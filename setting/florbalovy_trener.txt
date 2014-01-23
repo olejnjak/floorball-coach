@@ -1,0 +1,11 @@
+1) Vytvořte analýzu aplikací, které se zabývají tématikou přípravy florbalových tréninků.
+2) Zanalyzujte požadavky vybraných florbalových trenérů na mobilní aplikaci.
+3) Podle analýzy požadavků vytvořtte příslušné modely (doménový, use case, atd.) s využitím vhodné notace (např. UML).
+4) Vytvořte wireframy aplikace.
+5) Na základě analýzy připravte specifikaci, podle které navrhněte aplikaci pro tablety s operačním systémem iOS.
+6) Implementujte funkční prototyp s následující funkcionalitou:
+  - vkládání elementů (obránci, útočníci, kužely, apod.) na herní plochu z připraveného toolboxu
+  - volné kreslení na plochu znázorňující florbalové hřiště
+  - nakreslená cvičení musí být možno seskupovat do tréninků a ukládat na perzistentní úložiště
+  - k jednotlivým cvičením musí být možno připisovat textové poznámky.
+6) Otestujte funknčí prototyp pomocí akceptačních testů.
