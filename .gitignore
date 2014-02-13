@@ -1,7 +1,20 @@
+### OS X files
 *.DS_Store
+
+### LaTeX intermediate files
 *.aux
 *.lof
 *.log
 *.out
 *.toc
+
+### Result PDF - can be generated using LaTeX
 BP_Olejnik_Jakub_2014.pdf
+
+### Intermediate build files
+tmp
+!tmp/info.txt
+
+### Result binaries
+out
+!out/info.txt
