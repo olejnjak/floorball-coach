@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B803918CE33680042C083 /* FBCAppDelegate.m */; };
+		690B803F18CE33680042C083 /* Floorbal Coach-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 690B803A18CE33680042C083 /* Floorbal Coach-Info.plist */; };
+		690B804118CE33680042C083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B803D18CE33680042C083 /* main.m */; };
+		690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690B804318CE33FD0042C083 /* MainStoryboard.storyboard */; };
+		69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
+		69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
+		69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
+		69ECF28018CE32C900F741AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF27F18CE32C900F741AB /* XCTest.framework */; };
+		69ECF28118CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
+		69ECF28218CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69ECF28318CE32C900F741AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69ECF25B18CE32C800F741AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69ECF26218CE32C800F741AB;
+			remoteInfo = "Floorbal Coach";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		690B803818CE33680042C083 /* FBCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAppDelegate.h; sourceTree = "<group>"; };
+		690B803918CE33680042C083 /* FBCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAppDelegate.m; sourceTree = "<group>"; };
+		690B803A18CE33680042C083 /* Floorbal Coach-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Floorbal Coach-Info.plist"; sourceTree = "<group>"; };
+		690B803B18CE33680042C083 /* Floorbal Coach-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Floorbal Coach-Prefix.pch"; sourceTree = "<group>"; };
+		690B803D18CE33680042C083 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		690B804318CE33FD0042C083 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		69ECF26318CE32C900F741AB /* Floorbal Coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floorbal Coach.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ECF26618CE32C900F741AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		69ECF26818CE32C900F741AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		69ECF26A18CE32C900F741AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		69ECF27E18CE32C900F741AB /* Floorbal CoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Floorbal CoachTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ECF27F18CE32C900F741AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69ECF26018CE32C800F741AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */,
+				69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */,
+				69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69ECF27B18CE32C900F741AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69ECF28018CE32C900F741AB /* XCTest.framework in Frameworks */,
+				69ECF28218CE32C900F741AB /* UIKit.framework in Frameworks */,
+				69ECF28118CE32C900F741AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		690B803718CE33680042C083 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				690B804218CE33CC0042C083 /* Supporting files */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		690B804218CE33CC0042C083 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				690B803818CE33680042C083 /* FBCAppDelegate.h */,
+				690B803918CE33680042C083 /* FBCAppDelegate.m */,
+				690B803A18CE33680042C083 /* Floorbal Coach-Info.plist */,
+				690B803B18CE33680042C083 /* Floorbal Coach-Prefix.pch */,
+				690B803D18CE33680042C083 /* main.m */,
+				690B804318CE33FD0042C083 /* MainStoryboard.storyboard */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		69ECF25A18CE32C800F741AB = {
+			isa = PBXGroup;
+			children = (
+				690B803718CE33680042C083 /* src */,
+				69ECF26518CE32C900F741AB /* Frameworks */,
+				69ECF26418CE32C900F741AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69ECF26418CE32C900F741AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69ECF26318CE32C900F741AB /* Floorbal Coach.app */,
+				69ECF27E18CE32C900F741AB /* Floorbal CoachTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69ECF26518CE32C900F741AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69ECF26618CE32C900F741AB /* Foundation.framework */,
+				69ECF26818CE32C900F741AB /* CoreGraphics.framework */,
+				69ECF26A18CE32C900F741AB /* UIKit.framework */,
+				69ECF27F18CE32C900F741AB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69ECF26218CE32C800F741AB /* Floorbal Coach */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69ECF28F18CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorbal Coach" */;
+			buildPhases = (
+				69ECF25F18CE32C800F741AB /* Sources */,
+				69ECF26018CE32C800F741AB /* Frameworks */,
+				69ECF26118CE32C800F741AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Floorbal Coach";
+			productName = "Floorbal Coach";
+			productReference = 69ECF26318CE32C900F741AB /* Floorbal Coach.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69ECF27D18CE32C900F741AB /* Floorbal CoachTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69ECF29218CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorbal CoachTests" */;
+			buildPhases = (
+				69ECF27A18CE32C900F741AB /* Sources */,
+				69ECF27B18CE32C900F741AB /* Frameworks */,
+				69ECF27C18CE32C900F741AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69ECF28418CE32C900F741AB /* PBXTargetDependency */,
+			);
+			name = "Floorbal CoachTests";
+			productName = "Floorbal CoachTests";
+			productReference = 69ECF27E18CE32C900F741AB /* Floorbal CoachTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69ECF25B18CE32C800F741AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FBC;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Jakub Olejník";
+				TargetAttributes = {
+					69ECF27D18CE32C900F741AB = {
+						TestTargetID = 69ECF26218CE32C800F741AB;
+					};
+				};
+			};
+			buildConfigurationList = 69ECF25E18CE32C800F741AB /* Build configuration list for PBXProject "Floorbal Coach" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 69ECF25A18CE32C800F741AB;
+			productRefGroup = 69ECF26418CE32C900F741AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69ECF26218CE32C800F741AB /* Floorbal Coach */,
+				69ECF27D18CE32C900F741AB /* Floorbal CoachTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69ECF26118CE32C800F741AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */,
+				690B803F18CE33680042C083 /* Floorbal Coach-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69ECF27C18CE32C900F741AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69ECF25F18CE32C800F741AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				690B804118CE33680042C083 /* main.m in Sources */,
+				690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69ECF27A18CE32C900F741AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69ECF28418CE32C900F741AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69ECF26218CE32C800F741AB /* Floorbal Coach */;
+			targetProxy = 69ECF28318CE32C900F741AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		69ECF28D18CE32C900F741AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OBJROOT = ../tmp;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
+				SDKROOT = iphoneos;
+				SYMROOT = ../out;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		69ECF28E18CE32C900F741AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OBJROOT = ../tmp;
+				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
+				SDKROOT = iphoneos;
+				SYMROOT = ../out;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69ECF29018CE32C900F741AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "../src/Floorbal Coach-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/src/Floorbal Coach-Info.plist";
+				OBJROOT = ../tmp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
+				SYMROOT = ../out;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		69ECF29118CE32C900F741AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "../src/Floorbal Coach-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/src/Floorbal Coach-Info.plist";
+				OBJROOT = ../tmp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
+				SYMROOT = ../out;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		69ECF29318CE32C900F741AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Floorbal Coach.app/Floorbal Coach";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Floorbal Coach/Floorbal Coach-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Floorbal CoachTests/Floorbal CoachTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		69ECF29418CE32C900F741AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Floorbal Coach.app/Floorbal Coach";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Floorbal Coach/Floorbal Coach-Prefix.pch";
+				INFOPLIST_FILE = "Floorbal CoachTests/Floorbal CoachTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69ECF25E18CE32C800F741AB /* Build configuration list for PBXProject "Floorbal Coach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69ECF28D18CE32C900F741AB /* Debug */,
+				69ECF28E18CE32C900F741AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69ECF28F18CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorbal Coach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69ECF29018CE32C900F741AB /* Debug */,
+				69ECF29118CE32C900F741AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69ECF29218CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorbal CoachTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69ECF29318CE32C900F741AB /* Debug */,
+				69ECF29418CE32C900F741AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69ECF25B18CE32C800F741AB /* Project object */;
+}
