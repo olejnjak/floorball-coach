@@ -1,1 +1,0 @@
-Složka pro zdrojové kódy projektu.

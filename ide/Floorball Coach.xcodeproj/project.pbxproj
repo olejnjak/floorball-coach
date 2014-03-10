@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B803918CE33680042C083 /* FBCAppDelegate.m */; };
-		690B803F18CE33680042C083 /* Floorbal Coach-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 690B803A18CE33680042C083 /* Floorbal Coach-Info.plist */; };
+		690B803F18CE33680042C083 /* Floorball Coach-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 690B803A18CE33680042C083 /* Floorball Coach-Info.plist */; };
 		690B804118CE33680042C083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B803D18CE33680042C083 /* main.m */; };
 		690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690B804318CE33FD0042C083 /* MainStoryboard.storyboard */; };
+		690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804618CE3DC40042C083 /* FBCMainMenuController.m */; };
+		690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */; };
 		69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
 		69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
@@ -32,15 +34,19 @@
 /* Begin PBXFileReference section */
 		690B803818CE33680042C083 /* FBCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAppDelegate.h; sourceTree = "<group>"; };
 		690B803918CE33680042C083 /* FBCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAppDelegate.m; sourceTree = "<group>"; };
-		690B803A18CE33680042C083 /* Floorbal Coach-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Floorbal Coach-Info.plist"; sourceTree = "<group>"; };
-		690B803B18CE33680042C083 /* Floorbal Coach-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Floorbal Coach-Prefix.pch"; sourceTree = "<group>"; };
+		690B803A18CE33680042C083 /* Floorball Coach-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Floorball Coach-Info.plist"; sourceTree = "<group>"; };
+		690B803B18CE33680042C083 /* Floorball Coach-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Floorball Coach-Prefix.pch"; sourceTree = "<group>"; };
 		690B803D18CE33680042C083 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		690B804318CE33FD0042C083 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		69ECF26318CE32C900F741AB /* Floorbal Coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floorbal Coach.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		690B804518CE3DC40042C083 /* FBCMainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCMainMenuController.h; sourceTree = "<group>"; };
+		690B804618CE3DC40042C083 /* FBCMainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuController.m; sourceTree = "<group>"; };
+		690B804818CE41670042C083 /* FBCMainMenuCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCMainMenuCellFactory.h; sourceTree = "<group>"; };
+		690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuCellFactory.m; sourceTree = "<group>"; };
+		69ECF26318CE32C900F741AB /* Floorball Coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floorball Coach.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ECF26618CE32C900F741AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		69ECF26818CE32C900F741AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		69ECF26A18CE32C900F741AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		69ECF27E18CE32C900F741AB /* Floorbal CoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Floorbal CoachTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		69ECF27E18CE32C900F741AB /* Floorball CoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Floorball CoachTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ECF27F18CE32C900F741AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -72,8 +78,13 @@
 			isa = PBXGroup;
 			children = (
 				690B804218CE33CC0042C083 /* Supporting files */,
+				690B804518CE3DC40042C083 /* FBCMainMenuController.h */,
+				690B804618CE3DC40042C083 /* FBCMainMenuController.m */,
+				690B804818CE41670042C083 /* FBCMainMenuCellFactory.h */,
+				690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */,
 			);
-			path = src;
+			name = src;
+			path = ../src;
 			sourceTree = "<group>";
 		};
 		690B804218CE33CC0042C083 /* Supporting files */ = {
@@ -81,8 +92,8 @@
 			children = (
 				690B803818CE33680042C083 /* FBCAppDelegate.h */,
 				690B803918CE33680042C083 /* FBCAppDelegate.m */,
-				690B803A18CE33680042C083 /* Floorbal Coach-Info.plist */,
-				690B803B18CE33680042C083 /* Floorbal Coach-Prefix.pch */,
+				690B803A18CE33680042C083 /* Floorball Coach-Info.plist */,
+				690B803B18CE33680042C083 /* Floorball Coach-Prefix.pch */,
 				690B803D18CE33680042C083 /* main.m */,
 				690B804318CE33FD0042C083 /* MainStoryboard.storyboard */,
 			);
@@ -101,10 +112,11 @@
 		69ECF26418CE32C900F741AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				69ECF26318CE32C900F741AB /* Floorbal Coach.app */,
-				69ECF27E18CE32C900F741AB /* Floorbal CoachTests.xctest */,
+				69ECF26318CE32C900F741AB /* Floorball Coach.app */,
+				69ECF27E18CE32C900F741AB /* Floorball CoachTests.xctest */,
 			);
 			name = Products;
+			path = ../out;
 			sourceTree = "<group>";
 		};
 		69ECF26518CE32C900F741AB /* Frameworks */ = {
@@ -121,9 +133,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69ECF26218CE32C800F741AB /* Floorbal Coach */ = {
+		69ECF26218CE32C800F741AB /* Floorball Coach */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69ECF28F18CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorbal Coach" */;
+			buildConfigurationList = 69ECF28F18CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorball Coach" */;
 			buildPhases = (
 				69ECF25F18CE32C800F741AB /* Sources */,
 				69ECF26018CE32C800F741AB /* Frameworks */,
@@ -133,14 +145,14 @@
 			);
 			dependencies = (
 			);
-			name = "Floorbal Coach";
+			name = "Floorball Coach";
 			productName = "Floorbal Coach";
-			productReference = 69ECF26318CE32C900F741AB /* Floorbal Coach.app */;
+			productReference = 69ECF26318CE32C900F741AB /* Floorball Coach.app */;
 			productType = "com.apple.product-type.application";
 		};
-		69ECF27D18CE32C900F741AB /* Floorbal CoachTests */ = {
+		69ECF27D18CE32C900F741AB /* Floorball CoachTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69ECF29218CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorbal CoachTests" */;
+			buildConfigurationList = 69ECF29218CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorball CoachTests" */;
 			buildPhases = (
 				69ECF27A18CE32C900F741AB /* Sources */,
 				69ECF27B18CE32C900F741AB /* Frameworks */,
@@ -151,9 +163,9 @@
 			dependencies = (
 				69ECF28418CE32C900F741AB /* PBXTargetDependency */,
 			);
-			name = "Floorbal CoachTests";
+			name = "Floorball CoachTests";
 			productName = "Floorbal CoachTests";
-			productReference = 69ECF27E18CE32C900F741AB /* Floorbal CoachTests.xctest */;
+			productReference = 69ECF27E18CE32C900F741AB /* Floorball CoachTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +183,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 69ECF25E18CE32C800F741AB /* Build configuration list for PBXProject "Floorbal Coach" */;
+			buildConfigurationList = 69ECF25E18CE32C800F741AB /* Build configuration list for PBXProject "Floorball Coach" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,8 +195,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				69ECF26218CE32C800F741AB /* Floorbal Coach */,
-				69ECF27D18CE32C900F741AB /* Floorbal CoachTests */,
+				69ECF26218CE32C800F741AB /* Floorball Coach */,
+				69ECF27D18CE32C900F741AB /* Floorball CoachTests */,
 			);
 		};
 /* End PBXProject section */
@@ -195,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */,
-				690B803F18CE33680042C083 /* Floorbal Coach-Info.plist in Resources */,
+				690B803F18CE33680042C083 /* Floorball Coach-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +225,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
+				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				690B804118CE33680042C083 /* main.m in Sources */,
 				690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */,
 			);
@@ -230,7 +244,7 @@
 /* Begin PBXTargetDependency section */
 		69ECF28418CE32C900F741AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 69ECF26218CE32C800F741AB /* Floorbal Coach */;
+			target = 69ECF26218CE32C800F741AB /* Floorball Coach */;
 			targetProxy = 69ECF28318CE32C900F741AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -322,10 +336,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "../src/Floorbal Coach-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/src/Floorbal Coach-Info.plist";
+				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/../src/Floorball Coach-Info.plist";
 				OBJROOT = ../tmp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Floorball Coach";
 				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
 				SYMROOT = ../out;
 				WRAPPER_EXTENSION = app;
@@ -338,10 +352,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "../src/Floorbal Coach-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/src/Floorbal Coach-Info.plist";
+				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/../src/Floorball Coach-Info.plist";
 				OBJROOT = ../tmp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Floorball Coach";
 				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
 				SYMROOT = ../out;
 				WRAPPER_EXTENSION = app;
@@ -365,7 +379,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Floorbal CoachTests/Floorbal CoachTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Floorball CoachTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -384,7 +398,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Floorbal Coach/Floorbal Coach-Prefix.pch";
 				INFOPLIST_FILE = "Floorbal CoachTests/Floorbal CoachTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Floorball CoachTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -393,7 +407,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		69ECF25E18CE32C800F741AB /* Build configuration list for PBXProject "Floorbal Coach" */ = {
+		69ECF25E18CE32C800F741AB /* Build configuration list for PBXProject "Floorball Coach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69ECF28D18CE32C900F741AB /* Debug */,
@@ -402,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69ECF28F18CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorbal Coach" */ = {
+		69ECF28F18CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorball Coach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69ECF29018CE32C900F741AB /* Debug */,
@@ -411,7 +425,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69ECF29218CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorbal CoachTests" */ = {
+		69ECF29218CE32C900F741AB /* Build configuration list for PBXNativeTarget "Floorball CoachTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69ECF29318CE32C900F741AB /* Debug */,

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kzl-9J-YL8">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Main Menu Controller-->
+        <scene sceneID="shr-qp-Bc0">
+            <objects>
+                <viewController storyboardIdentifier="FBCMainMenuControllerStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kzl-9J-YL8" customClass="FBCMainMenuController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KGG-bl-8yf"/>
+                        <viewControllerLayoutGuide type="bottom" id="PY2-90-wnn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KoD-6Z-hw7">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Floorball coach]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJu-bA-Iye">
+                                <rect key="frame" x="20" y="30" width="728" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Opk-g2-JDp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8io-3X-lFq">
+                                <rect key="frame" x="65" y="99" width="638" height="870"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yEb-17-f8i">
+                                    <size key="itemSize" width="290" height="290"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCCollectionViewCell0" id="z3a-YD-dEN">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ev-xh-jBi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="[New exercise]">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="2Ev-xh-jBi" firstAttribute="leading" secondItem="z3a-YD-dEN" secondAttribute="leading" id="0E1-IN-xHY"/>
+                                            <constraint firstAttribute="bottom" secondItem="2Ev-xh-jBi" secondAttribute="bottom" id="NwI-NL-hIV"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Ev-xh-jBi" secondAttribute="trailing" id="cTL-Wc-UgP"/>
+                                            <constraint firstItem="2Ev-xh-jBi" firstAttribute="top" secondItem="z3a-YD-dEN" secondAttribute="top" id="tfb-Bz-ooh"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCCollectionViewCell1" id="Ke8-tf-GJ9">
+                                        <rect key="frame" x="348" y="0.0" width="290" height="290"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OO-Cj-k1l">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="[New training]">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="9OO-Cj-k1l" secondAttribute="trailing" id="NQ2-b8-1Ll"/>
+                                            <constraint firstAttribute="bottom" secondItem="9OO-Cj-k1l" secondAttribute="bottom" id="TGm-1y-dhi"/>
+                                            <constraint firstItem="9OO-Cj-k1l" firstAttribute="top" secondItem="Ke8-tf-GJ9" secondAttribute="top" id="hIL-nE-ELz"/>
+                                            <constraint firstItem="9OO-Cj-k1l" firstAttribute="leading" secondItem="Ke8-tf-GJ9" secondAttribute="leading" id="mjg-y1-pKG"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCCollectionViewCell2" id="M9Z-3y-oMk">
+                                        <rect key="frame" x="0.0" y="300" width="290" height="290"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Al-Kx-Qxe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="[List of exercises]">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="6Al-Kx-Qxe" firstAttribute="leading" secondItem="M9Z-3y-oMk" secondAttribute="leading" id="2Ic-vW-2yp"/>
+                                            <constraint firstItem="6Al-Kx-Qxe" firstAttribute="top" secondItem="M9Z-3y-oMk" secondAttribute="top" id="dSB-Dl-Ayg"/>
+                                            <constraint firstAttribute="bottom" secondItem="6Al-Kx-Qxe" secondAttribute="bottom" id="pbX-3B-4yl"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Al-Kx-Qxe" secondAttribute="trailing" id="sDk-nt-JcU"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCCollectionViewCell3" id="nz0-Ix-UFa">
+                                        <rect key="frame" x="348" y="300" width="290" height="290"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqF-hC-i8z">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="[List of trainings]">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="lqF-hC-i8z" firstAttribute="top" secondItem="nz0-Ix-UFa" secondAttribute="top" id="7CC-Jl-W4R"/>
+                                            <constraint firstAttribute="bottom" secondItem="lqF-hC-i8z" secondAttribute="bottom" id="aw3-Jv-y9b"/>
+                                            <constraint firstItem="lqF-hC-i8z" firstAttribute="leading" secondItem="nz0-Ix-UFa" secondAttribute="leading" id="gpK-C0-Zip"/>
+                                            <constraint firstAttribute="trailing" secondItem="lqF-hC-i8z" secondAttribute="trailing" id="rBu-BD-ob5"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCCollectionViewCell4" id="sVL-dI-5Pp">
+                                        <rect key="frame" x="0.0" y="600" width="290" height="290"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5T-JG-ca4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="[Favorite exercises]">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="W5T-JG-ca4" secondAttribute="bottom" id="04Q-tl-sQt"/>
+                                            <constraint firstAttribute="trailing" secondItem="W5T-JG-ca4" secondAttribute="trailing" id="Co9-5m-P0A"/>
+                                            <constraint firstItem="W5T-JG-ca4" firstAttribute="leading" secondItem="sVL-dI-5Pp" secondAttribute="leading" id="Q9y-PV-UvI"/>
+                                            <constraint firstItem="W5T-JG-ca4" firstAttribute="top" secondItem="sVL-dI-5Pp" secondAttribute="top" id="oJK-B9-6zh"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCCollectionViewCell5" id="aTw-SJ-H4d">
+                                        <rect key="frame" x="348" y="600" width="290" height="290"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9E-6f-7X3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="[About]">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="M9E-6f-7X3" firstAttribute="leading" secondItem="aTw-SJ-H4d" secondAttribute="leading" id="Snc-SZ-vkl"/>
+                                            <constraint firstItem="M9E-6f-7X3" firstAttribute="top" secondItem="aTw-SJ-H4d" secondAttribute="top" id="dRw-U3-0dM"/>
+                                            <constraint firstAttribute="trailing" secondItem="M9E-6f-7X3" secondAttribute="trailing" id="wLv-bN-N3N"/>
+                                            <constraint firstAttribute="bottom" secondItem="M9E-6f-7X3" secondAttribute="bottom" id="z2k-dG-Q8B"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Kzl-9J-YL8" id="CvE-Ux-xnd"/>
+                                    <outlet property="delegate" destination="Kzl-9J-YL8" id="LHV-tM-Kg3"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tJu-bA-Iye" firstAttribute="leading" secondItem="KoD-6Z-hw7" secondAttribute="leading" constant="20" id="2Vi-YV-n74"/>
+                            <constraint firstItem="8io-3X-lFq" firstAttribute="top" secondItem="tJu-bA-Iye" secondAttribute="bottom" constant="28" id="b1D-tT-n5w"/>
+                            <constraint firstAttribute="trailing" secondItem="8io-3X-lFq" secondAttribute="trailing" constant="65" id="bfJ-wb-ivE"/>
+                            <constraint firstItem="8io-3X-lFq" firstAttribute="centerX" secondItem="tJu-bA-Iye" secondAttribute="centerX" id="jhg-HG-YHm"/>
+                            <constraint firstItem="tJu-bA-Iye" firstAttribute="top" secondItem="KGG-bl-8yf" secondAttribute="bottom" constant="10" id="jsl-Go-hcM"/>
+                            <constraint firstItem="8io-3X-lFq" firstAttribute="leading" secondItem="KoD-6Z-hw7" secondAttribute="leading" constant="65" id="kgV-4O-JkU"/>
+                            <constraint firstItem="PY2-90-wnn" firstAttribute="top" secondItem="8io-3X-lFq" secondAttribute="bottom" constant="55" id="l5D-2h-Qp3"/>
+                            <constraint firstAttribute="trailing" secondItem="tJu-bA-Iye" secondAttribute="trailing" constant="20" id="uhc-wN-lWU"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="mainMenu" destination="8io-3X-lFq" id="3OP-8A-mUl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vsi-xm-4nq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="-258"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
