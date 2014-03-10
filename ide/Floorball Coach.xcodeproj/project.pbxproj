@@ -13,6 +13,7 @@
 		690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690B804318CE33FD0042C083 /* MainStoryboard.storyboard */; };
 		690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804618CE3DC40042C083 /* FBCMainMenuController.m */; };
 		690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */; };
+		69DE1C6F18CE8929006A869C /* info.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69DE1C6E18CE8929006A869C /* info.txt */; };
 		69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
 		69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
@@ -42,6 +43,7 @@
 		690B804618CE3DC40042C083 /* FBCMainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuController.m; sourceTree = "<group>"; };
 		690B804818CE41670042C083 /* FBCMainMenuCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCMainMenuCellFactory.h; sourceTree = "<group>"; };
 		690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuCellFactory.m; sourceTree = "<group>"; };
+		69DE1C6E18CE8929006A869C /* info.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = info.txt; sourceTree = "<group>"; };
 		69ECF26318CE32C900F741AB /* Floorball Coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floorball Coach.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ECF26618CE32C900F741AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		69ECF26818CE32C900F741AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,10 +102,19 @@
 			name = "Supporting files";
 			sourceTree = "<group>";
 		};
+		69DE1C6D18CE8929006A869C /* tst */ = {
+			isa = PBXGroup;
+			children = (
+				69DE1C6E18CE8929006A869C /* info.txt */,
+			);
+			path = tst;
+			sourceTree = "<group>";
+		};
 		69ECF25A18CE32C800F741AB = {
 			isa = PBXGroup;
 			children = (
 				690B803718CE33680042C083 /* src */,
+				69DE1C6D18CE8929006A869C /* tst */,
 				69ECF26518CE32C900F741AB /* Frameworks */,
 				69ECF26418CE32C900F741AB /* Products */,
 			);
@@ -215,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DE1C6F18CE8929006A869C /* info.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
