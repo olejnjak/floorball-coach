@@ -14,14 +14,16 @@
 {
     UIViewController *src = (UIViewController *) self.sourceViewController;
     UIViewController *dst = (UIViewController *) self.destinationViewController;
+    UIWindow *window = src.view.window;
     
-    [UIView beginAnimations:@"LeftFlip" context:nil];
-    [UIView setAnimationDuration:0.6];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:src.view.superview cache:YES];
-    [UIView commitAnimations];
+    dst.view.center = src.view.center;
+    dst.view.transform = src.view.transform;
+    dst.view.bounds = src.view.bounds;
     
-    [src presentViewController:dst animated:NO completion:nil];
+    [UIView transitionFromView:src.view toView:dst.view duration:0.6 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished)
+     {
+         [window setRootViewController:dst];
+     }];
 }
 
 

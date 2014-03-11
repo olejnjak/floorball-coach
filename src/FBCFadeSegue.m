@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Jakub Olejník. All rights reserved.
 //
 
-#import "FBCScreenSwitchSegue.h"
+#import "FBCFadeSegue.h"
 
-@implementation FBCScreenSwitchSegue
+@implementation FBCFadeSegue
 
 - (void)perform
 {

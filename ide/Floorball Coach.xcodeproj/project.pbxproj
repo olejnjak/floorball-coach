@@ -24,7 +24,7 @@
 		69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F5882918CF78C9002A18F4 /* FBCListViewController.m */; };
 		69FD432F18CFABF300A95B61 /* FBCExerciseListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD432E18CFABF300A95B61 /* FBCExerciseListModel.m */; };
 		69FD433218CFAC1C00A95B61 /* FBCTrainingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD433118CFAC1C00A95B61 /* FBCTrainingListModel.m */; };
-		69FD433B18CFB7B000A95B61 /* FBCScreenSwitchSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD433A18CFB7B000A95B61 /* FBCScreenSwitchSegue.m */; };
+		69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD433A18CFB7B000A95B61 /* FBCFadeSegue.m */; };
 		69FD433E18CFB95500A95B61 /* FBCFlipHorizontalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD433D18CFB95500A95B61 /* FBCFlipHorizontalSegue.m */; };
 /* End PBXBuildFile section */
 
@@ -68,8 +68,8 @@
 		69FD432E18CFABF300A95B61 /* FBCExerciseListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCExerciseListModel.m; sourceTree = "<group>"; };
 		69FD433018CFAC1C00A95B61 /* FBCTrainingListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingListModel.h; sourceTree = "<group>"; };
 		69FD433118CFAC1C00A95B61 /* FBCTrainingListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingListModel.m; sourceTree = "<group>"; };
-		69FD433918CFB7B000A95B61 /* FBCScreenSwitchSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCScreenSwitchSegue.h; sourceTree = "<group>"; };
-		69FD433A18CFB7B000A95B61 /* FBCScreenSwitchSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCScreenSwitchSegue.m; sourceTree = "<group>"; };
+		69FD433918CFB7B000A95B61 /* FBCFadeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCFadeSegue.h; sourceTree = "<group>"; };
+		69FD433A18CFB7B000A95B61 /* FBCFadeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCFadeSegue.m; sourceTree = "<group>"; };
 		69FD433C18CFB95500A95B61 /* FBCFlipHorizontalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCFlipHorizontalSegue.h; sourceTree = "<group>"; };
 		69FD433D18CFB95500A95B61 /* FBCFlipHorizontalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCFlipHorizontalSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,8 +211,8 @@
 		69FD433F18CFB95D00A95B61 /* Custom segues */ = {
 			isa = PBXGroup;
 			children = (
-				69FD433918CFB7B000A95B61 /* FBCScreenSwitchSegue.h */,
-				69FD433A18CFB7B000A95B61 /* FBCScreenSwitchSegue.m */,
+				69FD433918CFB7B000A95B61 /* FBCFadeSegue.h */,
+				69FD433A18CFB7B000A95B61 /* FBCFadeSegue.m */,
 				69FD433C18CFB95500A95B61 /* FBCFlipHorizontalSegue.h */,
 				69FD433D18CFB95500A95B61 /* FBCFlipHorizontalSegue.m */,
 			);
@@ -317,7 +317,7 @@
 			files = (
 				69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */,
 				69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */,
-				69FD433B18CFB7B000A95B61 /* FBCScreenSwitchSegue.m in Sources */,
+				69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */,
 				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
 				69FD433E18CFB95500A95B61 /* FBCFlipHorizontalSegue.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,

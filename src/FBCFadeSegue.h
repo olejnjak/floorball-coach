@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBCScreenSwitchSegue : UIStoryboardSegue
+@interface FBCFadeSegue : UIStoryboardSegue
 
 @end
