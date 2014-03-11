@@ -14,6 +14,7 @@
 		690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804618CE3DC40042C083 /* FBCMainMenuController.m */; };
 		690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */; };
 		69DE1C6F18CE8929006A869C /* info.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69DE1C6E18CE8929006A869C /* info.txt */; };
+		69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */; };
 		69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
 		69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
@@ -44,6 +45,10 @@
 		690B804818CE41670042C083 /* FBCMainMenuCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCMainMenuCellFactory.h; sourceTree = "<group>"; };
 		690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuCellFactory.m; sourceTree = "<group>"; };
 		69DE1C6E18CE8929006A869C /* info.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = info.txt; sourceTree = "<group>"; };
+		69DE1C7018CE8E3F006A869C /* FBCAboutScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAboutScreenController.h; sourceTree = "<group>"; };
+		69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAboutScreenController.m; sourceTree = "<group>"; };
+		69DE1C7318CE8ECD006A869C /* FBCControllerDoneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCControllerDoneProtocol.h; sourceTree = "<group>"; };
+		69DE1C7518CE90A6006A869C /* FBCSegueIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSegueIdentifiers.h; sourceTree = "<group>"; };
 		69ECF26318CE32C900F741AB /* Floorball Coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floorball Coach.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ECF26618CE32C900F741AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		69ECF26818CE32C900F741AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,11 +84,15 @@
 		690B803718CE33680042C083 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				69DE1C7418CE9082006A869C /* defines */,
 				690B804218CE33CC0042C083 /* Supporting files */,
 				690B804518CE3DC40042C083 /* FBCMainMenuController.h */,
 				690B804618CE3DC40042C083 /* FBCMainMenuController.m */,
 				690B804818CE41670042C083 /* FBCMainMenuCellFactory.h */,
 				690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */,
+				69DE1C7018CE8E3F006A869C /* FBCAboutScreenController.h */,
+				69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */,
+				69DE1C7318CE8ECD006A869C /* FBCControllerDoneProtocol.h */,
 			);
 			name = src;
 			path = ../src;
@@ -108,6 +117,14 @@
 				69DE1C6E18CE8929006A869C /* info.txt */,
 			);
 			path = tst;
+			sourceTree = "<group>";
+		};
+		69DE1C7418CE9082006A869C /* defines */ = {
+			isa = PBXGroup;
+			children = (
+				69DE1C7518CE90A6006A869C /* FBCSegueIdentifiers.h */,
+			);
+			name = defines;
 			sourceTree = "<group>";
 		};
 		69ECF25A18CE32C800F741AB = {
@@ -237,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */,
 				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				690B804118CE33680042C083 /* main.m in Sources */,

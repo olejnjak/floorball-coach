@@ -8,6 +8,7 @@
 
 #import "FBCMainMenuController.h"
 #import "FBCMainMenuCellFactory.h"
+#import "FBCAboutScreenController.h"
 
 @interface FBCMainMenuController ()
 
@@ -39,6 +40,17 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - FBCControllerDone protocol -
+
+- (void)controllerIsDone:(UIViewController *)controller
+{
+    if (controller == self.presentedViewController)
+    {
+        [controller dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Rotation -
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
@@ -47,5 +59,19 @@
     [self.mainMenu reloadData];
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Segues -
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *identifier = [segue identifier];
+    
+    if ([identifier isEqualToString:kFBCMainMenuToAboutSegue])
+    {
+        FBCAboutScreenController *dst = segue.destinationViewController;
+        
+        [dst setDelegate:self];
+    }
+}
 
 @end
