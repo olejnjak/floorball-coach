@@ -21,6 +21,7 @@
 		69ECF28018CE32C900F741AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF27F18CE32C900F741AB /* XCTest.framework */; };
 		69ECF28118CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		69ECF28218CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
+		69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F5882918CF78C9002A18F4 /* FBCListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		69ECF26A18CE32C900F741AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		69ECF27E18CE32C900F741AB /* Floorball CoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Floorball CoachTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ECF27F18CE32C900F741AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		69F5882818CF78C9002A18F4 /* FBCListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCListViewController.h; sourceTree = "<group>"; };
+		69F5882918CF78C9002A18F4 /* FBCListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				69DE1C7018CE8E3F006A869C /* FBCAboutScreenController.h */,
 				69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */,
 				69DE1C7318CE8ECD006A869C /* FBCControllerDoneProtocol.h */,
+				69F5882818CF78C9002A18F4 /* FBCListViewController.h */,
+				69F5882918CF78C9002A18F4 /* FBCListViewController.m */,
 			);
 			name = src;
 			path = ../src;
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */,
 				69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */,
 				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,

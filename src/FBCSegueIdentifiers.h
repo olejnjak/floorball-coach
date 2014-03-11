@@ -7,3 +7,4 @@
 //
 
 #define kFBCMainMenuToAboutSegue @"FBCMainMenuToAboutSegue"
+#define kFBCMainMenuToExerciseListSegue @"FBCMainMenuToExerciseListSegue"

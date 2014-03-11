@@ -9,10 +9,7 @@
 #import "FBCMainMenuController.h"
 #import "FBCMainMenuCellFactory.h"
 #import "FBCAboutScreenController.h"
-
-@interface FBCMainMenuController ()
-
-@end
+#import "FBCListViewController.h"
 
 @implementation FBCMainMenuController
 
@@ -71,6 +68,17 @@
         FBCAboutScreenController *dst = segue.destinationViewController;
         
         [dst setDelegate:self];
+        return;
+    }
+    
+    if ([identifier isEqualToString:kFBCMainMenuToExerciseListSegue])
+    {
+        FBCListViewController *dst = segue.destinationViewController;
+        
+        [dst setDelegate:self];
+        [dst setType:FBCListViewControllerTypeExercise];
+        
+        return;
     }
 }
 

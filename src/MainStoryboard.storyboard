@@ -4,6 +4,90 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
+        <!--List View Controller-->
+        <scene sceneID="Rtw-gQ-vsD">
+            <objects>
+                <viewController id="9SZ-sS-LaG" customClass="FBCListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2gq-Mn-Sjc"/>
+                        <viewControllerLayoutGuide type="bottom" id="NGp-y2-59O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JlM-51-kvk">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ZDK-9g-EON">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="OR4-ik-nDt"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="[Back]" id="ufF-nP-7SY">
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="9SZ-sS-LaG" id="tK4-j1-YJh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="[Trainings]" id="7V1-6F-wP4"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mOa-9p-fDy"/>
+                                    <barButtonItem style="plain" id="vab-jb-5Gi">
+                                        <view key="customView" contentMode="scaleToFill" id="jIS-gg-AcJ">
+                                            <rect key="frame" x="320" y="8" width="128" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Exercise list]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIV-tR-785">
+                                                    <rect key="frame" x="0.0" y="20" width="128" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.95050993490000002" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="fIV-tR-785" secondAttribute="trailing" id="W6E-m1-Idt"/>
+                                                <constraint firstAttribute="bottom" secondItem="fIV-tR-785" secondAttribute="bottom" id="mhd-Iy-ehm"/>
+                                                <constraint firstItem="fIV-tR-785" firstAttribute="top" secondItem="jIS-gg-AcJ" secondAttribute="top" constant="20" id="ms2-UW-KWs"/>
+                                                <constraint firstItem="fIV-tR-785" firstAttribute="leading" secondItem="jIS-gg-AcJ" secondAttribute="leading" id="sSz-RS-agR"/>
+                                            </constraints>
+                                        </view>
+                                        <color key="tintColor" red="1" green="0.95050993490000002" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ckn-91-ee8"/>
+                                    <barButtonItem systemItem="add" id="MnX-h3-PxE">
+                                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="[Sort]" id="XDs-sL-PQs"/>
+                                    <barButtonItem systemItem="edit" id="u5A-i0-d8G"/>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="siG-Qe-0Td">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9SZ-sS-LaG" id="Dke-uI-XaU"/>
+                                    <outlet property="delegate" destination="9SZ-sS-LaG" id="rvq-FO-RKX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZDK-9g-EON" secondAttribute="trailing" id="BMI-dW-dBp"/>
+                            <constraint firstItem="siG-Qe-0Td" firstAttribute="top" secondItem="ZDK-9g-EON" secondAttribute="bottom" id="Dma-yz-q2U"/>
+                            <constraint firstItem="ZDK-9g-EON" firstAttribute="leading" secondItem="JlM-51-kvk" secondAttribute="leading" id="KCv-jc-sE4"/>
+                            <constraint firstItem="ZDK-9g-EON" firstAttribute="top" secondItem="2gq-Mn-Sjc" secondAttribute="bottom" constant="-20" id="NGe-Ah-qXy"/>
+                            <constraint firstItem="siG-Qe-0Td" firstAttribute="leading" secondItem="JlM-51-kvk" secondAttribute="leading" id="bCq-KI-CFK"/>
+                            <constraint firstItem="NGp-y2-59O" firstAttribute="top" secondItem="siG-Qe-0Td" secondAttribute="bottom" id="fV4-vy-vSB"/>
+                            <constraint firstAttribute="trailing" secondItem="siG-Qe-0Td" secondAttribute="trailing" id="xL9-57-rkU"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4C-lj-oDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="-1404"/>
+        </scene>
         <!--Main Menu Controller - Main menu-->
         <scene sceneID="shr-qp-Bc0">
             <objects>
@@ -100,6 +184,9 @@
                                                     <state key="normal" title="[List of exercises]">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="9SZ-sS-LaG" kind="modal" identifier="FBCMainMenuToExerciseListSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="9uY-sY-113"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
