@@ -16,3 +16,4 @@
 #endif
 
 #import "FBCSegueIdentifiers.h"
+#import "FBCCellIdentifiers.h"

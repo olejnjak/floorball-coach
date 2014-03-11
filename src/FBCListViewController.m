@@ -7,15 +7,34 @@
 //
 
 #import "FBCListViewController.h"
-
-@interface FBCListViewController ()
-
-@end
+#import "FBCListViewModelProtocol.h"
+#import "FBCExerciseListModel.h"
+#import "FBCTrainingListModel.h"
 
 @implementation FBCListViewController
+{
+    id<FBCListViewModelProtocol> _model;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Init and dealloc
+
+- (void)__setInitState
+{
+    NSAssert(self.type != FBCListViewControllerTypeUndefined, @"Unexpected controller type.");
+    
+    _model = nil;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self __setInitState];
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -27,26 +46,67 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    NSInteger count = [self.model count];
+    
+    return count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    NSString *reusableIdentifier = [self.model.class reusableCellIdentifierForIndexPath:indexPath];
+    UITableViewCell *result = [tableView dequeueReusableCellWithIdentifier:reusableIdentifier forIndexPath:indexPath];
+    
+    return result;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UITableViewDataDelegate methods
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - UI actions
 
-- (IBAction)backButtonPressed:(UIBarButtonItem *)sender
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (self.delegate != nil)
+    NSString *identifier = [segue identifier];
+    
+    if ([identifier isEqualToString:kFBCListViewTypeChangeSegue])
     {
-        [self.delegate controllerIsDone:self];
+        FBCListViewController *dst = [segue destinationViewController];
+        
+        if (self.type == FBCListViewControllerTypeTraining)
+        {
+            [dst setType:FBCListViewControllerTypeExercise];
+        }
+        
+        else if (self.type == FBCListViewControllerTypeExercise)
+        {
+            [dst setType:FBCListViewControllerTypeTraining];
+        }
+        
+        return;
     }
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Custom properties
+
+- (id<FBCListViewModelProtocol>)model
+{
+    if (_model == nil && self.type == FBCListViewControllerTypeExercise)
+    {
+        _model = [FBCExerciseListModel model];
+    }
+    
+    else if (_model == nil && self.type == FBCListViewControllerTypeTraining)
+    {
+        _model = [FBCTrainingListModel model];
+    }
+    
+    return _model;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
 
 @end

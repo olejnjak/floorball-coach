@@ -41,10 +41,7 @@
 
 - (void)controllerIsDone:(UIViewController *)controller
 {
-    if (controller == self.presentedViewController)
-    {
-        [controller dismissViewControllerAnimated:YES completion:nil];
-    }
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +62,7 @@
     
     if ([identifier isEqualToString:kFBCMainMenuToAboutSegue])
     {
-        FBCAboutScreenController *dst = segue.destinationViewController;
+        FBCAboutScreenController *dst = [segue destinationViewController];
         
         [dst setDelegate:self];
         return;
@@ -73,10 +70,18 @@
     
     if ([identifier isEqualToString:kFBCMainMenuToExerciseListSegue])
     {
+        FBCListViewController *dst = [segue destinationViewController];
+        
+        [dst setType:FBCListViewControllerTypeExercise];
+        
+        return;
+    }
+    
+    if ([identifier isEqualToString:kFBCMainMenuToTrainingListSegue])
+    {
         FBCListViewController *dst = segue.destinationViewController;
         
-        [dst setDelegate:self];
-        [dst setType:FBCListViewControllerTypeExercise];
+        [dst setType:FBCListViewControllerTypeTraining];
         
         return;
     }

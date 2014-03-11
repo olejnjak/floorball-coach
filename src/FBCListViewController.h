@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FBCControllerDoneProtocol.h"
 
 typedef enum
 {
@@ -18,9 +17,6 @@ typedef enum
 
 @interface FBCListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, weak) UIViewController<FBCControllerDoneProtocol> *delegate;
 @property (assign, nonatomic) FBCListViewControllerType type;
-
-- (IBAction)backButtonPressed:(UIBarButtonItem *)sender;
 
 @end

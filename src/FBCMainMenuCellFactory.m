@@ -8,8 +8,6 @@
 
 #import "FBCMainMenuCellFactory.h"
 
-#define kFBCReusableIdFormat @"FBCCollectionViewCell%d"
-
 @implementation FBCMainMenuCellFactory
 
 + (NSString*)reusableIdForIndexPath:(NSIndexPath *)indexPath andOrientation:(UIInterfaceOrientation)orientation
@@ -20,7 +18,7 @@
     // in portrait the consequence is 0,1,2,3,4,5
     if (UIInterfaceOrientationIsPortrait(orientation))
     {
-        cellId = [NSString stringWithFormat:kFBCReusableIdFormat, row];
+        cellId = [NSString stringWithFormat:kFBCMainMenuCellFormat, row];
     }
     
     // in landscape the consequence is 0,2,4,1,3,5
@@ -33,7 +31,7 @@
             cellNumber = 5;
         }
         
-        cellId = [NSString stringWithFormat:kFBCReusableIdFormat, cellNumber];
+        cellId = [NSString stringWithFormat:kFBCMainMenuCellFormat, cellNumber];
     }
     
     return cellId;
