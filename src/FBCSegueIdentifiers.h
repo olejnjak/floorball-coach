@@ -10,6 +10,8 @@
 #define kFBCMainMenuToAboutSegue @"FBCMainMenuToAboutSegue"
 #define kFBCMainMenuToExerciseListSegue @"FBCMainMenuToExerciseListSegue"
 #define kFBCMainMenuToTrainingListSegue @"FBCMainMenuToTrainingListSegue"
+#define kFBCMainMenuToExerciseSegue @"FBCMainMenuToExerciseSegue"
 
 // List view segues
 #define kFBCListViewTypeChangeSegue @"FBCListViewTypeChangeSegue"
+#define kFBCListToExerciseSegue @"FBCListToExerciseSegue"

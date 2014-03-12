@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FBCControllerDoneProtocol.h"
+
 typedef enum
 {
     FBCListViewControllerTypeUndefined,
@@ -15,7 +17,7 @@ typedef enum
     FBCListViewControllerTypeTraining
 } FBCListViewControllerType;
 
-@interface FBCListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface FBCListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,FBCControllerDoneProtocol>
 
 @property (assign, nonatomic) FBCListViewControllerType type;
 

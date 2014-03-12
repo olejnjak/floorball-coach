@@ -10,6 +10,7 @@
 #import "FBCListViewModelProtocol.h"
 #import "FBCExerciseListModel.h"
 #import "FBCTrainingListModel.h"
+#import "FBCExerciseController.h"
 
 @implementation FBCListViewController
 {
@@ -60,8 +61,27 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - UITableViewDataDelegate methods
+#pragma mark - UITableViewDelegate methods
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // TODO: handle item selection
+    
+    FBCExerciseController *exerciseController = [FBCExerciseController instantiateFromStoryboard:kFBCExerciseController];
+    
+    [exerciseController setDelegate:self];
+    [exerciseController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    
+    [self presentViewController:exerciseController animated:YES completion:nil];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - FBCControllerDoneProtocol methods
+
+- (void)controllerIsDone:(UIViewController *)controller
+{
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Segues

@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FBCControllerDoneProtocol.h"
+
 @interface FBCExerciseController : UIViewController
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *notesTrailingConstraint;
 
-- (IBAction)notesButtonPressed:(id)sender;
+@property (weak, nonatomic) id<FBCControllerDoneProtocol> delegate;
+
++ (FBCExerciseController*) instantiateFromStoryboard:(NSString*)storyboardID;
+
+- (IBAction)notesButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)backButtonPressed:(UIBarButtonItem *)sender;
 
 @end

@@ -242,6 +242,9 @@
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <segue destination="nXa-ZP-GJ2" kind="modal" identifier="FBCListToExerciseSegue" modalTransitionStyle="crossDissolve" id="7nV-PG-H8S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4C-lj-oDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +253,7 @@
         <!--Exercise Controller-->
         <scene sceneID="sOo-H8-96p">
             <objects>
-                <viewController id="nXa-ZP-GJ2" customClass="FBCExerciseController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FBCExerciseControllerStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nXa-ZP-GJ2" customClass="FBCExerciseController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j06-wI-Txs"/>
                         <viewControllerLayoutGuide type="bottom" id="1W2-Fg-pCf"/>
@@ -266,7 +269,11 @@
                                     <constraint firstAttribute="height" constant="64" id="XdY-bx-DjJ"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="[Back]" id="yuD-el-1Lu"/>
+                                    <barButtonItem title="[Back]" id="yuD-el-1Lu">
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="nXa-ZP-GJ2" id="Fbs-tu-cRR"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gQL-KY-Cjg"/>
                                     <barButtonItem width="256" style="plain" id="Qvw-Vy-EF0">
                                         <view key="customView" contentMode="scaleToFill" id="p64-6B-aQT">
@@ -413,7 +420,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="nXa-ZP-GJ2" kind="custom" customClass="FBCFadeSegue" id="gOi-T2-F6s"/>
+                                                        <segue destination="nXa-ZP-GJ2" kind="modal" identifier="FBCMainMenuToExerciseSegue" customClass="FBCFadeSegue" modalTransitionStyle="crossDissolve" id="gOi-T2-F6s"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -692,7 +699,6 @@
         <!--Toolbox Controller-->
         <scene sceneID="srE-5c-r9c">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="034-Fk-0mU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="nLe-hM-tmD" customClass="FBCToolboxController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="epG-Z4-TFf"/>
@@ -900,6 +906,7 @@
                     </view>
                     <toolbarItems/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="034-Fk-0mU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781" y="-484"/>
         </scene>
@@ -924,7 +931,6 @@
         <!--Notes Controller-->
         <scene sceneID="fDD-fH-7H3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ipx-Mg-hOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="EvZ-Tm-4te" customClass="FBCNotesController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jPV-N4-suA"/>
@@ -1011,6 +1017,7 @@
                     </view>
                     <toolbarItems/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ipx-Mg-hOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2438" y="-1404"/>
         </scene>
@@ -1022,5 +1029,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="nET-52-7m0"/>
+        <segue reference="7nV-PG-H8S"/>
     </inferredMetricsTieBreakers>
 </document>
