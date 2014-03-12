@@ -13,6 +13,10 @@
 		690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690B804318CE33FD0042C083 /* MainStoryboard.storyboard */; };
 		690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804618CE3DC40042C083 /* FBCMainMenuController.m */; };
 		690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */; };
+		691E7AFE18CFDBE80030B929 /* FBCExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7AFD18CFDBE80030B929 /* FBCExerciseController.m */; };
+		691E7B0118CFDC1F0030B929 /* FBCToolboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0018CFDC1F0030B929 /* FBCToolboxController.m */; };
+		691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0318CFE2290030B929 /* FBCFieldController.m */; };
+		691E7B0718CFE34E0030B929 /* FBCNotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0618CFE34E0030B929 /* FBCNotesController.m */; };
 		69DE1C6F18CE8929006A869C /* info.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69DE1C6E18CE8929006A869C /* info.txt */; };
 		69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */; };
 		69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
@@ -49,6 +53,14 @@
 		690B804618CE3DC40042C083 /* FBCMainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuController.m; sourceTree = "<group>"; };
 		690B804818CE41670042C083 /* FBCMainMenuCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCMainMenuCellFactory.h; sourceTree = "<group>"; };
 		690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuCellFactory.m; sourceTree = "<group>"; };
+		691E7AFC18CFDBE80030B929 /* FBCExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCExerciseController.h; sourceTree = "<group>"; };
+		691E7AFD18CFDBE80030B929 /* FBCExerciseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCExerciseController.m; sourceTree = "<group>"; };
+		691E7AFF18CFDC1F0030B929 /* FBCToolboxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCToolboxController.h; sourceTree = "<group>"; };
+		691E7B0018CFDC1F0030B929 /* FBCToolboxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCToolboxController.m; sourceTree = "<group>"; };
+		691E7B0218CFE2290030B929 /* FBCFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCFieldController.h; sourceTree = "<group>"; };
+		691E7B0318CFE2290030B929 /* FBCFieldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCFieldController.m; sourceTree = "<group>"; };
+		691E7B0518CFE34E0030B929 /* FBCNotesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNotesController.h; sourceTree = "<group>"; };
+		691E7B0618CFE34E0030B929 /* FBCNotesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNotesController.m; sourceTree = "<group>"; };
 		69DE1C6E18CE8929006A869C /* info.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = info.txt; sourceTree = "<group>"; };
 		69DE1C7018CE8E3F006A869C /* FBCAboutScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAboutScreenController.h; sourceTree = "<group>"; };
 		69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAboutScreenController.m; sourceTree = "<group>"; };
@@ -101,6 +113,7 @@
 		690B803718CE33680042C083 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				691E7AFB18CFDBA60030B929 /* Exercise */,
 				69DE1C7418CE9082006A869C /* defines */,
 				690B804218CE33CC0042C083 /* Supporting files */,
 				69FD432A18CFABB800A95B61 /* Main menu */,
@@ -124,6 +137,21 @@
 				690B804318CE33FD0042C083 /* MainStoryboard.storyboard */,
 			);
 			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		691E7AFB18CFDBA60030B929 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				691E7AFC18CFDBE80030B929 /* FBCExerciseController.h */,
+				691E7AFD18CFDBE80030B929 /* FBCExerciseController.m */,
+				691E7AFF18CFDC1F0030B929 /* FBCToolboxController.h */,
+				691E7B0018CFDC1F0030B929 /* FBCToolboxController.m */,
+				691E7B0218CFE2290030B929 /* FBCFieldController.h */,
+				691E7B0318CFE2290030B929 /* FBCFieldController.m */,
+				691E7B0518CFE34E0030B929 /* FBCNotesController.h */,
+				691E7B0618CFE34E0030B929 /* FBCNotesController.m */,
+			);
+			name = Exercise;
 			sourceTree = "<group>";
 		};
 		69DE1C6D18CE8929006A869C /* tst */ = {
@@ -319,12 +347,16 @@
 				69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */,
 				69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */,
 				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
+				691E7AFE18CFDBE80030B929 /* FBCExerciseController.m in Sources */,
 				69FD433E18CFB95500A95B61 /* FBCFlipHorizontalSegue.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
+				691E7B0718CFE34E0030B929 /* FBCNotesController.m in Sources */,
 				690B804118CE33680042C083 /* main.m in Sources */,
 				69FD433218CFAC1C00A95B61 /* FBCTrainingListModel.m in Sources */,
+				691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */,
 				690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */,
 				69FD432F18CFABF300A95B61 /* FBCExerciseListModel.m in Sources */,
+				691E7B0118CFDC1F0030B929 /* FBCToolboxController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
