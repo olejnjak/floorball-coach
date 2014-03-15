@@ -45,8 +45,10 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *reusableIdentifier = [self.model.class reusableCellIdentifierForIndexPath:indexPath];
+    NSString *reusableIdentifier = [self.model reusableCellIdentifierForIndexPath:indexPath];
     UITableViewCell *result = [tableView dequeueReusableCellWithIdentifier:reusableIdentifier forIndexPath:indexPath];
+    
+    [self.model prepareTableViewCell:result forIndexPath:indexPath];
     
     return result;
 }

@@ -11,10 +11,11 @@
 @protocol FBCListViewModelProtocol <NSObject>
 
 + (id<FBCListViewModelProtocol>)model;
-+ (NSString*)reusableCellIdentifierForIndexPath:(NSIndexPath*)indexPath;
 
 - (NSInteger)count;
 
+- (NSString*)reusableCellIdentifierForIndexPath:(NSIndexPath*)indexPath;
+- (void)prepareTableViewCell:(UITableViewCell*)cell forIndexPath:(NSIndexPath*)indexPath;
 - (void)deleteRowAtIndexPath:(NSIndexPath*)indexPath;
 
 @end

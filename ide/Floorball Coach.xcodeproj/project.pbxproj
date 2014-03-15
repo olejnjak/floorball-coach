@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B803918CE33680042C083 /* FBCAppDelegate.m */; };
-		690B803F18CE33680042C083 /* Floorball Coach-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 690B803A18CE33680042C083 /* Floorball Coach-Info.plist */; };
 		690B804118CE33680042C083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B803D18CE33680042C083 /* main.m */; };
 		690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690B804318CE33FD0042C083 /* MainStoryboard.storyboard */; };
 		690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804618CE3DC40042C083 /* FBCMainMenuController.m */; };
@@ -17,8 +16,13 @@
 		691E7B0118CFDC1F0030B929 /* FBCToolboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0018CFDC1F0030B929 /* FBCToolboxController.m */; };
 		691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0318CFE2290030B929 /* FBCFieldController.m */; };
 		691E7B0718CFE34E0030B929 /* FBCNotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0618CFE34E0030B929 /* FBCNotesController.m */; };
-		69DE1C6F18CE8929006A869C /* info.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69DE1C6E18CE8929006A869C /* info.txt */; };
 		69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */; };
+		69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651418D4E6DB00F72E33 /* FBCExercise.m */; };
+		69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651718D4E6F500F72E33 /* FBCTraining.m */; };
+		69EB651C18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651B18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m */; };
+		69EB651F18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */; };
+		69EB652518D503EE00F72E33 /* FBCComplexExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB652418D503EE00F72E33 /* FBCComplexExerciseCell.m */; };
+		69EB652818D5057700F72E33 /* NSDate+FBCDateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB652718D5057700F72E33 /* NSDate+FBCDateToString.m */; };
 		69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
 		69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
@@ -62,11 +66,23 @@
 		691E7B0518CFE34E0030B929 /* FBCNotesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNotesController.h; sourceTree = "<group>"; };
 		691E7B0618CFE34E0030B929 /* FBCNotesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNotesController.m; sourceTree = "<group>"; };
 		69302B5318D0957300C73208 /* FBCStoryboardIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBCStoryboardIdentifiers.h; sourceTree = "<group>"; };
-		69DE1C6E18CE8929006A869C /* info.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = info.txt; sourceTree = "<group>"; };
 		69DE1C7018CE8E3F006A869C /* FBCAboutScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAboutScreenController.h; sourceTree = "<group>"; };
 		69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAboutScreenController.m; sourceTree = "<group>"; };
 		69DE1C7318CE8ECD006A869C /* FBCControllerDoneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCControllerDoneProtocol.h; sourceTree = "<group>"; };
 		69DE1C7518CE90A6006A869C /* FBCSegueIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSegueIdentifiers.h; sourceTree = "<group>"; };
+		69EB651318D4E6DB00F72E33 /* FBCExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCExercise.h; sourceTree = "<group>"; };
+		69EB651418D4E6DB00F72E33 /* FBCExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCExercise.m; sourceTree = "<group>"; };
+		69EB651618D4E6F500F72E33 /* FBCTraining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTraining.h; sourceTree = "<group>"; };
+		69EB651718D4E6F500F72E33 /* FBCTraining.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTraining.m; sourceTree = "<group>"; };
+		69EB651918D4EBD800F72E33 /* FBCTrainingUnitProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBCTrainingUnitProtocol.h; sourceTree = "<group>"; };
+		69EB651A18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingUnitLibrary.h; sourceTree = "<group>"; };
+		69EB651B18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingUnitLibrary.m; sourceTree = "<group>"; };
+		69EB651D18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFBCTrainingUnitLibrary.h; sourceTree = "<group>"; };
+		69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFBCTrainingUnitLibrary.m; sourceTree = "<group>"; };
+		69EB652318D503EE00F72E33 /* FBCComplexExerciseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCComplexExerciseCell.h; sourceTree = "<group>"; };
+		69EB652418D503EE00F72E33 /* FBCComplexExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCComplexExerciseCell.m; sourceTree = "<group>"; };
+		69EB652618D5057700F72E33 /* NSDate+FBCDateToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+FBCDateToString.h"; sourceTree = "<group>"; };
+		69EB652718D5057700F72E33 /* NSDate+FBCDateToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+FBCDateToString.m"; sourceTree = "<group>"; };
 		69ECF26318CE32C900F741AB /* Floorball Coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floorball Coach.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69ECF26618CE32C900F741AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		69ECF26818CE32C900F741AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,12 +132,21 @@
 			children = (
 				69FD432B18CFABC700A95B61 /* About screen */,
 				69FD433F18CFB95D00A95B61 /* Custom segues */,
-				69DE1C7418CE9082006A869C /* defines */,
+				69DE1C7418CE9082006A869C /* Defines */,
 				691E7AFB18CFDBA60030B929 /* Exercise */,
 				69DE1C7318CE8ECD006A869C /* FBCControllerDoneProtocol.h */,
 				69FD432C18CFABD000A95B61 /* List view */,
 				69FD432A18CFABB800A95B61 /* Main menu */,
 				690B804218CE33CC0042C083 /* Supporting files */,
+				69EB651318D4E6DB00F72E33 /* FBCExercise.h */,
+				69EB651418D4E6DB00F72E33 /* FBCExercise.m */,
+				69EB651618D4E6F500F72E33 /* FBCTraining.h */,
+				69EB651718D4E6F500F72E33 /* FBCTraining.m */,
+				69EB651918D4EBD800F72E33 /* FBCTrainingUnitProtocol.h */,
+				69EB651A18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.h */,
+				69EB651B18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m */,
+				69EB652618D5057700F72E33 /* NSDate+FBCDateToString.h */,
+				69EB652718D5057700F72E33 /* NSDate+FBCDateToString.m */,
 			);
 			name = src;
 			path = ../src;
@@ -158,19 +183,20 @@
 		69DE1C6D18CE8929006A869C /* tst */ = {
 			isa = PBXGroup;
 			children = (
-				69DE1C6E18CE8929006A869C /* info.txt */,
+				69EB651D18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.h */,
+				69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */,
 			);
 			path = tst;
 			sourceTree = "<group>";
 		};
-		69DE1C7418CE9082006A869C /* defines */ = {
+		69DE1C7418CE9082006A869C /* Defines */ = {
 			isa = PBXGroup;
 			children = (
 				69DE1C7518CE90A6006A869C /* FBCSegueIdentifiers.h */,
 				69FD432818CFA75F00A95B61 /* FBCCellIdentifiers.h */,
 				69302B5318D0957300C73208 /* FBCStoryboardIdentifiers.h */,
 			);
-			name = defines;
+			name = Defines;
 			sourceTree = "<group>";
 		};
 		69ECF25A18CE32C800F741AB = {
@@ -234,6 +260,8 @@
 				69FD432E18CFABF300A95B61 /* FBCExerciseListModel.m */,
 				69FD433018CFAC1C00A95B61 /* FBCTrainingListModel.h */,
 				69FD433118CFAC1C00A95B61 /* FBCTrainingListModel.m */,
+				69EB652318D503EE00F72E33 /* FBCComplexExerciseCell.h */,
+				69EB652418D503EE00F72E33 /* FBCComplexExerciseCell.m */,
 			);
 			name = "List view";
 			sourceTree = "<group>";
@@ -294,7 +322,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FBC;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jakub Olejník";
 				TargetAttributes = {
 					69ECF27D18CE32C900F741AB = {
@@ -326,7 +354,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */,
-				690B803F18CE33680042C083 /* Floorball Coach-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +361,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69DE1C6F18CE8929006A869C /* info.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,20 +371,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */,
+				69EB652518D503EE00F72E33 /* FBCComplexExerciseCell.m in Sources */,
 				69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */,
 				69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */,
 				69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */,
 				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
 				691E7AFE18CFDBE80030B929 /* FBCExerciseController.m in Sources */,
 				69FD433E18CFB95500A95B61 /* FBCFlipHorizontalSegue.m in Sources */,
+				69EB651F18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				691E7B0718CFE34E0030B929 /* FBCNotesController.m in Sources */,
 				690B804118CE33680042C083 /* main.m in Sources */,
+				69EB652818D5057700F72E33 /* NSDate+FBCDateToString.m in Sources */,
+				69EB651C18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m in Sources */,
 				69FD433218CFAC1C00A95B61 /* FBCTrainingListModel.m in Sources */,
 				691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */,
 				690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */,
 				69FD432F18CFABF300A95B61 /* FBCExerciseListModel.m in Sources */,
 				691E7B0118CFDC1F0030B929 /* FBCToolboxController.m in Sources */,
+				69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +416,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -427,7 +458,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -495,7 +525,6 @@
 		69ECF29318CE32C900F741AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Floorbal Coach.app/Floorbal Coach";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -518,7 +547,6 @@
 		69ECF29418CE32C900F741AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Floorbal Coach.app/Floorbal Coach";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

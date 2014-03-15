@@ -79,7 +79,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBCExerciseListCell" rowHeight="72" id="xVb-wb-l7q">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBCExerciseListCell" rowHeight="72" id="xVb-wb-l7q" customClass="FBCComplexExerciseCell">
                                         <rect key="frame" x="0.0" y="22" width="768" height="72"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xVb-wb-l7q" id="8pI-Rq-gaD">
@@ -148,6 +148,10 @@
                                                 <constraint firstItem="lTP-ge-Lft" firstAttribute="leading" secondItem="4Jy-1N-T8e" secondAttribute="leading" id="wZg-PQ-Of3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Gzh-Zi-IVi" id="4xK-IY-EXG"/>
+                                            <outlet property="nameLabel" destination="4Jy-1N-T8e" id="OlW-de-qTI"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBCTrainingNameCell" id="B7V-f1-1WB">
                                         <rect key="frame" x="0.0" y="94" width="768" height="72"/>
@@ -967,7 +971,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="170" id="RpO-fl-Vs2">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBCExerciseNoteCell" rowHeight="170" id="RpO-fl-Vs2">
                                         <rect key="frame" x="0.0" y="22" width="319" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RpO-fl-Vs2" id="m6e-XH-QMR">

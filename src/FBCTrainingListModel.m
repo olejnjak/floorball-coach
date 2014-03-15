@@ -36,7 +36,7 @@
     return [[self.class alloc] init];
 }
 
-+ (NSString*)reusableCellIdentifierForIndexPath:(NSIndexPath *)indexPath
+- (NSString*)reusableCellIdentifierForIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = indexPath.row;
     
@@ -46,6 +46,11 @@
     }
     
     return kFBCTrainingExerciseCell;
+}
+
+- (void)prepareTableViewCell:(UITableViewCell*)cell forIndexPath:(NSIndexPath*)indexPath
+{
+    
 }
 
 - (NSInteger)count
