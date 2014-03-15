@@ -18,16 +18,6 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Init and dealloc
-
-- (void)__setInitState
-{
-    NSAssert(self.type != FBCListViewControllerTypeUndefined, @"Unexpected controller type.");
-    
-    _model = nil;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIViewController methods
 
 - (void)viewDidLoad
@@ -35,6 +25,7 @@
     [super viewDidLoad];
     
     [self __setInitState];
+    [self updateToolbar];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -73,6 +64,33 @@
     [exerciseController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     
     [self presentViewController:exerciseController animated:YES completion:nil];
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+    forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.model deleteRowAtIndexPath:indexPath];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)setEditing:(BOOL)editing
+{
+    [super setEditing:editing];
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,6 +145,67 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UI actions
+
+- (IBAction)editButtonPressed:(UIBarButtonItem *)sender
+{
+    [self editTableView];
+}
+
+- (IBAction)doneButtonPressed:(UIBarButtonItem *)sender
+{
+    [self doneEditingTableView];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Helpers
+
+- (void)__setInitState
+{
+    NSAssert(self.type != FBCListViewControllerTypeUndefined, @"Unexpected controller type.");
+    
+    _model = nil;
+}
+
+- (void)editTableView
+{
+    [self.tableView setEditing:YES animated:YES];
+    [self updateToolbar];
+}
+
+- (void)doneEditingTableView
+{
+    [self.tableView setEditing:NO animated:YES];
+    [self updateToolbar];
+}
+
+- (void)updateToolbar
+{
+    UITableView *tableView = self.tableView;
+    UIToolbar *toolbar = self.toolbar;
+    NSMutableArray *toolbarItems = [toolbar.items mutableCopy];
+    
+    if (tableView.editing)
+    {
+        [toolbarItems removeObject:self.editButton];
+        
+        if ([toolbarItems containsObject:self.doneButton] == NO)
+        {
+            [toolbarItems addObject:self.doneButton];
+        }
+    }
+
+    else
+    {
+        [toolbarItems removeObject:self.doneButton];
+        
+        if ([toolbarItems containsObject:self.editButton] == NO)
+        {
+            [toolbarItems addObject:self.editButton];
+        }
+    }
+    
+    [toolbar setItems:toolbarItems animated:YES];
+}
 
 @end

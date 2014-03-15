@@ -9,6 +9,24 @@
 #import "FBCTrainingListModel.h"
 
 @implementation FBCTrainingListModel
+{
+    NSInteger _count;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Init and dealloc
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        _count = 5;
+    }
+    
+    return self;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - FBCListViewModelProtocol methods
@@ -32,7 +50,12 @@
 
 - (NSInteger)count
 {
-    return 5;
+    return _count;
+}
+
+- (void)deleteRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    _count--;
 }
 
 @end

@@ -15,4 +15,6 @@
 
 - (NSInteger)count;
 
+- (void)deleteRowAtIndexPath:(NSIndexPath*)indexPath;
+
 @end
