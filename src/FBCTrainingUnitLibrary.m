@@ -60,6 +60,13 @@ static FBCTrainingUnitLibrary *g_Library = nil;
     return result;
 }
 
+- (NSArray*)trainings
+{
+    NSArray *result = [NSArray arrayWithArray:_trainings];
+    
+    return result;
+}
+
 - (NSArray*)flatTrainings
 {
     NSArray *trainings = _trainings;

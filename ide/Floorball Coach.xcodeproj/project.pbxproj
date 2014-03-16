@@ -16,6 +16,7 @@
 		691E7B0118CFDC1F0030B929 /* FBCToolboxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0018CFDC1F0030B929 /* FBCToolboxController.m */; };
 		691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0318CFE2290030B929 /* FBCFieldController.m */; };
 		691E7B0718CFE34E0030B929 /* FBCNotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0618CFE34E0030B929 /* FBCNotesController.m */; };
+		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
 		69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */; };
 		69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */; };
 		69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */; };
@@ -68,6 +69,9 @@
 		691E7B0518CFE34E0030B929 /* FBCNotesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNotesController.h; sourceTree = "<group>"; };
 		691E7B0618CFE34E0030B929 /* FBCNotesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNotesController.m; sourceTree = "<group>"; };
 		69302B5318D0957300C73208 /* FBCStoryboardIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBCStoryboardIdentifiers.h; sourceTree = "<group>"; };
+		6990D18118D5C371003BC7BC /* FBCSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortViewController.h; sourceTree = "<group>"; };
+		6990D18218D5C371003BC7BC /* FBCSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSortViewController.m; sourceTree = "<group>"; };
+		6990D18618D5D1D5003BC7BC /* FBCSortBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortBlocks.h; sourceTree = "<group>"; };
 		69A2013A18D51C67005C4E7B /* FBCSimpleExerciseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSimpleExerciseCell.h; sourceTree = "<group>"; };
 		69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSimpleExerciseCell.m; sourceTree = "<group>"; };
 		69A2013D18D5274F005C4E7B /* FBCTrainingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingCell.h; sourceTree = "<group>"; };
@@ -272,6 +276,9 @@
 				69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */,
 				69A2013D18D5274F005C4E7B /* FBCTrainingCell.h */,
 				69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */,
+				6990D18118D5C371003BC7BC /* FBCSortViewController.h */,
+				6990D18218D5C371003BC7BC /* FBCSortViewController.m */,
+				6990D18618D5D1D5003BC7BC /* FBCSortBlocks.h */,
 			);
 			name = "List view";
 			sourceTree = "<group>";
@@ -386,6 +393,7 @@
 				69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */,
 				69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */,
 				69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */,
+				6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */,
 				69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */,
 				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
 				691E7AFE18CFDBE80030B929 /* FBCExerciseController.m in Sources */,

@@ -12,6 +12,7 @@
 #import "FBCTrainingListModel.h"
 #import "FBCExerciseController.h"
 #import "FBCTraining.h"
+#import "FBCSortViewController.h"
 
 @implementation FBCListViewController
 {
@@ -116,6 +117,40 @@
         }
         
         return;
+    }
+    
+    if ([identifier isEqualToString:kFBCSortPopoverSegue])
+    {
+        UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue*)segue;
+        FBCSortViewController *dst = [popoverSegue destinationViewController];
+        UIPopoverController *popover = [popoverSegue popoverController];
+        __weak FBCListViewController *weakSelf = self;
+        
+        [dst setPopover:popover];
+        
+        [dst setAToZBlock:^{
+            [weakSelf.model sortAZ];
+            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
+        
+        [dst setZToABlock:^{
+            [weakSelf.model sortZA];
+            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
+        
+        [dst setOldFirstBlock:^{
+            [weakSelf.model sortOldFirst];
+            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
+        
+        [dst setNewFirstBlock:^{
+            [weakSelf.model sortNewFirst];
+            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
     }
 }
 

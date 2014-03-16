@@ -81,4 +81,53 @@
     [library removeExercise:exerciseToRemove];
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Sort
+
+- (void)sortAZ
+{
+    [_exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        FBCExercise *e1 = obj1;
+        FBCExercise *e2 = obj2;
+        
+        NSString *e1name = [e1.name lowercaseString];
+        NSString *e2name = [e2.name lowercaseString];
+        
+        return [e1name compare:e2name];
+    }];
+}
+
+- (void)sortZA
+{
+    [_exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        FBCExercise *e1 = obj1;
+        FBCExercise *e2 = obj2;
+        
+        NSString *e1name = [e1.name lowercaseString];
+        NSString *e2name = [e2.name lowercaseString];
+        
+        return [e2name compare:e1name];
+    }];
+}
+
+- (void)sortNewFirst
+{
+    [_exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        FBCExercise *e1 = obj1;
+        FBCExercise *e2 = obj2;
+        
+        return [e1.dateCreated compare:e2.dateCreated];
+    }];
+}
+
+- (void)sortOldFirst
+{
+    [_exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        FBCExercise *e1 = obj1;
+        FBCExercise *e2 = obj2;
+        
+        return [e2.dateCreated compare:e1.dateCreated];
+    }];
+}
+
 @end

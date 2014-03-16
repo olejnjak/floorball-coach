@@ -20,4 +20,9 @@
 - (void)prepareTableViewCell:(UITableViewCell*)cell forIndexPath:(NSIndexPath*)indexPath;
 - (void)deleteRowAtIndexPath:(NSIndexPath*)indexPath;
 
+- (void)sortAZ;
+- (void)sortZA;
+- (void)sortOldFirst;
+- (void)sortNewFirst;
+
 @end

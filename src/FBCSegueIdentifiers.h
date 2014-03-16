@@ -15,3 +15,4 @@
 // List view segues
 #define kFBCListViewTypeChangeSegue @"FBCListViewTypeChangeSegue"
 #define kFBCListToExerciseSegue @"FBCListToExerciseSegue"
+#define kFBCSortPopoverSegue @"FBCSortPopoverSegue"

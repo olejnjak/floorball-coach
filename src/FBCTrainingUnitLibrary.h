@@ -26,6 +26,7 @@
 - (void)removeExercise:(FBCExercise*)exercise;
 
 - (NSArray*)exercises;
+- (NSArray*)trainings;
 - (NSArray*)flatTrainings;
 
 - (void)loadStructure;

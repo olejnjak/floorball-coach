@@ -12,6 +12,7 @@
 #import "FBCExercise.h"
 #import "FBCTraining.h"
 #import "FBCTrainingUnitLibrary.h"
+#import "FBCSortBlocks.h"
 
 @implementation FBCTrainingListModel
 {
@@ -69,13 +70,13 @@
     // show exercise
     if ([cell isKindOfClass:[FBCSimpleExerciseCell class]] && [unit isKindOfClass:[FBCExercise class]])
     {
-        [self prepareSimpleExerciseCell:(FBCSimpleExerciseCell*)cell forExercise:(FBCExercise*)unit];
+        [self.class prepareSimpleExerciseCell:(FBCSimpleExerciseCell*)cell forExercise:(FBCExercise*)unit];
     }
     
     // show training
     else if ([cell isKindOfClass:[FBCTrainingCell class]] && [unit isKindOfClass:[FBCTraining class]])
     {
-        [self prepareTrainingCell:(FBCTrainingCell*)cell forTraining:(FBCTraining*)unit];
+        [self.class prepareTrainingCell:(FBCTrainingCell*)cell forTraining:(FBCTraining*)unit];
     }
 }
 
@@ -112,14 +113,61 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Sort
+
+- (void)sortAZ
+{
+    [self sortUsingComparator:kFBCAtoZBlock];
+}
+
+- (void)sortZA
+{
+    [self sortUsingComparator:kFBCZtoABlock];
+}
+
+- (void)sortNewFirst
+{
+    [self sortUsingComparator:kFBCNewFirstBlock];
+}
+
+- (void)sortOldFirst
+{
+    [self sortUsingComparator:kFBCOldFirstBlock];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Helpers
 
-- (void)prepareSimpleExerciseCell:(FBCSimpleExerciseCell*)cell forExercise:(FBCExercise*)exercise
+- (void)sortUsingComparator:(NSComparator)comparator
+{
+    FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
+    NSMutableArray *trainings = [library.trainings mutableCopy];
+    
+    [trainings sortUsingComparator:comparator];
+    
+    _trainings = [self.class flattenTrainingArray:trainings];
+}
+
++ (NSMutableArray*)flattenTrainingArray:(NSArray*)trainingArray;
+{
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:trainingArray.count];
+    
+    [trainingArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        FBCTraining *training = obj;
+        NSArray *flatTraining = [training flatten];
+        
+        [result addObjectsFromArray:flatTraining];
+    }];
+    
+    return result;
+}
+
++ (void)prepareSimpleExerciseCell:(FBCSimpleExerciseCell*)cell forExercise:(FBCExercise*)exercise
 {
     [cell.nameLabel setText:exercise.name];
 }
 
-- (void)prepareTrainingCell:(FBCTrainingCell*)cell forTraining:(FBCTraining*)training
++ (void)prepareTrainingCell:(FBCTrainingCell*)cell forTraining:(FBCTraining*)training
 {
     NSString *date = [training.date localString];
     NSUInteger exerciseCount = [training.exercises count];

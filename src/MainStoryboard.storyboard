@@ -4,6 +4,100 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Sort View Controller-->
+        <scene sceneID="5B5-jT-huS">
+            <objects>
+                <tableViewController id="IJ5-Sz-CVk" customClass="FBCSortViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" id="g5P-5p-xC6">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                        <sections>
+                            <tableViewSection id="HcI-KB-rRg">
+                                <cells>
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Bbl-dt-xIm" style="IBUITableViewCellStyleDefault" id="81F-ZP-gMm" userLabel="A to Z Cell">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="32"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="81F-ZP-gMm" id="T07-GI-PjO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="A -> Z" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bbl-dt-xIm">
+                                                    <rect key="frame" x="15" y="0.0" width="90" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="scS-HC-yO3" style="IBUITableViewCellStyleDefault" id="kLm-dh-gKY" userLabel="Z to A Cell">
+                                        <rect key="frame" x="0.0" y="32" width="120" height="32"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kLm-dh-gKY" id="F6Z-bY-tTF">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Z -> A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="scS-HC-yO3">
+                                                    <rect key="frame" x="15" y="0.0" width="90" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell tag="3" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="q2c-Sw-Lf4" style="IBUITableViewCellStyleDefault" id="C0c-Lx-bEK" userLabel="New first Cell">
+                                        <rect key="frame" x="0.0" y="64" width="120" height="32"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C0c-Lx-bEK" id="b5z-TF-tn6">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="[New first]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q2c-Sw-Lf4">
+                                                    <rect key="frame" x="15" y="0.0" width="90" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell tag="4" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="93y-Oh-cm9" style="IBUITableViewCellStyleDefault" id="A7U-Oj-Uxr" userLabel="Old first Cell">
+                                        <rect key="frame" x="0.0" y="96" width="120" height="32"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A7U-Oj-Uxr" id="8AR-za-gCf">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="[Old first]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="93y-Oh-cm9">
+                                                    <rect key="frame" x="15" y="0.0" width="90" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="IJ5-Sz-CVk" id="qXk-hf-K5Y"/>
+                            <outlet property="delegate" destination="IJ5-Sz-CVk" id="YZ5-qF-Kvr"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="120" height="128"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLj-yo-w4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="248" y="-1972"/>
+        </scene>
         <!--List View Controller-->
         <scene sceneID="Rtw-gQ-vsD">
             <objects>
@@ -61,7 +155,13 @@
                                     <barButtonItem systemItem="add" id="MnX-h3-PxE">
                                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                                     </barButtonItem>
-                                    <barButtonItem title="[Sort]" id="XDs-sL-PQs"/>
+                                    <barButtonItem title="[Sort]" id="XDs-sL-PQs">
+                                        <connections>
+                                            <segue destination="IJ5-Sz-CVk" kind="popover" identifier="FBCSortPopoverSegue" popoverAnchorBarButtonItem="XDs-sL-PQs" id="ukS-fy-zaM">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem systemItem="edit" id="u5A-i0-d8G">
                                         <connections>
                                             <action selector="editButtonPressed:" destination="9SZ-sS-LaG" id="8yp-XL-QAq"/>
