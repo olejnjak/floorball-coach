@@ -153,7 +153,7 @@
                                             <outlet property="nameLabel" destination="4Jy-1N-T8e" id="OlW-de-qTI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBCTrainingNameCell" id="B7V-f1-1WB">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBCTrainingNameCell" id="B7V-f1-1WB" customClass="FBCTrainingCell">
                                         <rect key="frame" x="0.0" y="94" width="768" height="72"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B7V-f1-1WB" id="Ox3-Jw-bM1">
@@ -169,6 +169,13 @@
                                                         <constraint firstAttribute="width" constant="60" id="xdk-a0-b1v"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzC-b7-Y5C">
+                                                    <rect key="frame" x="20" y="6" width="60" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Training name]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkV-tc-ORB">
                                                     <rect key="frame" x="88" y="6" width="660" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -202,17 +209,26 @@
                                                 <constraint firstItem="r83-1J-Nys" firstAttribute="height" secondItem="rnX-RI-MUQ" secondAttribute="height" id="4ml-pl-lFU"/>
                                                 <constraint firstItem="rnX-RI-MUQ" firstAttribute="leading" secondItem="VU3-tV-4Ig" secondAttribute="trailing" constant="8" id="9P6-eL-A7T"/>
                                                 <constraint firstAttribute="trailing" secondItem="KkV-tc-ORB" secondAttribute="trailing" constant="20" id="GgC-cL-ikp"/>
+                                                <constraint firstItem="XzC-b7-Y5C" firstAttribute="centerX" secondItem="VU3-tV-4Ig" secondAttribute="centerX" id="Kut-13-SAI"/>
                                                 <constraint firstItem="r83-1J-Nys" firstAttribute="leading" secondItem="rnX-RI-MUQ" secondAttribute="trailing" constant="-4" id="Skd-c8-k94"/>
+                                                <constraint firstItem="XzC-b7-Y5C" firstAttribute="height" secondItem="VU3-tV-4Ig" secondAttribute="height" id="VK8-nW-xYH"/>
                                                 <constraint firstItem="r83-1J-Nys" firstAttribute="centerY" secondItem="rnX-RI-MUQ" secondAttribute="centerY" id="Wsj-M9-pUn"/>
                                                 <constraint firstItem="KkV-tc-ORB" firstAttribute="top" secondItem="VU3-tV-4Ig" secondAttribute="top" id="aWG-Zm-yC5"/>
                                                 <constraint firstAttribute="centerY" secondItem="VU3-tV-4Ig" secondAttribute="centerY" constant="-0.5" id="bQt-zJ-TZ1"/>
+                                                <constraint firstItem="XzC-b7-Y5C" firstAttribute="width" secondItem="VU3-tV-4Ig" secondAttribute="width" id="bcV-lV-c3T"/>
                                                 <constraint firstItem="KkV-tc-ORB" firstAttribute="leading" secondItem="VU3-tV-4Ig" secondAttribute="trailing" constant="8" id="dh3-qt-xNH"/>
+                                                <constraint firstItem="XzC-b7-Y5C" firstAttribute="centerY" secondItem="VU3-tV-4Ig" secondAttribute="centerY" constant="-0.5" id="g0i-hF-4lc"/>
                                                 <constraint firstItem="rnX-RI-MUQ" firstAttribute="bottom" secondItem="VU3-tV-4Ig" secondAttribute="bottom" id="jz4-Es-vBS"/>
                                                 <constraint firstItem="VU3-tV-4Ig" firstAttribute="leading" secondItem="Ox3-Jw-bM1" secondAttribute="leading" constant="20" id="zez-Jd-Cop"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="r83-1J-Nys" id="bgc-jC-zzG"/>
+                                            <outlet property="exerciseNumberLabel" destination="XzC-b7-Y5C" id="JYY-9n-g0J"/>
+                                            <outlet property="nameLabel" destination="KkV-tc-ORB" id="nqV-mm-XYm"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBCTrainingExerciseCell" rowHeight="47" id="jcS-gX-K9L">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBCTrainingExerciseCell" rowHeight="47" id="jcS-gX-K9L" customClass="FBCSimpleExerciseCell">
                                         <rect key="frame" x="0.0" y="166" width="768" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jcS-gX-K9L" id="qaP-Aa-YYd">
@@ -235,6 +251,9 @@
                                                 <constraint firstAttribute="centerY" secondItem="SGt-4g-DNK" secondAttribute="centerY" id="WBk-hH-G4k"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="SGt-4g-DNK" id="uZf-TD-Zt2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

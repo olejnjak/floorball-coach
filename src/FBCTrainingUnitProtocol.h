@@ -10,8 +10,6 @@
 
 @protocol FBCTrainingUnitProtocol <NSObject>
 
-- (NSUInteger)subunitsCount;
-
 - (NSArray*)flatten;
 
 @end

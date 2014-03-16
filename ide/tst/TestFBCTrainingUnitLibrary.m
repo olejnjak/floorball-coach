@@ -17,6 +17,8 @@
 
 - (void)__setInitState
 {
+    _exercises = [NSMutableArray arrayWithCapacity:1];
+    _trainings = [NSMutableArray arrayWithCapacity:1];
     [self testData];
 }
 
@@ -25,31 +27,29 @@
 
 - (void)testData
 {
-    const static NSUInteger maxUnits = 11;
-    const NSUInteger unitsToGenerate = arc4random() % maxUnits;
-    NSMutableArray *testArray = [NSMutableArray arrayWithCapacity:unitsToGenerate];
+    const NSUInteger unitsToGenerate = 10;
+    
     
     for (NSUInteger i = 0; i < unitsToGenerate; i++)
     {
-        NSUInteger type = arc4random() % 2;
-        id<FBCTrainingUnitProtocol> unit = nil;
+        NSUInteger type = i % 2;
         
         //generate exercise
         if (type == 0)
         {
-            unit = [self.class generateExercise];
+            FBCExercise *exercise = [self.class generateExercise];
+            
+            [self addExercise:exercise];
         }
         
         //generate training
         else
         {
-            unit = [self.class generateTraining];
+            FBCTraining *training = [self.class generateTraining];
+            
+            [self addTraining:training];
         }
-        
-        [testArray addObject:unit];
     }
-
-    _units = testArray;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

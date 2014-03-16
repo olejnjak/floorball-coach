@@ -7,6 +7,7 @@
 //
 
 #import "FBCTraining.h"
+#import "FBCExercise.h"
 
 @implementation FBCTraining
 {
@@ -66,24 +67,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - FBCTrainingUnitProtocol methods
 
-- (NSUInteger)subunitsCount
-{
-    // In theory it is possible to have a training as a subunit to another training thats why it is correct to iterate
-    // over all subunits and ask them to return number of their subunits. Practically when only simple exercises can
-    // stand as a subunit it would be enough just to count the number of objects in exercises array.
-    
-    NSUInteger count = 1; // Training itself is counted as a unit.
-    
-    for (id<FBCTrainingUnitProtocol> unit in self.exercises)
-    {
-        NSUInteger unitCount = [unit subunitsCount];
-        
-        count += unitCount;
-    }
-    
-    return count;
-}
-
 - (NSArray*)flatten
 {
     // In theory it is possible to have a training as a subunit to another training thats why it is correct to iterate
@@ -116,12 +99,21 @@
 
 - (void)addExercise:(FBCExercise *)exercise
 {
-    [self addExercises:@[exercise]];
+    [self.mutableExercises addObject:exercise];
+    [exercise setParent:self];
 }
 
 - (void)addExercises:(NSArray *)exercises
 {
-    [self.mutableExercises addObjectsFromArray:exercises];
+    [exercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [self addExercise:obj];
+    }];
+}
+
+- (void)removeExercise:(FBCExercise *)exercise
+{
+    [exercise setParent:nil];
+    [self.mutableExercises removeObject:exercise];
 }
 
 @end

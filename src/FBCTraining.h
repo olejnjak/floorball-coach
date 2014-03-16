@@ -22,5 +22,6 @@
 - (NSArray*)exercises;
 - (void)addExercise:(FBCExercise*)exercise;
 - (void)addExercises:(NSArray*)exercises;
+- (void)removeExercise:(FBCExercise*)exercise;
 
 @end

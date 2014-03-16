@@ -74,11 +74,18 @@
 - (void)deleteRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger index = [indexPath row];
-    id<FBCTrainingUnitProtocol> objectToRemove = [_exercises objectAtIndex:index]; // TODO: Check if index is out of bounds.
+    FBCExercise *exerciseToRemove = [_exercises objectAtIndex:index]; // TODO: Check if index is out of bounds.
     FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
     
     [_exercises removeObjectAtIndex:index];
-    [library removeUnit:objectToRemove];
+    [library removeExercise:exerciseToRemove];
+}
+
+- (id<FBCTrainingUnitProtocol>)unitForIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger index = [indexPath row];
+    
+    return [_exercises objectAtIndex:index];
 }
 
 @end

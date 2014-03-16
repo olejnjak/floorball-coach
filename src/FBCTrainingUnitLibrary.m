@@ -9,6 +9,7 @@
 #import "FBCTrainingUnitLibrary.h"
 #import "TestFBCTrainingUnitLibrary.h"
 #import "FBCExercise.h"
+#import "FBCTraining.h"
 
 static FBCTrainingUnitLibrary *g_Library = nil;
 
@@ -45,63 +46,53 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 
 - (void)__setInitState
 {
-    _units = [NSMutableArray arrayWithCapacity:1];
+    _trainings = [NSMutableArray arrayWithCapacity:1];
+    _exercises = [NSMutableArray arrayWithCapacity:1];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public interface
 
-- (NSUInteger)count
-{
-    return [_units count];
-}
-
-- (NSArray*)units
-{
-    NSArray *units = [NSArray arrayWithArray:_units];
-
-    return units;
-}
-
-- (NSArray*)flatUnits
-{
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:1];
-    
-    for (id<FBCTrainingUnitProtocol> unit in _units)
-    {
-        NSArray *flatUnit = [unit flatten];
-        
-        [result addObjectsFromArray:flatUnit];
-    }
-    
-    return result;
-}
-
 - (NSArray*)exercises
 {
-    NSMutableArray *mutableResult = [NSMutableArray arrayWithCapacity:1];
-    
-    for (id<FBCTrainingUnitProtocol> unit in _units)
-    {
-        if ([unit isKindOfClass:[FBCExercise class]])
-        {
-            [mutableResult addObject:unit];
-        }
-    }
-    
-    NSArray *result = [NSArray arrayWithArray:mutableResult];
+    NSArray *result = [NSArray arrayWithArray:_exercises];
     
     return result;
 }
 
-- (void)addUnit:(id<FBCTrainingUnitProtocol>)unit
+- (NSArray*)flatTrainings
 {
-    [_units addObject:unit];
+    NSArray *trainings = _trainings;
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:trainings.count];
+    
+    [trainings enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        FBCTraining *training = obj;
+        NSArray *flatTraining = [training flatten];
+        
+        [result addObjectsFromArray:flatTraining];
+    }];
+    
+    return result;
 }
 
-- (void)removeUnit:(id<FBCTrainingUnitProtocol>)unit
+- (void)addExercise:(FBCExercise *)exercise
 {
-    [_units removeObject:unit];
+    [_exercises addObject:exercise];
+}
+
+- (void)addTraining:(FBCTraining *)training
+{
+    [_trainings addObject:training];
+}
+
+- (void)removeTraining:(FBCTraining *)training
+{
+    [_trainings removeObject:training];
+}
+
+- (void)removeExercise:(FBCExercise *)exercise
+{
+    [_exercises removeObject:exercise];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

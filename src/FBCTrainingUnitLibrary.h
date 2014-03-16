@@ -8,24 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FBCTrainingUnitProtocol.h"
+@class FBCTraining;
+@class FBCExercise;
 
 @interface FBCTrainingUnitLibrary : NSObject
 {
-    @protected NSMutableArray *_units;
+    @protected NSMutableArray *_exercises;
+    @protected NSMutableArray *_trainings;
 }
 
 + (FBCTrainingUnitLibrary*)library;
 
-- (void)addUnit:(id<FBCTrainingUnitProtocol>)unit;
-- (void)removeUnit:(id<FBCTrainingUnitProtocol>)unit;
+- (void)addTraining:(FBCTraining*)training;
+- (void)removeTraining:(FBCTraining*)training;
 
-- (NSArray*)units;
-- (NSArray*)flatUnits;
+- (void)addExercise:(FBCExercise*)exercise;
+- (void)removeExercise:(FBCExercise*)exercise;
 
 - (NSArray*)exercises;
-
-- (NSUInteger)count;
+- (NSArray*)flatTrainings;
 
 - (void)loadStructure;
 - (void)saveStructure;

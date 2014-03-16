@@ -7,10 +7,15 @@
 //
 
 #import "FBCTrainingListModel.h"
+#import "FBCSimpleExerciseCell.h"
+#import "FBCTrainingCell.h"
+#import "FBCExercise.h"
+#import "FBCTraining.h"
+#import "FBCTrainingUnitLibrary.h"
 
 @implementation FBCTrainingListModel
 {
-    NSInteger _count;
+    NSMutableArray *_trainings;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,10 +27,17 @@
     
     if (self != nil)
     {
-        _count = 5;
+        [self __setInitState];
     }
     
     return self;
+}
+
+- (void)__setInitState
+{
+    FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
+    
+    _trainings = [library.flatTrainings mutableCopy];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,9 +50,10 @@
 
 - (NSString*)reusableCellIdentifierForIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger row = indexPath.row;
+    NSInteger index = indexPath.row;
+    id<FBCTrainingUnitProtocol> unit = [_trainings objectAtIndex:index];
     
-    if (row == 0)
+    if ([unit isKindOfClass:[FBCTraining class]])
     {
         return kFBCTrainingNameCell;
     }
@@ -50,17 +63,78 @@
 
 - (void)prepareTableViewCell:(UITableViewCell*)cell forIndexPath:(NSIndexPath*)indexPath
 {
+    NSUInteger index = [indexPath row];
+    id<FBCTrainingUnitProtocol> unit = [_trainings objectAtIndex:index];
     
+    // show exercise
+    if ([cell isKindOfClass:[FBCSimpleExerciseCell class]] && [unit isKindOfClass:[FBCExercise class]])
+    {
+        [self prepareSimpleExerciseCell:(FBCSimpleExerciseCell*)cell forExercise:(FBCExercise*)unit];
+    }
+    
+    // show training
+    else if ([cell isKindOfClass:[FBCTrainingCell class]] && [unit isKindOfClass:[FBCTraining class]])
+    {
+        [self prepareTrainingCell:(FBCTrainingCell*)cell forTraining:(FBCTraining*)unit];
+    }
 }
 
 - (NSInteger)count
 {
-    return _count;
+    return [_trainings count];
 }
 
 - (void)deleteRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    _count--;
+    NSUInteger index = [indexPath row];
+    id<FBCTrainingUnitProtocol> objectToRemove = [_trainings objectAtIndex:index];
+    
+    [_trainings removeObject:objectToRemove];
+    
+    if ([objectToRemove isKindOfClass:[FBCTraining class]])
+    {
+        FBCTraining *training = objectToRemove;
+        FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
+        
+        [library removeTraining:training];
+        
+        [training.exercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [_trainings removeObject:obj];
+        }];
+    }
+    else
+    {
+        FBCExercise *exercise = objectToRemove;
+        FBCTraining *training = [exercise parent];
+        
+        [training removeExercise:exercise];
+    }
+}
+
+- (id<FBCTrainingUnitProtocol>)unitForIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger index = [indexPath row];
+    
+    return [_trainings objectAtIndex:index];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
+
+- (void)prepareSimpleExerciseCell:(FBCSimpleExerciseCell*)cell forExercise:(FBCExercise*)exercise
+{
+    [cell.nameLabel setText:exercise.name];
+}
+
+- (void)prepareTrainingCell:(FBCTrainingCell*)cell forTraining:(FBCTraining*)training
+{
+    NSString *date = [training.date localString];
+    NSUInteger exerciseCount = [training.exercises count];
+    NSString *exerciseCountString = [NSString stringWithFormat:@"%u", exerciseCount];
+    
+    [cell.nameLabel setText:training.name];
+    [cell.dateLabel setText:date];
+    [cell.exerciseNumberLabel setText:exerciseCountString];
 }
 
 @end

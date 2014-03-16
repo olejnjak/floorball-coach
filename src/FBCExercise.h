@@ -10,7 +10,11 @@
 
 #import "FBCTrainingUnitProtocol.h"
 
+@class FBCTraining;
+
 @interface FBCExercise : NSObject<FBCTrainingUnitProtocol>
+
+@property (nonatomic,weak) FBCTraining *parent;
 
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong,readonly) NSDate *dateCreated;
