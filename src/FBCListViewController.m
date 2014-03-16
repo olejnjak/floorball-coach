@@ -76,25 +76,8 @@
 
 - (void)tableView:(UITableView*)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
     forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    id<FBCTrainingUnitProtocol> objectToRemove = [self.model unitForIndexPath:indexPath];
-    NSMutableArray *rowsToDelete = [NSMutableArray arrayWithObject:indexPath];
-    
-    if ([objectToRemove isKindOfClass:[FBCTraining class]])
-    {
-        FBCTraining *training = objectToRemove;
-        NSUInteger section = [indexPath section];
-        NSUInteger row = [indexPath row] + 1;
-        
-        [training.exercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            NSIndexPath *newIP = [NSIndexPath indexPathForRow:row + idx inSection:section];
-            
-            [rowsToDelete addObject:newIP];
-        }];
-    }
-    
+{    
     [self.model deleteRowAtIndexPath:indexPath];
-//    [tableView deleteRowsAtIndexPaths:rowsToDelete withRowAnimation:UITableViewRowAnimationAutomatic];
     [tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 

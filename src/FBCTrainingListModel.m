@@ -111,13 +111,6 @@
     }
 }
 
-- (id<FBCTrainingUnitProtocol>)unitForIndexPath:(NSIndexPath *)indexPath
-{
-    NSUInteger index = [indexPath row];
-    
-    return [_trainings objectAtIndex:index];
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Helpers
 

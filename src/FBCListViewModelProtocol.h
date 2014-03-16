@@ -16,7 +16,6 @@
 
 - (NSInteger)count;
 
-- (id<FBCTrainingUnitProtocol>)unitForIndexPath:(NSIndexPath*)indexPath;
 - (NSString*)reusableCellIdentifierForIndexPath:(NSIndexPath*)indexPath;
 - (void)prepareTableViewCell:(UITableViewCell*)cell forIndexPath:(NSIndexPath*)indexPath;
 - (void)deleteRowAtIndexPath:(NSIndexPath*)indexPath;

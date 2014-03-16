@@ -81,11 +81,4 @@
     [library removeExercise:exerciseToRemove];
 }
 
-- (id<FBCTrainingUnitProtocol>)unitForIndexPath:(NSIndexPath *)indexPath
-{
-    NSUInteger index = [indexPath row];
-    
-    return [_exercises objectAtIndex:index];
-}
-
 @end
