@@ -227,7 +227,8 @@
 				69EB651D18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.h */,
 				69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */,
 			);
-			path = tst;
+			name = tst;
+			path = ../tst;
 			sourceTree = "<group>";
 		};
 		69DE1C7418CE9082006A869C /* Defines */ = {
