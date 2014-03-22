@@ -10,7 +10,7 @@
 
 @class FBCExercise;
 
-@interface FBCEditExerciseNameController : UIViewController
+@interface FBCEditExerciseNameController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;

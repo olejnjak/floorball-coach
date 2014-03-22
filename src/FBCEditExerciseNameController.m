@@ -60,14 +60,23 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self save];
+    [self dismissPopover];
+    
+    return NO;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UI actions
 
 - (IBAction)saveButtonTapped:(UIButton *)sender
 {
     [self save];
-    
-    [self.popController dismissPopoverAnimated:YES];
-    [self.popController.delegate popoverControllerDidDismissPopover:self.popController];
+    [self dismissPopover];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,7 +93,16 @@
 {
     NSString *newName = [self.nameField text];
     
-    [self.exercise setName:newName];
+    if ([newName length] > 0)
+    {
+        [self.exercise setName:newName];
+    }
+}
+
+- (void)dismissPopover
+{
+    [self.popController dismissPopoverAnimated:YES];
+    [self.popController.delegate popoverControllerDidDismissPopover:self.popController];
 }
 
 @end
