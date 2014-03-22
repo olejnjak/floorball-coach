@@ -12,9 +12,6 @@
 #import "FBCExercise.h"
 
 @implementation FBCExerciseListModel
-{
-    NSMutableArray *_exercises;
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - FBCListViewModelProtocol methods
@@ -43,6 +40,7 @@
     
     [complexCell.nameLabel setText:exercise.name];
     [complexCell.dateLabel setText:date];
+    [complexCell setExercise:exercise];
 }
 
 - (NSInteger)count

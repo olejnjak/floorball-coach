@@ -232,6 +232,9 @@
                                                     <state key="normal" title="[Favorite]">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="favoriteButtonTapped:" destination="xVb-wb-l7q" eventType="touchUpInside" id="lAK-Mo-RqF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -251,6 +254,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="Gzh-Zi-IVi" id="4xK-IY-EXG"/>
+                                            <outlet property="favoriteButton" destination="Yi3-0M-cwt" id="8WJ-dc-IFE"/>
                                             <outlet property="nameLabel" destination="4Jy-1N-T8e" id="OlW-de-qTI"/>
                                         </connections>
                                     </tableViewCell>
@@ -674,6 +678,9 @@
                                                     <state key="normal" title="[Favorite exercises]">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="9SZ-sS-LaG" kind="custom" identifier="FBCMainMenuToFavoritesSegue" customClass="FBCFadeSegue" id="HV0-Pc-L6i"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1328,6 +1335,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="7nV-PG-H8S"/>
-        <segue reference="nET-52-7m0"/>
+        <segue reference="HV0-Pc-L6i"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,8 @@ typedef enum
 {
     FBCListViewControllerTypeUndefined,
     FBCListViewControllerTypeExercise,
-    FBCListViewControllerTypeTraining
+    FBCListViewControllerTypeTraining,
+    FBCListViewControllerTypeFavorite
 } FBCListViewControllerType;
 
 @interface FBCListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,FBCControllerDoneProtocol>

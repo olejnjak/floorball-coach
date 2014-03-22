@@ -11,5 +11,8 @@
 #import "FBCListViewModelProtocol.h"
 
 @interface FBCExerciseListModel : NSObject<FBCListViewModelProtocol>
+{
+  @protected NSMutableArray *_exercises;
+}
 
 @end

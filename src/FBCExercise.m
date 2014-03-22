@@ -13,8 +13,11 @@
     NSMutableArray *_notes;
 }
 
+@synthesize parent = _parent;
+
 @synthesize name = _name;
 @synthesize dateCreated = _dateCreated;
+@synthesize favorite = _favorite;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Init and dealloc

@@ -11,6 +11,7 @@
 #define kFBCMainMenuToExerciseListSegue @"FBCMainMenuToExerciseListSegue"
 #define kFBCMainMenuToTrainingListSegue @"FBCMainMenuToTrainingListSegue"
 #define kFBCMainMenuToExerciseSegue @"FBCMainMenuToExerciseSegue"
+#define kFBCMainMenuToFavoritesSegue @"FBCMainMenuToFavoritesSegue"
 
 // List view segues
 #define kFBCListViewTypeChangeSegue @"FBCListViewTypeChangeSegue"

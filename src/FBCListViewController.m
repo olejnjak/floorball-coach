@@ -10,6 +10,7 @@
 #import "FBCListViewModelProtocol.h"
 #import "FBCExerciseListModel.h"
 #import "FBCTrainingListModel.h"
+#import "FBCFavoritesModel.h"
 #import "FBCExerciseController.h"
 #import "FBCTraining.h"
 #import "FBCSortViewController.h"
@@ -178,6 +179,11 @@
     else if (_model == nil && self.type == FBCListViewControllerTypeTraining)
     {
         _model = [FBCTrainingListModel model];
+    }
+    
+    else if (_model == nil && self.type == FBCListViewControllerTypeFavorite)
+    {
+        _model = [FBCFavoritesModel model];
     }
     
     return _model;

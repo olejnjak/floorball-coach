@@ -19,6 +19,7 @@
 
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong,readonly) NSDate *dateCreated;
+@property (nonatomic) BOOL favorite;
 
 - (id)initWithName:(NSString*)name;
 

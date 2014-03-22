@@ -62,6 +62,7 @@
 {
     NSString *identifier = [segue identifier];
     
+    // about screen
     if ([identifier isEqualToString:kFBCMainMenuToAboutSegue])
     {
         FBCAboutScreenController *dst = [segue destinationViewController];
@@ -70,6 +71,7 @@
         return;
     }
     
+    // exercise list
     if ([identifier isEqualToString:kFBCMainMenuToExerciseListSegue])
     {
         FBCListViewController *dst = [segue destinationViewController];
@@ -79,19 +81,31 @@
         return;
     }
     
+    // training list
     if ([identifier isEqualToString:kFBCMainMenuToTrainingListSegue])
     {
-        FBCListViewController *dst = segue.destinationViewController;
+        FBCListViewController *dst = [segue destinationViewController];
         
         [dst setType:FBCListViewControllerTypeTraining];
         
         return;
     }
+
+    // favorite exercises
+    if ([identifier isEqualToString:kFBCMainMenuToFavoritesSegue])
+    {
+        FBCListViewController *dst = [segue destinationViewController];
+        
+        [dst setType:FBCListViewControllerTypeFavorite];
+        
+        return;
+    }
     
+    // new exercise
     if ([identifier isEqualToString:kFBCMainMenuToExerciseSegue])
     {
         FBCExerciseController *dst = [segue destinationViewController];
-        FBCExercise *exercise = [[FBCExercise alloc] initWithName:LOC(@"FBCNewTraining")];
+        FBCExercise *exercise = [[FBCExercise alloc] initWithName:LOC(@"FBCNewExercise")];
         
         [dst setExercise:exercise];
         [dst setDelegate:self];
