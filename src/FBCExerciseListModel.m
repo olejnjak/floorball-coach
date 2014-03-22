@@ -17,27 +17,6 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Init and dealloc
-
-- (id)init
-{
-    self = [super init];
-    
-    if (self != nil)
-    {
-        [self __setInitState];
-    }
-    
-    return self;
-}
-
-- (void)__setInitState
-{
-    FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
-    _exercises = [library.exercises mutableCopy];
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - FBCListViewModelProtocol methods
 
 + (id<FBCListViewModelProtocol>)model
@@ -59,7 +38,7 @@
     
     FBCComplexExerciseCell *complexCell = (FBCComplexExerciseCell*)cell;
     NSUInteger index = [indexPath row];
-    FBCExercise *exercise = [_exercises objectAtIndex:index];
+    FBCExercise *exercise = [self.exercises objectAtIndex:index];
     NSString *date = [exercise.dateCreated localString];
     
     [complexCell.nameLabel setText:exercise.name];
@@ -68,17 +47,32 @@
 
 - (NSInteger)count
 {
-    return [_exercises count];
+    return [self.exercises count];
 }
 
 - (void)deleteRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger index = [indexPath row];
-    FBCExercise *exerciseToRemove = [_exercises objectAtIndex:index]; // TODO: Check if index is out of bounds.
+    FBCExercise *exerciseToRemove = [self.exercises objectAtIndex:index]; // TODO: Check if index is out of bounds.
     FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
     
-    [_exercises removeObjectAtIndex:index];
+    [self.exercises removeObjectAtIndex:index];
     [library removeExercise:exerciseToRemove];
+}
+
+- (id<FBCTrainingUnitProtocol>)unitAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = [indexPath row];
+    NSInteger size = [self.exercises count];
+    
+    if (row >= size || row < 0)
+    {
+        return nil;
+    }
+    
+    FBCExercise *exercise = [self.exercises objectAtIndex:row];
+    
+    return exercise;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,7 +80,7 @@
 
 - (void)sortAZ
 {
-    [_exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    [self.exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         FBCExercise *e1 = obj1;
         FBCExercise *e2 = obj2;
         
@@ -99,7 +93,7 @@
 
 - (void)sortZA
 {
-    [_exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    [self.exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         FBCExercise *e1 = obj1;
         FBCExercise *e2 = obj2;
         
@@ -112,7 +106,7 @@
 
 - (void)sortNewFirst
 {
-    [_exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    [self.exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         FBCExercise *e1 = obj1;
         FBCExercise *e2 = obj2;
         
@@ -122,12 +116,30 @@
 
 - (void)sortOldFirst
 {
-    [_exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    [self.exercises sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         FBCExercise *e1 = obj1;
         FBCExercise *e2 = obj2;
         
         return [e2.dateCreated compare:e1.dateCreated];
     }];
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Custom properties -
+
+- (NSMutableArray*)exercises
+{
+    if (nil == _exercises)
+    {
+        FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
+        _exercises = [library.exercises mutableCopy];
+    }
+    
+    return _exercises;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers -
+
 
 @end

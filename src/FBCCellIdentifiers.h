@@ -13,3 +13,6 @@
 #define kFBCExerciseListCell @"FBCExerciseListCell"
 #define kFBCTrainingNameCell @"FBCTrainingNameCell"
 #define kFBCTrainingExerciseCell @"FBCTrainingExerciseCell"
+
+// Exercise
+#define kFBCExerciseNoteCell @"FBCExerciseNoteCell"

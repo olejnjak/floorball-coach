@@ -18,6 +18,8 @@
 
 - (NSString*)reusableCellIdentifierForIndexPath:(NSIndexPath*)indexPath;
 - (void)prepareTableViewCell:(UITableViewCell*)cell forIndexPath:(NSIndexPath*)indexPath;
+
+- (id<FBCTrainingUnitProtocol>)unitAtIndexPath:(NSIndexPath*)indexPath;
 - (void)deleteRowAtIndexPath:(NSIndexPath*)indexPath;
 
 - (void)sortAZ;

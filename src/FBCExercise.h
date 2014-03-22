@@ -11,6 +11,7 @@
 #import "FBCTrainingUnitProtocol.h"
 
 @class FBCTraining;
+@class FBCNote;
 
 @interface FBCExercise : NSObject<FBCTrainingUnitProtocol>
 
@@ -20,5 +21,9 @@
 @property (nonatomic,strong,readonly) NSDate *dateCreated;
 
 - (id)initWithName:(NSString*)name;
+
+- (NSArray*)notes;
+- (void)addNote:(FBCNote*)note;
+- (void)removeNote:(FBCNote*)note;
 
 @end

@@ -11,6 +11,7 @@
 #import "FBCAboutScreenController.h"
 #import "FBCListViewController.h"
 #import "FBCExerciseController.h"
+#import "FBCTrainingUnitLibrary.h"
 
 @implementation FBCMainMenuController
 
@@ -90,8 +91,14 @@
     if ([identifier isEqualToString:kFBCMainMenuToExerciseSegue])
     {
         FBCExerciseController *dst = [segue destinationViewController];
+        FBCExercise *exercise = [[FBCExercise alloc] initWithName:LOC(@"FBCNewTraining")];
         
+        [dst setExercise:exercise];
         [dst setDelegate:self];
+        
+        FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
+        
+        [library addExercise:exercise];
         
         return;
     }

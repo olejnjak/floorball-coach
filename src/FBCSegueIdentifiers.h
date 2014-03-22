@@ -16,3 +16,7 @@
 #define kFBCListViewTypeChangeSegue @"FBCListViewTypeChangeSegue"
 #define kFBCListToExerciseSegue @"FBCListToExerciseSegue"
 #define kFBCSortPopoverSegue @"FBCSortPopoverSegue"
+
+// Exercise segues
+#define kFBCNotesEmbedSegue @"FBCNotesEmbedSegue"
+#define kFBCNoteDetailPopoverSegue @"FBCNoteDetailPopoverSegue"

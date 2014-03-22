@@ -7,11 +7,15 @@
 //
 
 #import "FBCExerciseController.h"
+#import "FBCNotesPanelController.h"
 
 #define kFBCNotesShownConstant 0
 #define kFBCNotesHiddenConstant -320
 
 @implementation FBCExerciseController
+
+@synthesize delegate = _delegate;
+@synthesize exercise = _exercise;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class methods
@@ -23,6 +27,19 @@
     FBCExerciseController *exerciseController = [storyboard instantiateViewControllerWithIdentifier:storyboardID];
     
     return exerciseController;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    NSAssert(self.exercise != nil, @"Cannot start with no training set.");
+    
+    [self updateUI];
+    [self loadExercise];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,28 +58,83 @@
     }
 }
 
+- (IBAction)fieldTapped:(UITapGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateRecognized && [self notesPanelShown])
+    {
+        [self hideNotesPanel];
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Helpers
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *identifier = [segue identifier];
+    
+    if ([identifier isEqualToString:kFBCNotesEmbedSegue])
+    {
+        FBCNotesPanelController *dst = [segue destinationViewController];
+        
+        [dst setExercise:self.exercise];
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Notes panel handling
 
 - (void)toggleNotesPanel
 {
-    CGFloat panelConstant = self.notesTrailingConstraint.constant;
-    
-    // show panel
-    if (panelConstant == kFBCNotesHiddenConstant)
+    if ([self notesPanelShown])
     {
-        self.notesTrailingConstraint.constant = kFBCNotesShownConstant;
+        [self hideNotesPanel];
     }
-    
-    // hide panel
     else
     {
-        self.notesTrailingConstraint.constant = kFBCNotesHiddenConstant;
+        [self showNotesPanel];
     }
+}
+
+- (BOOL)notesPanelShown
+{
+    CGFloat trailingSpaceConstant = [self.notesTrailingConstraint constant];
+    
+    return trailingSpaceConstant == kFBCNotesShownConstant;
+}
+
+- (void)hideNotesPanel
+{
+    [self setNotesPanelTrailingConstant:kFBCNotesHiddenConstant];
+}
+
+- (void)showNotesPanel
+{
+    [self setNotesPanelTrailingConstant:kFBCNotesShownConstant];
+}
+
+- (void)setNotesPanelTrailingConstant:(CGFloat)newConstant
+{
+    [self.notesTrailingConstraint setConstant:newConstant];
     
     [UIView animateWithDuration:0.5 animations:^{
         [self.view layoutIfNeeded];
     }];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
+
+- (void)updateUI
+{
+    FBCExercise *exercise = [self exercise];
+    
+    [self.nameLabel setText:exercise.name];
+}
+
+- (void)loadExercise
+{
+    
 }
 
 @end

@@ -9,6 +9,9 @@
 #import "FBCExercise.h"
 
 @implementation FBCExercise
+{
+    NSMutableArray *_notes;
+}
 
 @synthesize name = _name;
 @synthesize dateCreated = _dateCreated;
@@ -32,11 +35,17 @@
             return nil;
         }
         
+        [self __setInitState];
         [self setName:name];
         _dateCreated = [NSDate date];
     }
     
     return self;
+}
+
+- (void)__setInitState
+{
+    _notes = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,6 +54,49 @@
 - (NSArray*)flatten
 {
     return @[self];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Custom properties
+
+- (NSMutableArray*)notesArray
+{
+    if (_notes == nil)
+    {
+        _notes = [NSMutableArray arrayWithCapacity:1];
+    }
+    
+    return _notes;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Public interface
+
+- (NSArray*)notes
+{
+    NSArray *result = [NSArray arrayWithArray:self.notesArray];
+    
+    return result;
+}
+
+- (void)addNote:(FBCNote *)note
+{
+    if (nil == note)
+    {
+        return;
+    }
+    
+    [self.notesArray addObject:note];
+}
+
+- (void)removeNote:(FBCNote *)note
+{
+    if (nil == note)
+    {
+        return;
+    }
+    
+    [self.notesArray removeObject:note];
 }
 
 @end

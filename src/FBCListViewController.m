@@ -61,11 +61,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // TODO: handle item selection
+    id<FBCTrainingUnitProtocol> unit = [self.model unitAtIndexPath:indexPath];
+    
+    // if training is selected, don't do anything
+    if ([unit isKindOfClass:[FBCTraining class]])
+    {
+        return;
+    }
+    
+    FBCExercise *exercise = unit;
     
     FBCExerciseController *exerciseController = [FBCExerciseController instantiateFromStoryboard:kFBCExerciseController];
     
     [exerciseController setDelegate:self];
-    [exerciseController setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [exerciseController setExercise:exercise];
     
     [self presentViewController:exerciseController animated:YES completion:nil];
 }
@@ -102,6 +111,7 @@
 {
     NSString *identifier = [segue identifier];
     
+    // list view type change
     if ([identifier isEqualToString:kFBCListViewTypeChangeSegue])
     {
         FBCListViewController *dst = [segue destinationViewController];
@@ -119,6 +129,7 @@
         return;
     }
     
+    // sort popover
     if ([identifier isEqualToString:kFBCSortPopoverSegue])
     {
         UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue*)segue;
@@ -213,7 +224,7 @@
     UIToolbar *toolbar = self.toolbar;
     NSMutableArray *toolbarItems = [toolbar.items mutableCopy];
     
-    if (tableView.editing)
+    if (YES == tableView.editing)
     {
         [toolbarItems removeObject:self.editButton];
         
