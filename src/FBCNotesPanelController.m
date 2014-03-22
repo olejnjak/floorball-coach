@@ -31,13 +31,13 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FBCNoteCell *cell = [tableView dequeueReusableCellWithIdentifier:kFBCExerciseNoteCell];
-    
     NSInteger index = [indexPath row];
     FBCNote *note = [self noteAtIndex:index];
 
     [cell setNote:note];
     [cell.nameField setText:note.name];
     [cell.textView setText:note.text];
+    cell.textView.textContainerInset = UIEdgeInsetsZero;
     
     return cell;
 }
@@ -60,7 +60,9 @@
                                       attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}
                                          context:nil];
     
-    return rect.size.height * 1.1 + textViewBottomMargin + textViewTopMargin;
+    CGFloat result = rect.size.height + 2 + textViewBottomMargin + textViewTopMargin;
+    
+    return result;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
