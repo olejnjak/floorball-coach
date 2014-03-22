@@ -416,32 +416,13 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="gQL-KY-Cjg"/>
-                                    <barButtonItem width="256" style="plain" id="Qvw-Vy-EF0">
-                                        <view key="customView" contentMode="scaleToFill" id="p64-6B-aQT">
-                                            <rect key="frame" x="245" y="8" width="256" height="48"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Exercise name]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFK-Iv-sFT">
-                                                    <rect key="frame" x="0.0" y="27" width="256" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="PsD-Px-QP8"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="jFK-Iv-sFT" secondAttribute="bottom" id="Cq3-GN-dTB"/>
-                                                <constraint firstAttribute="trailing" secondItem="jFK-Iv-sFT" secondAttribute="trailing" id="eox-vf-R2w"/>
-                                                <constraint firstItem="jFK-Iv-sFT" firstAttribute="leading" secondItem="p64-6B-aQT" secondAttribute="leading" id="s8p-BI-a7P"/>
-                                            </constraints>
-                                        </view>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <barButtonItem title="[Exercise name]" id="mwj-wY-Ofe">
+                                        <connections>
+                                            <segue destination="QIN-Jm-QYA" kind="popover" identifier="FBCEditExerciseNamePopoverSegue" popoverAnchorBarButtonItem="mwj-wY-Ofe" id="bBM-iD-fl0">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                            </segue>
+                                        </connections>
                                     </barButtonItem>
-                                    <barButtonItem id="kV3-Ea-iHz"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XmY-ly-Set"/>
                                     <barButtonItem title="[Notes]" id="W0p-AQ-IcS">
                                         <connections>
@@ -510,7 +491,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="jFK-Iv-sFT" id="6s8-9D-6Be"/>
+                        <outlet property="nameItem" destination="mwj-wY-Ofe" id="bRr-ZK-h2U"/>
                         <outlet property="notesTrailingConstraint" destination="MWH-0A-Gm2" id="Ax3-Ps-35U"/>
                     </connections>
                 </viewController>
@@ -1141,6 +1122,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysE-Ff-ffj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1790" y="-273"/>
+        </scene>
+        <!--Edit Exercise Name Controller-->
+        <scene sceneID="3qb-CH-e3K">
+            <objects>
+                <viewController id="QIN-Jm-QYA" customClass="FBCEditExerciseNameController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Div-9z-gTM"/>
+                        <viewControllerLayoutGuide type="bottom" id="JGG-Tx-ey7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lBO-3X-rUj">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="[Exercise name]" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acf-za-UU9">
+                                <rect key="frame" x="20" y="10" width="215" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyO-2o-R48">
+                                <rect key="frame" x="243" y="10" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="[Save]">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="QIN-Jm-QYA" eventType="touchUpInside" id="cCI-dD-85a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="50"/>
+                    <connections>
+                        <outlet property="nameField" destination="acf-za-UU9" id="Dgt-V1-Wv0"/>
+                        <outlet property="saveButton" destination="fyO-2o-R48" id="elE-p8-jHf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFx-Js-2lA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781" y="-1614"/>
         </scene>
         <!--Field Controller-->
         <scene sceneID="WG6-dd-rbQ">

@@ -17,6 +17,7 @@
 		691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0318CFE2290030B929 /* FBCFieldController.m */; };
 		691E7B0718CFE34E0030B929 /* FBCNotesPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691E7B0618CFE34E0030B929 /* FBCNotesPanelController.m */; };
 		69391D0618DD99E70009E3AB /* FBCFavoritesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0518DD99E70009E3AB /* FBCFavoritesModel.m */; };
+		69391D0918DDB0BF0009E3AB /* FBCEditExerciseNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0818DDB0BF0009E3AB /* FBCEditExerciseNameController.m */; };
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
 		69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */; };
 		69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */; };
@@ -77,6 +78,8 @@
 		69302B5318D0957300C73208 /* FBCStoryboardIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBCStoryboardIdentifiers.h; sourceTree = "<group>"; };
 		69391D0418DD99E70009E3AB /* FBCFavoritesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCFavoritesModel.h; sourceTree = "<group>"; };
 		69391D0518DD99E70009E3AB /* FBCFavoritesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCFavoritesModel.m; sourceTree = "<group>"; };
+		69391D0718DDB0BF0009E3AB /* FBCEditExerciseNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCEditExerciseNameController.h; sourceTree = "<group>"; };
+		69391D0818DDB0BF0009E3AB /* FBCEditExerciseNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCEditExerciseNameController.m; sourceTree = "<group>"; };
 		6990D18118D5C371003BC7BC /* FBCSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortViewController.h; sourceTree = "<group>"; };
 		6990D18218D5C371003BC7BC /* FBCSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSortViewController.m; sourceTree = "<group>"; };
 		6990D18618D5D1D5003BC7BC /* FBCSortBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortBlocks.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 				69FBC18218DCE7890070E258 /* FBCNoteDetailController.m */,
 				69FBC18418DCF96A0070E258 /* FBCNoteCell.h */,
 				69FBC18518DCF96A0070E258 /* FBCNoteCell.m */,
+				69391D0718DDB0BF0009E3AB /* FBCEditExerciseNameController.h */,
+				69391D0818DDB0BF0009E3AB /* FBCEditExerciseNameController.m */,
 			);
 			name = Exercise;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */,
+				69391D0918DDB0BF0009E3AB /* FBCEditExerciseNameController.m in Sources */,
 				69EB652518D503EE00F72E33 /* FBCComplexExerciseCell.m in Sources */,
 				69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */,
 				69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */,

@@ -21,3 +21,4 @@
 // Exercise segues
 #define kFBCNotesEmbedSegue @"FBCNotesEmbedSegue"
 #define kFBCNoteDetailPopoverSegue @"FBCNoteDetailPopoverSegue"
+#define kFBCEditExerciseNamePopoverSegue @"FBCEditExerciseNamePopoverSegue"

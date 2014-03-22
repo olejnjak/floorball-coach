@@ -8,6 +8,7 @@
 
 #import "FBCExerciseController.h"
 #import "FBCNotesPanelController.h"
+#import "FBCEditExerciseNameController.h"
 
 #define kFBCNotesShownConstant 0
 #define kFBCNotesHiddenConstant -320
@@ -38,7 +39,7 @@
     
     NSAssert(self.exercise != nil, @"Cannot start with no training set.");
     
-    [self updateUI];
+    [self updateExerciseName];
     [self loadExercise];
 }
 
@@ -83,7 +84,33 @@
         FBCNotesPanelController *dst = [segue destinationViewController];
         
         [dst setExercise:self.exercise];
+        
+        return;
     }
+    
+    if ([identifier isEqualToString:kFBCEditExerciseNamePopoverSegue])
+    {
+        FBCEditExerciseNameController *dst = [segue destinationViewController];
+        
+        [dst setExercise:self.exercise];
+        
+        UIStoryboardPopoverSegue *theSegue = (UIStoryboardPopoverSegue*)segue;
+        UIPopoverController *popController = [theSegue popoverController];
+
+        [dst setPopController:popController];
+        [popController setDelegate:self];
+        [popController setPopoverContentSize:CGSizeMake(300, 50)];
+        
+        return;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIPopoverController delegate
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    [self updateExerciseName];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -130,11 +157,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Helpers
 
-- (void)updateUI
+- (void)updateExerciseName
 {
     FBCExercise *exercise = [self exercise];
     
-    [self.nameLabel setText:exercise.name];
+    [self.nameItem setTitle:exercise.name];
 }
 
 - (void)loadExercise

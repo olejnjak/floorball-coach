@@ -11,10 +11,11 @@
 #import "FBCControllerDoneProtocol.h"
 #import "FBCExercise.h"
 
-@interface FBCExerciseController : UIViewController
+@interface FBCExerciseController : UIViewController<UIPopoverControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *notesTrailingConstraint;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nameItem;
+
 
 @property (weak, nonatomic) id<FBCControllerDoneProtocol> delegate;
 @property (strong, nonatomic) FBCExercise *exercise;
