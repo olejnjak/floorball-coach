@@ -173,6 +173,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="siG-Qe-0Td">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -444,6 +445,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-dR-AkN" userLabel="Toolbox Toolbar">
                                 <rect key="frame" x="0.0" y="920" width="768" height="104"/>
@@ -452,6 +454,7 @@
                                     <constraint firstAttribute="height" constant="104" id="cTE-2H-hNP"/>
                                 </constraints>
                                 <items/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5W-Q5-ggM" userLabel="Toolbox">
                                 <rect key="frame" x="0.0" y="920" width="768" height="104"/>
@@ -1191,10 +1194,9 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-GQ-Myw" userLabel="Note text">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-GQ-Myw" userLabel="Note text">
                                                     <rect key="frame" x="12" y="49" width="263" height="112"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1325,7 +1327,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="7nV-PG-H8S"/>
         <segue reference="nET-52-7m0"/>
-        <segue reference="gOi-T2-F6s"/>
     </inferredMetricsTieBreakers>
 </document>
