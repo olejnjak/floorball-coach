@@ -38,7 +38,7 @@
 		69ECF28118CE32C900F741AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		69ECF28218CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
 		69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F5882918CF78C9002A18F4 /* FBCListViewController.m */; };
-		69FBC18318DCE7890070E258 /* FBCNoteDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FBC18218DCE7890070E258 /* FBCNoteDetailController.m */; };
+		69FBC18318DCE7890070E258 /* FBCNewNoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FBC18218DCE7890070E258 /* FBCNewNoteController.m */; };
 		69FBC18618DCF96A0070E258 /* FBCNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FBC18518DCF96A0070E258 /* FBCNoteCell.m */; };
 		69FD432F18CFABF300A95B61 /* FBCExerciseListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD432E18CFABF300A95B61 /* FBCExerciseListModel.m */; };
 		69FD433218CFAC1C00A95B61 /* FBCTrainingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD433118CFAC1C00A95B61 /* FBCTrainingListModel.m */; };
@@ -117,8 +117,8 @@
 		69ECF27F18CE32C900F741AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		69F5882818CF78C9002A18F4 /* FBCListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCListViewController.h; sourceTree = "<group>"; };
 		69F5882918CF78C9002A18F4 /* FBCListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCListViewController.m; sourceTree = "<group>"; };
-		69FBC18118DCE7890070E258 /* FBCNoteDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNoteDetailController.h; sourceTree = "<group>"; };
-		69FBC18218DCE7890070E258 /* FBCNoteDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNoteDetailController.m; sourceTree = "<group>"; };
+		69FBC18118DCE7890070E258 /* FBCNewNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNewNoteController.h; sourceTree = "<group>"; };
+		69FBC18218DCE7890070E258 /* FBCNewNoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNewNoteController.m; sourceTree = "<group>"; };
 		69FBC18418DCF96A0070E258 /* FBCNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNoteCell.h; sourceTree = "<group>"; };
 		69FBC18518DCF96A0070E258 /* FBCNoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNoteCell.m; sourceTree = "<group>"; };
 		69FD432818CFA75F00A95B61 /* FBCCellIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBCCellIdentifiers.h; sourceTree = "<group>"; };
@@ -209,12 +209,7 @@
 				691E7B0018CFDC1F0030B929 /* FBCToolboxController.m */,
 				691E7B0218CFE2290030B929 /* FBCFieldController.h */,
 				691E7B0318CFE2290030B929 /* FBCFieldController.m */,
-				691E7B0518CFE34E0030B929 /* FBCNotesPanelController.h */,
-				691E7B0618CFE34E0030B929 /* FBCNotesPanelController.m */,
-				69FBC18118DCE7890070E258 /* FBCNoteDetailController.h */,
-				69FBC18218DCE7890070E258 /* FBCNoteDetailController.m */,
-				69FBC18418DCF96A0070E258 /* FBCNoteCell.h */,
-				69FBC18518DCF96A0070E258 /* FBCNoteCell.m */,
+				69E6260C18DDBB8B00438EA8 /* Notes */,
 				69391D0718DDB0BF0009E3AB /* FBCEditExerciseNameController.h */,
 				69391D0818DDB0BF0009E3AB /* FBCEditExerciseNameController.m */,
 			);
@@ -239,6 +234,19 @@
 				69302B5318D0957300C73208 /* FBCStoryboardIdentifiers.h */,
 			);
 			name = Defines;
+			sourceTree = "<group>";
+		};
+		69E6260C18DDBB8B00438EA8 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				691E7B0518CFE34E0030B929 /* FBCNotesPanelController.h */,
+				691E7B0618CFE34E0030B929 /* FBCNotesPanelController.m */,
+				69FBC18118DCE7890070E258 /* FBCNewNoteController.h */,
+				69FBC18218DCE7890070E258 /* FBCNewNoteController.m */,
+				69FBC18418DCF96A0070E258 /* FBCNoteCell.h */,
+				69FBC18518DCF96A0070E258 /* FBCNoteCell.m */,
+			);
+			name = Notes;
 			sourceTree = "<group>";
 		};
 		69ECF25A18CE32C800F741AB = {
@@ -432,7 +440,7 @@
 				69391D0618DD99E70009E3AB /* FBCFavoritesModel.m in Sources */,
 				6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */,
 				69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */,
-				69FBC18318DCE7890070E258 /* FBCNoteDetailController.m in Sources */,
+				69FBC18318DCE7890070E258 /* FBCNewNoteController.m in Sources */,
 				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
 				69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */,
 				691E7AFE18CFDBE80030B929 /* FBCExerciseController.m in Sources */,

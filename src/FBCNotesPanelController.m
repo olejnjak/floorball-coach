@@ -7,7 +7,7 @@
 //
 
 #import "FBCNotesPanelController.h"
-#import "FBCNoteDetailController.h"
+#import "FBCNewNoteController.h"
 #import "FBCExercise.h"
 #import "FBCNoteCell.h"
 #import "FBCNote.h"
@@ -82,7 +82,7 @@
     
     if ([identifier isEqualToString:kFBCNoteDetailPopoverSegue])
     {
-        FBCNoteDetailController *dst = [segue destinationViewController];
+        FBCNewNoteController *dst = [segue destinationViewController];
 
         [dst setExercise:self.exercise];
         

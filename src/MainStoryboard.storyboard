@@ -1045,10 +1045,10 @@
             </objects>
             <point key="canvasLocation" x="1781" y="-484"/>
         </scene>
-        <!--Note Detail Controller-->
+        <!--New Note Controller-->
         <scene sceneID="jNL-XW-ZdK">
             <objects>
-                <viewController id="NnP-a1-KxA" customClass="FBCNoteDetailController" sceneMemberID="viewController">
+                <viewController id="NnP-a1-KxA" customClass="FBCNewNoteController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Te4-ZO-sqO"/>
                         <viewControllerLayoutGuide type="bottom" id="xG0-hn-mT0"/>

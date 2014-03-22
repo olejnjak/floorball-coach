@@ -10,7 +10,7 @@
 
 @class FBCExercise;
 
-@interface FBCNoteDetailController : UIViewController<UITextFieldDelegate,UITextViewDelegate>
+@interface FBCNewNoteController : UIViewController<UITextFieldDelegate,UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;

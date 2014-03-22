@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Jakub Olejník. All rights reserved.
 //
 
-#import "FBCNoteDetailController.h"
+#import "FBCNewNoteController.h"
 #import "FBCNote.h"
 #import "FBCExercise.h"
 
-@implementation FBCNoteDetailController
+@implementation FBCNewNoteController
 
 @synthesize exercise = _exercise;
 @synthesize popController = _popController;
@@ -37,6 +37,16 @@
     
     [self.popController dismissPopoverAnimated:YES];
     [self.popController.delegate popoverControllerDidDismissPopover:self.popController];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.contentTextView becomeFirstResponder];
+    
+    return NO;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
