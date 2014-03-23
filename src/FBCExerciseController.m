@@ -14,6 +14,9 @@
 #define kFBCNotesHiddenConstant -320
 
 @implementation FBCExerciseController
+{
+    UIPopoverController *_popoverController;
+}
 
 @synthesize delegate = _delegate;
 @synthesize exercise = _exercise;
@@ -31,6 +34,14 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Init and dealloc
+
+- (void)__setInitState
+{
+    _popoverController = nil;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIViewController methods
 
 - (void)viewDidLoad
@@ -39,6 +50,7 @@
     
     NSAssert(self.exercise != nil, @"Cannot start with no training set.");
     
+    [self __setInitState];
     [self updateExerciseName];
     [self loadExercise];
 }
@@ -75,6 +87,24 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Segues
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:kFBCEditExerciseNamePopoverSegue])
+    {
+        UIPopoverController *popoverController = _popoverController;
+        
+        if (nil != popoverController)
+        {
+            [popoverController dismissPopoverAnimated:YES];
+            _popoverController = nil;
+            
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSString *identifier = [segue identifier];
@@ -99,7 +129,8 @@
 
         [dst setPopController:popController];
         [popController setDelegate:self];
-        [popController setPopoverContentSize:CGSizeMake(300, 50)];
+        
+        _popoverController = popController;
         
         return;
     }
@@ -111,6 +142,11 @@
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
     [self updateExerciseName];
+    
+    if (_popoverController == popoverController)
+    {
+        _popoverController = nil;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
