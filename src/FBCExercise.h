@@ -17,8 +17,7 @@
 
 @property (nonatomic,weak) FBCTraining *parent;
 
-@property (nonatomic,strong) NSString *name;
-@property (nonatomic,strong,readonly) NSDate *dateCreated;
+@property (nonatomic,strong,readonly) NSDate *lastChange;
 @property (nonatomic) BOOL favorite;
 
 - (id)initWithName:(NSString*)name;

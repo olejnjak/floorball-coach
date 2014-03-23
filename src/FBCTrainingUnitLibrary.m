@@ -47,7 +47,7 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 - (void)__setInitState
 {
     _trainings = [NSMutableArray arrayWithCapacity:1];
-    _exercises = [NSMutableArray arrayWithCapacity:1];
+    _allExercises = [NSMutableArray arrayWithCapacity:1];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -55,7 +55,16 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 
 - (NSArray*)exercises
 {
-    NSArray *result = [NSArray arrayWithArray:_exercises];
+    NSArray *result = [_allExercises arrayByRemovingDuplicates];
+    
+    return result;
+}
+
+- (NSArray*)favoriteExercises
+{
+    NSArray *exercises = [self exercises];
+    NSPredicate *favoritePredicate = [NSPredicate predicateWithFormat:@"favorite == YES"];
+    NSArray *result = [exercises filteredArrayUsingPredicate:favoritePredicate];
     
     return result;
 }
@@ -84,7 +93,7 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 
 - (void)addExercise:(FBCExercise *)exercise
 {
-    [_exercises addObject:exercise];
+    [_allExercises addObject:exercise];
 }
 
 - (void)addTraining:(FBCTraining *)training
@@ -99,7 +108,7 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 
 - (void)removeExercise:(FBCExercise *)exercise
 {
-    [_exercises removeObject:exercise];
+    [_allExercises removeObject:exercise];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -8,7 +8,7 @@
 
 #import "FBCExerciseController.h"
 #import "FBCNotesPanelController.h"
-#import "FBCEditExerciseNameController.h"
+#import "FBCEditUnitNameController.h"
 
 #define kFBCNotesShownConstant 0
 #define kFBCNotesHiddenConstant -320
@@ -120,9 +120,9 @@
     
     if ([identifier isEqualToString:kFBCEditExerciseNamePopoverSegue])
     {
-        FBCEditExerciseNameController *dst = [segue destinationViewController];
+        FBCEditUnitNameController *dst = [segue destinationViewController];
         
-        [dst setExercise:self.exercise];
+        [dst setUnit:self.exercise];
         
         UIStoryboardPopoverSegue *theSegue = (UIStoryboardPopoverSegue*)segue;
         UIPopoverController *popController = [theSegue popoverController];

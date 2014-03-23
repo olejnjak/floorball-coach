@@ -19,10 +19,8 @@
     if (nil == _exercises)
     {
         FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
-        NSArray *exercises = [library exercises];
-        NSPredicate *favoritePredicate = [NSPredicate predicateWithFormat:@"favorite == YES"];
         
-        _exercises = [[exercises filteredArrayUsingPredicate:favoritePredicate] mutableCopy];
+        _exercises = [library.favoriteExercises mutableCopy];
     }
     
     return _exercises;

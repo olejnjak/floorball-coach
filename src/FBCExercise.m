@@ -16,7 +16,7 @@
 @synthesize parent = _parent;
 
 @synthesize name = _name;
-@synthesize dateCreated = _dateCreated;
+@synthesize lastChange = _lastChange;
 @synthesize favorite = _favorite;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,7 +40,7 @@
         
         [self __setInitState];
         [self setName:name];
-        _dateCreated = [NSDate date];
+        _lastChange = [NSDate date];
     }
     
     return self;
@@ -100,6 +100,31 @@
     }
     
     [self.notesArray removeObject:note];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Equality
+
+- (BOOL)isEqual:(id)object
+{
+    if (NO == [object isKindOfClass:self.class])
+    {
+        return NO;
+    }
+    
+    FBCExercise *other = object;
+    BOOL nameEqual = [self.name isEqualToString:other.name];
+    BOOL lastChangeEqual = [self.lastChange isEqualToDate:other.lastChange];
+    
+    return nameEqual && lastChangeEqual;
+}
+
+- (NSUInteger)hash
+{
+    NSUInteger nameHash = [self.name hash];
+    NSUInteger changeHash = [self.lastChange hash];
+    
+    return nameHash + 2 * changeHash;
 }
 
 @end

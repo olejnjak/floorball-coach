@@ -17,9 +17,8 @@
 
 - (void)__setInitState
 {
-    _exercises = [NSMutableArray arrayWithCapacity:1];
+    _allExercises = [NSMutableArray arrayWithCapacity:1];
     _trainings = [NSMutableArray arrayWithCapacity:1];
-    [self testData];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,29 +26,56 @@
 
 - (void)testData
 {
-    const NSUInteger unitsToGenerate = 10;
+    static dispatch_once_t onceToken;
     
+    dispatch_once(&onceToken, ^{
+        const NSUInteger unitsToGenerate = 10;
+        
+        for (NSUInteger i = 0; i < unitsToGenerate; i++)
+        {
+            NSUInteger type = i % 2;
+            
+            //generate exercise
+            if (type == 0)
+            {
+                FBCExercise *exercise = [self.class generateExercise];
+                
+                [self addExercise:exercise];
+            }
+            
+            //generate training
+            else
+            {
+                FBCTraining *training = [self.class generateTraining];
+                
+                [self addTraining:training];
+            }
+        }
+    });
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Superclass override
+
+- (NSArray*)exercises
+{
+    [self testData];
     
-    for (NSUInteger i = 0; i < unitsToGenerate; i++)
-    {
-        NSUInteger type = i % 2;
-        
-        //generate exercise
-        if (type == 0)
-        {
-            FBCExercise *exercise = [self.class generateExercise];
-            
-            [self addExercise:exercise];
-        }
-        
-        //generate training
-        else
-        {
-            FBCTraining *training = [self.class generateTraining];
-            
-            [self addTraining:training];
-        }
-    }
+    return [super exercises];
+}
+
+- (NSArray*)flatTrainings
+{
+    [self testData];
+    
+    return [super flatTrainings];
+}
+
+- (NSArray*)trainings
+{
+    [self testData];
+    
+    return [super exercises];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

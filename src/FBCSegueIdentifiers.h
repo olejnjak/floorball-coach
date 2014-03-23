@@ -12,13 +12,18 @@
 #define kFBCMainMenuToTrainingListSegue @"FBCMainMenuToTrainingListSegue"
 #define kFBCMainMenuToExerciseSegue @"FBCMainMenuToExerciseSegue"
 #define kFBCMainMenuToFavoritesSegue @"FBCMainMenuToFavoritesSegue"
+#define kFBCMainMenuToTrainingDetailSegue @"FBCMainMenuToTrainingDetailSegue"
 
 // List view segues
 #define kFBCListViewTypeChangeSegue @"FBCListViewTypeChangeSegue"
 #define kFBCListToExerciseSegue @"FBCListToExerciseSegue"
 #define kFBCSortPopoverSegue @"FBCSortPopoverSegue"
+#define kFBCListToTrainingDetailSegue @"FBCListToTrainingDetailSegue"
 
 // Exercise segues
 #define kFBCNotesEmbedSegue @"FBCNotesEmbedSegue"
 #define kFBCNoteDetailPopoverSegue @"FBCNoteDetailPopoverSegue"
 #define kFBCEditExerciseNamePopoverSegue @"FBCEditExerciseNamePopoverSegue"
+
+// Training detail segues
+#define kFBCEditTrainingNamePopoverSegue @"FBCEditTrainingNamePopoverSegue"

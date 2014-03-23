@@ -16,3 +16,7 @@
 
 // Exercise
 #define kFBCExerciseNoteCell @"FBCExerciseNoteCell"
+
+// Training detail
+#define kFBCTrainingDetailCell @"FBCTrainingDetailCell"
+#define kFBCTrainingDetailSectionHeaderView @"FBCTrainingDetailSectionHeaderView"

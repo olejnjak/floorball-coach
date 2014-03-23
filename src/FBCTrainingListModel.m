@@ -133,12 +133,12 @@
 
 - (NSMutableArray*)trainings
 {
-    if (nil == _trainings)
+    if (_trainings == nil)
     {
         FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
-        NSArray *trainingArray = [library.trainings mutableCopy];
+        NSMutableArray *trainingArray = [library.flatTrainings mutableCopy];
         
-        _trainings = [self.class flattenTrainingArray:trainingArray];
+        _trainings = trainingArray;
     }
     
     return _trainings;

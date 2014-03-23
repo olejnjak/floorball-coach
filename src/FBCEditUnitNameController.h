@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class FBCExercise;
+#import "FBCTrainingUnitProtocol.h"
 
-@interface FBCEditExerciseNameController : UIViewController<UITextFieldDelegate>
+@interface FBCEditUnitNameController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
-@property (nonatomic, weak) FBCExercise* exercise;
+@property (nonatomic, weak) id<FBCTrainingUnitProtocol> unit;
 @property (nonatomic, weak) UIPopoverController *popController;
 
 - (IBAction)saveButtonTapped:(UIButton *)sender;

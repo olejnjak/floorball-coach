@@ -8,6 +8,7 @@
 
 #import "FBCTraining.h"
 #import "FBCExercise.h"
+#import "FBCTrainingUnitLibrary.h"
 
 @implementation FBCTraining
 {
@@ -99,8 +100,11 @@
 
 - (void)addExercise:(FBCExercise *)exercise
 {
+    FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
+    
     [self.mutableExercises addObject:exercise];
     [exercise setParent:self];
+    [library addExercise:exercise];
 }
 
 - (void)addExercises:(NSArray *)exercises

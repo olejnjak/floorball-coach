@@ -36,7 +36,7 @@
     FBCComplexExerciseCell *complexCell = (FBCComplexExerciseCell*)cell;
     NSUInteger index = [indexPath row];
     FBCExercise *exercise = [self.exercises objectAtIndex:index];
-    NSString *date = [exercise.dateCreated localString];
+    NSString *date = [exercise.lastChange localString];
     
     [complexCell.nameLabel setText:exercise.name];
     [complexCell.dateLabel setText:date];
@@ -108,7 +108,7 @@
         FBCExercise *e1 = obj1;
         FBCExercise *e2 = obj2;
         
-        return [e1.dateCreated compare:e2.dateCreated];
+        return [e1.lastChange compare:e2.lastChange];
     }];
 }
 
@@ -118,7 +118,7 @@
         FBCExercise *e1 = obj1;
         FBCExercise *e2 = obj2;
         
-        return [e2.dateCreated compare:e1.dateCreated];
+        return [e2.lastChange compare:e1.lastChange];
     }];
 }
 

@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Jakub Olejník. All rights reserved.
 //
 
-#import "FBCEditExerciseNameController.h"
+#import "FBCEditUnitNameController.h"
 #import "FBCExercise.h"
 
-@implementation FBCEditExerciseNameController
+@implementation FBCEditUnitNameController
 
-@synthesize exercise = _exercise;
+@synthesize unit = _unit;
 @synthesize popController = _popController;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,7 +84,7 @@
 
 - (void)updateExerciseName
 {
-    NSString *exerciseName = [self.exercise name];
+    NSString *exerciseName = [self.unit name];
     
     [self.nameField setText:exerciseName];
 }
@@ -95,7 +95,7 @@
     
     if ([newName length] > 0)
     {
-        [self.exercise setName:newName];
+        [self.unit setName:newName];
     }
 }
 

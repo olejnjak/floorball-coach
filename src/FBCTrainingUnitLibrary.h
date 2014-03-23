@@ -13,7 +13,7 @@
 
 @interface FBCTrainingUnitLibrary : NSObject
 {
-    @protected NSMutableArray *_exercises;
+    @protected NSMutableArray *_allExercises;
     @protected NSMutableArray *_trainings;
 }
 
@@ -26,6 +26,7 @@
 - (void)removeExercise:(FBCExercise*)exercise;
 
 - (NSArray*)exercises;
+- (NSArray*)favoriteExercises;
 - (NSArray*)trainings;
 - (NSArray*)flatTrainings;
 

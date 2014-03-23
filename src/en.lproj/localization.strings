@@ -9,3 +9,7 @@
 "FBCFavorite" = "Favorite";
 "FBCFavorited" = "Favorited";
 "FBCNewExercise" = "New exercise";
+"FBCNewTraining" = "New training";
+"FBCTrainingExercises" = "Exercises in training";
+"FBCFavoriteExercises" = "Favorite exercises";
+"FBCRestOfExercises" = "Remaining exercises";

@@ -14,10 +14,23 @@
 #import "FBCExerciseController.h"
 #import "FBCTraining.h"
 #import "FBCSortViewController.h"
+#import "FBCTrainingDetailController.h"
 
 @implementation FBCListViewController
 {
     id<FBCListViewModelProtocol> _model;
+    id<FBCTrainingUnitProtocol> _selectedUnit;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Init and dealloc
+
+- (void)__setInitState
+{
+    NSAssert(self.type != FBCListViewControllerTypeUndefined, @"Unexpected controller type.");
+    
+    _model = nil;
+    _selectedUnit = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,8 +40,15 @@
 {
     [super viewDidLoad];
     
-    [self __setInitState];
     [self updateToolbar];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self __setInitState];
+    [self.tableView reloadData];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -64,20 +84,17 @@
     // TODO: handle item selection
     id<FBCTrainingUnitProtocol> unit = [self.model unitAtIndexPath:indexPath];
     
+    _selectedUnit = unit;
+    
     // if training is selected, don't do anything
     if ([unit isKindOfClass:[FBCTraining class]])
     {
-        return;
+        [self performSegueWithIdentifier:kFBCListToTrainingDetailSegue sender:self];
     }
-    
-    FBCExercise *exercise = unit;
-    
-    FBCExerciseController *exerciseController = [FBCExerciseController instantiateFromStoryboard:kFBCExerciseController];
-    
-    [exerciseController setDelegate:self];
-    [exerciseController setExercise:exercise];
-    
-    [self presentViewController:exerciseController animated:YES completion:nil];
+    else
+    {
+        [self performSegueWithIdentifier:kFBCListToExerciseSegue sender:self];
+    }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -133,37 +150,70 @@
     // sort popover
     if ([identifier isEqualToString:kFBCSortPopoverSegue])
     {
-        UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue*)segue;
-        FBCSortViewController *dst = [popoverSegue destinationViewController];
-        UIPopoverController *popover = [popoverSegue popoverController];
-        __weak FBCListViewController *weakSelf = self;
+        [self sortPopoverSegue:segue];
         
-        [dst setPopover:popover];
-        
-        [dst setAToZBlock:^{
-            [weakSelf.model sortAZ];
-            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                              withRowAnimation:UITableViewRowAnimationAutomatic];
-        }];
-        
-        [dst setZToABlock:^{
-            [weakSelf.model sortZA];
-            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                              withRowAnimation:UITableViewRowAnimationAutomatic];
-        }];
-        
-        [dst setOldFirstBlock:^{
-            [weakSelf.model sortOldFirst];
-            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                              withRowAnimation:UITableViewRowAnimationAutomatic];
-        }];
-        
-        [dst setNewFirstBlock:^{
-            [weakSelf.model sortNewFirst];
-            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-                              withRowAnimation:UITableViewRowAnimationAutomatic];
-        }];
+        return;
     }
+    
+    // exercise selected
+    if ([identifier isEqualToString:kFBCListToExerciseSegue])
+    {
+        FBCExerciseController *dst = [segue destinationViewController];
+        
+        [dst setDelegate:self];
+        [dst setExercise:_selectedUnit];
+        
+        _selectedUnit = nil;
+        
+        return;
+    }
+    
+    // training selected
+    if ([identifier isEqualToString:kFBCListToTrainingDetailSegue])
+    {
+        FBCTrainingDetailController *dst = [segue destinationViewController];
+        
+        [dst setDelegate:self];
+        [dst setTraining:_selectedUnit];
+        
+        _selectedUnit = nil;
+        
+        return;
+    }
+}
+
+- (void)sortPopoverSegue:(UIStoryboardSegue*)segue
+{
+    UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue*)segue;
+    FBCSortViewController *dst = [popoverSegue destinationViewController];
+    UIPopoverController *popover = [popoverSegue popoverController];
+    __weak FBCListViewController *weakSelf = self;
+    
+    [dst setPopover:popover];
+    
+    [dst setAToZBlock:^{
+        [weakSelf.model sortAZ];
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+    
+    [dst setZToABlock:^{
+        [weakSelf.model sortZA];
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+    
+    [dst setOldFirstBlock:^{
+        [weakSelf.model sortOldFirst];
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+    
+    [dst setNewFirstBlock:^{
+        [weakSelf.model sortNewFirst];
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -204,13 +254,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Helpers
-
-- (void)__setInitState
-{
-    NSAssert(self.type != FBCListViewControllerTypeUndefined, @"Unexpected controller type.");
-    
-    _model = nil;
-}
 
 - (void)editTableView
 {

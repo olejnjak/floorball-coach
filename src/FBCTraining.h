@@ -14,7 +14,6 @@
 
 @interface FBCTraining : NSObject<FBCTrainingUnitProtocol>
 
-@property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong,readonly) NSDate *date;
 
 - (id)initWithName:(NSString*)name;

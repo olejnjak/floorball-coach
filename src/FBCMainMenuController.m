@@ -12,6 +12,8 @@
 #import "FBCListViewController.h"
 #import "FBCExerciseController.h"
 #import "FBCTrainingUnitLibrary.h"
+#import "FBCTrainingDetailController.h"
+#import "FBCTraining.h"
 
 @implementation FBCMainMenuController
 
@@ -87,6 +89,18 @@
         FBCListViewController *dst = [segue destinationViewController];
         
         [dst setType:FBCListViewControllerTypeTraining];
+        
+        return;
+    }
+    
+    // training detail - new training
+    if ([identifier isEqualToString:kFBCMainMenuToTrainingDetailSegue])
+    {
+        FBCTrainingDetailController *dst = [segue destinationViewController];
+        FBCTraining *training = [[FBCTraining alloc] initWithName:LOC(@"FBCNewTraining")];
+        
+        [dst setDelegate:self];
+        [dst setTraining:training];
         
         return;
     }

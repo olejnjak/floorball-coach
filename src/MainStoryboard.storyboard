@@ -258,11 +258,11 @@
                                             <outlet property="nameLabel" destination="4Jy-1N-T8e" id="OlW-de-qTI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FBCTrainingNameCell" id="B7V-f1-1WB" customClass="FBCTrainingCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FBCTrainingNameCell" id="B7V-f1-1WB" customClass="FBCTrainingCell">
                                         <rect key="frame" x="0.0" y="94" width="768" height="72"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B7V-f1-1WB" id="Ox3-Jw-bM1">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="735" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VU3-tV-4Ig">
@@ -282,7 +282,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Training name]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkV-tc-ORB">
-                                                    <rect key="frame" x="88" y="6" width="660" height="28"/>
+                                                    <rect key="frame" x="88" y="6" width="627" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="duF-cJ-cnP"/>
@@ -385,6 +385,7 @@
                         <outlet property="tableView" destination="siG-Qe-0Td" id="ud9-c8-g8B"/>
                         <outlet property="toolbar" destination="ZDK-9g-EON" id="Fa9-F0-YDa"/>
                         <segue destination="nXa-ZP-GJ2" kind="modal" identifier="FBCListToExerciseSegue" modalTransitionStyle="crossDissolve" id="7nV-PG-H8S"/>
+                        <segue destination="ONY-qI-YdE" kind="modal" identifier="FBCListToTrainingDetailSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="sH3-k9-12t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4C-lj-oDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -578,6 +579,9 @@
                                                     <state key="normal" title="[New training]">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="ONY-qI-YdE" kind="modal" identifier="FBCMainMenuToTrainingDetailSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="qP1-Ol-nSg"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1123,10 +1127,134 @@
             </objects>
             <point key="canvasLocation" x="1790" y="-273"/>
         </scene>
-        <!--Edit Exercise Name Controller-->
+        <!--Training Detail Controller-->
+        <scene sceneID="QrR-OB-u7m">
+            <objects>
+                <viewController id="ONY-qI-YdE" customClass="FBCTrainingDetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UfL-2i-YcJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="uCC-mG-qhg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7np-ao-PGP">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="aM2-ik-9Fs">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Por-PT-HdK"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="[Back]" width="50" id="ocU-bF-nQz">
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="ONY-qI-YdE" id="U6U-oC-6af"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aN6-Or-cOa"/>
+                                    <barButtonItem title="[Training name]" id="RHe-5u-Avc">
+                                        <connections>
+                                            <segue destination="QIN-Jm-QYA" kind="popover" identifier="FBCEditTrainingNamePopoverSegue" popoverAnchorBarButtonItem="RHe-5u-Avc" id="fWF-YC-6Jc">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jBh-kT-No8"/>
+                                    <barButtonItem width="50" style="plain" systemItem="fixedSpace" id="rhl-Jp-mes"/>
+                                </items>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EgE-AQ-aj8">
+                                <rect key="frame" x="44" y="64" width="681" height="973"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="1c2-RR-Ogr">
+                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCTrainingDetailCell" id="P6m-Da-Ne6" customClass="FBCTrainingDetailCell">
+                                        <rect key="frame" x="20" y="70" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u5K-Mc-4cI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="160"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Exercise name]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-DE-wa6">
+                                                    <rect key="frame" x="0.0" y="160" width="200" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="u5K-Mc-4cI" secondAttribute="trailing" id="IF8-TQ-Ka6"/>
+                                            <constraint firstItem="u5K-Mc-4cI" firstAttribute="top" secondItem="P6m-Da-Ne6" secondAttribute="top" id="JlI-TI-M40"/>
+                                            <constraint firstItem="mPA-DE-wa6" firstAttribute="centerX" secondItem="u5K-Mc-4cI" secondAttribute="centerX" id="KNu-ch-ak0"/>
+                                            <constraint firstAttribute="bottom" secondItem="u5K-Mc-4cI" secondAttribute="bottom" constant="40" id="dxk-NO-kSU"/>
+                                            <constraint firstItem="mPA-DE-wa6" firstAttribute="width" secondItem="u5K-Mc-4cI" secondAttribute="width" id="eki-DX-Xdf"/>
+                                            <constraint firstItem="u5K-Mc-4cI" firstAttribute="leading" secondItem="P6m-Da-Ne6" secondAttribute="leading" id="nKd-ye-1Vh"/>
+                                            <constraint firstItem="mPA-DE-wa6" firstAttribute="top" secondItem="u5K-Mc-4cI" secondAttribute="bottom" id="oHt-qN-G9n"/>
+                                            <constraint firstAttribute="bottom" secondItem="mPA-DE-wa6" secondAttribute="bottom" id="sxm-vA-YBz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="icon" destination="u5K-Mc-4cI" id="hY0-AQ-bIQ"/>
+                                            <outlet property="nameLabel" destination="mPA-DE-wa6" id="YMC-UM-fEo"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCTrainingDetailSectionHeaderView" id="en6-MW-IZZ" customClass="FBCTrainingDetailSectionHeaderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="681" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Section name]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lc0-bh-PxL">
+                                            <rect key="frame" x="20" y="14" width="641" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="lc0-bh-PxL" id="auM-3i-wXj"/>
+                                    </connections>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aM2-ik-9Fs" firstAttribute="top" secondItem="UfL-2i-YcJ" secondAttribute="bottom" constant="-20" id="4y0-zi-9ul"/>
+                            <constraint firstItem="uCC-mG-qhg" firstAttribute="top" secondItem="EgE-AQ-aj8" secondAttribute="bottom" constant="-13" id="9qK-UZ-STf"/>
+                            <constraint firstItem="aM2-ik-9Fs" firstAttribute="leading" secondItem="7np-ao-PGP" secondAttribute="leading" id="jps-8R-URo"/>
+                            <constraint firstItem="EgE-AQ-aj8" firstAttribute="leading" secondItem="7np-ao-PGP" secondAttribute="leading" constant="44" id="oLa-Yc-3eo"/>
+                            <constraint firstAttribute="trailing" secondItem="aM2-ik-9Fs" secondAttribute="trailing" id="vjs-a8-k2S"/>
+                            <constraint firstAttribute="trailing" secondItem="EgE-AQ-aj8" secondAttribute="trailing" constant="43" id="ziK-fS-o4Q"/>
+                            <constraint firstItem="EgE-AQ-aj8" firstAttribute="top" secondItem="aM2-ik-9Fs" secondAttribute="bottom" id="zkw-wJ-t7R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="EgE-AQ-aj8" id="kjU-OZ-uZ5"/>
+                        <outlet property="trainingName" destination="RHe-5u-Avc" id="bjd-Zb-xjM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="REY-rA-hV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="896"/>
+        </scene>
+        <!--Edit Unit Name Controller-->
         <scene sceneID="3qb-CH-e3K">
             <objects>
-                <viewController id="QIN-Jm-QYA" customClass="FBCEditExerciseNameController" sceneMemberID="viewController">
+                <viewController id="QIN-Jm-QYA" customClass="FBCEditUnitNameController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Div-9z-gTM"/>
                         <viewControllerLayoutGuide type="bottom" id="JGG-Tx-ey7"/>
@@ -1166,7 +1294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qFx-Js-2lA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1781" y="-1614"/>
+            <point key="canvasLocation" x="1790" y="74"/>
         </scene>
         <!--Field Controller-->
         <scene sceneID="WG6-dd-rbQ">
@@ -1362,5 +1490,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="7nV-PG-H8S"/>
         <segue reference="HV0-Pc-L6i"/>
+        <segue reference="sH3-k9-12t"/>
+        <segue reference="fWF-YC-6Jc"/>
     </inferredMetricsTieBreakers>
 </document>

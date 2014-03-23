@@ -10,6 +10,8 @@
 
 @protocol FBCTrainingUnitProtocol <NSObject>
 
+@property (nonatomic,strong) NSString *name;
+
 - (NSArray*)flatten;
 
 @end
