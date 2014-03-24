@@ -180,7 +180,7 @@
 {
     NSString *date = [training.date localString];
     NSUInteger exerciseCount = [training.exercises count];
-    NSString *exerciseCountString = [NSString stringWithFormat:@"%u", exerciseCount];
+    NSString *exerciseCountString = [NSString stringWithFormat:@"%lu", (unsigned long)exerciseCount];
     
     [cell.nameLabel setText:training.name];
     [cell.dateLabel setText:date];

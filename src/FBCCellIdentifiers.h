@@ -7,7 +7,7 @@
 //
 
 // Main menu
-#define kFBCMainMenuCellFormat @"FBCCollectionViewCell%d"
+#define kFBCMainMenuCellFormat @"FBCCollectionViewCell%ld"
 
 // List view
 #define kFBCExerciseListCell @"FBCExerciseListCell"

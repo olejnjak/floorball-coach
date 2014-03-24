@@ -81,7 +81,7 @@ static const NSInteger kFBCRestOfExercisesSection = 2;
         // This code should be never reached.
         default:
         {
-            NSString *exceptionReason = [NSString stringWithFormat:@"Unknown section index (%d).", section];
+            NSString *exceptionReason = [NSString stringWithFormat:@"Unknown section index (%ld).", (long)section];
             [[[NSException alloc] initWithName:@"Illegal section exception" reason:exceptionReason userInfo:nil] raise];
         }
     }
@@ -209,7 +209,7 @@ static const NSInteger kFBCRestOfExercisesSection = 2;
         // This code should be never reached.
         default:
         {
-            NSString *exceptionReason = [NSString stringWithFormat:@"Unknown section index (%d).", section];
+            NSString *exceptionReason = [NSString stringWithFormat:@"Unknown section index (%ld).", (long)section];
             [[[NSException alloc] initWithName:@"Illegal section exception" reason:exceptionReason userInfo:nil] raise];
         }
     }

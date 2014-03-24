@@ -18,7 +18,7 @@
     // in portrait the consequence is 0,1,2,3,4,5
     if (UIInterfaceOrientationIsPortrait(orientation))
     {
-        cellId = [NSString stringWithFormat:kFBCMainMenuCellFormat, row];
+        cellId = [NSString stringWithFormat:kFBCMainMenuCellFormat, (long)row];
     }
     
     // in landscape the consequence is 0,2,4,1,3,5
@@ -31,7 +31,7 @@
             cellNumber = 5;
         }
         
-        cellId = [NSString stringWithFormat:kFBCMainMenuCellFormat, cellNumber];
+        cellId = [NSString stringWithFormat:kFBCMainMenuCellFormat, (long)cellNumber];
     }
     
     return cellId;
