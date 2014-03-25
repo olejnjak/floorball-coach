@@ -107,6 +107,15 @@
     [library addExercise:exercise];
 }
 
+- (void)addExercise:(FBCExercise *)exercise toIndex:(NSInteger)index
+{
+    FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
+    
+    [self.mutableExercises insertObject:exercise atIndex:index];
+    [exercise setParent:self];
+    [library addExercise:exercise];
+}
+
 - (void)addExercises:(NSArray *)exercises
 {
     [exercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -118,6 +127,14 @@
 {
     [exercise setParent:nil];
     [self.mutableExercises removeObject:exercise];
+}
+
+- (void)moveExerciseFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex
+{
+    FBCExercise *exercise = [self.exercises objectAtIndex:fromIndex];
+    
+    [self.mutableExercises removeObjectAtIndex:fromIndex];
+    [self.mutableExercises insertObject:exercise atIndex:toIndex];
 }
 
 @end

@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "../lib/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.h"
+
+static const NSInteger kFBCTrainingExercisesSection = 0;
+static const NSInteger kFBCFavoriteExercisesSection = 1;
+static const NSInteger kFBCRestOfExercisesSection = 2;
+
 @class FBCTraining;
 
-@interface FBCTrainingDetailModel : NSObject<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface FBCTrainingDetailModel : NSObject<UICollectionViewDelegate,UICollectionViewDataSource,
+    LXReorderableCollectionViewDataSource>
 
 @property (nonatomic, strong) FBCTraining *training;
 

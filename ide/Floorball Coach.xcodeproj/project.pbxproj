@@ -27,6 +27,7 @@
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
 		69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */; };
 		69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */; };
+		69BC278C18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC278B18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m */; };
 		69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */; };
 		69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69C3E4FB18DCDD3900B6B1FB /* localization.strings */; };
 		69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */; };
@@ -105,6 +106,8 @@
 		69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSimpleExerciseCell.m; sourceTree = "<group>"; };
 		69A2013D18D5274F005C4E7B /* FBCTrainingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingCell.h; sourceTree = "<group>"; };
 		69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingCell.m; sourceTree = "<group>"; };
+		69BC278A18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LXReorderableCollectionViewFlowLayout.h; path = ../lib/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		69BC278B18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LXReorderableCollectionViewFlowLayout.m; path = ../lib/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		69C3E4F618DCDC7500B6B1FB /* FBCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCUtilities.h; sourceTree = "<group>"; };
 		69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCUtilities.m; sourceTree = "<group>"; };
 		69C3E4FA18DCDD3900B6B1FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
@@ -254,6 +257,15 @@
 			name = Exercise;
 			sourceTree = "<group>";
 		};
+		69BC278918E087C600C0B055 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				69BC278A18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.h */,
+				69BC278B18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 		69DE1C6D18CE8929006A869C /* tst */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,10 +302,11 @@
 		69ECF25A18CE32C800F741AB = {
 			isa = PBXGroup;
 			children = (
+				69ECF26518CE32C900F741AB /* Frameworks */,
+				69BC278918E087C600C0B055 /* lib */,
+				69ECF26418CE32C900F741AB /* Products */,
 				690B803718CE33680042C083 /* src */,
 				69DE1C6D18CE8929006A869C /* tst */,
-				69ECF26518CE32C900F741AB /* Frameworks */,
-				69ECF26418CE32C900F741AB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -499,6 +512,7 @@
 				691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */,
 				690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */,
 				69FD432F18CFABF300A95B61 /* FBCExerciseListModel.m in Sources */,
+				69BC278C18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m in Sources */,
 				691E7B0118CFDC1F0030B929 /* FBCToolboxController.m in Sources */,
 				69FBC18618DCF96A0070E258 /* FBCNoteCell.m in Sources */,
 				69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */,

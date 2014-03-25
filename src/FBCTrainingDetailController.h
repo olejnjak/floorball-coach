@@ -11,11 +11,13 @@
 #import "FBCControllerDoneProtocol.h"
 
 @class FBCTraining;
+@class LXReorderableCollectionViewFlowLayout;
 
 @interface FBCTrainingDetailController : UIViewController<UIPopoverControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *trainingName;
+@property (weak, nonatomic) IBOutlet LXReorderableCollectionViewFlowLayout *flowLayout;
 
 @property (nonatomic, weak) id<FBCControllerDoneProtocol> delegate;
 

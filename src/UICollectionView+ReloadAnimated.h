@@ -11,5 +11,6 @@
 @interface UICollectionView (ReloadAnimated)
 
 - (void)reloadDataAnimated:(BOOL)animated;
+- (void)reloadSection:(NSInteger)section animated:(BOOL)animated;
 
 @end

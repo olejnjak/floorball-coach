@@ -13,10 +13,6 @@
 #import "FBCExercise.h"
 #import "FBCTrainingDetailSectionHeaderView.h"
 
-static const NSInteger kFBCTrainingExercisesSection = 0;
-static const NSInteger kFBCFavoriteExercisesSection = 1;
-static const NSInteger kFBCRestOfExercisesSection = 2;
-
 @implementation FBCTrainingDetailModel
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,11 +43,7 @@ static const NSInteger kFBCRestOfExercisesSection = 2;
     NSInteger section = [indexPath section];
     FBCExercise *exercise = [self exerciseForIndexPath:indexPath];
     
-    if (section == kFBCTrainingExercisesSection)
-    {
-        [self.training removeExercise:exercise];
-    }
-    else
+    if (section == kFBCRestOfExercisesSection)
     {
         [self.training addExercise:exercise];
     }
@@ -98,6 +90,7 @@ static const NSInteger kFBCRestOfExercisesSection = 2;
     FBCExercise *exercise = [self exerciseForIndexPath:indexPath];
     
     [cell.nameLabel setText:exercise.name];
+    [cell setExercise:exercise];
     
     return cell;
 }
@@ -136,6 +129,94 @@ static const NSInteger kFBCRestOfExercisesSection = 2;
     }
     
     return nil;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - LXReorderableCollectionViewDataSource methods
+
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath
+    canMoveToIndexPath:(NSIndexPath *)toIndexPath
+{
+    NSInteger fromSection = [fromIndexPath section];
+    NSInteger toSection = [toIndexPath section];
+    FBCExercise *exercise = [self exerciseForIndexPath:fromIndexPath];
+    FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
+
+    // never allow move to favorites
+    if (toSection == kFBCFavoriteExercisesSection)
+    {
+        return [library.favoriteExercises containsObject:exercise];
+    }
+    
+    // allow move to favorites only for favorites
+    if (toSection == kFBCRestOfExercisesSection)
+    {
+        BOOL favoritesContainsExercise = [library.favoriteExercises containsObject:exercise];
+        if (YES == favoritesContainsExercise)
+        {
+            return NO;
+        }
+    }
+    
+    // from favorites to training exercises
+    if (fromSection == kFBCFavoriteExercisesSection && toSection == kFBCTrainingExercisesSection)
+    {
+        return YES;
+    }
+
+    // from all exercises to training exercises
+    else if (fromSection == kFBCRestOfExercisesSection && toSection == kFBCTrainingExercisesSection)
+    {
+        return YES;
+    }
+    
+    // reorder in training exercises
+    else if (fromSection == kFBCTrainingExercisesSection && toSection == kFBCTrainingExercisesSection)
+    {
+        return YES;
+    }
+    
+    // remove exercise from training (drag only to all exercises not favorites)
+    else if (fromSection == kFBCTrainingExercisesSection && toSection == kFBCRestOfExercisesSection)
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath
+   willMoveToIndexPath:(NSIndexPath *)toIndexPath
+{
+    NSInteger fromSection = [fromIndexPath section];
+    NSInteger toSection = [toIndexPath section];
+    NSInteger fromIndex = [fromIndexPath row];
+    NSInteger toIndex = [toIndexPath row];
+    FBCExercise *exercise = [self exerciseForIndexPath:fromIndexPath];
+    
+    // reorder exercises
+    if (fromSection == kFBCTrainingExercisesSection && fromSection == toSection)
+    {
+        [self.training moveExerciseFromIndex:fromIndex toIndex:toIndex];
+    }
+    
+    // remove exercise from training
+    else if (fromSection == kFBCTrainingExercisesSection && toSection == kFBCRestOfExercisesSection)
+    {
+        [self.training removeExercise:exercise];
+    }
+    
+    // move from favorites or rest to training exercises
+    else if ((fromSection == kFBCRestOfExercisesSection || fromSection == kFBCFavoriteExercisesSection)
+             && toSection == kFBCTrainingExercisesSection)
+    {
+        [self.training addExercise:exercise toIndex:toIndex];
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,9 +263,11 @@ static const NSInteger kFBCRestOfExercisesSection = 2;
 {
     FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
     NSArray *trainingExercises = [self.training exercises];
+    NSArray *favoriteExercises = [library favoriteExercises];
     NSMutableArray *allExercises = [library.exercises mutableCopy];
     
     [allExercises removeObjectsInArray:trainingExercises];
+    [allExercises removeObjectsInArray:favoriteExercises];
     
     return allExercises;
 }

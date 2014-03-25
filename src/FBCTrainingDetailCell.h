@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class FBCExercise;
+
 @interface FBCTrainingDetailCell : UICollectionViewCell
+
+@property (strong, nonatomic) FBCExercise *exercise;
 
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

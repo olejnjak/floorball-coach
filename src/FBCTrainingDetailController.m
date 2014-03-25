@@ -10,6 +10,7 @@
 #import "FBCTrainingDetailModel.h"
 #import "FBCEditUnitNameController.h"
 #import "FBCTraining.h"
+#import "LXReorderableCollectionViewFlowLayout.h"
 
 @implementation FBCTrainingDetailController
 {
