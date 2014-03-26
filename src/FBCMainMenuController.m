@@ -97,7 +97,7 @@
     if ([identifier isEqualToString:kFBCMainMenuToTrainingDetailSegue])
     {
         FBCTrainingDetailController *dst = [segue destinationViewController];
-        FBCTraining *training = [[FBCTraining alloc] initWithName:LOC(@"FBCNewTraining")];
+        FBCTraining *training = [FBCTrainingUnitLibrary.library createNewTraining];
         
         [dst setDelegate:self];
         [dst setTraining:training];
@@ -119,14 +119,10 @@
     if ([identifier isEqualToString:kFBCMainMenuToExerciseSegue])
     {
         FBCExerciseController *dst = [segue destinationViewController];
-        FBCExercise *exercise = [[FBCExercise alloc] initWithName:LOC(@"FBCNewExercise")];
+        FBCExercise *exercise = [FBCTrainingUnitLibrary.library createNewExercise];
         
         [dst setExercise:exercise];
         [dst setDelegate:self];
-        
-        FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
-        
-        [library addExercise:exercise];
         
         return;
     }

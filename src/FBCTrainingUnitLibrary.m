@@ -112,6 +112,24 @@ static FBCTrainingUnitLibrary *g_Library = nil;
     [_allExercises removeObject:exercise];
 }
 
+- (FBCTraining*)createNewTraining
+{
+    FBCTraining *newTraining = [[FBCTraining alloc] initWithName:LOC(@"FBCNewTraining")];
+    
+    [self addTraining:newTraining];
+    
+    return newTraining;
+}
+
+- (FBCExercise*)createNewExercise
+{
+    FBCExercise *newExercise = [[FBCExercise alloc] initWithName:LOC(@"FBCNewExercise")];
+    
+    [self addExercise:newExercise];
+    
+    return newExercise;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Serialization
 

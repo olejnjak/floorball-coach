@@ -154,6 +154,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ckn-91-ee8"/>
                                     <barButtonItem systemItem="add" id="MnX-h3-PxE">
                                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="9SZ-sS-LaG" id="fSs-88-Fel"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem title="[Sort]" id="XDs-sL-PQs">
                                         <connections>
@@ -380,10 +383,12 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="addButton" destination="MnX-h3-PxE" id="LnF-9V-khB"/>
                         <outlet property="doneButton" destination="9bB-Gj-GiB" id="IeD-rZ-1jK"/>
                         <outlet property="editButton" destination="u5A-i0-d8G" id="g3F-4U-mB0"/>
                         <outlet property="tableView" destination="siG-Qe-0Td" id="ud9-c8-g8B"/>
                         <outlet property="toolbar" destination="ZDK-9g-EON" id="Fa9-F0-YDa"/>
+                        <outlet property="typeChangeButton" destination="7V1-6F-wP4" id="aVZ-Vf-cwm"/>
                         <segue destination="nXa-ZP-GJ2" kind="modal" identifier="FBCListToExerciseSegue" modalTransitionStyle="crossDissolve" id="7nV-PG-H8S"/>
                         <segue destination="ONY-qI-YdE" kind="modal" identifier="FBCListToTrainingDetailSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="sH3-k9-12t"/>
                     </connections>
@@ -1489,9 +1494,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="7nV-PG-H8S"/>
         <segue reference="HV0-Pc-L6i"/>
         <segue reference="sH3-k9-12t"/>
-        <segue reference="fWF-YC-6Jc"/>
+        <segue reference="7nV-PG-H8S"/>
+        <segue reference="bBM-iD-fl0"/>
     </inferredMetricsTieBreakers>
 </document>

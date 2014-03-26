@@ -22,6 +22,9 @@
 - (void)addTraining:(FBCTraining*)training;
 - (void)removeTraining:(FBCTraining*)training;
 
+- (FBCTraining*)createNewTraining;
+- (FBCExercise*)createNewExercise;
+
 - (void)addExercise:(FBCExercise*)exercise;
 - (void)removeExercise:(FBCExercise*)exercise;
 
