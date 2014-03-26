@@ -14,4 +14,8 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSDate *dateCreated;
 
+- (id)initWithDictionary:(NSDictionary*)dictionary;
+
+- (NSDictionary*)structure;
+
 @end

@@ -12,4 +12,7 @@
 
 - (NSString*)localString;
 
+- (NSString*)dateToString;
++ (NSDate*)dateFromString:(NSString*)string;
+
 @end

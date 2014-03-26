@@ -7,6 +7,12 @@
 //
 
 #import "FBCExercise.h"
+#import "FBCNote.h"
+
+static const NSString *kFBCNameKey = @"name";
+static const NSString *kFBCLastChangeKey = @"lastChange";
+static const NSString *kFBCFavoriteKey = @"favorite";
+static const NSString *kFBCNotesKey = @"notes";
 
 @implementation FBCExercise
 {
@@ -31,7 +37,7 @@
 {
     self = [super init];
     
-    if (self != nil)
+    if (nil != self)
     {
         if ([name length] == 0)
         {
@@ -41,6 +47,31 @@
         [self __setInitState];
         [self setName:name];
         _lastChange = [NSDate date];
+    }
+    
+    return self;
+}
+
+- (id)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    
+    if (nil != self)
+    {
+        NSString *lastChangeString = [dictionary objectForKey:kFBCLastChangeKey];
+        NSNumber *favoriteNumber = [dictionary objectForKey:kFBCFavoriteKey];
+        NSArray *notesArray = [dictionary objectForKey:kFBCNotesKey];
+        
+        self.name = [dictionary objectForKey:kFBCNameKey];
+        self.favorite = [favoriteNumber boolValue];
+        _lastChange = [NSDate dateFromString:lastChangeString];
+        
+        [notesArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSDictionary *noteDictionary = obj;
+            FBCNote *note = [[FBCNote alloc] initWithDictionary:noteDictionary];
+            
+            [self.notesArray addObject:note];
+        }];
     }
     
     return self;
@@ -57,6 +88,29 @@
 - (NSArray*)flatten
 {
     return @[self];
+}
+
+- (NSDictionary*)structure
+{
+    NSMutableDictionary *structureDict = [NSMutableDictionary dictionaryWithCapacity:4];
+    NSString *lastChangeString = [self.lastChange dateToString];
+    NSNumber *favoriteNumber = [NSNumber numberWithBool:self.favorite];
+    NSMutableArray *notesArray = [NSMutableArray arrayWithCapacity:self.notesArray.count];
+    
+    [structureDict setObject:self.name forKey:kFBCNameKey];
+    [structureDict setObject:lastChangeString forKey:kFBCLastChangeKey];
+    [structureDict setObject:favoriteNumber forKey:kFBCFavoriteKey];
+    
+    [self.notesArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        FBCNote *note = obj;
+        NSDictionary *noteDictionary = [note structure];
+        
+        [notesArray addObject:noteDictionary];
+    }];
+    
+    [structureDict setObject:notesArray forKey:kFBCNotesKey];
+    
+    return structureDict;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

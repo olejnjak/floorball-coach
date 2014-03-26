@@ -20,8 +20,6 @@
 @property (nonatomic,strong,readonly) NSDate *lastChange;
 @property (nonatomic) BOOL favorite;
 
-- (id)initWithName:(NSString*)name;
-
 - (NSArray*)notes;
 - (void)addNote:(FBCNote*)note;
 - (void)removeNote:(FBCNote*)note;

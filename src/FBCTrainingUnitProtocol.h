@@ -12,6 +12,10 @@
 
 @property (nonatomic,strong) NSString *name;
 
+- (id)initWithName:(NSString*)name;
+- (id)initWithDictionary:(NSDictionary*)dictionary;
+
 - (NSArray*)flatten;
+- (NSDictionary*)structure;
 
 @end

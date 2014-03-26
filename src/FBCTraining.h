@@ -16,8 +16,6 @@
 
 @property (nonatomic,strong,readonly) NSDate *date;
 
-- (id)initWithName:(NSString*)name;
-
 - (NSArray*)exercises;
 - (void)addExercise:(FBCExercise*)exercise;
 - (void)addExercise:(FBCExercise *)exercise toIndex:(NSInteger)index;

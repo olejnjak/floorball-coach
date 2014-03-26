@@ -10,6 +10,10 @@
 #import "FBCExercise.h"
 #import "FBCTrainingUnitLibrary.h"
 
+static const NSString *kFBCNameKey = @"name";
+static const NSString *kFBCDateKey = @"date";
+static const NSString *kFBCExerciseKey = @"exercises";
+
 @implementation FBCTraining
 {
     dispatch_once_t _onceToken;
@@ -48,6 +52,30 @@
     return self;
 }
 
+- (id)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        NSString *dateString = [dictionary objectForKey:kFBCDateKey];
+        NSArray *exerciseArray = [dictionary objectForKey:kFBCExerciseKey];
+        
+        _name = [dictionary objectForKey:kFBCNameKey];
+        _date = [NSDate dateFromString:dateString];
+        _mutableExercises = [NSMutableArray arrayWithCapacity:exerciseArray.count];
+        
+        [exerciseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSDictionary *exerciseDictionary = obj;
+            FBCExercise *exercise = [[FBCExercise alloc] initWithDictionary:exerciseDictionary];
+            
+            [_mutableExercises addObject:exercise];
+        }];
+    }
+    
+    return self;
+}
+
 - (void)__setInitState
 {
     _mutableExercises = nil;
@@ -59,7 +87,10 @@
 - (NSMutableArray*)mutableExercises
 {
     dispatch_once(&_onceToken, ^{
-        _mutableExercises = [[NSMutableArray alloc] initWithCapacity:1];
+        if (_mutableExercises == nil)
+        {
+            _mutableExercises = [[NSMutableArray alloc] initWithCapacity:1];
+        }
     });
     
     return _mutableExercises;
@@ -86,6 +117,27 @@
     NSArray *result = [NSArray arrayWithArray:mutableResult];
     
     return result;
+}
+
+- (NSDictionary*)structure
+{
+    NSMutableDictionary *structureDict = [NSMutableDictionary dictionaryWithCapacity:3];
+    NSString *dateString = [self.date dateToString];
+    NSMutableArray *exerciseArray = [NSMutableArray arrayWithCapacity:self.exercises.count];
+    
+    [structureDict setObject:dateString forKey:kFBCDateKey];
+    [structureDict setObject:self.name forKey:kFBCNameKey];
+    
+    [self.exercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        FBCExercise *exercise = obj;
+        NSDictionary *exerciseDictionary = [exercise structure];
+        
+        [exerciseArray addObject:exerciseDictionary];
+    }];
+    
+    [structureDict setObject:exerciseArray forKey:kFBCExerciseKey];
+    
+    return structureDict;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

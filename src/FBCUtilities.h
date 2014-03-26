@@ -7,3 +7,5 @@
 //
 
 NSString* LOC(NSString *key);
+
+NSURL *FBCLibraryFile(void);

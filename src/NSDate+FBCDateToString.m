@@ -8,6 +8,8 @@
 
 #import "NSDate+FBCDateToString.h"
 
+static NSString *kFBCDateFormat = @"yyyyMMddHH:mm";
+
 @implementation NSDate (FBCDateToString)
 
 - (NSString*)localString
@@ -18,6 +20,24 @@
     [df setTimeStyle:NSDateFormatterNoStyle];
     
     return [df stringFromDate:self];
+}
+
+- (NSString*)dateToString
+{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+
+    [df setDateFormat:kFBCDateFormat];
+    
+    return [df stringFromDate:self];
+}
+
++ (NSDate*)dateFromString:(NSString *)string
+{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    
+    [df setDateFormat:kFBCDateFormat];
+    
+    return [df dateFromString:string];
 }
 
 @end
