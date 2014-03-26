@@ -24,10 +24,13 @@ typedef enum
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *typeChangeButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @property (assign, nonatomic) FBCListViewControllerType type;
 
 - (IBAction)editButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)doneButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)addButtonPressed:(UIBarButtonItem *)sender;
 
 @end

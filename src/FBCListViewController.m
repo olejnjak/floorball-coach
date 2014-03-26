@@ -15,6 +15,7 @@
 #import "FBCTraining.h"
 #import "FBCSortViewController.h"
 #import "FBCTrainingDetailController.h"
+#import "FBCTrainingUnitLibrary.h"
 
 @implementation FBCListViewController
 {
@@ -41,6 +42,7 @@
     [super viewDidLoad];
     
     [self updateToolbar];
+    [self updateUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -81,16 +83,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: handle item selection
     id<FBCTrainingUnitProtocol> unit = [self.model unitAtIndexPath:indexPath];
     
     _selectedUnit = unit;
     
-    // if training is selected, don't do anything
+    // if training is selected, open training detail
     if ([unit isKindOfClass:[FBCTraining class]])
     {
         [self performSegueWithIdentifier:kFBCListToTrainingDetailSegue sender:self];
     }
+    
+    // if exercise is selected, open exercise
     else
     {
         [self performSegueWithIdentifier:kFBCListToExerciseSegue sender:self];
@@ -252,8 +255,42 @@
     [self doneEditingTableView];
 }
 
+- (IBAction)addButtonPressed:(UIBarButtonItem *)sender
+{
+    if (FBCListViewControllerTypeExercise == self.type)
+    {
+        FBCExercise *exercise = [[FBCTrainingUnitLibrary library] createNewExercise];
+        
+        _selectedUnit = exercise;
+        
+        [self performSegueWithIdentifier:kFBCListToExerciseSegue sender:self];
+    }
+    
+    else if (FBCListViewControllerTypeTraining == self.type)
+    {
+        FBCTraining *training = [[FBCTrainingUnitLibrary library] createNewTraining];
+        
+        _selectedUnit = training;
+        
+        [self performSegueWithIdentifier:kFBCListToTrainingDetailSegue sender:self];
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Helpers
+
+- (void)updateUI
+{
+    if (self.type == FBCListViewControllerTypeFavorite)
+    {
+        NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
+        
+        [toolbarItems removeObject:self.typeChangeButton];
+        [toolbarItems removeObject:self.addButton];
+        
+        [self.toolbar setItems:toolbarItems animated:YES];
+    }
+}
 
 - (void)editTableView
 {
