@@ -17,7 +17,7 @@ static const NSInteger kFBCRestOfExercisesSection = 2;
 @class FBCTraining;
 
 @interface FBCTrainingDetailModel : NSObject<UICollectionViewDelegate,UICollectionViewDataSource,
-    LXReorderableCollectionViewDataSource>
+    LXReorderableCollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) FBCTraining *training;
 

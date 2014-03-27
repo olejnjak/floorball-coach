@@ -52,6 +52,30 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UICollectionViewDelegateFlowLayout methods
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    FBCExercise *exercise = [self exerciseForIndexPath:indexPath];
+    
+    if (nil == exercise)
+    {
+        LXReorderableCollectionViewFlowLayout *layout = (LXReorderableCollectionViewFlowLayout*)collectionViewLayout;
+        CGSize selfSize = collectionView.bounds.size;
+        UIEdgeInsets insets = layout.sectionInset;
+        
+        selfSize.height = 20;
+        selfSize.width -= insets.left;
+        selfSize.width -= insets.right;
+        
+        return selfSize;
+    }
+    
+    return CGSizeMake(200, 200);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UICollectionViewDataSource methods
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -88,6 +112,15 @@
                                                                             forIndexPath:indexPath];
     
     FBCExercise *exercise = [self exerciseForIndexPath:indexPath];
+    
+    if ([self isPlaceholderAtIndexPath:indexPath])
+    {
+        [cell setHidden:YES];
+    }
+    else
+    {
+        [cell setHidden:NO];
+    }
     
     [cell.nameLabel setText:exercise.name];
     [cell setExercise:exercise];
@@ -136,7 +169,7 @@
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    return NO == [self isPlaceholderAtIndexPath:indexPath];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath
@@ -145,6 +178,13 @@
     NSInteger fromSection = [fromIndexPath section];
     NSInteger toSection = [toIndexPath section];
     FBCExercise *exercise = [self exerciseForIndexPath:fromIndexPath];
+    
+    // allow move to placeholder index path only when section is empty
+    if ([self isPlaceholderAtIndexPath:toIndexPath] && [toIndexPath row] > 0)
+    {
+        return NO;
+    }
+    
     FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
 
     // never allow move to favorites
@@ -226,21 +266,21 @@
 {
     NSArray *exercises = [self trainingExercises];
     
-    return [exercises count];
+    return [exercises count] + 1;
 }
 
 - (NSUInteger)favoriteExercisesCount
 {
     NSArray *favoriteExercises = [self favoriteExercises];
     
-    return [favoriteExercises count];
+    return [favoriteExercises count] + 1;
 }
 
 - (NSUInteger)restOfExercisesCount
 {
     NSArray *exercises = [self restOfExercises];
     
-    return [exercises count];
+    return [exercises count] + 1;
 }
 
 - (NSArray*)trainingExercises
@@ -303,9 +343,23 @@
     }
     
     NSInteger index = [indexPath row];
+    
+    if (index >= [exerciseArray count])
+    {
+        return nil;
+    }
+    
     FBCExercise *exercise = [exerciseArray objectAtIndex:index];
     
     return exercise;
+}
+
+- (BOOL)isPlaceholderAtIndexPath:(NSIndexPath*)indexPath
+{
+    // if model doesn't contain exercise for represented index path, it is a placeholder
+    FBCExercise *exercise = [self exerciseForIndexPath:indexPath];
+    
+    return exercise == nil;
 }
 
 @end
