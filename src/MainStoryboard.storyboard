@@ -1309,14 +1309,39 @@
         <scene sceneID="WG6-dd-rbQ">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="lHG-7Y-1gk" customClass="FBCFieldController" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DhM-LJ-lkG">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7wJ-DB-uwh"/>
+                        <viewControllerLayoutGuide type="bottom" id="cKP-gE-b1l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z0p-KC-6J2">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="856"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </imageView>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oGL-vn-S3G">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="856"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llm-9W-ROe" customClass="FBCDrawingView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="856"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="llm-9W-ROe" firstAttribute="width" secondItem="oGL-vn-S3G" secondAttribute="width" id="EUx-Jd-aJ5"/>
+                            <constraint firstItem="oGL-vn-S3G" firstAttribute="width" secondItem="z0p-KC-6J2" secondAttribute="width" id="IVu-ea-WXZ"/>
+                            <constraint firstItem="llm-9W-ROe" firstAttribute="height" secondItem="oGL-vn-S3G" secondAttribute="height" id="NPm-MV-Rce"/>
+                            <constraint firstItem="llm-9W-ROe" firstAttribute="centerY" secondItem="oGL-vn-S3G" secondAttribute="centerY" id="QMR-T4-Sz2"/>
+                            <constraint firstAttribute="centerY" secondItem="oGL-vn-S3G" secondAttribute="centerY" id="gzD-l9-dFY"/>
+                            <constraint firstAttribute="centerX" secondItem="oGL-vn-S3G" secondAttribute="centerX" id="kzQ-34-PAa"/>
+                            <constraint firstItem="oGL-vn-S3G" firstAttribute="height" secondItem="z0p-KC-6J2" secondAttribute="height" id="ujY-0e-AFi"/>
+                            <constraint firstItem="llm-9W-ROe" firstAttribute="centerX" secondItem="oGL-vn-S3G" secondAttribute="centerX" id="wrD-q6-u6B"/>
+                        </constraints>
+                    </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="fieldImageView" destination="DhM-LJ-lkG" id="JLN-vQ-M2D"/>
-                        <outlet property="view" destination="DhM-LJ-lkG" id="4QM-m6-h7u"/>
+                        <outlet property="fieldImageView" destination="oGL-vn-S3G" id="kos-0k-Ylg"/>
+                        <outlet property="view" destination="z0p-KC-6J2" id="X0M-Ch-KIu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b31-SR-C4H" userLabel="First Responder" sceneMemberID="firstResponder"/>

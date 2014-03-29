@@ -30,6 +30,7 @@
 		69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */; };
 		69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69C3E4FB18DCDD3900B6B1FB /* localization.strings */; };
 		69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */; };
+		69C9524E18E773800058C958 /* FBCDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C9524D18E773800058C958 /* FBCDrawingView.m */; };
 		69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */; };
 		69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651418D4E6DB00F72E33 /* FBCExercise.m */; };
 		69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651718D4E6F500F72E33 /* FBCTraining.m */; };
@@ -118,6 +119,8 @@
 		69C3E4FA18DCDD3900B6B1FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
 		69C3E4FC18DCDF6C00B6B1FB /* FBCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNote.h; sourceTree = "<group>"; };
 		69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNote.m; sourceTree = "<group>"; };
+		69C9524C18E773800058C958 /* FBCDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCDrawingView.h; sourceTree = "<group>"; };
+		69C9524D18E773800058C958 /* FBCDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCDrawingView.m; sourceTree = "<group>"; };
 		69DE1C7018CE8E3F006A869C /* FBCAboutScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAboutScreenController.h; sourceTree = "<group>"; };
 		69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAboutScreenController.m; sourceTree = "<group>"; };
 		69DE1C7318CE8ECD006A869C /* FBCControllerDoneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCControllerDoneProtocol.h; sourceTree = "<group>"; };
@@ -450,6 +453,8 @@
 			children = (
 				691E7B0218CFE2290030B929 /* FBCFieldController.h */,
 				691E7B0318CFE2290030B929 /* FBCFieldController.m */,
+				69C9524C18E773800058C958 /* FBCDrawingView.h */,
+				69C9524D18E773800058C958 /* FBCDrawingView.m */,
 			);
 			name = Field;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */,
 				69FEA00518E7633D00EEA177 /* NSData+MD5.m in Sources */,
 				691E7AFE18CFDBE80030B929 /* FBCExerciseController.m in Sources */,
+				69C9524E18E773800058C958 /* FBCDrawingView.m in Sources */,
 				69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */,
 				69FEA00818E7633D00EEA177 /* UIImage+PDF.m in Sources */,
 				69FD433E18CFB95500A95B61 /* FBCFlipHorizontalSegue.m in Sources */,
