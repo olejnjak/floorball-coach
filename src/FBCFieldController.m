@@ -10,4 +10,24 @@
 
 @implementation FBCFieldController
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self loadBackground];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
+
+- (void)loadBackground
+{
+    UIImage *fieldBg = [UIImage imageWithPDFNamed:kFBCFieldImage atHeight:2048];
+    
+    [self.fieldImageView setImage:fieldBg];
+}
+
 @end

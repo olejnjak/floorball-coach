@@ -10,4 +10,6 @@
 
 @interface FBCFieldController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIImageView *fieldImageView;
+
 @end

@@ -1309,13 +1309,13 @@
         <scene sceneID="WG6-dd-rbQ">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="lHG-7Y-1gk" customClass="FBCFieldController" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DhM-LJ-lkG">
+                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DhM-LJ-lkG">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="856"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93333339689999995" green="0.10588236149999999" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
                     </imageView>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="fieldImageView" destination="DhM-LJ-lkG" id="JLN-vQ-M2D"/>
                         <outlet property="view" destination="DhM-LJ-lkG" id="4QM-m6-h7u"/>
                     </connections>
                 </viewController>

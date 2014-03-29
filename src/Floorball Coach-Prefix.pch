@@ -22,3 +22,5 @@
 #import "FBCUtilities.h"
 #import "UICollectionView+ReloadAnimated.h"
 #import "NSMutableArray+RemoveDuplicates.h"
+#import "UIImage+PDF.h"
+#import "FBCBundleResources.h"

@@ -27,7 +27,6 @@
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
 		69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */; };
 		69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */; };
-		69BC278C18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 69BC278B18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m */; };
 		69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */; };
 		69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69C3E4FB18DCDD3900B6B1FB /* localization.strings */; };
 		69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */; };
@@ -51,6 +50,14 @@
 		69FD433218CFAC1C00A95B61 /* FBCTrainingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD433118CFAC1C00A95B61 /* FBCTrainingListModel.m */; };
 		69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD433A18CFB7B000A95B61 /* FBCFadeSegue.m */; };
 		69FD433E18CFB95500A95B61 /* FBCFlipHorizontalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FD433D18CFB95500A95B61 /* FBCFlipHorizontalSegue.m */; };
+		69FE9FF718E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FE9FF618E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.m */; };
+		69FEA00418E7633D00EEA177 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69FE9FF918E7633D00EEA177 /* LICENSE.txt */; };
+		69FEA00518E7633D00EEA177 /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FE9FFB18E7633D00EEA177 /* NSData+MD5.m */; };
+		69FEA00618E7633D00EEA177 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FE9FFD18E7633D00EEA177 /* NSString+MD5.m */; };
+		69FEA00718E7633D00EEA177 /* PDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FE9FFF18E7633D00EEA177 /* PDFView.m */; };
+		69FEA00818E7633D00EEA177 /* UIImage+PDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FEA00118E7633D00EEA177 /* UIImage+PDF.m */; };
+		69FEA00918E7633D00EEA177 /* UIView+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FEA00318E7633D00EEA177 /* UIView+Image.m */; };
+		69FEA00D18E7643500EEA177 /* field.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 69FEA00C18E7643500EEA177 /* field.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +113,6 @@
 		69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSimpleExerciseCell.m; sourceTree = "<group>"; };
 		69A2013D18D5274F005C4E7B /* FBCTrainingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingCell.h; sourceTree = "<group>"; };
 		69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingCell.m; sourceTree = "<group>"; };
-		69BC278A18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LXReorderableCollectionViewFlowLayout.h; path = ../lib/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		69BC278B18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LXReorderableCollectionViewFlowLayout.m; path = ../lib/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		69C3E4F618DCDC7500B6B1FB /* FBCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCUtilities.h; sourceTree = "<group>"; };
 		69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCUtilities.m; sourceTree = "<group>"; };
 		69C3E4FA18DCDD3900B6B1FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
@@ -152,6 +157,21 @@
 		69FD433A18CFB7B000A95B61 /* FBCFadeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCFadeSegue.m; sourceTree = "<group>"; };
 		69FD433C18CFB95500A95B61 /* FBCFlipHorizontalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCFlipHorizontalSegue.h; sourceTree = "<group>"; };
 		69FD433D18CFB95500A95B61 /* FBCFlipHorizontalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCFlipHorizontalSegue.m; sourceTree = "<group>"; };
+		69FE9FF518E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		69FE9FF618E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXReorderableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		69FE9FF918E7633D00EEA177 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		69FE9FFA18E7633D00EEA177 /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		69FE9FFB18E7633D00EEA177 /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
+		69FE9FFC18E7633D00EEA177 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		69FE9FFD18E7633D00EEA177 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		69FE9FFE18E7633D00EEA177 /* PDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFView.h; sourceTree = "<group>"; };
+		69FE9FFF18E7633D00EEA177 /* PDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFView.m; sourceTree = "<group>"; };
+		69FEA00018E7633D00EEA177 /* UIImage+PDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PDF.h"; sourceTree = "<group>"; };
+		69FEA00118E7633D00EEA177 /* UIImage+PDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PDF.m"; sourceTree = "<group>"; };
+		69FEA00218E7633D00EEA177 /* UIView+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Image.h"; sourceTree = "<group>"; };
+		69FEA00318E7633D00EEA177 /* UIView+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Image.m"; sourceTree = "<group>"; };
+		69FEA00C18E7643500EEA177 /* field.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = field.pdf; sourceTree = "<group>"; };
+		69FEA00E18E764A900EEA177 /* FBCBundleResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCBundleResources.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,10 +240,7 @@
 				69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */,
 				69C3E4FC18DCDF6C00B6B1FB /* FBCNote.h */,
 				69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */,
-				6906CFD218DF801800D3006A /* UICollectionView+ReloadAnimated.h */,
-				6906CFD318DF801800D3006A /* UICollectionView+ReloadAnimated.m */,
-				6906CFD518DF871200D3006A /* NSMutableArray+RemoveDuplicates.h */,
-				6906CFD618DF871200D3006A /* NSMutableArray+RemoveDuplicates.m */,
+				69FE9FF318E7617800EEA177 /* Helper categories */,
 			);
 			name = src;
 			path = ../src;
@@ -250,8 +267,7 @@
 				691E7AFD18CFDBE80030B929 /* FBCExerciseController.m */,
 				691E7AFF18CFDC1F0030B929 /* FBCToolboxController.h */,
 				691E7B0018CFDC1F0030B929 /* FBCToolboxController.m */,
-				691E7B0218CFE2290030B929 /* FBCFieldController.h */,
-				691E7B0318CFE2290030B929 /* FBCFieldController.m */,
+				69FEA00A18E763E600EEA177 /* Field */,
 				69E6260C18DDBB8B00438EA8 /* Notes */,
 			);
 			name = Exercise;
@@ -260,8 +276,8 @@
 		69BC278918E087C600C0B055 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				69BC278A18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.h */,
-				69BC278B18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m */,
+				69FE9FF818E7633D00EEA177 /* UIImage+PDF */,
+				69FE9FF418E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -282,6 +298,7 @@
 				69DE1C7518CE90A6006A869C /* FBCSegueIdentifiers.h */,
 				69FD432818CFA75F00A95B61 /* FBCCellIdentifiers.h */,
 				69302B5318D0957300C73208 /* FBCStoryboardIdentifiers.h */,
+				69FEA00E18E764A900EEA177 /* FBCBundleResources.h */,
 			);
 			name = Defines;
 			sourceTree = "<group>";
@@ -305,6 +322,7 @@
 				69ECF26518CE32C900F741AB /* Frameworks */,
 				69BC278918E087C600C0B055 /* lib */,
 				69ECF26418CE32C900F741AB /* Products */,
+				69FEA00B18E7641600EEA177 /* res */,
 				690B803718CE33680042C083 /* src */,
 				69DE1C6D18CE8929006A869C /* tst */,
 			);
@@ -387,6 +405,64 @@
 			name = "Custom segues";
 			sourceTree = "<group>";
 		};
+		69FE9FF318E7617800EEA177 /* Helper categories */ = {
+			isa = PBXGroup;
+			children = (
+				6906CFD218DF801800D3006A /* UICollectionView+ReloadAnimated.h */,
+				6906CFD318DF801800D3006A /* UICollectionView+ReloadAnimated.m */,
+				6906CFD518DF871200D3006A /* NSMutableArray+RemoveDuplicates.h */,
+				6906CFD618DF871200D3006A /* NSMutableArray+RemoveDuplicates.m */,
+			);
+			name = "Helper categories";
+			sourceTree = "<group>";
+		};
+		69FE9FF418E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				69FE9FF518E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.h */,
+				69FE9FF618E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.m */,
+			);
+			name = LXReorderableCollectionViewFlowLayout;
+			path = ../lib/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		69FE9FF818E7633D00EEA177 /* UIImage+PDF */ = {
+			isa = PBXGroup;
+			children = (
+				69FE9FF918E7633D00EEA177 /* LICENSE.txt */,
+				69FE9FFA18E7633D00EEA177 /* NSData+MD5.h */,
+				69FE9FFB18E7633D00EEA177 /* NSData+MD5.m */,
+				69FE9FFC18E7633D00EEA177 /* NSString+MD5.h */,
+				69FE9FFD18E7633D00EEA177 /* NSString+MD5.m */,
+				69FE9FFE18E7633D00EEA177 /* PDFView.h */,
+				69FE9FFF18E7633D00EEA177 /* PDFView.m */,
+				69FEA00018E7633D00EEA177 /* UIImage+PDF.h */,
+				69FEA00118E7633D00EEA177 /* UIImage+PDF.m */,
+				69FEA00218E7633D00EEA177 /* UIView+Image.h */,
+				69FEA00318E7633D00EEA177 /* UIView+Image.m */,
+			);
+			name = "UIImage+PDF";
+			path = "../lib/UIImage+PDF/UIImage+PDF";
+			sourceTree = "<group>";
+		};
+		69FEA00A18E763E600EEA177 /* Field */ = {
+			isa = PBXGroup;
+			children = (
+				691E7B0218CFE2290030B929 /* FBCFieldController.h */,
+				691E7B0318CFE2290030B929 /* FBCFieldController.m */,
+			);
+			name = Field;
+			sourceTree = "<group>";
+		};
+		69FEA00B18E7641600EEA177 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				69FEA00C18E7643500EEA177 /* field.pdf */,
+			);
+			name = res;
+			path = ../res;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,6 +539,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69FEA00418E7633D00EEA177 /* LICENSE.txt in Resources */,
+				69FEA00D18E7643500EEA177 /* field.pdf in Resources */,
 				69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */,
 				690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */,
 			);
@@ -494,16 +572,20 @@
 				69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */,
 				6906CFD118DF7C0C00D3006A /* FBCTrainingDetailSectionHeaderView.m in Sources */,
 				69FBC18318DCE7890070E258 /* FBCNewNoteController.m in Sources */,
+				69FE9FF718E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.m in Sources */,
 				690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */,
 				69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */,
+				69FEA00518E7633D00EEA177 /* NSData+MD5.m in Sources */,
 				691E7AFE18CFDBE80030B929 /* FBCExerciseController.m in Sources */,
 				69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */,
+				69FEA00818E7633D00EEA177 /* UIImage+PDF.m in Sources */,
 				69FD433E18CFB95500A95B61 /* FBCFlipHorizontalSegue.m in Sources */,
 				6906CFD718DF871200D3006A /* NSMutableArray+RemoveDuplicates.m in Sources */,
 				69EB651F18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m in Sources */,
 				6906CFD418DF801800D3006A /* UICollectionView+ReloadAnimated.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				691E7B0718CFE34E0030B929 /* FBCNotesPanelController.m in Sources */,
+				69FEA00718E7633D00EEA177 /* PDFView.m in Sources */,
 				690B804118CE33680042C083 /* main.m in Sources */,
 				69EB652818D5057700F72E33 /* NSDate+FBCDateToString.m in Sources */,
 				69EB651C18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m in Sources */,
@@ -511,8 +593,9 @@
 				69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */,
 				691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */,
 				690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */,
+				69FEA00918E7633D00EEA177 /* UIView+Image.m in Sources */,
 				69FD432F18CFABF300A95B61 /* FBCExerciseListModel.m in Sources */,
-				69BC278C18E087D300C0B055 /* LXReorderableCollectionViewFlowLayout.m in Sources */,
+				69FEA00618E7633D00EEA177 /* NSString+MD5.m in Sources */,
 				691E7B0118CFDC1F0030B929 /* FBCToolboxController.m in Sources */,
 				69FBC18618DCF96A0070E258 /* FBCNoteCell.m in Sources */,
 				69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */,
