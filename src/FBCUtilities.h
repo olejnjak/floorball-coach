@@ -9,3 +9,7 @@
 NSString* LOC(NSString *key);
 
 NSURL *FBCLibraryFile(void);
+
+CGPoint FBCRotatePointAroundPoint (CGPoint pointToRotate, CGFloat angle, CGPoint center);
+CGFloat FBCDistanceBetweenPoints(CGPoint p1, CGPoint p2);
+CGPoint FBCScalePointWithCenter(CGPoint pointToScale, CGFloat scale, CGPoint center);

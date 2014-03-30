@@ -7,10 +7,12 @@
 //
 
 #import "FBCDrawingView.h"
+#import "FBCRun.h"
+#import "FBCPass.h"
 
 @implementation FBCDrawingView
 {
-    UIBezierPath *_path;
+    FBCPass *_run;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,8 +37,7 @@
 {
     [super drawRect:rect];
     
-    [[UIColor redColor] set];
-    [_path stroke];
+    [_run draw];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -44,9 +45,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     
-    _path = [[UIBezierPath alloc] init];
-    
-    [_path moveToPoint:point];
+    _run = [[FBCPass alloc] initWithStartPoint:point];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -54,7 +53,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     
-    [_path addLineToPoint:point];
+    [_run addPoint:point];
     [self setNeedsDisplay];
 }
 

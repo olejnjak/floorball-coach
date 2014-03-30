@@ -32,6 +32,9 @@
 		69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */; };
 		69C9524E18E773800058C958 /* FBCDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C9524D18E773800058C958 /* FBCDrawingView.m */; };
 		69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */; };
+		69E32BFA18E88C8800303ED4 /* FBCRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32BF918E88C8800303ED4 /* FBCRun.m */; };
+		69E32BFD18E890C300303ED4 /* FBCPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32BFC18E890C300303ED4 /* FBCPass.m */; };
+		69E5F2CC18E8CA7300E191FE /* FBCArrowLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */; };
 		69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651418D4E6DB00F72E33 /* FBCExercise.m */; };
 		69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651718D4E6F500F72E33 /* FBCTraining.m */; };
 		69EB651C18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651B18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m */; };
@@ -125,6 +128,13 @@
 		69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAboutScreenController.m; sourceTree = "<group>"; };
 		69DE1C7318CE8ECD006A869C /* FBCControllerDoneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCControllerDoneProtocol.h; sourceTree = "<group>"; };
 		69DE1C7518CE90A6006A869C /* FBCSegueIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSegueIdentifiers.h; sourceTree = "<group>"; };
+		69E32BF818E88C8800303ED4 /* FBCRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCRun.h; sourceTree = "<group>"; };
+		69E32BF918E88C8800303ED4 /* FBCRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCRun.m; sourceTree = "<group>"; };
+		69E32BFB18E890C300303ED4 /* FBCPass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCPass.h; sourceTree = "<group>"; };
+		69E32BFC18E890C300303ED4 /* FBCPass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCPass.m; sourceTree = "<group>"; };
+		69E32BFE18E890E100303ED4 /* FBCDrawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCDrawable.h; sourceTree = "<group>"; };
+		69E5F2CA18E8CA7300E191FE /* FBCArrowLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCArrowLine.h; sourceTree = "<group>"; };
+		69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCArrowLine.m; sourceTree = "<group>"; };
 		69EB651318D4E6DB00F72E33 /* FBCExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCExercise.h; sourceTree = "<group>"; };
 		69EB651418D4E6DB00F72E33 /* FBCExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCExercise.m; sourceTree = "<group>"; };
 		69EB651618D4E6F500F72E33 /* FBCTraining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTraining.h; sourceTree = "<group>"; };
@@ -219,6 +229,7 @@
 		690B803718CE33680042C083 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				69E32BF718E88C7100303ED4 /* Tools */,
 				6906CFC518DF417600D3006A /* Training detail */,
 				69FD432B18CFABC700A95B61 /* About screen */,
 				69FD433F18CFB95D00A95B61 /* Custom segues */,
@@ -304,6 +315,20 @@
 				69FEA00E18E764A900EEA177 /* FBCBundleResources.h */,
 			);
 			name = Defines;
+			sourceTree = "<group>";
+		};
+		69E32BF718E88C7100303ED4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				69E32BF818E88C8800303ED4 /* FBCRun.h */,
+				69E32BF918E88C8800303ED4 /* FBCRun.m */,
+				69E32BFB18E890C300303ED4 /* FBCPass.h */,
+				69E32BFC18E890C300303ED4 /* FBCPass.m */,
+				69E32BFE18E890E100303ED4 /* FBCDrawable.h */,
+				69E5F2CA18E8CA7300E191FE /* FBCArrowLine.h */,
+				69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 		69E6260C18DDBB8B00438EA8 /* Notes */ = {
@@ -589,6 +614,7 @@
 				6906CFD718DF871200D3006A /* NSMutableArray+RemoveDuplicates.m in Sources */,
 				69EB651F18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m in Sources */,
 				6906CFD418DF801800D3006A /* UICollectionView+ReloadAnimated.m in Sources */,
+				69E5F2CC18E8CA7300E191FE /* FBCArrowLine.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				691E7B0718CFE34E0030B929 /* FBCNotesPanelController.m in Sources */,
 				69FEA00718E7633D00EEA177 /* PDFView.m in Sources */,
@@ -596,8 +622,10 @@
 				69EB652818D5057700F72E33 /* NSDate+FBCDateToString.m in Sources */,
 				69EB651C18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m in Sources */,
 				69FD433218CFAC1C00A95B61 /* FBCTrainingListModel.m in Sources */,
+				69E32BFA18E88C8800303ED4 /* FBCRun.m in Sources */,
 				69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */,
 				691E7B0418CFE2290030B929 /* FBCFieldController.m in Sources */,
+				69E32BFD18E890C300303ED4 /* FBCPass.m in Sources */,
 				690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */,
 				69FEA00918E7633D00EEA177 /* UIView+Image.m in Sources */,
 				69FD432F18CFABF300A95B61 /* FBCExerciseListModel.m in Sources */,
