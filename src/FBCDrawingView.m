@@ -9,10 +9,11 @@
 #import "FBCDrawingView.h"
 #import "FBCDrawable.h"
 #import "FBCShot.h"
+#import "FBCToolboxController.h"
 
 @implementation FBCDrawingView
 {
-    id<FBCDrawable> _run;
+    id<FBCDrawable> _currentTool;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,7 +38,7 @@
 {
     [super drawRect:rect];
     
-    [_run draw];
+    [_currentTool draw];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -45,7 +46,9 @@
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     
-    _run = [[FBCShot alloc] initWithStartPoint:point];
+    Class<FBCDrawable> selectedTool = [FBCToolboxController selectedTool];
+    
+    _currentTool = [[selectedTool.class alloc] initWithStartPoint:point];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -53,7 +56,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     
-    [_run addPoint:point];
+    [_currentTool addPoint:point];
     [self setNeedsDisplay];
 }
 

@@ -8,6 +8,54 @@
 
 #import "FBCToolboxController.h"
 
+#import "FBCRun.h"
+#import "FBCShot.h"
+#import "FBCPass.h"
+
+static Class<FBCDrawable> g_selectedTool = nil;
+
 @implementation FBCToolboxController
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Public interface
+
++ (Class<FBCDrawable>)selectedTool
+{
+    if (g_selectedTool == nil)
+    {
+        g_selectedTool = [FBCRun class];
+    }
+    
+    return g_selectedTool;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UI actions
+
+- (IBAction)passSelected:(UIButton *)sender
+{
+    g_selectedTool = [FBCPass class];
+}
+
+- (IBAction)shotSelected:(UIButton *)sender
+{
+    g_selectedTool = [FBCShot class];
+}
+
+- (IBAction)runSelected:(UIButton *)sender
+{
+    g_selectedTool = [FBCRun class];
+}
+
+- (IBAction)coneSelected:(UIButton *)sender
+{
+}
+
+- (IBAction)attackerSelected:(UIButton *)sender
+{
+}
+
+- (IBAction)defenderSelected:(UIButton *)sender
+{
+}
 @end
