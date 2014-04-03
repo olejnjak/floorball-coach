@@ -13,9 +13,13 @@
 @interface FBCArrowLine : NSObject<FBCDrawable>
 {
     @protected UIBezierPath *_path;
+    @protected CGPoint _lastPoint;
+    @protected CGPoint _beforeLastPoint;
 }
 
 + (UIColor*)color;
 + (CGFloat)lineWidth;
+
+- (void)drawArrow;
 
 @end

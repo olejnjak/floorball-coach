@@ -7,12 +7,12 @@
 //
 
 #import "FBCDrawingView.h"
-#import "FBCRun.h"
-#import "FBCPass.h"
+#import "FBCDrawable.h"
+#import "FBCShot.h"
 
 @implementation FBCDrawingView
 {
-    FBCPass *_run;
+    id<FBCDrawable> _run;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,7 +45,7 @@
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     
-    _run = [[FBCPass alloc] initWithStartPoint:point];
+    _run = [[FBCShot alloc] initWithStartPoint:point];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event

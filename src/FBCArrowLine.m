@@ -9,12 +9,9 @@
 #import "FBCArrowLine.h"
 
 static const CGFloat kFBCArrowDistance = 30.0;
+static const CGFloat kFBCArrowShift = 15.0;
 
 @implementation FBCArrowLine
-{    
-    CGPoint _lastPoint;
-    CGPoint _beforeLastPoint;
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class methods
@@ -77,7 +74,7 @@ static const CGFloat kFBCArrowDistance = 30.0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Helpers
+#pragma mark - Public interface
 
 - (void)drawArrow
 {
@@ -95,11 +92,15 @@ static const CGFloat kFBCArrowDistance = 30.0;
     
     UIBezierPath *arrowPath = [[UIBezierPath alloc] init];
     CGFloat lineWidth = [self.class lineWidth];
+    CGFloat shiftScale = kFBCArrowShift / length;
+    CGPoint shiftVector = FBCScalePointWithCenter(vector, shiftScale, CGPointZero);
     
     [arrowPath setLineWidth:lineWidth];
     [arrowPath moveToPoint:rotatedPoint1];
     [arrowPath addLineToPoint:_lastPoint];
     [arrowPath addLineToPoint:rotatedPoint2];
+    
+    [arrowPath applyTransform:CGAffineTransformMakeTranslation(shiftVector.x, shiftVector.y)];
     
     [arrowPath stroke];
 }

@@ -35,6 +35,7 @@
 		69E32BFA18E88C8800303ED4 /* FBCRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32BF918E88C8800303ED4 /* FBCRun.m */; };
 		69E32BFD18E890C300303ED4 /* FBCPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32BFC18E890C300303ED4 /* FBCPass.m */; };
 		69E5F2CC18E8CA7300E191FE /* FBCArrowLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */; };
+		69EACF3318EE06B7006F7636 /* FBCShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EACF3218EE06B7006F7636 /* FBCShot.m */; };
 		69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651418D4E6DB00F72E33 /* FBCExercise.m */; };
 		69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651718D4E6F500F72E33 /* FBCTraining.m */; };
 		69EB651C18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651B18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m */; };
@@ -135,6 +136,8 @@
 		69E32BFE18E890E100303ED4 /* FBCDrawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCDrawable.h; sourceTree = "<group>"; };
 		69E5F2CA18E8CA7300E191FE /* FBCArrowLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCArrowLine.h; sourceTree = "<group>"; };
 		69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCArrowLine.m; sourceTree = "<group>"; };
+		69EACF3118EE06B7006F7636 /* FBCShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCShot.h; sourceTree = "<group>"; };
+		69EACF3218EE06B7006F7636 /* FBCShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCShot.m; sourceTree = "<group>"; };
 		69EB651318D4E6DB00F72E33 /* FBCExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCExercise.h; sourceTree = "<group>"; };
 		69EB651418D4E6DB00F72E33 /* FBCExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCExercise.m; sourceTree = "<group>"; };
 		69EB651618D4E6F500F72E33 /* FBCTraining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTraining.h; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 				69E32BFE18E890E100303ED4 /* FBCDrawable.h */,
 				69E5F2CA18E8CA7300E191FE /* FBCArrowLine.h */,
 				69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */,
+				69EACF3118EE06B7006F7636 /* FBCShot.h */,
+				69EACF3218EE06B7006F7636 /* FBCShot.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 				69EB651F18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m in Sources */,
 				6906CFD418DF801800D3006A /* UICollectionView+ReloadAnimated.m in Sources */,
 				69E5F2CC18E8CA7300E191FE /* FBCArrowLine.m in Sources */,
+				69EACF3318EE06B7006F7636 /* FBCShot.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				691E7B0718CFE34E0030B929 /* FBCNotesPanelController.m in Sources */,
 				69FEA00718E7633D00EEA177 /* PDFView.m in Sources */,
