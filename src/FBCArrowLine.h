@@ -8,17 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FBCDrawable.h"
+#import "FBCLine.h"
 
-@interface FBCArrowLine : NSObject<FBCDrawable>
+@interface FBCArrowLine : FBCLine
 {
-    @protected UIBezierPath *_path;
     @protected CGPoint _lastPoint;
     @protected CGPoint _beforeLastPoint;
 }
-
-+ (UIColor*)color;
-+ (CGFloat)lineWidth;
 
 - (void)drawArrow;
 

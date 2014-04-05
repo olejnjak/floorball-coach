@@ -39,17 +39,10 @@ static const CGFloat kFBCArrowShift = 15.0;
 
 - (id)initWithStartPoint:(CGPoint)startPoint
 {
-    self = [super init];
+    self = [super initWithStartPoint:startPoint];
     
     if (nil != self)
     {
-        _path = [[UIBezierPath alloc] init];
-        
-        CGFloat lineWidth = [self.class lineWidth];
-        
-        [_path setLineWidth:lineWidth];
-        [_path moveToPoint:startPoint];
-        
         _beforeLastPoint = startPoint;
         _lastPoint = startPoint;
     }
@@ -59,7 +52,7 @@ static const CGFloat kFBCArrowShift = 15.0;
 
 - (void)addPoint:(CGPoint)point
 {
-    [_path addLineToPoint:point];
+    [super addPoint:point];
     
     _beforeLastPoint = _lastPoint;
     _lastPoint = point;
@@ -67,9 +60,8 @@ static const CGFloat kFBCArrowShift = 15.0;
 
 - (void)draw
 {
-    [[self.class color] set];
+    [super draw];
     
-    [_path stroke];
     [self drawArrow];
 }
 
@@ -78,18 +70,21 @@ static const CGFloat kFBCArrowShift = 15.0;
 
 - (void)drawArrow
 {
+    // prepare directiion vector
     CGPoint vector = _lastPoint;
     vector.x -= _beforeLastPoint.x;
     vector.y -= _beforeLastPoint.y;
     
+    // prepare points for arrow
     CGFloat length = FBCDistanceBetweenPoints(vector, CGPointZero);
     CGFloat scale = kFBCArrowDistance / length;
-    
     CGPoint rotatedPoint1 = FBCRotatePointAroundPoint(_beforeLastPoint, M_PI/6, _lastPoint);
     CGPoint rotatedPoint2 = FBCRotatePointAroundPoint(_beforeLastPoint, -M_PI/6, _lastPoint);
+    
     rotatedPoint1 = FBCScalePointWithCenter(rotatedPoint1, scale, _lastPoint);
     rotatedPoint2 = FBCScalePointWithCenter(rotatedPoint2, scale, _lastPoint);
     
+    // draw arrow
     UIBezierPath *arrowPath = [[UIBezierPath alloc] init];
     CGFloat lineWidth = [self.class lineWidth];
     CGFloat shiftScale = kFBCArrowShift / length;
@@ -100,6 +95,7 @@ static const CGFloat kFBCArrowShift = 15.0;
     [arrowPath addLineToPoint:_lastPoint];
     [arrowPath addLineToPoint:rotatedPoint2];
     
+    // translate arrow from the line's ending
     [arrowPath applyTransform:CGAffineTransformMakeTranslation(shiftVector.x, shiftVector.y)];
     
     [arrowPath stroke];

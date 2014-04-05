@@ -998,6 +998,9 @@
                                 <state key="normal" title="[Line]">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="lineToolSelected:" destination="nLe-hM-tmD" eventType="touchUpInside" id="KBK-jQ-q6t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>

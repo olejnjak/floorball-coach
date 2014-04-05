@@ -14,6 +14,9 @@
 #import "FBCCone.h"
 #import "FBCAttacker.h"
 #import "FBCDefender.h"
+#import "FBCLine.h"
+
+#define kFBCDefaultTool FBCRun
 
 static Class<FBCDrawable> g_selectedTool = nil;
 
@@ -26,7 +29,7 @@ static Class<FBCDrawable> g_selectedTool = nil;
 {
     if (g_selectedTool == nil)
     {
-        g_selectedTool = [FBCRun class];
+        g_selectedTool = [kFBCDefaultTool class];
     }
     
     return g_selectedTool;
@@ -63,5 +66,10 @@ static Class<FBCDrawable> g_selectedTool = nil;
 - (IBAction)defenderSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCDefender class];
+}
+
+- (IBAction)lineToolSelected:(UIButton *)sender
+{
+    g_selectedTool = [FBCLine class];
 }
 @end
