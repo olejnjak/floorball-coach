@@ -12,6 +12,7 @@
 #import "FBCShot.h"
 #import "FBCPass.h"
 #import "FBCCone.h"
+#import "FBCAttacker.h"
 
 static Class<FBCDrawable> g_selectedTool = nil;
 
@@ -55,6 +56,7 @@ static Class<FBCDrawable> g_selectedTool = nil;
 
 - (IBAction)attackerSelected:(UIButton *)sender
 {
+    g_selectedTool = [FBCAttacker class];
 }
 
 - (IBAction)defenderSelected:(UIButton *)sender

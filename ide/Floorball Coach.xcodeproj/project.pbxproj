@@ -27,6 +27,7 @@
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
 		69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */; };
 		69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */; };
+		69B7079618F0B2230060FEB7 /* FBCAttacker.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7079518F0B2230060FEB7 /* FBCAttacker.m */; };
 		69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */; };
 		69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69C3E4FB18DCDD3900B6B1FB /* localization.strings */; };
 		69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */; };
@@ -120,6 +121,8 @@
 		69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSimpleExerciseCell.m; sourceTree = "<group>"; };
 		69A2013D18D5274F005C4E7B /* FBCTrainingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingCell.h; sourceTree = "<group>"; };
 		69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingCell.m; sourceTree = "<group>"; };
+		69B7079418F0B2230060FEB7 /* FBCAttacker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAttacker.h; sourceTree = "<group>"; };
+		69B7079518F0B2230060FEB7 /* FBCAttacker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAttacker.m; sourceTree = "<group>"; };
 		69C3E4F618DCDC7500B6B1FB /* FBCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCUtilities.h; sourceTree = "<group>"; };
 		69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCUtilities.m; sourceTree = "<group>"; };
 		69C3E4FA18DCDD3900B6B1FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				69E8D5F318F0A75B0031C171 /* FBCCone.m */,
 				69E8D5F518F0AFF30031C171 /* FBCPlayer.h */,
 				69E8D5F618F0AFF30031C171 /* FBCPlayer.m */,
+				69B7079418F0B2230060FEB7 /* FBCAttacker.h */,
+				69B7079518F0B2230060FEB7 /* FBCAttacker.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -632,6 +637,7 @@
 				6906CFD418DF801800D3006A /* UICollectionView+ReloadAnimated.m in Sources */,
 				69E5F2CC18E8CA7300E191FE /* FBCArrowLine.m in Sources */,
 				69EACF3318EE06B7006F7636 /* FBCShot.m in Sources */,
+				69B7079618F0B2230060FEB7 /* FBCAttacker.m in Sources */,
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				691E7B0718CFE34E0030B929 /* FBCNotesPanelController.m in Sources */,
 				69FEA00718E7633D00EEA177 /* PDFView.m in Sources */,
