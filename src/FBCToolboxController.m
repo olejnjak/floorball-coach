@@ -11,6 +11,7 @@
 #import "FBCRun.h"
 #import "FBCShot.h"
 #import "FBCPass.h"
+#import "FBCCone.h"
 
 static Class<FBCDrawable> g_selectedTool = nil;
 
@@ -49,6 +50,7 @@ static Class<FBCDrawable> g_selectedTool = nil;
 
 - (IBAction)coneSelected:(UIButton *)sender
 {
+    g_selectedTool = [FBCCone class];
 }
 
 - (IBAction)attackerSelected:(UIButton *)sender

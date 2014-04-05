@@ -35,6 +35,8 @@
 		69E32BFA18E88C8800303ED4 /* FBCRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32BF918E88C8800303ED4 /* FBCRun.m */; };
 		69E32BFD18E890C300303ED4 /* FBCPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32BFC18E890C300303ED4 /* FBCPass.m */; };
 		69E5F2CC18E8CA7300E191FE /* FBCArrowLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */; };
+		69E8D5F418F0A75B0031C171 /* FBCCone.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E8D5F318F0A75B0031C171 /* FBCCone.m */; };
+		69E8D5F718F0AFF40031C171 /* FBCPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E8D5F618F0AFF30031C171 /* FBCPlayer.m */; };
 		69EACF3318EE06B7006F7636 /* FBCShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EACF3218EE06B7006F7636 /* FBCShot.m */; };
 		69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651418D4E6DB00F72E33 /* FBCExercise.m */; };
 		69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651718D4E6F500F72E33 /* FBCTraining.m */; };
@@ -136,6 +138,10 @@
 		69E32BFE18E890E100303ED4 /* FBCDrawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCDrawable.h; sourceTree = "<group>"; };
 		69E5F2CA18E8CA7300E191FE /* FBCArrowLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCArrowLine.h; sourceTree = "<group>"; };
 		69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCArrowLine.m; sourceTree = "<group>"; };
+		69E8D5F218F0A75B0031C171 /* FBCCone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCCone.h; sourceTree = "<group>"; };
+		69E8D5F318F0A75B0031C171 /* FBCCone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCCone.m; sourceTree = "<group>"; };
+		69E8D5F518F0AFF30031C171 /* FBCPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCPlayer.h; sourceTree = "<group>"; };
+		69E8D5F618F0AFF30031C171 /* FBCPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCPlayer.m; sourceTree = "<group>"; };
 		69EACF3118EE06B7006F7636 /* FBCShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCShot.h; sourceTree = "<group>"; };
 		69EACF3218EE06B7006F7636 /* FBCShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCShot.m; sourceTree = "<group>"; };
 		69EB651318D4E6DB00F72E33 /* FBCExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCExercise.h; sourceTree = "<group>"; };
@@ -332,6 +338,10 @@
 				69E5F2CB18E8CA7300E191FE /* FBCArrowLine.m */,
 				69EACF3118EE06B7006F7636 /* FBCShot.h */,
 				69EACF3218EE06B7006F7636 /* FBCShot.m */,
+				69E8D5F218F0A75B0031C171 /* FBCCone.h */,
+				69E8D5F318F0A75B0031C171 /* FBCCone.m */,
+				69E8D5F518F0AFF30031C171 /* FBCPlayer.h */,
+				69E8D5F618F0AFF30031C171 /* FBCPlayer.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -596,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */,
+				69E8D5F418F0A75B0031C171 /* FBCCone.m in Sources */,
 				69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */,
 				69EB652518D503EE00F72E33 /* FBCComplexExerciseCell.m in Sources */,
 				69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */,
@@ -624,6 +635,7 @@
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				691E7B0718CFE34E0030B929 /* FBCNotesPanelController.m in Sources */,
 				69FEA00718E7633D00EEA177 /* PDFView.m in Sources */,
+				69E8D5F718F0AFF40031C171 /* FBCPlayer.m in Sources */,
 				690B804118CE33680042C083 /* main.m in Sources */,
 				69EB652818D5057700F72E33 /* NSDate+FBCDateToString.m in Sources */,
 				69EB651C18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m in Sources */,
