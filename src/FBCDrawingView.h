@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class FBCExercise;
+
 @interface FBCDrawingView : UIView
+
+@property (nonatomic,strong) FBCExercise *exercise;
 
 @end

@@ -19,9 +19,16 @@
 
 @property (nonatomic,strong,readonly) NSDate *lastChange;
 @property (nonatomic) BOOL favorite;
+@property (nonatomic,strong) NSMutableArray *drawables;
+@property (nonatomic,strong) NSMutableArray *notes;
 
-- (NSArray*)notes;
 - (void)addNote:(FBCNote*)note;
 - (void)removeNote:(FBCNote*)note;
+
+- (void)saveNotes;
+- (void)loadNotes;
+
+- (void)saveDrawables;
+- (void)loadDrawables;
 
 @end

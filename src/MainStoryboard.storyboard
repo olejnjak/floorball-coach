@@ -460,7 +460,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="g8z-UX-RFg" appends="YES" id="jyJ-MD-ZAm"/>
-                                    <segue destination="lHG-7Y-1gk" kind="embed" id="8df-h5-59s"/>
+                                    <segue destination="lHG-7Y-1gk" kind="embed" identifier="FBCFieldControllerEmbedSegue" id="8df-h5-59s"/>
                                 </connections>
                             </containerView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPy-zX-Lw8" userLabel="Notes">
@@ -1311,6 +1311,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="drawingView" destination="llm-9W-ROe" id="ScH-HU-LdL"/>
                         <outlet property="fieldImageView" destination="oGL-vn-S3G" id="kos-0k-Ylg"/>
                         <outlet property="view" destination="z0p-KC-6J2" id="X0M-Ch-KIu"/>
                     </connections>

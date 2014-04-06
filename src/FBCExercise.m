@@ -12,18 +12,16 @@
 static const NSString *kFBCNameKey = @"name";
 static const NSString *kFBCLastChangeKey = @"lastChange";
 static const NSString *kFBCFavoriteKey = @"favorite";
-static const NSString *kFBCNotesKey = @"notes";
 
 @implementation FBCExercise
-{
-    NSMutableArray *_notes;
-}
 
 @synthesize parent = _parent;
 
 @synthesize name = _name;
 @synthesize lastChange = _lastChange;
 @synthesize favorite = _favorite;
+@synthesize drawables = _drawables;
+@synthesize notes = _notes;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Init and dealloc
@@ -60,18 +58,10 @@ static const NSString *kFBCNotesKey = @"notes";
     {
         NSString *lastChangeString = [dictionary objectForKey:kFBCLastChangeKey];
         NSNumber *favoriteNumber = [dictionary objectForKey:kFBCFavoriteKey];
-        NSArray *notesArray = [dictionary objectForKey:kFBCNotesKey];
         
         self.name = [dictionary objectForKey:kFBCNameKey];
         self.favorite = [favoriteNumber boolValue];
         _lastChange = [NSDate dateFromString:lastChangeString];
-        
-        [notesArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            NSDictionary *noteDictionary = obj;
-            FBCNote *note = [[FBCNote alloc] initWithDictionary:noteDictionary];
-            
-            [self.notesArray addObject:note];
-        }];
     }
     
     return self;
@@ -95,20 +85,10 @@ static const NSString *kFBCNotesKey = @"notes";
     NSMutableDictionary *structureDict = [NSMutableDictionary dictionaryWithCapacity:4];
     NSString *lastChangeString = [self.lastChange dateToString];
     NSNumber *favoriteNumber = [NSNumber numberWithBool:self.favorite];
-    NSMutableArray *notesArray = [NSMutableArray arrayWithCapacity:self.notesArray.count];
     
     [structureDict setObject:self.name forKey:kFBCNameKey];
     [structureDict setObject:lastChangeString forKey:kFBCLastChangeKey];
     [structureDict setObject:favoriteNumber forKey:kFBCFavoriteKey];
-    
-    [self.notesArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        FBCNote *note = obj;
-        NSDictionary *noteDictionary = [note structure];
-        
-        [notesArray addObject:noteDictionary];
-    }];
-    
-    [structureDict setObject:notesArray forKey:kFBCNotesKey];
     
     return structureDict;
 }
@@ -116,9 +96,9 @@ static const NSString *kFBCNotesKey = @"notes";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Custom properties
 
-- (NSMutableArray*)notesArray
+- (NSMutableArray*)notes
 {
-    if (_notes == nil)
+    if (nil == _notes)
     {
         _notes = [NSMutableArray arrayWithCapacity:1];
     }
@@ -126,15 +106,18 @@ static const NSString *kFBCNotesKey = @"notes";
     return _notes;
 }
 
+- (NSMutableArray*)drawables
+{
+    if (nil == _drawables)
+    {
+        _drawables = [NSMutableArray arrayWithCapacity:1];
+    }
+    
+    return _drawables;
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public interface
-
-- (NSArray*)notes
-{
-    NSArray *result = [NSArray arrayWithArray:self.notesArray];
-    
-    return result;
-}
 
 - (void)addNote:(FBCNote *)note
 {
@@ -143,7 +126,7 @@ static const NSString *kFBCNotesKey = @"notes";
         return;
     }
     
-    [self.notesArray addObject:note];
+    [self.notes addObject:note];
 }
 
 - (void)removeNote:(FBCNote *)note
@@ -153,7 +136,27 @@ static const NSString *kFBCNotesKey = @"notes";
         return;
     }
     
-    [self.notesArray removeObject:note];
+    [self.notes removeObject:note];
+}
+
+- (void)saveDrawables
+{
+    
+}
+
+- (void)loadDrawables
+{
+    
+}
+
+- (void)saveNotes
+{
+    
+}
+
+- (void)loadNotes
+{
+    
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -24,6 +24,7 @@
 #define kFBCNotesEmbedSegue @"FBCNotesEmbedSegue"
 #define kFBCNoteDetailPopoverSegue @"FBCNoteDetailPopoverSegue"
 #define kFBCEditExerciseNamePopoverSegue @"FBCEditExerciseNamePopoverSegue"
+#define kFBCFieldControllerEmbedSegue @"FBCFieldControllerEmbedSegue"
 
 // Training detail segues
 #define kFBCEditTrainingNamePopoverSegue @"FBCEditTrainingNamePopoverSegue"

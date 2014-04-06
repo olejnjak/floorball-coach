@@ -8,13 +8,15 @@
 
 #import "FBCDrawingView.h"
 #import "FBCDrawable.h"
-#import "FBCShot.h"
 #import "FBCToolboxController.h"
+#import "FBCExercise.h"
 
 @implementation FBCDrawingView
 {
     id<FBCDrawable> _currentTool;
 }
+
+@synthesize exercise = _exercise;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Init and dealloc
@@ -38,8 +40,17 @@
 {
     [super drawRect:rect];
     
+    NSArray *exerciseDrawables = [self.exercise drawables];
+    
+    [exerciseDrawables enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj draw];
+    }];
+    
     [_currentTool draw];
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Touches handling
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -58,6 +69,26 @@
     
     [_currentTool addPoint:point];
     [self setNeedsDisplay];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self saveCurrentTool];
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self saveCurrentTool];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
+
+- (void)saveCurrentTool
+{
+    NSMutableArray *exerciseDrawables = [self.exercise drawables];
+    
+    [exerciseDrawables addObject:_currentTool];
 }
 
 @end

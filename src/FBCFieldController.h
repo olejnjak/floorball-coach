@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class FBCDrawingView;
+@class FBCExercise;
+
 @interface FBCFieldController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIImageView *fieldImageView;
+@property (weak, nonatomic) IBOutlet FBCDrawingView *drawingView;
+
+@property (nonatomic,strong) FBCExercise *exercise;
 
 @end

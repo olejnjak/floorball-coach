@@ -9,6 +9,7 @@
 #import "FBCExerciseController.h"
 #import "FBCNotesPanelController.h"
 #import "FBCEditUnitNameController.h"
+#import "FBCFieldController.h"
 
 #define kFBCNotesShownConstant 0
 #define kFBCNotesHiddenConstant -320
@@ -41,6 +42,13 @@
     _popoverController = nil;
 }
 
+- (void)dealloc
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    [nc removeObserver:self];
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIViewController methods
 
@@ -51,8 +59,8 @@
     NSAssert(self.exercise != nil, @"Cannot start with no training set.");
     
     [self __setInitState];
+    [self resetNotifications];
     [self updateExerciseName];
-    [self loadExercise];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -70,6 +78,12 @@
 
 - (IBAction)backButtonPressed:(UIBarButtonItem *)sender
 {
+    [self.exercise saveNotes];
+    [self.exercise setNotes:nil];
+    
+    [self.exercise saveDrawables];
+    [self.exercise setDrawables:nil];
+    
     if (self.delegate != nil)
     {
         [self.delegate controllerIsDone:self];
@@ -82,6 +96,25 @@
     {
         [self hideNotesPanel];
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Notifications
+
+- (void)resetNotifications
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    [nc removeObserver:self];
+    
+    [nc addObserver:self selector:@selector(applicationToBackgroundNotification:)
+               name:UIApplicationDidEnterBackgroundNotification object:nil];
+}
+
+- (void)applicationToBackgroundNotification:(NSNotification*)notification
+{
+    [self.exercise saveNotes];
+    [self.exercise saveDrawables];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -133,6 +166,13 @@
         _popoverController = popController;
         
         return;
+    }
+    
+    if ([identifier isEqualToString:kFBCFieldControllerEmbedSegue])
+    {
+        FBCFieldController *dst = [segue destinationViewController];
+        
+        [dst setExercise:self.exercise];
     }
 }
 
@@ -198,11 +238,6 @@
     FBCExercise *exercise = [self exercise];
     
     [self.nameItem setTitle:exercise.name];
-}
-
-- (void)loadExercise
-{
-    
 }
 
 @end
