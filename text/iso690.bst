@@ -230,7 +230,7 @@ FUNCTION {bbl.and}
 { "and"}
 
 FUNCTION {bbl.etal}
-{ "etc." }
+{ "et al." }
 
 FUNCTION {bbl.editors}
 { "editors" }
@@ -603,7 +603,7 @@ FUNCTION {format.title}
   "title" bibinfo.check
   duplicate$ empty$ 'skip$
     {
-      select.language
+%       select.language
     }
   if$
 }
@@ -672,7 +672,7 @@ FUNCTION {format.btitle}
   duplicate$ empty$ 'skip$
     {
       emphasize
-      select.language
+%       select.language
     }
   if$
 }
@@ -1064,7 +1064,7 @@ FUNCTION {format.organization.address}
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
-  add.colon
+  new.sentence
   format.title "title" output.check
   new.sentence
   crossref missing$
@@ -1094,10 +1094,10 @@ FUNCTION {book}
 { output.bibitem
   author empty$
     { format.editors "author and editor" output.check
-      add.colon
+      new.sentence
     }
     { format.authors output.nonnull
-      add.colon
+      new.sentence
       crossref missing$
         { "author and editor" editor either.or.check }
         'skip$
@@ -1129,7 +1129,7 @@ FUNCTION {book}
 FUNCTION {booklet}
 { output.bibitem
   format.authors output
-  add.colon
+  new.sentence
   format.title "title" output.check
   new.sentence
   howpublished "howpublished" bibinfo.check output
@@ -1148,10 +1148,10 @@ FUNCTION {inbook}
 { output.bibitem
   author empty$
     { format.editors "author and editor" output.check
-      add.colon
+      new.sentence
     }
     { format.authors output.nonnull
-      add.colon
+      new.sentence
       crossref missing$
         { "author and editor" editor either.or.check }
         'skip$
@@ -1190,7 +1190,7 @@ FUNCTION {inbook}
 FUNCTION {incollection}
 { output.bibitem
   format.authors "author" output.check
-  add.colon
+  new.sentence
   format.title "title" output.check
   new.sentence
   crossref missing$
@@ -1216,7 +1216,7 @@ FUNCTION {incollection}
 FUNCTION {inproceedings}
 { output.bibitem
   format.authors "author" output.check
-  add.colon
+  new.sentence
   format.title "title" output.check
   new.sentence
   crossref missing$
@@ -1255,7 +1255,7 @@ FUNCTION {manual}
     }
     { format.authors output.nonnull }
   if$
-  add.colon
+  new.sentence
   format.btitle "title" output.check
   new.sentence
   author empty$
@@ -1283,7 +1283,7 @@ FUNCTION {manual}
 FUNCTION {mastersthesis}
 { output.bibitem
   format.authors "author" output.check
-  add.colon
+  new.sentence
   format.btitle
   "title" output.check
   new.sentence
@@ -1301,7 +1301,7 @@ FUNCTION {mastersthesis}
 FUNCTION {misc}
 { output.bibitem
   format.authors output
-  add.colon
+  new.sentence
   format.title output
   new.sentence
   howpublished "howpublished" bibinfo.check output
@@ -1316,7 +1316,7 @@ FUNCTION {misc}
 FUNCTION {phdthesis}
 { output.bibitem
   format.authors "author" output.check
-  add.colon
+  new.sentence
   format.btitle
   "title" output.check
   new.sentence
@@ -1338,7 +1338,7 @@ FUNCTION {proceedings}
     }
     { format.editors output.nonnull }
   if$
-  add.colon
+  new.sentence
   format.btitle "title" output.check
   format.bvolume output
   format.number.series output
@@ -1373,7 +1373,7 @@ FUNCTION {proceedings}
 FUNCTION {techreport}
 { output.bibitem
   format.authors "author" output.check
-  add.colon
+  new.sentence
   format.title
   "title" output.check
   new.sentence
@@ -1391,7 +1391,7 @@ FUNCTION {techreport}
 FUNCTION {unpublished}
 { output.bibitem
   format.authors "author" output.check
-  add.colon
+  new.sentence
   format.title "title" output.check
   format.date output
   format.doi output
@@ -1548,7 +1548,7 @@ FUNCTION {presort}
   'sort.key$ :=
 }
 ITERATE {presort}
-SORT
+% SORT
 STRINGS { longest.label }
 INTEGERS { number.label longest.label.width }
 FUNCTION {initialize.longest.label}
@@ -1586,8 +1586,8 @@ FUNCTION {begin.bib}
   write$ newline$
   "  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup \urlstyle{rm}\Url}\fi"
   write$ newline$
-  "\providecommand{\selectlanguage}[1]{\relax}"
-  write$ newline$
+%   "\providecommand{\selectlanguage}[1]{\relax}"
+%   write$ newline$
   "\providecommand{\eprint}[2][]{\biburl{#2}}"
   write$ newline$
 }

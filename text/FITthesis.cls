@@ -349,7 +349,7 @@ sp\^ osobom, ktor\'y nezni\v zuje hodnotu Diela (vr\'atane komer\v cn\'eho vyu\v
 		
 		\vfill
 		
-		\if\@lang1\chapterstyletitle{Pod{\v e}kov{\' a}n{\' i}}\else\if\@lang2\chapterstyletitle{Po\v dakovanie}\else\chapterstyletitle{Acknowledgements}\fi\theacknowledgements
+		\if\@lang1\chapterstyletitle{Pod{\v e}kov{\' a}n{\' i}}\else\if\@lang2\chapterstyletitle{Po\v dakovanie}\else\chapterstyletitle{Acknowledgements}\fi\fi\theacknowledgements
 	\fi
 }
 
@@ -410,10 +410,23 @@ sp\^ osobom, ktor\'y nezni\v zuje hodnotu Diela (vr\'atane komer\v cn\'eho vyu\v
 }
 
 \DeclareRobustCommand{\abstractpage}{
-	\chapter*{Abstract}
+	\chapter*{Abstrakt}
+	\if@abstractcsdefined
+		\theabstractcs
+	\else
+		\ClassError{FITthesis}{Abstract in Czech unspecified}{Specify abstract in Czech language using the \abstractCS command.}
+	\fi
+
+	\if@keywordscsdefined
+		\paragraph*{Kl{\' i}{\v c}ov{\' a} slova} \thekeywordscs{}
+	\else
+		\ClassError{FITthesis}{Czech keywords unspecified}{Specify the keywords in Czech of your thesis using \keywordsCS command.}
+	\fi
+
+	\vfil
 
 	\if@abstractendefined
-		\theabstracten
+		\chapterstyletitle{Abstract}\theabstracten
 	\else
 		\ClassError{FITthesis}{Abstract in English unspecified}{Specify abstract in English using the \abstractEN command.}
 	\fi
@@ -422,20 +435,6 @@ sp\^ osobom, ktor\'y nezni\v zuje hodnotu Diela (vr\'atane komer\v cn\'eho vyu\v
 		\paragraph*{Keywords} \thekeywordsen{}
 	\else
 		\ClassError{FITthesis}{English keywords unspecified}{Specify the keywords in English of your thesis using \keywordsEN command.}
-	\fi
-
-	\vfil
-
-	\if@abstractcsdefined
-		\chapterstyletitle{Abstrakt}\theabstractcs
-	\else
-		\ClassError{FITthesis}{Abstract in Czech unspecified}{Specify abstract in Czech language using the \abstractCS command.}
-	\fi
-	
-	\if@keywordscsdefined
-		\paragraph*{Kl{\' i}{\v c}ov{\' a} slova} \thekeywordscs{}
-	\else
-		\ClassError{FITthesis}{Czech keywords unspecified}{Specify the keywords in Czech of your thesis using \keywordsCS command.}
 	\fi
 }
 
