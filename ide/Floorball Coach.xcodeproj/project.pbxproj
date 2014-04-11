@@ -26,6 +26,17 @@
 		69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */; };
 		6943971418F0BEE10044DEAC /* FBCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943971318F0BEE10044DEAC /* FBCLine.m */; };
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
+		6999802318F87BCD00063C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
+		6999802418F87BCD00063C86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
+		6999802518F87BCD00063C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
+		6999805518F87C3800063C86 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6999804D18F87C3800063C86 /* InfoPlist.strings */; };
+		6999805618F87C3800063C86 /* RTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999805018F87C3800063C86 /* RTPAppDelegate.m */; };
+		6999805718F87C3800063C86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6999805118F87C3800063C86 /* Images.xcassets */; };
+		6999805818F87C3800063C86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999805218F87C3800063C86 /* main.m */; };
+		6999805918F87C3800063C86 /* RubberTool prototype-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6999805318F87C3800063C86 /* RubberTool prototype-Info.plist */; };
+		6999805B18F87DAF00063C86 /* RTPMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6999805A18F87DAF00063C86 /* RTPMainStoryboard.storyboard */; };
+		6999805E18F87E6C00063C86 /* RTPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999805D18F87E6C00063C86 /* RTPMainViewController.m */; };
+		6999806118F8812700063C86 /* RTPDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999806018F8812700063C86 /* RTPDrawingView.m */; };
 		69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */; };
 		69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A2013E18D5274F005C4E7B /* FBCTrainingCell.m */; };
 		69ADBD3618F0C9DE00DF7B18 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF27F18CE32C900F741AB /* XCTest.framework */; };
@@ -123,6 +134,19 @@
 		6990D18118D5C371003BC7BC /* FBCSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortViewController.h; sourceTree = "<group>"; };
 		6990D18218D5C371003BC7BC /* FBCSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSortViewController.m; sourceTree = "<group>"; };
 		6990D18618D5D1D5003BC7BC /* FBCSortBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortBlocks.h; sourceTree = "<group>"; };
+		6999802218F87BCD00063C86 /* RubberTool prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RubberTool prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6999804E18F87C3800063C86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6999804F18F87C3800063C86 /* RTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPAppDelegate.h; sourceTree = "<group>"; };
+		6999805018F87C3800063C86 /* RTPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPAppDelegate.m; sourceTree = "<group>"; };
+		6999805118F87C3800063C86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6999805218F87C3800063C86 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6999805318F87C3800063C86 /* RubberTool prototype-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RubberTool prototype-Info.plist"; sourceTree = "<group>"; };
+		6999805418F87C3800063C86 /* RubberTool prototype-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RubberTool prototype-Prefix.pch"; sourceTree = "<group>"; };
+		6999805A18F87DAF00063C86 /* RTPMainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RTPMainStoryboard.storyboard; sourceTree = "<group>"; };
+		6999805C18F87E6C00063C86 /* RTPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPMainViewController.h; sourceTree = "<group>"; };
+		6999805D18F87E6C00063C86 /* RTPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPMainViewController.m; sourceTree = "<group>"; };
+		6999805F18F8812700063C86 /* RTPDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPDrawingView.h; sourceTree = "<group>"; };
+		6999806018F8812700063C86 /* RTPDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTPDrawingView.m; sourceTree = "<group>"; };
 		69A2013A18D51C67005C4E7B /* FBCSimpleExerciseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSimpleExerciseCell.h; sourceTree = "<group>"; };
 		69A2013B18D51C67005C4E7B /* FBCSimpleExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSimpleExerciseCell.m; sourceTree = "<group>"; };
 		69A2013D18D5274F005C4E7B /* FBCTrainingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingCell.h; sourceTree = "<group>"; };
@@ -211,6 +235,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6999801F18F87BCD00063C86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6999802418F87BCD00063C86 /* CoreGraphics.framework in Frameworks */,
+				6999802518F87BCD00063C86 /* UIKit.framework in Frameworks */,
+				6999802318F87BCD00063C86 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69ADBD3218F0C9DE00DF7B18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,6 +344,26 @@
 			name = Exercise;
 			sourceTree = "<group>";
 		};
+		6999804C18F87C3800063C86 /* RubberTool prototype */ = {
+			isa = PBXGroup;
+			children = (
+				6999804D18F87C3800063C86 /* InfoPlist.strings */,
+				6999804F18F87C3800063C86 /* RTPAppDelegate.h */,
+				6999805018F87C3800063C86 /* RTPAppDelegate.m */,
+				6999805118F87C3800063C86 /* Images.xcassets */,
+				6999805218F87C3800063C86 /* main.m */,
+				6999805318F87C3800063C86 /* RubberTool prototype-Info.plist */,
+				6999805418F87C3800063C86 /* RubberTool prototype-Prefix.pch */,
+				6999805A18F87DAF00063C86 /* RTPMainStoryboard.storyboard */,
+				6999805C18F87E6C00063C86 /* RTPMainViewController.h */,
+				6999805D18F87E6C00063C86 /* RTPMainViewController.m */,
+				6999805F18F8812700063C86 /* RTPDrawingView.h */,
+				6999806018F8812700063C86 /* RTPDrawingView.m */,
+			);
+			name = "RubberTool prototype";
+			path = "../prototypes/RubberTool prototype";
+			sourceTree = "<group>";
+		};
 		69ADBD2318F0C71C00DF7B18 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +448,7 @@
 		69ECF25A18CE32C800F741AB = {
 			isa = PBXGroup;
 			children = (
+				6999804C18F87C3800063C86 /* RubberTool prototype */,
 				69ECF26518CE32C900F741AB /* Frameworks */,
 				69BC278918E087C600C0B055 /* lib */,
 				69ECF26418CE32C900F741AB /* Products */,
@@ -408,6 +463,7 @@
 			children = (
 				69ECF26318CE32C900F741AB /* Floorball Coach.app */,
 				69ADBD3518F0C9DE00DF7B18 /* Floorball Coach Tests.xctest */,
+				6999802218F87BCD00063C86 /* RubberTool prototype.app */,
 			);
 			name = Products;
 			path = ../out;
@@ -543,6 +599,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6999802118F87BCD00063C86 /* RubberTool prototype */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6999804618F87BCD00063C86 /* Build configuration list for PBXNativeTarget "RubberTool prototype" */;
+			buildPhases = (
+				6999801E18F87BCD00063C86 /* Sources */,
+				6999801F18F87BCD00063C86 /* Frameworks */,
+				6999802018F87BCD00063C86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RubberTool prototype";
+			productName = "RubberTool prototype";
+			productReference = 6999802218F87BCD00063C86 /* RubberTool prototype.app */;
+			productType = "com.apple.product-type.application";
+		};
 		69ADBD3418F0C9DE00DF7B18 /* Floorball Coach Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69ADBD4418F0C9DE00DF7B18 /* Build configuration list for PBXNativeTarget "Floorball Coach Tests" */;
@@ -584,7 +657,7 @@
 		69ECF25B18CE32C800F741AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = FBC;
+				CLASSPREFIX = RTP;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jakub Olejník";
 				TargetAttributes = {
@@ -607,11 +680,23 @@
 			targets = (
 				69ECF26218CE32C800F741AB /* Floorball Coach */,
 				69ADBD3418F0C9DE00DF7B18 /* Floorball Coach Tests */,
+				6999802118F87BCD00063C86 /* RubberTool prototype */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6999802018F87BCD00063C86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6999805518F87C3800063C86 /* InfoPlist.strings in Resources */,
+				6999805B18F87DAF00063C86 /* RTPMainStoryboard.storyboard in Resources */,
+				6999805918F87C3800063C86 /* RubberTool prototype-Info.plist in Resources */,
+				6999805718F87C3800063C86 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69ADBD3318F0C9DE00DF7B18 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,6 +718,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6999801E18F87BCD00063C86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6999806118F8812700063C86 /* RTPDrawingView.m in Sources */,
+				6999805818F87C3800063C86 /* main.m in Sources */,
+				6999805E18F87E6C00063C86 /* RTPMainViewController.m in Sources */,
+				6999805618F87C3800063C86 /* RTPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		69ADBD3118F0C9DE00DF7B18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -710,6 +806,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6999804D18F87C3800063C86 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6999804E18F87C3800063C86 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		69ADBD2B18F0C77600DF7B18 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -729,6 +833,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6999804718F87BCD00063C86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "../prototypes/RubberTool prototype/RubberTool prototype-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "../prototypes/RubberTool prototype/RubberTool prototype-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6999804818F87BCD00063C86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "../prototypes/RubberTool prototype/RubberTool prototype-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "../prototypes/RubberTool prototype/RubberTool prototype-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		69ADBD4518F0C9DE00DF7B18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -888,6 +1028,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6999804618F87BCD00063C86 /* Build configuration list for PBXNativeTarget "RubberTool prototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6999804718F87BCD00063C86 /* Debug */,
+				6999804818F87BCD00063C86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		69ADBD4418F0C9DE00DF7B18 /* Build configuration list for PBXNativeTarget "Floorball Coach Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -895,6 +1043,7 @@
 				69ADBD4618F0C9DE00DF7B18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69ECF25E18CE32C800F741AB /* Build configuration list for PBXProject "Floorball Coach" */ = {
 			isa = XCConfigurationList;
