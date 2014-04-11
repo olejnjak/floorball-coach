@@ -73,12 +73,12 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self saveCurrentTool];
+    [self finishTouch];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self saveCurrentTool];
+    [self finishTouch];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -89,6 +89,17 @@
     NSMutableArray *exerciseDrawables = [self.exercise drawables];
     
     [exerciseDrawables addObject:_currentTool];
+}
+
+- (void)finishTouch
+{
+    [self saveCurrentTool];
+    
+    if ([_currentTool respondsToSelector:@selector(finish)])
+    {
+        [_currentTool finish];
+        [self setNeedsDisplay];
+    }
 }
 
 @end

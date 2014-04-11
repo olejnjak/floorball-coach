@@ -21,5 +21,6 @@
 - (IBAction)attackerSelected:(UIButton *)sender;
 - (IBAction)defenderSelected:(UIButton *)sender;
 - (IBAction)lineToolSelected:(UIButton *)sender;
+- (IBAction)rubberToolSelected:(UIButton *)sender;
 
 @end

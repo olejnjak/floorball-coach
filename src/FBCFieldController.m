@@ -20,18 +20,7 @@
 {
     [super viewDidLoad];
     
-    [self loadBackground];
     [self.drawingView setExercise:self.exercise];
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Helpers
-
-- (void)loadBackground
-{
-    UIImage *fieldBg = [UIImage imageWithPDFNamed:kFBCFieldImage atHeight:2048];
-    
-    [self.fieldImageView setImage:fieldBg];
 }
 
 @end

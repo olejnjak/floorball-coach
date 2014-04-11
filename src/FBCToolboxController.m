@@ -8,13 +8,7 @@
 
 #import "FBCToolboxController.h"
 
-#import "FBCRun.h"
-#import "FBCShot.h"
-#import "FBCPass.h"
-#import "FBCCone.h"
-#import "FBCAttacker.h"
-#import "FBCDefender.h"
-#import "FBCLine.h"
+#import "FBCTools.h"
 
 #define kFBCDefaultTool FBCRun
 
@@ -71,5 +65,10 @@ static Class<FBCDrawable> g_selectedTool = nil;
 - (IBAction)lineToolSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCLine class];
+}
+
+- (IBAction)rubberToolSelected:(UIButton *)sender
+{
+    g_selectedTool = [FBCRubber class];
 }
 @end

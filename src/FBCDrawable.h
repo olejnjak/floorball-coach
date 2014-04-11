@@ -15,4 +15,6 @@
 - (void)addPoint:(CGPoint)point;
 - (void)draw;
 
+@optional - (void)finish;
+
 @end
