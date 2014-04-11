@@ -848,6 +848,7 @@
 				INFOPLIST_FILE = "../prototypes/RubberTool prototype/RubberTool prototype-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E10A7434-76B8-4660-AA8D-005EFC0445BE";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1035,6 +1036,7 @@
 				6999804818F87BCD00063C86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69ADBD4418F0C9DE00DF7B18 /* Build configuration list for PBXNativeTarget "Floorball Coach Tests" */ = {
 			isa = XCConfigurationList;
