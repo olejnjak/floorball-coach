@@ -31,6 +31,7 @@
     if (nil != self)
     {
         _centerPoint = CGPointZero;
+        [self preparePathWithCenter:startPoint];
     }
     
     return self;

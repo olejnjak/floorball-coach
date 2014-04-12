@@ -60,6 +60,7 @@
     Class<FBCDrawable> selectedTool = [FBCToolboxController selectedTool];
     
     _currentTool = [[selectedTool.class alloc] initWithStartPoint:point];
+    [self setNeedsDisplay];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
