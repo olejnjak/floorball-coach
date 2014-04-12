@@ -70,6 +70,11 @@ static const CGFloat kFBCArrowShift = 15.0;
 
 - (void)drawArrow
 {
+    if (CGPointEqualToPoint(_beforeLastPoint, _lastPoint))
+    {
+        return;
+    }
+    
     // prepare directiion vector
     CGPoint vector = _lastPoint;
     vector.x -= _beforeLastPoint.x;
