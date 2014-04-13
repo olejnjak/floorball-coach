@@ -12,6 +12,7 @@
 static NSString *kFBCNameKey = @"name";
 static NSString *kFBCLastChangeKey = @"lastChange";
 static NSString *kFBCFavoriteKey = @"favorite";
+static NSString *kFBCUIDKey = @"uid";
 
 @implementation FBCExercise
 
@@ -22,6 +23,7 @@ static NSString *kFBCFavoriteKey = @"favorite";
 @synthesize favorite = _favorite;
 @synthesize drawables = _drawables;
 @synthesize notes = _notes;
+@synthesize uid = _uid;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Init and dealloc
@@ -69,10 +71,12 @@ static NSString *kFBCFavoriteKey = @"favorite";
         NSString *name = [aDecoder decodeObjectForKey:kFBCNameKey];
         BOOL favorite = [aDecoder decodeBoolForKey:kFBCFavoriteKey];
         NSDate *lastChange = [aDecoder decodeObjectForKey:kFBCLastChangeKey];
+        NSUUID *uid = [aDecoder decodeObjectForKey:kFBCUIDKey];
         
         [self setName:name];
         [self setFavorite:favorite];
         [self setLastChange:lastChange];
+        [self setUid:uid];
     }
     
     return self;
@@ -83,6 +87,7 @@ static NSString *kFBCFavoriteKey = @"favorite";
     [aCoder encodeObject:self.name forKey:kFBCNameKey];
     [aCoder encodeObject:self.lastChange forKey:kFBCLastChangeKey];
     [aCoder encodeBool:self.favorite forKey:kFBCFavoriteKey];
+    [aCoder encodeObject:self.uid forKey:kFBCUIDKey];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -139,24 +144,16 @@ static NSString *kFBCFavoriteKey = @"favorite";
     [self.notes removeObject:note];
 }
 
-- (void)saveDrawables
+- (void)save
 {
-    
+    [self saveDrawables];
+    [self saveNotes];
 }
 
-- (void)loadDrawables
+- (void)load
 {
-    
-}
-
-- (void)saveNotes
-{
-    
-}
-
-- (void)loadNotes
-{
-    
+    [self loadDrawables];
+    [self loadNotes];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,6 +179,35 @@ static NSString *kFBCFavoriteKey = @"favorite";
     NSUInteger changeHash = [self.lastChange hash];
     
     return nameHash + 2 * changeHash;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
+
+- (void)loadNotes
+{
+    NSURL *fileURL = FBCFileForExerciseNotes(self);
+    
+    NSMutableArray *notes = [NSKeyedUnarchiver unarchiveObjectWithFile:fileURL.path];
+    
+    _notes = notes;
+}
+
+- (void)saveNotes
+{
+    NSURL *fileURL = FBCFileForExerciseNotes(self);
+    
+    [NSKeyedArchiver archiveRootObject:self.notes toFile:fileURL.path];
+}
+
+- (void)loadDrawables
+{
+    
+}
+
+- (void)saveDrawables
+{
+    
 }
 
 @end

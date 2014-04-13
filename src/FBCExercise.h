@@ -21,14 +21,12 @@
 @property (nonatomic) BOOL favorite;
 @property (nonatomic,strong) NSMutableArray *drawables;
 @property (nonatomic,strong) NSMutableArray *notes;
+@property (nonatomic) NSUUID *uid;
 
 - (void)addNote:(FBCNote*)note;
 - (void)removeNote:(FBCNote*)note;
 
-- (void)saveNotes;
-- (void)loadNotes;
-
-- (void)saveDrawables;
-- (void)loadDrawables;
+- (void)save;
+- (void)load;
 
 @end

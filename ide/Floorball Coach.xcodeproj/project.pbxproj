@@ -43,7 +43,6 @@
 		69ADBD3618F0C9DE00DF7B18 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF27F18CE32C900F741AB /* XCTest.framework */; };
 		69ADBD3718F0C9DE00DF7B18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		69ADBD3818F0C9DE00DF7B18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
-		69ADBD4718F0CA1600DF7B18 /* FBCBezierPathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6909AB0618F0C1FD007B783C /* FBCBezierPathTest.m */; };
 		69B7079618F0B2230060FEB7 /* FBCAttacker.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7079518F0B2230060FEB7 /* FBCAttacker.m */; };
 		69B7079918F0B43B0060FEB7 /* FBCDefender.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7079818F0B43B0060FEB7 /* FBCDefender.m */; };
 		69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */; };
@@ -100,7 +99,6 @@
 		6906CFD318DF801800D3006A /* UICollectionView+ReloadAnimated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+ReloadAnimated.m"; sourceTree = "<group>"; };
 		6906CFD518DF871200D3006A /* NSMutableArray+RemoveDuplicates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+RemoveDuplicates.h"; sourceTree = "<group>"; };
 		6906CFD618DF871200D3006A /* NSMutableArray+RemoveDuplicates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+RemoveDuplicates.m"; sourceTree = "<group>"; };
-		6909AB0618F0C1FD007B783C /* FBCBezierPathTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCBezierPathTest.m; sourceTree = "<group>"; };
 		690B803818CE33680042C083 /* FBCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAppDelegate.h; sourceTree = "<group>"; };
 		690B803918CE33680042C083 /* FBCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAppDelegate.m; sourceTree = "<group>"; };
 		690B803A18CE33680042C083 /* Floorball Coach-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Floorball Coach-Info.plist"; sourceTree = "<group>"; };
@@ -292,8 +290,6 @@
 				69EB651918D4EBD800F72E33 /* FBCTrainingUnitProtocol.h */,
 				69EB651A18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.h */,
 				69EB651B18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m */,
-				69EB652618D5057700F72E33 /* NSDate+FBCDateToString.h */,
-				69EB652718D5057700F72E33 /* NSDate+FBCDateToString.m */,
 				69C3E4F618DCDC7500B6B1FB /* FBCUtilities.h */,
 				69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */,
 				69C3E4FC18DCDF6C00B6B1FB /* FBCNote.h */,
@@ -375,7 +371,6 @@
 				69ADBD2318F0C71C00DF7B18 /* Supporting files */,
 				69EB651D18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.h */,
 				69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */,
-				6909AB0618F0C1FD007B783C /* FBCBezierPathTest.m */,
 			);
 			name = tst;
 			path = ../tst;
@@ -530,6 +525,8 @@
 			children = (
 				6906CFD218DF801800D3006A /* UICollectionView+ReloadAnimated.h */,
 				6906CFD318DF801800D3006A /* UICollectionView+ReloadAnimated.m */,
+				69EB652618D5057700F72E33 /* NSDate+FBCDateToString.h */,
+				69EB652718D5057700F72E33 /* NSDate+FBCDateToString.m */,
 				6906CFD518DF871200D3006A /* NSMutableArray+RemoveDuplicates.h */,
 				6906CFD618DF871200D3006A /* NSMutableArray+RemoveDuplicates.m */,
 			);
@@ -702,7 +699,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69ADBD4718F0CA1600DF7B18 /* FBCBezierPathTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

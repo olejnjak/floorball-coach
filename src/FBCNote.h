@@ -8,14 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FBCNote : NSObject
+@interface FBCNote : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSDate *dateCreated;
-
-- (id)initWithDictionary:(NSDictionary*)dictionary;
-
-- (NSDictionary*)structure;
 
 @end

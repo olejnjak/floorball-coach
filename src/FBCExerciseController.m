@@ -61,6 +61,8 @@
     [self __setInitState];
     [self resetNotifications];
     [self updateExerciseName];
+    
+    [self.exercise load];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
@@ -83,10 +85,8 @@
 
 - (IBAction)backButtonPressed:(UIBarButtonItem *)sender
 {
-    [self.exercise saveNotes];
+    [self.exercise save];
     [self.exercise setNotes:nil];
-    
-    [self.exercise saveDrawables];
     [self.exercise setDrawables:nil];
     
     if (self.delegate != nil)
@@ -118,8 +118,7 @@
 
 - (void)applicationToBackgroundNotification:(NSNotification*)notification
 {
-    [self.exercise saveNotes];
-    [self.exercise saveDrawables];
+    [self.exercise save];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

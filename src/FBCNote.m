@@ -8,9 +8,9 @@
 
 #import "FBCNote.h"
 
-static const NSString* kFBCNameKey = @"name";
-static const NSString* kFBCDateCreatedKey = @"dateCreated";
-static const NSString* kFBCTextKey = @"text";
+static NSString* kFBCNameKey = @"name";
+static NSString* kFBCDateCreatedKey = @"dateCreated";
+static NSString* kFBCTextKey = @"text";
 
 @implementation FBCNote
 
@@ -18,32 +18,32 @@ static const NSString* kFBCTextKey = @"text";
 @synthesize dateCreated = _dateCreated;
 @synthesize text = _text;
 
-- (id)initWithDictionary:(NSDictionary *)dictionary
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCoding methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
     
     if (nil != self)
     {
-        NSString *dateCreatedString = [dictionary objectForKey:kFBCDateCreatedKey];
+        NSDate *dateCreated = [aDecoder decodeObjectForKey:kFBCDateCreatedKey];
+        NSString *text = [aDecoder decodeObjectForKey:kFBCTextKey];
+        NSString *name = [aDecoder decodeObjectForKey:kFBCNameKey];
         
-        self.dateCreated = [NSDate dateFromString:dateCreatedString];
-        self.text = [dictionary objectForKey:kFBCTextKey];
-        self.name = [dictionary objectForKey:kFBCNameKey];
+        [self setDateCreated:dateCreated];
+        [self setText:text];
+        [self setName:name];
     }
     
     return self;
 }
 
-- (NSDictionary*)structure
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    NSMutableDictionary *structureDictionary = [NSMutableDictionary dictionaryWithCapacity:3];
-    NSString *dateCreatedString = [self.dateCreated dateToString];
-    
-    [structureDictionary setObject:self.name forKey:kFBCNameKey];
-    [structureDictionary setObject:dateCreatedString forKey:kFBCDateCreatedKey];
-    [structureDictionary setObject:self.text forKey:kFBCTextKey];
-    
-    return structureDictionary;
+    [aCoder encodeObject:self.name forKey:kFBCNameKey];
+    [aCoder encodeObject:self.dateCreated forKey:kFBCDateCreatedKey];
+    [aCoder encodeObject:self.text forKey:kFBCTextKey];
 }
 
 @end
