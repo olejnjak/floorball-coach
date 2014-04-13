@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "FBCTrainingUnitProtocol.h"
+#import "FBCDrawable.h"
 
 @class FBCTraining;
 @class FBCNote;
@@ -17,16 +18,23 @@
 
 @property (nonatomic,weak) FBCTraining *parent;
 
-@property (nonatomic,strong) NSDate *lastChange;
+@property (nonatomic,strong,readonly) NSDate *lastChange;
 @property (nonatomic) BOOL favorite;
-@property (nonatomic,strong) NSMutableArray *drawables;
-@property (nonatomic,strong) NSMutableArray *notes;
 @property (nonatomic) NSUUID *uid;
+
+- (NSArray*)drawables;
+- (NSArray*)notes;
+- (UIImage*)icon;
 
 - (void)addNote:(FBCNote*)note;
 - (void)removeNote:(FBCNote*)note;
 
+- (void)addDrawable:(id<FBCDrawable>)drawable;
+
+- (void)saveIcon:(UIImage*)icon;
+
 - (void)save;
 - (void)load;
+- (void)empty;
 
 @end

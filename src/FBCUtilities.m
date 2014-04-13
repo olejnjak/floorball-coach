@@ -13,6 +13,7 @@ static NSString *kFBCLibraryFile = @".unitLibrary";
 static NSString *kFBCExerciseFolderName = @".exercises";
 static NSString *kFBCExerciseNotesFile = @".notes";
 static NSString *kFBCExerciseDrawablesFile = @".drawables";
+static NSString *kFBCExerciseIconFile = @"icon.png";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Forward declarations
@@ -46,6 +47,13 @@ NSURL* FBCFileForExerciseNotes(FBCExercise *exercise)
 }
 
 NSURL* FBCFileForExerciseDrawables(FBCExercise *exercise)
+{
+    NSURL *exerciseDir = FBCFolderForExercise(exercise);
+    
+    return [exerciseDir URLByAppendingPathComponent:kFBCExerciseDrawablesFile];
+}
+
+NSURL *FBCFileForExerciseIcon(FBCExercise* exercise)
 {
     NSURL *exerciseDir = FBCFolderForExercise(exercise);
     

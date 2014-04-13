@@ -8,6 +8,7 @@
 
 #import "FBCFieldController.h"
 #import "FBCDrawingView.h"
+#import "FBCExercise.h"
 
 @implementation FBCFieldController
 
@@ -21,6 +22,18 @@
     [super viewDidLoad];
     
     [self.drawingView setExercise:self.exercise];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    [self.exercise saveIcon:image];
 }
 
 @end

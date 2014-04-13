@@ -87,9 +87,7 @@
 
 - (void)saveCurrentTool
 {
-    NSMutableArray *exerciseDrawables = [self.exercise drawables];
-    
-    [exerciseDrawables addObject:_currentTool];
+    [self.exercise addDrawable:_currentTool];
 }
 
 - (void)finishTouch

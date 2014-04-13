@@ -15,14 +15,16 @@ static NSString *kFBCFavoriteKey = @"favorite";
 static NSString *kFBCUIDKey = @"uid";
 
 @implementation FBCExercise
+{
+    NSMutableArray *_drawables;
+    NSMutableArray *_notes;
+}
 
 @synthesize parent = _parent;
 
 @synthesize name = _name;
 @synthesize lastChange = _lastChange;
 @synthesize favorite = _favorite;
-@synthesize drawables = _drawables;
-@synthesize notes = _notes;
 @synthesize uid = _uid;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,7 +103,7 @@ static NSString *kFBCUIDKey = @"uid";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Custom properties
 
-- (NSMutableArray*)notes
+- (NSMutableArray*)mutableNotes
 {
     if (nil == _notes)
     {
@@ -111,7 +113,7 @@ static NSString *kFBCUIDKey = @"uid";
     return _notes;
 }
 
-- (NSMutableArray*)drawables
+- (NSMutableArray*)mutableDrawables
 {
     if (nil == _drawables)
     {
@@ -119,6 +121,11 @@ static NSString *kFBCUIDKey = @"uid";
     }
     
     return _drawables;
+}
+
+- (void)setLastChange:(NSDate *)lastChange
+{
+    _lastChange = lastChange;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -131,7 +138,8 @@ static NSString *kFBCUIDKey = @"uid";
         return;
     }
     
-    [self.notes addObject:note];
+    [self.mutableNotes addObject:note];
+    self.lastChange = [NSDate date];
 }
 
 - (void)removeNote:(FBCNote *)note
@@ -141,7 +149,36 @@ static NSString *kFBCUIDKey = @"uid";
         return;
     }
     
-    [self.notes removeObject:note];
+    [self.mutableNotes removeObject:note];
+    self.lastChange = [NSDate date];
+}
+
+- (void)addDrawable:(id<FBCDrawable>)drawable
+{
+    if (nil == drawable)
+    {
+        return;
+    }
+    
+    [self.mutableDrawables addObject:drawable];
+    self.lastChange = [NSDate date];
+}
+
+- (NSArray*)drawables
+{
+    return [NSArray arrayWithArray:self.mutableDrawables];
+}
+
+- (NSArray*)notes
+{
+    return [NSArray arrayWithArray:self.mutableNotes];
+}
+
+- (UIImage*)icon
+{
+    NSURL *iconURL = FBCFileForExerciseIcon(self);
+    
+    return [UIImage imageWithContentsOfFile:iconURL.path];
 }
 
 - (void)save
@@ -154,6 +191,12 @@ static NSString *kFBCUIDKey = @"uid";
 {
     [self loadDrawables];
     [self loadNotes];
+}
+
+- (void)empty
+{
+    _notes = nil;
+    _drawables = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -198,6 +241,13 @@ static NSString *kFBCUIDKey = @"uid";
     NSURL *fileURL = FBCFileForExerciseNotes(self);
     
     [NSKeyedArchiver archiveRootObject:self.notes toFile:fileURL.path];
+}
+
+- (void)saveIcon:(UIImage*)icon
+{
+    NSData * iconData = UIImagePNGRepresentation(icon);
+    
+    [iconData writeToURL:FBCFileForExerciseIcon(self) atomically:NO];
 }
 
 - (void)loadDrawables

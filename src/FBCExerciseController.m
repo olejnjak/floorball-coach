@@ -86,8 +86,7 @@
 - (IBAction)backButtonPressed:(UIBarButtonItem *)sender
 {
     [self.exercise save];
-    [self.exercise setNotes:nil];
-    [self.exercise setDrawables:nil];
+    [self.exercise empty];
     
     if (self.delegate != nil)
     {

@@ -120,6 +120,10 @@
     else
     {
         [cell setHidden:NO];
+        
+        UIImage *icon = [exercise icon];
+        
+        [cell.icon setImage:icon];
     }
     
     [cell.nameLabel setText:exercise.name];
