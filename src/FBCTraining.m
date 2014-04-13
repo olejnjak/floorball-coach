@@ -10,9 +10,9 @@
 #import "FBCExercise.h"
 #import "FBCTrainingUnitLibrary.h"
 
-static const NSString *kFBCNameKey = @"name";
-static const NSString *kFBCDateKey = @"date";
-static const NSString *kFBCExerciseKey = @"exercises";
+static NSString *kFBCNameKey = @"name";
+static NSString *kFBCDateKey = @"date";
+static NSString *kFBCExerciseKey = @"exercises";
 
 @implementation FBCTraining
 {
@@ -52,33 +52,39 @@ static const NSString *kFBCExerciseKey = @"exercises";
     return self;
 }
 
-- (id)initWithDictionary:(NSDictionary *)dictionary
+- (void)__setInitState
+{
+    _mutableExercises = nil;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCoding methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
     
-    if (self != nil)
+    if (nil != self)
     {
-        NSString *dateString = [dictionary objectForKey:kFBCDateKey];
-        NSArray *exerciseArray = [dictionary objectForKey:kFBCExerciseKey];
+        [self __setInitState];
         
-        _name = [dictionary objectForKey:kFBCNameKey];
-        _date = [NSDate dateFromString:dateString];
-        _mutableExercises = [NSMutableArray arrayWithCapacity:exerciseArray.count];
+        NSDate *date = [aDecoder decodeObjectForKey:kFBCDateKey];
+        NSString *name = [aDecoder decodeObjectForKey:kFBCNameKey];
+        NSMutableArray *exercises = [aDecoder decodeObjectForKey:kFBCExerciseKey];
         
-        [exerciseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            NSDictionary *exerciseDictionary = obj;
-            FBCExercise *exercise = [[FBCExercise alloc] initWithDictionary:exerciseDictionary];
-            
-            [_mutableExercises addObject:exercise];
-        }];
+        _date = date;
+        [self setName:name];
+        _mutableExercises = exercises;
     }
     
     return self;
 }
 
-- (void)__setInitState
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    _mutableExercises = nil;
+    [aCoder encodeObject:self.date forKey:kFBCDateKey];
+    [aCoder encodeObject:self.name forKey:kFBCNameKey];
+    [aCoder encodeObject:self.mutableExercises forKey:kFBCExerciseKey];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -117,27 +123,6 @@ static const NSString *kFBCExerciseKey = @"exercises";
     NSArray *result = [NSArray arrayWithArray:mutableResult];
     
     return result;
-}
-
-- (NSDictionary*)structure
-{
-    NSMutableDictionary *structureDict = [NSMutableDictionary dictionaryWithCapacity:3];
-    NSString *dateString = [self.date dateToString];
-    NSMutableArray *exerciseArray = [NSMutableArray arrayWithCapacity:self.exercises.count];
-    
-    [structureDict setObject:dateString forKey:kFBCDateKey];
-    [structureDict setObject:self.name forKey:kFBCNameKey];
-    
-    [self.exercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        FBCExercise *exercise = obj;
-        NSDictionary *exerciseDictionary = [exercise structure];
-        
-        [exerciseArray addObject:exerciseDictionary];
-    }];
-    
-    [structureDict setObject:exerciseArray forKey:kFBCExerciseKey];
-    
-    return structureDict;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

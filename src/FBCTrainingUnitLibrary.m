@@ -10,8 +10,8 @@
 #import "FBCExercise.h"
 #import "FBCTraining.h"
 
-static const NSString *kFBCExerciseKey = @"allExercises";
-static const NSString *kFBCTrainingKey = @"trainings";
+static NSString *kFBCExerciseKey = @"allExercises";
+static NSString *kFBCTrainingKey = @"trainings";
 
 static FBCTrainingUnitLibrary *g_Library = nil;
 
@@ -45,10 +45,27 @@ static FBCTrainingUnitLibrary *g_Library = nil;
     return self;
 }
 
-- (void)__setInitState
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Custom properties
+
+- (NSMutableArray*)allExercises
 {
-    _trainings = [NSMutableArray arrayWithCapacity:1];
-    _allExercises = [NSMutableArray arrayWithCapacity:1];
+    if (nil == _allExercises)
+    {
+        _allExercises = [[NSMutableArray alloc] initWithCapacity:1];
+    }
+    
+    return _allExercises;
+}
+
+- (NSMutableArray*)trainings
+{
+    if (nil == _trainings)
+    {
+        _trainings = [[NSMutableArray alloc] initWithCapacity:1];
+    }
+    
+    return _trainings;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,7 +73,7 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 
 - (NSArray*)exercises
 {
-    NSArray *result = [_allExercises arrayByRemovingDuplicates];
+    NSArray *result = [self.allExercises arrayByRemovingDuplicates];
     
     return result;
 }
@@ -70,16 +87,9 @@ static FBCTrainingUnitLibrary *g_Library = nil;
     return result;
 }
 
-- (NSArray*)trainings
-{
-    NSArray *result = [NSArray arrayWithArray:_trainings];
-    
-    return result;
-}
-
 - (NSArray*)flatTrainings
 {
-    NSArray *trainings = _trainings;
+    NSArray *trainings = [self trainings];
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:trainings.count];
     
     [trainings enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -94,22 +104,22 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 
 - (void)addExercise:(FBCExercise *)exercise
 {
-    [_allExercises addObject:exercise];
+    [self.allExercises addObject:exercise];
 }
 
 - (void)addTraining:(FBCTraining *)training
 {
-    [_trainings addObject:training];
+    [self.trainings addObject:training];
 }
 
 - (void)removeTraining:(FBCTraining *)training
 {
-    [_trainings removeObject:training];
+    [self.trainings removeObject:training];
 }
 
 - (void)removeExercise:(FBCExercise *)exercise
 {
-    [_allExercises removeObject:exercise];
+    [self.allExercises removeObject:exercise];
 }
 
 - (FBCTraining*)createNewTraining
@@ -135,85 +145,22 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 
 - (void)saveStructure
 {
-    NSMutableArray *trainingArray = [NSMutableArray arrayWithCapacity:_trainings.count];
+    NSMutableDictionary *libDict = [NSMutableDictionary dictionaryWithCapacity:2];
+    NSURL *libFile = FBCLibraryFile();
     
-    [_trainings enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        id<FBCTrainingUnitProtocol> unit = obj;
-        NSDictionary *structure = [unit structure];
-        
-        [trainingArray addObject:structure];
-    }];
+    [libDict setObject:self.trainings forKey:kFBCTrainingKey];
+    [libDict setObject:self.allExercises forKey:kFBCExerciseKey];
     
-    NSMutableArray *exerciseArray = [NSMutableArray arrayWithCapacity:_allExercises.count];
-    
-    [_allExercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        id<FBCTrainingUnitProtocol> unit = obj;
-        NSDictionary *structure = [unit structure];
-        
-        [exerciseArray addObject:structure];
-    }];
-    
-    NSMutableDictionary *structureDictionary = [NSMutableDictionary dictionaryWithCapacity:2];
-    
-    [structureDictionary setObject:trainingArray forKey:kFBCTrainingKey];
-    [structureDictionary setObject:exerciseArray forKey:kFBCExerciseKey];
-
-    NSURL *targetURL = FBCLibraryFile();
-    NSData *libData = [NSJSONSerialization dataWithJSONObject:structureDictionary options:NSJSONWritingPrettyPrinted
-                                                        error:nil];
-    
-    [libData writeToURL:targetURL atomically:YES];
+    [NSKeyedArchiver archiveRootObject:libDict toFile:libFile.path];
 }
 
 - (void)loadStructure
 {
-    NSURL *targetURL = FBCLibraryFile();
-    NSData *libData = [NSData dataWithContentsOfURL:targetURL];
+    NSURL *libFile = FBCLibraryFile();
+    NSMutableDictionary *items = [NSKeyedUnarchiver unarchiveObjectWithFile:libFile.path];
     
-    if (nil == libData)
-    {
-        [self __setInitState];
-        
-        return;
-    }
-    
-    NSDictionary *structureDictionary = [NSJSONSerialization
-                                         JSONObjectWithData:libData options:NSJSONReadingMutableContainers error:nil];
-    
-    NSMutableArray *trainings = [structureDictionary objectForKey:kFBCTrainingKey];
-    NSMutableArray *exercises = [structureDictionary objectForKey:kFBCExerciseKey];
-    
-    if (nil != trainings)
-    {
-        _trainings = [NSMutableArray arrayWithCapacity:trainings.count];
-        
-        [trainings enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            NSDictionary *unitDict = obj;
-            FBCTraining *training = [[FBCTraining alloc] initWithDictionary:unitDict];
-            
-            [_trainings addObject:training];
-        }];
-    }
-    else
-    {
-        _trainings = [NSMutableArray arrayWithCapacity:1];
-    }
-    
-    if (nil != exercises)
-    {
-        _allExercises = [NSMutableArray arrayWithCapacity:exercises.count];
-        
-        [exercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            NSDictionary *unitDict = obj;
-            FBCExercise *exercise = [[FBCExercise alloc] initWithDictionary:unitDict];
-            
-            [_allExercises addObject:exercise];
-        }];
-    }
-    else
-    {
-        _allExercises = [NSMutableArray arrayWithCapacity:1];
-    }
+    _trainings = [items objectForKey:kFBCTrainingKey];
+    _allExercises = [items objectForKey:kFBCExerciseKey];
 }
 
 @end

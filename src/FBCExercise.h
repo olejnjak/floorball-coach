@@ -17,7 +17,7 @@
 
 @property (nonatomic,weak) FBCTraining *parent;
 
-@property (nonatomic,strong,readonly) NSDate *lastChange;
+@property (nonatomic,strong) NSDate *lastChange;
 @property (nonatomic) BOOL favorite;
 @property (nonatomic,strong) NSMutableArray *drawables;
 @property (nonatomic,strong) NSMutableArray *notes;

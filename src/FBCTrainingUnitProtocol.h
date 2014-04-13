@@ -8,14 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol FBCTrainingUnitProtocol <NSObject>
+@protocol FBCTrainingUnitProtocol <NSObject, NSCoding>
 
 @property (nonatomic,strong) NSString *name;
 
 - (id)initWithName:(NSString*)name;
-- (id)initWithDictionary:(NSDictionary*)dictionary;
 
 - (NSArray*)flatten;
-- (NSDictionary*)structure;
 
 @end

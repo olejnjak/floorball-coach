@@ -30,7 +30,7 @@
 
 - (NSArray*)exercises;
 - (NSArray*)favoriteExercises;
-- (NSArray*)trainings;
+- (NSMutableArray*)trainings;
 - (NSArray*)flatTrainings;
 
 - (void)loadStructure;

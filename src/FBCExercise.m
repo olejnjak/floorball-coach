@@ -9,9 +9,9 @@
 #import "FBCExercise.h"
 #import "FBCNote.h"
 
-static const NSString *kFBCNameKey = @"name";
-static const NSString *kFBCLastChangeKey = @"lastChange";
-static const NSString *kFBCFavoriteKey = @"favorite";
+static NSString *kFBCNameKey = @"name";
+static NSString *kFBCLastChangeKey = @"lastChange";
+static NSString *kFBCFavoriteKey = @"favorite";
 
 @implementation FBCExercise
 
@@ -50,26 +50,39 @@ static const NSString *kFBCFavoriteKey = @"favorite";
     return self;
 }
 
-- (id)initWithDictionary:(NSDictionary *)dictionary
+- (void)__setInitState
+{
+    _notes = nil;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCoding methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
     
     if (nil != self)
     {
-        NSString *lastChangeString = [dictionary objectForKey:kFBCLastChangeKey];
-        NSNumber *favoriteNumber = [dictionary objectForKey:kFBCFavoriteKey];
+        [self __setInitState];
         
-        self.name = [dictionary objectForKey:kFBCNameKey];
-        self.favorite = [favoriteNumber boolValue];
-        _lastChange = [NSDate dateFromString:lastChangeString];
+        NSString *name = [aDecoder decodeObjectForKey:kFBCNameKey];
+        BOOL favorite = [aDecoder decodeBoolForKey:kFBCFavoriteKey];
+        NSDate *lastChange = [aDecoder decodeObjectForKey:kFBCLastChangeKey];
+        
+        [self setName:name];
+        [self setFavorite:favorite];
+        [self setLastChange:lastChange];
     }
     
     return self;
 }
 
-- (void)__setInitState
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    _notes = nil;
+    [aCoder encodeObject:self.name forKey:kFBCNameKey];
+    [aCoder encodeObject:self.lastChange forKey:kFBCLastChangeKey];
+    [aCoder encodeBool:self.favorite forKey:kFBCFavoriteKey];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,19 +91,6 @@ static const NSString *kFBCFavoriteKey = @"favorite";
 - (NSArray*)flatten
 {
     return @[self];
-}
-
-- (NSDictionary*)structure
-{
-    NSMutableDictionary *structureDict = [NSMutableDictionary dictionaryWithCapacity:4];
-    NSString *lastChangeString = [self.lastChange dateToString];
-    NSNumber *favoriteNumber = [NSNumber numberWithBool:self.favorite];
-    
-    [structureDict setObject:self.name forKey:kFBCNameKey];
-    [structureDict setObject:lastChangeString forKey:kFBCLastChangeKey];
-    [structureDict setObject:favoriteNumber forKey:kFBCFavoriteKey];
-    
-    return structureDict;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
