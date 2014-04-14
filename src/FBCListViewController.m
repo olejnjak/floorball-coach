@@ -164,7 +164,7 @@
         FBCExerciseController *dst = [segue destinationViewController];
         
         [dst setDelegate:self];
-        [dst setExercise:_selectedUnit];
+        [dst setExercise:(FBCExercise*)_selectedUnit];
         
         _selectedUnit = nil;
         

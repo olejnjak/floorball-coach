@@ -10,6 +10,9 @@
 
 static const CGFloat kFBCCircleHalfSize = 20.0;
 
+static NSString *kFBCLastPointKey = @"lastPoint";
+static NSString *kFBCFinishedKey = @"finished";
+
 @implementation FBCRubber
 {
     CGPoint _lastPoint;
@@ -68,6 +71,43 @@ static const CGFloat kFBCCircleHalfSize = 20.0;
 - (void)finish
 {
     _finished = YES;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCoding methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (nil != self)
+    {
+        _lastPoint = [aDecoder decodeCGPointForKey:kFBCLastPointKey];
+        _finished = [aDecoder decodeBoolForKey:kFBCFinishedKey];
+    }
+    
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [super encodeWithCoder:aCoder];
+    
+    [aCoder encodeCGPoint:_lastPoint forKey:kFBCLastPointKey];
+    [aCoder encodeBool:_finished forKey:kFBCFinishedKey];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCopying methods
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    FBCRubber *copy = [super copyWithZone:zone];
+    
+    copy->_lastPoint = _lastPoint;
+    copy->_finished = _finished;
+    
+    return copy;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

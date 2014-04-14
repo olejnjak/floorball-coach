@@ -10,7 +10,7 @@
 
 #import "FBCDrawable.h"
 
-@interface FBCPlayer : NSObject
+@interface FBCPlayer : NSObject<FBCDrawable>
 {
     @protected UIBezierPath *_path;
 }

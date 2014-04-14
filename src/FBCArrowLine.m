@@ -11,6 +11,9 @@
 static const CGFloat kFBCArrowDistance = 30.0;
 static const CGFloat kFBCArrowShift = 15.0;
 
+static NSString *kFBCLastPointKey = @"lastPoint";
+static NSString *kFBCBeforeLastPointKey = @"beforeLastPoint";
+
 @implementation FBCArrowLine
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,6 +66,43 @@ static const CGFloat kFBCArrowShift = 15.0;
     [super draw];
     
     [self drawArrow];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCopying methods
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    FBCArrowLine *copy = [super copyWithZone:zone];
+    
+    copy->_beforeLastPoint = _beforeLastPoint;
+    copy->_lastPoint = _lastPoint;
+    
+    return copy;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCoding methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (nil != self)
+    {
+        _lastPoint = [aDecoder decodeCGPointForKey:kFBCLastPointKey];
+        _beforeLastPoint = [aDecoder decodeCGPointForKey:kFBCBeforeLastPointKey];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [super encodeWithCoder:aCoder];
+    
+    [aCoder encodeCGPoint:_lastPoint forKey:kFBCLastPointKey];
+    [aCoder encodeCGPoint:_beforeLastPoint forKey:kFBCBeforeLastPointKey];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

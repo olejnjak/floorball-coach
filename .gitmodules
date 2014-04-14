@@ -1,3 +1,6 @@
 [submodule "lib/LXReorderableCollectionViewFlowLayout"]
 	path = lib/LXReorderableCollectionViewFlowLayout
 	url = https://github.com/lxcid/LXReorderableCollectionViewFlowLayout.git
+[submodule "lib/Lumberjack"]
+	path = lib/Lumberjack
+	url = https://github.com/CocoaLumberjack/CocoaLumberjack.git

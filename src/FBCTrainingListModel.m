@@ -83,7 +83,7 @@
     }
     else
     {
-        FBCExercise *exercise = objectToRemove;
+        FBCExercise *exercise = (FBCExercise*)objectToRemove;
         FBCTraining *training = [exercise parent];
         
         [training removeExercise:exercise];

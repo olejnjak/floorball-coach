@@ -11,6 +11,9 @@
 #define kFBCDoubleLineHalfDistance 5.0
 #define kFBCLineWidth 4.0
 
+static NSString *kFBCPath2Key = @"path2";
+static NSString *kFBCMovedKey = @"moved";
+
 @implementation FBCShot
 {
     UIBezierPath *_path2;
@@ -30,6 +33,44 @@
 {
     return kFBCLineWidth;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCopying methods
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    FBCShot *copy = [super copyWithZone:zone];
+    
+    copy->_path2 = [_path2 copyWithZone:zone];
+    copy->_wasMoved = _wasMoved;
+    
+    return copy;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCoding methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (nil != self)
+    {
+        _path2 = [aDecoder decodeObjectForKey:kFBCPath2Key];
+        _wasMoved = [aDecoder decodeBoolForKey:kFBCMovedKey];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [super encodeWithCoder:aCoder];
+    
+    [aCoder encodeObject:_path2 forKey:kFBCPath2Key];
+    [aCoder encodeBool:_wasMoved forKey:kFBCMovedKey];
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Superclass override

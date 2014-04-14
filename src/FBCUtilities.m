@@ -57,7 +57,20 @@ NSURL *FBCFileForExerciseIcon(FBCExercise* exercise)
 {
     NSURL *exerciseDir = FBCFolderForExercise(exercise);
     
-    return [exerciseDir URLByAppendingPathComponent:kFBCExerciseDrawablesFile];
+    return [exerciseDir URLByAppendingPathComponent:kFBCExerciseIconFile];
+}
+
+NSURL* FBCFolderForExercise(FBCExercise* exercise)
+{
+    NSUUID *uid = [exercise uid];
+    NSString *uidString = [uid UUIDString];
+    
+    NSURL *exerciseFolder = FBCExerciseFolder();
+    NSURL *result = [exerciseFolder URLByAppendingPathComponent:uidString];
+    
+    FBCCreateDirectoryIfNotCreated(result);
+    
+    return result;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,19 +134,6 @@ NSURL* FBCExerciseFolder(void)
     NSURL *lib = FBCLibraryURL();
     NSURL *result = [lib URLByAppendingPathComponent:kFBCExerciseFolderName];
 
-    return result;
-}
-
-NSURL* FBCFolderForExercise(FBCExercise* exercise)
-{
-    NSUUID *uid = [exercise uid];
-    NSString *uidString = [uid UUIDString];
-    
-    NSURL *exerciseFolder = FBCExerciseFolder();
-    NSURL *result = [exerciseFolder URLByAppendingPathComponent:uidString];
-    
-    FBCCreateDirectoryIfNotCreated(result);
-    
     return result;
 }
 

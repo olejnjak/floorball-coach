@@ -8,6 +8,8 @@
 
 #import "FBCLine.h"
 
+static NSString *kFBCPathKey = @"path";
+
 @implementation FBCLine
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,6 +31,38 @@
 - (id)init
 {
     return nil;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCoding methods
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    
+    if (nil != self)
+    {
+        _path = [aDecoder decodeObjectForKey:kFBCPathKey];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:_path forKey:kFBCPathKey];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCopying methods
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    FBCLine *copy = [[self.class allocWithZone:zone] initWithStartPoint:CGPointZero];
+    
+    copy->_path = [_path copyWithZone:zone];
+    
+    return copy;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

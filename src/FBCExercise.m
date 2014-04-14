@@ -14,6 +14,8 @@ static NSString *kFBCLastChangeKey = @"lastChange";
 static NSString *kFBCFavoriteKey = @"favorite";
 static NSString *kFBCUIDKey = @"uid";
 
+static const int ddLogLevel = FBC_BASIC_LOG_LEVEL;
+
 @implementation FBCExercise
 {
     NSMutableArray *_drawables;
@@ -49,6 +51,7 @@ static NSString *kFBCUIDKey = @"uid";
         [self __setInitState];
         [self setName:name];
         _lastChange = [NSDate date];
+        [self setUid:[NSUUID UUID]];
     }
     
     return self;
@@ -90,6 +93,22 @@ static NSString *kFBCUIDKey = @"uid";
     [aCoder encodeObject:self.lastChange forKey:kFBCLastChangeKey];
     [aCoder encodeBool:self.favorite forKey:kFBCFavoriteKey];
     [aCoder encodeObject:self.uid forKey:kFBCUIDKey];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCopying methods
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    FBCExercise *copy = [[self.class allocWithZone:zone] initWithName:self.name];
+    
+    [copy setLastChange:self.lastChange];
+    [copy setFavorite:self.favorite];
+    copy->_drawables = [_drawables copyWithZone:zone];
+    copy->_notes = [_notes copyWithZone:zone];
+    [copy saveIcon:self.icon];
+    
+    return copy;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -240,7 +259,7 @@ static NSString *kFBCUIDKey = @"uid";
 {
     NSURL *fileURL = FBCFileForExerciseNotes(self);
     
-    [NSKeyedArchiver archiveRootObject:self.notes toFile:fileURL.path];
+    [NSKeyedArchiver archiveRootObject:_notes toFile:fileURL.path];
 }
 
 - (void)saveIcon:(UIImage*)icon
@@ -252,12 +271,18 @@ static NSString *kFBCUIDKey = @"uid";
 
 - (void)loadDrawables
 {
+    NSURL *fileURL = FBCFileForExerciseDrawables(self);
     
+    NSMutableArray *drawables = [NSKeyedUnarchiver unarchiveObjectWithFile:fileURL.path];
+    
+    _drawables = drawables;
 }
 
 - (void)saveDrawables
 {
+    NSURL *fileURL = FBCFileForExerciseDrawables(self);
     
+    [NSKeyedArchiver archiveRootObject:_drawables toFile:fileURL.path];
 }
 
 @end

@@ -119,6 +119,11 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 
 - (void)removeExercise:(FBCExercise *)exercise
 {
+    NSURL *exerciseURL = FBCFolderForExercise(exercise);
+    NSFileManager *fm = [NSFileManager defaultManager];
+    
+    [fm removeItemAtURL:exerciseURL error:nil];
+    
     [self.allExercises removeObject:exercise];
 }
 
@@ -134,14 +139,6 @@ static FBCTrainingUnitLibrary *g_Library = nil;
 - (FBCExercise*)createNewExercise
 {
     FBCExercise *newExercise = [[FBCExercise alloc] initWithName:LOC(@"FBCNewExercise")];
-    NSUUID *uid = [NSUUID UUID];
-    
-    while ([self exerciseExistsWithUUID:uid])
-    {
-        uid = [NSUUID UUID];
-    }
-    
-    [newExercise setUid:uid];
     
     [self addExercise:newExercise];
     
@@ -169,27 +166,6 @@ static FBCTrainingUnitLibrary *g_Library = nil;
     
     _trainings = [items objectForKey:kFBCTrainingKey];
     _allExercises = [items objectForKey:kFBCExerciseKey];
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Helpers
-
-- (BOOL)exerciseExistsWithUUID:(NSUUID*)uuid
-{
-    __block BOOL exists = NO;
-    
-    [self.allExercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        FBCExercise *exercise = obj;
-        BOOL equal = [exercise.uid isEqual:uuid];
-        
-        if (YES == equal)
-        {
-            exists = YES;
-            *stop = YES;
-        }
-    }];
-    
-    return exists;
 }
 
 @end

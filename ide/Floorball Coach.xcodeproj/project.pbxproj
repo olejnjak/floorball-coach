@@ -25,6 +25,7 @@
 		69391D0618DD99E70009E3AB /* FBCFavoritesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0518DD99E70009E3AB /* FBCFavoritesModel.m */; };
 		69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */; };
 		6943971418F0BEE10044DEAC /* FBCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943971318F0BEE10044DEAC /* FBCLine.m */; };
+		6951182918FB54EE000E778F /* libLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6951182418FB535E000E778F /* libLumberjack.a */; };
 		6964A67518F8ABD7006B502E /* FBCRubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964A67418F8ABD7006B502E /* FBCRubber.m */; };
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
 		6999802318F87BCD00063C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
@@ -77,6 +78,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6951182318FB535E000E778F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6951181E18FB535E000E778F /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC58E48814DC70CF006B16E2;
+			remoteInfo = Lumberjack;
+		};
+		6951182518FB535E000E778F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6951181E18FB535E000E778F /* Lumberjack.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC58E4C114DC8BE2006B16E2;
+			remoteInfo = LibTest;
+		};
+		6951182718FB5377000E778F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6951181E18FB535E000E778F /* Lumberjack.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DC58E48714DC70CF006B16E2;
+			remoteInfo = Lumberjack;
+		};
 		69ADBD4218F0C9DE00DF7B18 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69ECF25B18CE32C800F741AB /* Project object */;
@@ -124,6 +146,7 @@
 		69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCEditUnitNameController.m; sourceTree = "<group>"; };
 		6943971218F0BEE10044DEAC /* FBCLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCLine.h; sourceTree = "<group>"; };
 		6943971318F0BEE10044DEAC /* FBCLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCLine.m; sourceTree = "<group>"; };
+		6951181E18FB535E000E778F /* Lumberjack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lumberjack.xcodeproj; path = ../lib/Lumberjack/Xcode/LumberjackFramework/Mobile/Lumberjack.xcodeproj; sourceTree = "<group>"; };
 		6964A67218F8AA7B006B502E /* FBCTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBCTools.h; sourceTree = "<group>"; };
 		6964A67318F8ABD7006B502E /* FBCRubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCRubber.h; sourceTree = "<group>"; };
 		6964A67418F8ABD7006B502E /* FBCRubber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCRubber.m; sourceTree = "<group>"; };
@@ -244,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6951182918FB54EE000E778F /* libLumberjack.a in Frameworks */,
 				69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */,
 				69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */,
 				69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */,
@@ -325,6 +349,15 @@
 				69E6260C18DDBB8B00438EA8 /* Notes */,
 			);
 			name = Exercise;
+			sourceTree = "<group>";
+		};
+		6951181F18FB535E000E778F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6951182418FB535E000E778F /* libLumberjack.a */,
+				6951182618FB535E000E778F /* LibTest.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		6999804C18F87C3800063C86 /* RubberTool prototype */ = {
@@ -432,6 +465,7 @@
 		69ECF25A18CE32C800F741AB = {
 			isa = PBXGroup;
 			children = (
+				6951181E18FB535E000E778F /* Lumberjack.xcodeproj */,
 				6999804C18F87C3800063C86 /* RubberTool prototype */,
 				69ECF26518CE32C900F741AB /* Frameworks */,
 				69BC278918E087C600C0B055 /* lib */,
@@ -612,6 +646,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6951182818FB5377000E778F /* PBXTargetDependency */,
 			);
 			name = "Floorball Coach";
 			productName = "Floorbal Coach";
@@ -643,6 +678,12 @@
 			mainGroup = 69ECF25A18CE32C800F741AB;
 			productRefGroup = 69ECF26418CE32C900F741AB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6951181F18FB535E000E778F /* Products */;
+					ProjectRef = 6951181E18FB535E000E778F /* Lumberjack.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				69ECF26218CE32C800F741AB /* Floorball Coach */,
@@ -651,6 +692,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6951182418FB535E000E778F /* libLumberjack.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLumberjack.a;
+			remoteRef = 6951182318FB535E000E778F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6951182618FB535E000E778F /* LibTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = LibTest.app;
+			remoteRef = 6951182518FB535E000E778F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6999802018F87BCD00063C86 /* Resources */ = {
@@ -759,6 +817,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6951182818FB5377000E778F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Lumberjack;
+			targetProxy = 6951182718FB5377000E778F /* PBXContainerItemProxy */;
+		};
 		69ADBD4318F0C9DE00DF7B18 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 69ECF26218CE32C800F741AB /* Floorball Coach */;
@@ -966,6 +1029,7 @@
 				PRODUCT_NAME = "Floorball Coach";
 				PROVISIONING_PROFILE = "9129B872-7E83-49F2-B600-D3A279FF34F8";
 				SYMROOT = ../out;
+				USER_HEADER_SEARCH_PATHS = "../lib/Lumberjack/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -983,6 +1047,7 @@
 				PRODUCT_NAME = "Floorball Coach";
 				PROVISIONING_PROFILE = "";
 				SYMROOT = ../out;
+				USER_HEADER_SEARCH_PATHS = "../lib/Lumberjack/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

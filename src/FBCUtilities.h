@@ -14,6 +14,7 @@ NSURL *FBCLibraryFile(void);
 NSURL *FBCFileForExerciseDrawables(FBCExercise* exercise);
 NSURL *FBCFileForExerciseNotes(FBCExercise* exercise);
 NSURL *FBCFileForExerciseIcon(FBCExercise* exercise);
+NSURL* FBCFolderForExercise(FBCExercise* exercise);
 
 CGPoint FBCRotatePointAroundPoint (CGPoint pointToRotate, CGFloat angle, CGPoint center);
 CGFloat FBCDistanceBetweenPoints(CGPoint p1, CGPoint p2);

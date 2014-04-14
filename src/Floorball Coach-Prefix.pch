@@ -23,3 +23,11 @@
 #import "UICollectionView+ReloadAnimated.h"
 #import "NSMutableArray+RemoveDuplicates.h"
 #import "FBCBundleResources.h"
+
+#import "DDLog.h"
+
+#if DEBUG
+#define FBC_BASIC_LOG_LEVEL LOG_LEVEL_INFO;
+#else
+#define FBC_BASIC_LOG_LEVEL LOG_LEVEL_ERROR;
+#endif

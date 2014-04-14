@@ -14,7 +14,7 @@
 @class FBCTraining;
 @class FBCNote;
 
-@interface FBCExercise : NSObject<FBCTrainingUnitProtocol>
+@interface FBCExercise : NSObject<FBCTrainingUnitProtocol,NSCopying>
 
 @property (nonatomic,weak) FBCTraining *parent;
 

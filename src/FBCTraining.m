@@ -137,20 +137,22 @@ static NSString *kFBCExerciseKey = @"exercises";
 
 - (void)addExercise:(FBCExercise *)exercise
 {
+    FBCExercise *exerciseCopy = [exercise copy];
     FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
     
-    [self.mutableExercises addObject:exercise];
-    [exercise setParent:self];
-    [library addExercise:exercise];
+    [self.mutableExercises addObject:exerciseCopy];
+    [exerciseCopy setParent:self];
+    [library addExercise:exerciseCopy];
 }
 
 - (void)addExercise:(FBCExercise *)exercise toIndex:(NSInteger)index
 {
+    FBCExercise *exerciseCopy = [exercise copy];
     FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
     
-    [self.mutableExercises insertObject:exercise atIndex:index];
-    [exercise setParent:self];
-    [library addExercise:exercise];
+    [self.mutableExercises insertObject:exerciseCopy atIndex:index];
+    [exerciseCopy setParent:self];
+    [library addExercise:exerciseCopy];
 }
 
 - (void)addExercises:(NSArray *)exercises

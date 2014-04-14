@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol FBCDrawable <NSObject>
+@protocol FBCDrawable <NSObject,NSCopying,NSCoding>
 
 - (id)initWithStartPoint:(CGPoint)startPoint;
 

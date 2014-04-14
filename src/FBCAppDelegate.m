@@ -9,10 +9,16 @@
 #import "FBCAppDelegate.h"
 #import "FBCTrainingUnitLibrary.h"
 
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+
 @implementation FBCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+
     return YES;
 }
 
