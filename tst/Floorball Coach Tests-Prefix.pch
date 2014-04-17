@@ -7,3 +7,11 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
 #endif
+
+#define HC_SHORTHAND
+#import <OCHamcrestIOS/OCHamcrestIOS.h>
+
+#define MOCKITO_SHORTHAND
+#import <OCMockitoIOS/OCMockitoIOS.h>
+
+#import "DDLog.h"

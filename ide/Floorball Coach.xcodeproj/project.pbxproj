@@ -26,6 +26,10 @@
 		69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */; };
 		6943971418F0BEE10044DEAC /* FBCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943971318F0BEE10044DEAC /* FBCLine.m */; };
 		6951182918FB54EE000E778F /* libLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6951182418FB535E000E778F /* libLumberjack.a */; };
+		696290CF18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 696290CE18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m */; };
+		696290DA18FC77D50079CAF7 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */; };
+		696290DB18FC77D50079CAF7 /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */; };
+		696290DD18FC79EF0079CAF7 /* FBCExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */; };
 		6964A67518F8ABD7006B502E /* FBCRubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964A67418F8ABD7006B502E /* FBCRubber.m */; };
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
 		6999802318F87BCD00063C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
@@ -35,7 +39,6 @@
 		6999805618F87C3800063C86 /* RTPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999805018F87C3800063C86 /* RTPAppDelegate.m */; };
 		6999805718F87C3800063C86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6999805118F87C3800063C86 /* Images.xcassets */; };
 		6999805818F87C3800063C86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999805218F87C3800063C86 /* main.m */; };
-		6999805918F87C3800063C86 /* RubberTool prototype-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6999805318F87C3800063C86 /* RubberTool prototype-Info.plist */; };
 		6999805B18F87DAF00063C86 /* RTPMainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6999805A18F87DAF00063C86 /* RTPMainStoryboard.storyboard */; };
 		6999805E18F87E6C00063C86 /* RTPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999805D18F87E6C00063C86 /* RTPMainViewController.m */; };
 		6999806118F8812700063C86 /* RTPDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6999806018F8812700063C86 /* RTPDrawingView.m */; };
@@ -147,6 +150,10 @@
 		6943971218F0BEE10044DEAC /* FBCLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCLine.h; sourceTree = "<group>"; };
 		6943971318F0BEE10044DEAC /* FBCLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCLine.m; sourceTree = "<group>"; };
 		6951181E18FB535E000E778F /* Lumberjack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lumberjack.xcodeproj; path = ../lib/Lumberjack/Xcode/LumberjackFramework/Mobile/Lumberjack.xcodeproj; sourceTree = "<group>"; };
+		696290CE18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingUnitLibraryTests.m; sourceTree = "<group>"; };
+		696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = ../lib/MockitoIOS/OCHamcrestIOS.framework; sourceTree = "<group>"; };
+		696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMockitoIOS.framework; path = ../lib/MockitoIOS/OCMockitoIOS.framework; sourceTree = "<group>"; };
+		696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCExerciseTests.m; sourceTree = "<group>"; };
 		6964A67218F8AA7B006B502E /* FBCTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBCTools.h; sourceTree = "<group>"; };
 		6964A67318F8ABD7006B502E /* FBCRubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCRubber.h; sourceTree = "<group>"; };
 		6964A67418F8ABD7006B502E /* FBCRubber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCRubber.m; sourceTree = "<group>"; };
@@ -257,6 +264,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				696290DA18FC77D50079CAF7 /* OCHamcrestIOS.framework in Frameworks */,
+				696290DB18FC77D50079CAF7 /* OCMockitoIOS.framework in Frameworks */,
 				69ADBD3618F0C9DE00DF7B18 /* XCTest.framework in Frameworks */,
 				69ADBD3818F0C9DE00DF7B18 /* UIKit.framework in Frameworks */,
 				69ADBD3718F0C9DE00DF7B18 /* Foundation.framework in Frameworks */,
@@ -360,6 +369,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		696290CC18FC760B0079CAF7 /* Doublers */ = {
+			isa = PBXGroup;
+			children = (
+				69EB651D18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.h */,
+				69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */,
+			);
+			name = Doublers;
+			sourceTree = "<group>";
+		};
 		6999804C18F87C3800063C86 /* RubberTool prototype */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,8 +420,9 @@
 			isa = PBXGroup;
 			children = (
 				69ADBD2318F0C71C00DF7B18 /* Supporting files */,
-				69EB651D18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.h */,
-				69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */,
+				696290CC18FC760B0079CAF7 /* Doublers */,
+				696290CE18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m */,
+				696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */,
 			);
 			name = tst;
 			path = ../tst;
@@ -490,6 +509,8 @@
 		69ECF26518CE32C900F741AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */,
+				696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */,
 				69ECF26618CE32C900F741AB /* Foundation.framework */,
 				69ECF26818CE32C900F741AB /* CoreGraphics.framework */,
 				69ECF26A18CE32C900F741AB /* UIKit.framework */,
@@ -717,7 +738,6 @@
 			files = (
 				6999805518F87C3800063C86 /* InfoPlist.strings in Resources */,
 				6999805B18F87DAF00063C86 /* RTPMainStoryboard.storyboard in Resources */,
-				6999805918F87C3800063C86 /* RubberTool prototype-Info.plist in Resources */,
 				6999805718F87C3800063C86 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,6 +777,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				696290CF18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m in Sources */,
+				696290DD18FC79EF0079CAF7 /* FBCExerciseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +924,9 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"/Users/olejnjak/Downloads/OCMockito-1.2.0",
+					"/Users/olejnjak/Downloads/OCHamcrest-3.0.1",
+					"/Users/olejnjak/School/BI-BAP/lib/MockitoIOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../tst/Floorball Coach Tests-Prefix.pch";
@@ -914,6 +939,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "../lib/Lumberjack/**";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -926,6 +952,9 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"/Users/olejnjak/Downloads/OCMockito-1.2.0",
+					"/Users/olejnjak/Downloads/OCHamcrest-3.0.1",
+					"/Users/olejnjak/School/BI-BAP/lib/MockitoIOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../tst/Floorball Coach Tests-Prefix.pch";
@@ -934,6 +963,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "../lib/Lumberjack/**";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

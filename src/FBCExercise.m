@@ -14,8 +14,6 @@ static NSString *kFBCLastChangeKey = @"lastChange";
 static NSString *kFBCFavoriteKey = @"favorite";
 static NSString *kFBCUIDKey = @"uid";
 
-static const int ddLogLevel = FBC_BASIC_LOG_LEVEL;
-
 @implementation FBCExercise
 {
     NSMutableArray *_drawables;
