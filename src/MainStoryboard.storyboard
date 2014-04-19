@@ -522,7 +522,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainMenuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="q4F-V3-iqH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main menu background" translatesAutoresizingMaskIntoConstraints="NO" id="q4F-V3-iqH">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -554,16 +554,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewTrainingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="EiA-de-UAl">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New exercise icon" translatesAutoresizingMaskIntoConstraints="NO" id="EiA-de-UAl">
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="252"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[New training]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpY-Bh-hvS">
-                                                    <rect key="frame" x="92" y="260" width="106" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[New exercise]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpY-Bh-hvS">
+                                                    <rect key="frame" x="20" y="260" width="250" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="106" id="SUn-2F-8li"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.77647058823529413" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -583,10 +580,11 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="2Ev-xh-jBi" firstAttribute="leading" secondItem="z3a-YD-dEN" secondAttribute="leading" id="0E1-IN-xHY"/>
+                                            <constraint firstAttribute="trailing" secondItem="CpY-Bh-hvS" secondAttribute="trailing" constant="20" id="BDP-pI-uGK"/>
                                             <constraint firstAttribute="bottom" secondItem="EiA-de-UAl" secondAttribute="bottom" constant="38" id="E92-zI-68g"/>
                                             <constraint firstAttribute="trailing" secondItem="EiA-de-UAl" secondAttribute="trailing" id="JZQ-wu-iIX"/>
+                                            <constraint firstItem="CpY-Bh-hvS" firstAttribute="leading" secondItem="z3a-YD-dEN" secondAttribute="leading" constant="20" id="KfV-c5-dKb"/>
                                             <constraint firstAttribute="bottom" secondItem="2Ev-xh-jBi" secondAttribute="bottom" id="NwI-NL-hIV"/>
-                                            <constraint firstAttribute="bottom" secondItem="CpY-Bh-hvS" secondAttribute="bottom" constant="9" id="VKj-As-DOr"/>
                                             <constraint firstAttribute="trailing" secondItem="2Ev-xh-jBi" secondAttribute="trailing" id="cTL-Wc-UgP"/>
                                             <constraint firstItem="EiA-de-UAl" firstAttribute="top" secondItem="z3a-YD-dEN" secondAttribute="top" id="hBB-jq-NsE"/>
                                             <constraint firstAttribute="centerX" secondItem="CpY-Bh-hvS" secondAttribute="centerX" id="tFF-kf-1Cw"/>
@@ -605,22 +603,40 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OO-Cj-k1l">
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="[New training]">
+                                                    <state key="normal" backgroundImage="border.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <segue destination="ONY-qI-YdE" kind="modal" identifier="FBCMainMenuToTrainingDetailSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="qP1-Ol-nSg"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="New training icon" translatesAutoresizingMaskIntoConstraints="NO" id="A0M-DD-Umj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="252"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[New training]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oP-EW-Gjy">
+                                                    <rect key="frame" x="20" y="260" width="250" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="A0M-DD-Umj" firstAttribute="leading" secondItem="Ke8-tf-GJ9" secondAttribute="leading" id="3So-yi-APb"/>
+                                            <constraint firstAttribute="trailing" secondItem="8oP-EW-Gjy" secondAttribute="trailing" constant="20" id="JUz-UE-gHf"/>
+                                            <constraint firstItem="8oP-EW-Gjy" firstAttribute="leading" secondItem="Ke8-tf-GJ9" secondAttribute="leading" constant="20" id="Jql-IF-9rf"/>
                                             <constraint firstAttribute="trailing" secondItem="9OO-Cj-k1l" secondAttribute="trailing" id="NQ2-b8-1Ll"/>
+                                            <constraint firstAttribute="centerX" secondItem="8oP-EW-Gjy" secondAttribute="centerX" id="R8U-9V-p0r"/>
                                             <constraint firstAttribute="bottom" secondItem="9OO-Cj-k1l" secondAttribute="bottom" id="TGm-1y-dhi"/>
+                                            <constraint firstAttribute="trailing" secondItem="A0M-DD-Umj" secondAttribute="trailing" id="VHc-cG-sy2"/>
+                                            <constraint firstItem="A0M-DD-Umj" firstAttribute="top" secondItem="Ke8-tf-GJ9" secondAttribute="top" id="dKf-2l-use"/>
                                             <constraint firstItem="9OO-Cj-k1l" firstAttribute="top" secondItem="Ke8-tf-GJ9" secondAttribute="top" id="hIL-nE-ELz"/>
+                                            <constraint firstItem="8oP-EW-Gjy" firstAttribute="top" secondItem="A0M-DD-Umj" secondAttribute="bottom" constant="8" id="j95-33-qum"/>
                                             <constraint firstItem="9OO-Cj-k1l" firstAttribute="leading" secondItem="Ke8-tf-GJ9" secondAttribute="leading" id="mjg-y1-pKG"/>
+                                            <constraint firstAttribute="bottom" secondItem="A0M-DD-Umj" secondAttribute="bottom" constant="38" id="t2t-DK-2t6"/>
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCCollectionViewCell2" id="M9Z-3y-oMk">
@@ -1535,9 +1551,10 @@
     </scenes>
     <resources>
         <image name="Field" width="482" height="728"/>
-        <image name="MainMenuBackground" width="768" height="1024"/>
-        <image name="NewTrainingIcon" width="290" height="290"/>
-        <image name="border.png" width="290" height="290"/>
+        <image name="Main menu background" width="768" height="1024"/>
+        <image name="New exercise icon" width="290" height="290"/>
+        <image name="New training icon" width="290" height="290"/>
+        <image name="border.png" width="512" height="512"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>

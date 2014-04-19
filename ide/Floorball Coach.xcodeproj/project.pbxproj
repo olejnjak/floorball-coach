@@ -32,7 +32,7 @@
 		696290DD18FC79EF0079CAF7 /* FBCExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */; };
 		6964A67518F8ABD7006B502E /* FBCRubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964A67418F8ABD7006B502E /* FBCRubber.m */; };
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
-		699699341902D27700B7EECB /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 699699331902D27700B7EECB /* border.png */; };
+		69969937190323D700B7EECB /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 69969936190323D700B7EECB /* border.png */; };
 		6999802318F87BCD00063C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		6999802418F87BCD00063C86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
 		6999802518F87BCD00063C86 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
@@ -161,7 +161,7 @@
 		6990D18118D5C371003BC7BC /* FBCSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortViewController.h; sourceTree = "<group>"; };
 		6990D18218D5C371003BC7BC /* FBCSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSortViewController.m; sourceTree = "<group>"; };
 		6990D18618D5D1D5003BC7BC /* FBCSortBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortBlocks.h; sourceTree = "<group>"; };
-		699699331902D27700B7EECB /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = border.png; path = ../../../Desktop/border.png; sourceTree = "<group>"; };
+		69969936190323D700B7EECB /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = border.png; sourceTree = "<group>"; };
 		6999802218F87BCD00063C86 /* RubberTool prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RubberTool prototype.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6999804E18F87C3800063C86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6999804F18F87C3800063C86 /* RTPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTPAppDelegate.h; sourceTree = "<group>"; };
@@ -614,7 +614,7 @@
 		69FEA00B18E7641600EEA177 /* res */ = {
 			isa = PBXGroup;
 			children = (
-				699699331902D27700B7EECB /* border.png */,
+				69969936190323D700B7EECB /* border.png */,
 				69EFCA5C18F8AF79001BEB8D /* Images.xcassets */,
 			);
 			name = res;
@@ -759,7 +759,7 @@
 				69EFCA5D18F8AF79001BEB8D /* Images.xcassets in Resources */,
 				69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */,
 				690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */,
-				699699341902D27700B7EECB /* border.png in Resources */,
+				69969937190323D700B7EECB /* border.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
