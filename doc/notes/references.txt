@@ -4,4 +4,7 @@ Google Forms
 Bitbucket.org
 Umlet - umlet.com
 https://github.com/lxcid/LXReorderableCollectionViewFlowLayout
-https://github.com/mindbrix/UIImage-PDF
+https://github.com/CocoaLumberjack/CocoaLumberjack.git
+https://github.com/jonreid/OCMockito
+https://github.com/hamcrest/OCHamcrest
+http://www.shapes4free.com/photoshop-custom-shapes/plus-minus-photoshop-shapes/

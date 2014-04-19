@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kzl-9J-YL8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kzl-9J-YL8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -522,6 +522,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainMenuBackground" translatesAutoresizingMaskIntoConstraints="NO" id="q4F-V3-iqH">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Floorball coach]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJu-bA-Iye">
                                 <rect key="frame" x="20" y="30" width="728" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -529,7 +533,7 @@
                                     <constraint firstAttribute="height" constant="41" id="Opk-g2-JDp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8io-3X-lFq">
@@ -550,10 +554,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewTrainingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="EiA-de-UAl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="252"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[New training]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpY-Bh-hvS">
+                                                    <rect key="frame" x="92" y="260" width="106" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="106" id="SUn-2F-8li"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.77647058823529413" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ev-xh-jBi">
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="[New exercise]">
+                                                    <state key="normal" backgroundImage="border.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -563,12 +581,18 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="2Ev-xh-jBi" firstAttribute="leading" secondItem="z3a-YD-dEN" secondAttribute="leading" id="0E1-IN-xHY"/>
+                                            <constraint firstAttribute="bottom" secondItem="EiA-de-UAl" secondAttribute="bottom" constant="38" id="E92-zI-68g"/>
+                                            <constraint firstAttribute="trailing" secondItem="EiA-de-UAl" secondAttribute="trailing" id="JZQ-wu-iIX"/>
                                             <constraint firstAttribute="bottom" secondItem="2Ev-xh-jBi" secondAttribute="bottom" id="NwI-NL-hIV"/>
+                                            <constraint firstAttribute="bottom" secondItem="CpY-Bh-hvS" secondAttribute="bottom" constant="9" id="VKj-As-DOr"/>
                                             <constraint firstAttribute="trailing" secondItem="2Ev-xh-jBi" secondAttribute="trailing" id="cTL-Wc-UgP"/>
+                                            <constraint firstItem="EiA-de-UAl" firstAttribute="top" secondItem="z3a-YD-dEN" secondAttribute="top" id="hBB-jq-NsE"/>
+                                            <constraint firstAttribute="centerX" secondItem="CpY-Bh-hvS" secondAttribute="centerX" id="tFF-kf-1Cw"/>
                                             <constraint firstItem="2Ev-xh-jBi" firstAttribute="top" secondItem="z3a-YD-dEN" secondAttribute="top" id="tfb-Bz-ooh"/>
+                                            <constraint firstItem="CpY-Bh-hvS" firstAttribute="top" secondItem="EiA-de-UAl" secondAttribute="bottom" constant="8" id="xBE-kj-lsG"/>
+                                            <constraint firstItem="EiA-de-UAl" firstAttribute="leading" secondItem="z3a-YD-dEN" secondAttribute="leading" id="zdg-u2-0g9"/>
                                         </constraints>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FBCCollectionViewCell1" id="Ke8-tf-GJ9">
@@ -720,7 +744,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="q4F-V3-iqH" firstAttribute="height" secondItem="KoD-6Z-hw7" secondAttribute="height" id="0NP-kf-2rY"/>
                             <constraint firstItem="tJu-bA-Iye" firstAttribute="leading" secondItem="KoD-6Z-hw7" secondAttribute="leading" constant="20" id="2Vi-YV-n74"/>
+                            <constraint firstItem="q4F-V3-iqH" firstAttribute="width" secondItem="KoD-6Z-hw7" secondAttribute="width" id="7bT-SF-IOf"/>
+                            <constraint firstAttribute="centerY" secondItem="q4F-V3-iqH" secondAttribute="centerY" id="JNH-bv-LSS"/>
+                            <constraint firstAttribute="centerX" secondItem="q4F-V3-iqH" secondAttribute="centerX" id="XfO-mX-oEv"/>
                             <constraint firstItem="8io-3X-lFq" firstAttribute="top" secondItem="tJu-bA-Iye" secondAttribute="bottom" constant="28" id="b1D-tT-n5w"/>
                             <constraint firstAttribute="trailing" secondItem="8io-3X-lFq" secondAttribute="trailing" constant="65" id="bfJ-wb-ivE"/>
                             <constraint firstItem="8io-3X-lFq" firstAttribute="centerX" secondItem="tJu-bA-Iye" secondAttribute="centerX" id="jhg-HG-YHm"/>
@@ -1507,6 +1535,9 @@
     </scenes>
     <resources>
         <image name="Field" width="482" height="728"/>
+        <image name="MainMenuBackground" width="768" height="1024"/>
+        <image name="NewTrainingIcon" width="290" height="290"/>
+        <image name="border.png" width="290" height="290"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
@@ -1515,8 +1546,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="HV0-Pc-L6i"/>
-        <segue reference="sH3-k9-12t"/>
-        <segue reference="7nV-PG-H8S"/>
+        <segue reference="qP1-Ol-nSg"/>
+        <segue reference="gOi-T2-F6s"/>
         <segue reference="bBM-iD-fl0"/>
     </inferredMetricsTieBreakers>
 </document>
