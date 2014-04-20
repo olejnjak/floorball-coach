@@ -9,6 +9,12 @@
 #import "FBCExercise.h"
 #import "FBCNote.h"
 
+#if DEBUG 
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#else 
+static const int ddLogLevel = FBC_BASIC_LOG_LEVEL;
+#endif
+
 static NSString *kFBCNameKey = @"name";
 static NSString *kFBCLastChangeKey = @"lastChange";
 static NSString *kFBCFavoriteKey = @"favorite";
@@ -100,10 +106,9 @@ static NSString *kFBCUIDKey = @"uid";
 {
     FBCExercise *copy = [[self.class allocWithZone:zone] initWithName:self.name];
     
+    [copy copyPersistDataFromExercise:self];
     [copy setLastChange:self.lastChange];
     [copy setFavorite:self.favorite];
-    copy->_drawables = [_drawables copyWithZone:zone];
-    copy->_notes = [_notes copyWithZone:zone];
     [copy saveIcon:self.icon];
     
     return copy;
@@ -281,6 +286,24 @@ static NSString *kFBCUIDKey = @"uid";
     NSURL *fileURL = FBCFileForExerciseDrawables(self);
     
     [NSKeyedArchiver archiveRootObject:_drawables toFile:fileURL.path];
+}
+
+- (void)copyPersistDataFromExercise:(FBCExercise*)exercise
+{
+    NSURL *selfFolder = FBCFolderForExercise(self);
+    NSURL *srcFolder = FBCFolderForExercise(exercise);
+    
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSError *error;
+    
+    [fm removeItemAtURL:selfFolder error:nil];
+    
+    BOOL result = [fm copyItemAtURL:srcFolder toURL:selfFolder error:&error];
+    
+    if (!result)
+    {
+        DDLogError(@"%@", error);
+    }
 }
 
 @end
