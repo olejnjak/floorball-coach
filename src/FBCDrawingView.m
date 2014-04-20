@@ -27,7 +27,7 @@
     
     if (nil != self)
     {
-        [self setBackgroundColor:UIColor.clearColor];
+        [self setBackgroundColor:[UIColor colorWithRed:0.84705882352941 green:0.96862745098039 blue:1.0 alpha:1.0]];
     }
     
     return self;

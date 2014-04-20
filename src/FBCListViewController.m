@@ -53,11 +53,6 @@
     [self.tableView reloadData];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UITableViewDataSource methods
 
@@ -72,8 +67,11 @@
 {
     NSString *reusableIdentifier = [self.model reusableCellIdentifierForIndexPath:indexPath];
     UITableViewCell *result = [tableView dequeueReusableCellWithIdentifier:reusableIdentifier forIndexPath:indexPath];
+    UIColor *clearColor = [UIColor clearColor];
     
     [self.model prepareTableViewCell:result forIndexPath:indexPath];
+    
+    [result setBackgroundColor:clearColor];
     
     return result;
 }
@@ -115,6 +113,11 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -290,6 +293,10 @@
         
         [self.toolbar setItems:toolbarItems animated:YES];
     }
+    
+    UIColor *clearColor = [UIColor clearColor];
+
+    [self.tableView setBackgroundColor:clearColor];
 }
 
 - (void)editTableView

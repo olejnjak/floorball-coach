@@ -41,14 +41,7 @@
 {
     BOOL favorited = [self.exercise favorite];
     
-    if (YES == favorited)
-    {
-        [self.favoriteButton setTitle:LOC(@"FBCFavorited") forState:UIControlStateNormal];
-    }
-    else
-    {
-        [self.favoriteButton setTitle:LOC(@"FBCFavorite") forState:UIControlStateNormal];        
-    }
+    [self.favoriteImage setHighlighted:favorited];
 }
 
 @end

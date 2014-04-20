@@ -12,6 +12,16 @@
 
 @interface FBCToolboxController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *passButton;
+@property (weak, nonatomic) IBOutlet UIButton *shotButton;
+@property (weak, nonatomic) IBOutlet UIButton *coneButton;
+@property (weak, nonatomic) IBOutlet UIButton *attackerButton;
+@property (weak, nonatomic) IBOutlet UIButton *defenderButton;
+@property (weak, nonatomic) IBOutlet UIButton *runButton;
+@property (weak, nonatomic) IBOutlet UIButton *lineButton;
+@property (weak, nonatomic) IBOutlet UIButton *rubberButton;
+@property (weak, nonatomic) IBOutlet UILabel *ballLabel;
+
 + (Class<FBCDrawable>)selectedTool;
 
 - (IBAction)passSelected:(UIButton *)sender;

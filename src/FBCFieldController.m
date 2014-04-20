@@ -24,6 +24,13 @@
     [self.drawingView setExercise:self.exercise];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self applyMask];
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -35,5 +42,22 @@
 
     [self.exercise saveIcon:image];
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
+
+- (void)applyMask
+{
+    CGRect frame = [self.view bounds];    
+    UIBezierPath *mask = [UIBezierPath bezierPathWithRoundedRect:frame cornerRadius:10.0];
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    
+    [layer setBackgroundColor:UIColor.clearColor.CGColor];
+    [layer setFillColor:UIColor.blackColor.CGColor];
+    [layer setPath:mask.CGPath];
+    
+    [self.view.layer setMask:layer];
+}
+
 
 @end

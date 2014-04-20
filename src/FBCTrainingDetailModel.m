@@ -122,8 +122,10 @@
         [cell setHidden:NO];
         
         UIImage *icon = [exercise icon];
+        CALayer *mask = [self.class iconMaskForView:cell.icon];
         
         [cell.icon setImage:icon];
+        [cell.icon.layer setMask:mask];
     }
     
     [cell.nameLabel setText:exercise.name];
@@ -364,6 +366,16 @@
     FBCExercise *exercise = [self exerciseForIndexPath:indexPath];
     
     return exercise == nil;
+}
+
++ (CAShapeLayer*)iconMaskForView:(UIView*)view
+{
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds cornerRadius:5];
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    
+    [layer setPath:maskPath.CGPath];
+    
+    return layer;
 }
 
 @end

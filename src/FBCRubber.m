@@ -29,7 +29,7 @@ static NSString *kFBCFinishedKey = @"finished";
 
 + (UIColor*)color
 {
-    return [UIColor whiteColor];
+    return [UIColor colorWithRed:0.84705882352941 green:0.96862745098039 blue:1.0 alpha:1.0];
 }
 
 - (id)initWithStartPoint:(CGPoint)startPoint

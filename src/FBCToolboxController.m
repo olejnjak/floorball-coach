@@ -10,23 +10,31 @@
 
 #import "FBCTools.h"
 
-#define kFBCDefaultTool FBCRun
-
 static Class<FBCDrawable> g_selectedTool = nil;
 
 @implementation FBCToolboxController
+{
+    UIButton *_selectedButton;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public interface
 
 + (Class<FBCDrawable>)selectedTool
 {
-    if (g_selectedTool == nil)
-    {
-        g_selectedTool = [kFBCDefaultTool class];
-    }
-    
     return g_selectedTool;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    _selectedButton = nil;
+    
+    [self runSelected:self.runButton];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,40 +43,81 @@ static Class<FBCDrawable> g_selectedTool = nil;
 - (IBAction)passSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCPass class];
+    
+    [self selectButton:sender];
 }
 
 - (IBAction)shotSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCShot class];
+    
+    [self selectButton:sender];
 }
 
 - (IBAction)runSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCRun class];
+    
+    [self selectButton:sender];
 }
 
 - (IBAction)coneSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCCone class];
+    
+    [self selectButton:sender];
 }
 
 - (IBAction)attackerSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCAttacker class];
+    
+    [self selectButton:sender];
 }
 
 - (IBAction)defenderSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCDefender class];
+    
+    [self selectButton:sender];
 }
 
 - (IBAction)lineToolSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCLine class];
+    
+    [self selectButton:sender];
 }
 
 - (IBAction)rubberToolSelected:(UIButton *)sender
 {
     g_selectedTool = [FBCRubber class];
+    
+    [self selectButton:sender];
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
+
+- (UIColor*)deselectedBackgroundColor
+{
+    return [self.ballLabel textColor];
+}
+
++ (UIColor*)selectedBackgroundColor
+{
+    return [UIColor redColor];
+}
+
+- (void)selectButton:(UIButton*)button
+{
+    UIColor *selectedColor = [self.class selectedBackgroundColor];
+    UIColor *backgroundColor = [self deselectedBackgroundColor];
+    
+    [_selectedButton setBackgroundColor:backgroundColor];
+    [button setBackgroundColor:selectedColor];
+    
+    _selectedButton = button;
+}
+
 @end
