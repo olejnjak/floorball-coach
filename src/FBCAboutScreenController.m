@@ -8,16 +8,24 @@
 
 #import "FBCAboutScreenController.h"
 
-@interface FBCAboutScreenController ()
-
-@end
-
 @implementation FBCAboutScreenController
 
 @synthesize delegate = _delegate;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark - UI actions -
+#pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    NSString * appVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+
+    [self.versionLabel setText:appVersionString];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UI actions
 
 - (IBAction)backButtonTapped:(UIButton *)sender
 {

@@ -12,8 +12,9 @@
 
 @interface FBCAboutScreenController : UIViewController
 
-- (IBAction)backButtonTapped:(UIButton *)sender;
-
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) id<FBCControllerDoneProtocol> delegate;
+
+- (IBAction)backButtonTapped:(UIButton *)sender;
 
 @end
