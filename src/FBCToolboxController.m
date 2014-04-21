@@ -34,6 +34,7 @@ static Class<FBCDrawable> g_selectedTool = nil;
     
     _selectedButton = nil;
     
+    // select default tool
     [self runSelected:self.runButton];
 }
 
@@ -101,7 +102,7 @@ static Class<FBCDrawable> g_selectedTool = nil;
 
 - (UIColor*)deselectedBackgroundColor
 {
-    return [self.ballLabel textColor];
+    return [UIColor colorWithRed:0.02352941176471 green:0.07450980392157 blue:0.24313725490196 alpha:1.0];
 }
 
 + (UIColor*)selectedBackgroundColor

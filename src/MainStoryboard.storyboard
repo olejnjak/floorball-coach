@@ -482,7 +482,6 @@
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPy-zX-Lw8" userLabel="Notes">
                                 <rect key="frame" x="768" y="64" width="320" height="856"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="1oB-9g-jWL"/>
                                 </constraints>
@@ -1189,7 +1188,6 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="attackerButton" destination="ghx-1g-Lcj" id="QHT-Ac-ozq"/>
-                        <outlet property="ballLabel" destination="EYj-Wa-LXr" id="Var-2B-EFI"/>
                         <outlet property="coneButton" destination="12Z-iK-60x" id="p76-kc-2rb"/>
                         <outlet property="defenderButton" destination="bqb-V0-3sY" id="lMw-2l-jZB"/>
                         <outlet property="lineButton" destination="B4h-v8-ikY" id="dEZ-ew-ccb"/>
@@ -1215,7 +1213,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="500" height="200"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="[Note name]" placeholder="[Note name]" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BeE-h1-Klc" userLabel="Name">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="[Note name]" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BeE-h1-Klc" userLabel="Name">
                                 <rect key="frame" x="20" y="20" width="396" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -1518,14 +1516,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enY-aq-xNq" userLabel="Border">
                                 <rect key="frame" x="0.0" y="0.0" width="1" height="856"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="8Xh-kj-TxR"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="170" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="skH-2m-6re">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="skH-2m-6re">
                                 <rect key="frame" x="1" y="0.0" width="320" height="802"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.84705882349999995" green="0.96862745100000003" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="FBCExerciseNoteCell" rowHeight="170" id="RpO-fl-Vs2" customClass="FBCNoteCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="170"/>
@@ -1541,13 +1541,14 @@
                                                         <constraint firstAttribute="height" constant="30" id="0ic-RM-On1"/>
                                                         <constraint firstAttribute="width" constant="263" id="X5C-yg-R3o"/>
                                                     </constraints>
+                                                    <color key="textColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-GQ-Myw" userLabel="Note text">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" text="[Note text]" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-GQ-Myw" userLabel="Note text">
                                                     <rect key="frame" x="12" y="49" width="263" height="112"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -1561,6 +1562,7 @@
                                                 <constraint firstItem="kqb-TO-VaQ" firstAttribute="leading" secondItem="m6e-XH-QMR" secondAttribute="leading" constant="12" id="gZW-w3-szX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.84705882349999995" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="nameField" destination="kqb-TO-VaQ" id="8mB-gr-jFJ"/>
                                             <outlet property="textView" destination="fhx-GQ-Myw" id="bap-Jr-gaO"/>
@@ -1580,6 +1582,7 @@
                                         <rect key="frame" x="34" y="12" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="[Edit]">
+                                            <color key="titleColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1590,6 +1593,7 @@
                                         <rect key="frame" x="33" y="12" width="101" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="[Done]">
+                                            <color key="titleColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1603,6 +1607,7 @@
                                             <constraint firstAttribute="width" constant="100" id="sMP-2K-vXd"/>
                                         </constraints>
                                         <state key="normal" title="[Add]">
+                                            <color key="titleColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1615,6 +1620,7 @@
                                         <rect key="frame" x="185" y="12" width="100" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="[Delete]">
+                                            <color key="titleColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1622,7 +1628,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="dEL-iY-peq" secondAttribute="bottom" constant="12" id="BJz-CN-7sv"/>
                                     <constraint firstAttribute="centerX" secondItem="WSS-95-YFS" secondAttribute="centerX" constant="75" id="Ctb-k4-38r"/>
@@ -1643,7 +1649,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.84705882349999995" green="0.96862745100000003" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="skH-2m-6re" secondAttribute="trailing" id="201-IL-FNk"/>
                             <constraint firstAttribute="trailing" secondItem="D97-Gs-Fxj" secondAttribute="trailing" id="8Rh-dv-u1G"/>

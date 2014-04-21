@@ -19,6 +19,20 @@
 @synthesize exercise = _exercise;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UIColor *separatorColor = [UIColor colorWithRed:0.02352941176471 green:0.07450980392157 blue:0.24313725490196
+                                              alpha:1.0];
+    
+    [self.tableView setSeparatorColor:separatorColor];
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -33,11 +47,13 @@
     FBCNoteCell *cell = [tableView dequeueReusableCellWithIdentifier:kFBCExerciseNoteCell];
     NSInteger index = [indexPath row];
     FBCNote *note = [self noteAtIndex:index];
+    UIColor *backgroundColor = [UIColor colorWithRed:0.84705882352941 green:0.96862745098039 blue:1.0 alpha:1.0];
 
     [cell setNote:note];
     [cell.nameField setText:note.name];
     [cell.textView setText:note.text];
-    cell.textView.textContainerInset = UIEdgeInsetsZero;
+    [cell.textView setTextContainerInset:UIEdgeInsetsZero];
+    [cell setBackgroundColor:backgroundColor];
     
     return cell;
 }
@@ -63,6 +79,11 @@
     CGFloat result = rect.size.height + 2 + textViewBottomMargin + textViewTopMargin;
     
     return result;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

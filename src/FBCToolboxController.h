@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *runButton;
 @property (weak, nonatomic) IBOutlet UIButton *lineButton;
 @property (weak, nonatomic) IBOutlet UIButton *rubberButton;
-@property (weak, nonatomic) IBOutlet UILabel *ballLabel;
 
 + (Class<FBCDrawable>)selectedTool;
 
