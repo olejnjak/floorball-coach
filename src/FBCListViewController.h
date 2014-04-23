@@ -26,6 +26,7 @@ typedef enum
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *typeChangeButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (assign, nonatomic) FBCListViewControllerType type;
 

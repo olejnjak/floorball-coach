@@ -1,0 +1,150 @@
+
+/* Class = "IBUILabel"; text = "[1.0]"; ObjectID = "41n-zR-0dU"; */
+"41n-zR-0dU.text" = "[1.0]";
+
+/* Class = "IBUILabel"; text = "[Exercise name]"; ObjectID = "4Jy-1N-T8e"; */
+"4Jy-1N-T8e.text" = "Exercise name";
+
+/* Class = "IBUIBarButtonItem"; title = "[Trainings]"; ObjectID = "7V1-6F-wP4"; */
+"7V1-6F-wP4.title" = "[Trainings]";
+
+/* Class = "IBUILabel"; text = "[New training]"; ObjectID = "8oP-EW-Gjy"; */
+"8oP-EW-Gjy.text" = "New training";
+
+/* Class = "IBUILabel"; text = "[Old first]"; ObjectID = "93y-Oh-cm9"; */
+"93y-Oh-cm9.text" = "Old first";
+
+/* Class = "IBUIButton"; normalTitle = "[Done]"; ObjectID = "9QG-rZ-ydu"; */
+"9QG-rZ-ydu.normalTitle" = "Done";
+
+/* Class = "IBUILabel"; text = "A -> Z"; ObjectID = "Bbl-dt-xIm"; */
+"Bbl-dt-xIm.text" = "A -> Z";
+
+/* Class = "IBUITextField"; placeholder = "[Note name]"; ObjectID = "BeE-h1-Klc"; */
+"BeE-h1-Klc.placeholder" = "Note name";
+
+/* Class = "IBUILabel"; text = "[New exercise]"; ObjectID = "CpY-Bh-hvS"; */
+"CpY-Bh-hvS.text" = "New exercise";
+
+/* Class = "IBUILabel"; text = "[Ball]"; ObjectID = "EYj-Wa-LXr"; */
+"EYj-Wa-LXr.text" = "Ball";
+
+/* Class = "IBUILabel"; text = "[29.3.2013]"; ObjectID = "Gzh-Zi-IVi"; */
+"Gzh-Zi-IVi.text" = "[29.3.2013]";
+
+/* Class = "IBUIViewController"; title = "Floorball coach"; ObjectID = "IEL-Oq-3Qb"; */
+"IEL-Oq-3Qb.title" = "Floorball coach";
+
+/* Class = "IBUIButton"; normalTitle = "[Delete]"; ObjectID = "Jus-Sw-ZBA"; */
+"Jus-Sw-ZBA.normalTitle" = "Delete";
+
+/* Class = "IBUILabel"; text = "[Training name]"; ObjectID = "KkV-tc-ORB"; */
+"KkV-tc-ORB.text" = "Training name";
+
+/* Class = "IBUIViewController"; title = "Main menu"; ObjectID = "Kzl-9J-YL8"; */
+"Kzl-9J-YL8.title" = "Main menu";
+
+/* Class = "IBUITextView"; text = "[Application developed at FIT CTU - http://fit.cvut.cz.]"; ObjectID = "QT5-r7-ldC"; */
+"QT5-r7-ldC.text" = "Application developed at FIT CTU - http://fit.cvut.cz";
+
+/* Class = "IBUIBarButtonItem"; title = "[Training name]"; ObjectID = "RHe-5u-Avc"; */
+"RHe-5u-Avc.title" = "Training name";
+
+/* Class = "IBUILabel"; text = "[Exercise name]"; ObjectID = "SGt-4g-DNK"; */
+"SGt-4g-DNK.text" = "Exercise name";
+
+/* Class = "IBUILabel"; text = "[Exercise list]"; ObjectID = "SQY-uA-mAq"; */
+"SQY-uA-mAq.text" = "Exercise list";
+
+/* Class = "IBUILabel"; text = "[Author: Jakub Olejník]"; ObjectID = "U3b-q3-sGZ"; */
+"U3b-q3-sGZ.text" = "Author: Jakub Olejník";
+
+/* Class = "IBUIBarButtonItem"; title = "[Notes]"; ObjectID = "W0p-AQ-IcS"; */
+"W0p-AQ-IcS.title" = "Notes";
+
+/* Class = "IBUILabel"; text = "[Training list]"; ObjectID = "WL8-nv-9yV"; */
+"WL8-nv-9yV.text" = "Training list";
+
+/* Class = "IBUIButton"; normalTitle = "[Edit]"; ObjectID = "WSS-95-YFS"; */
+"WSS-95-YFS.normalTitle" = "Edit";
+
+/* Class = "IBUIBarButtonItem"; title = "[Sort]"; ObjectID = "XDs-sL-PQs"; */
+"XDs-sL-PQs.title" = "Sort";
+
+/* Class = "IBUILabel"; text = "1"; ObjectID = "XzC-b7-Y5C"; */
+"XzC-b7-Y5C.text" = "1";
+
+/* Class = "IBUITextField"; placeholder = "[Exercise name]"; ObjectID = "acf-za-UU9"; */
+"acf-za-UU9.placeholder" = "Exercise name";
+
+/* Class = "IBUIButton"; normalTitle = "[Add]"; ObjectID = "dEL-iY-peq"; */
+"dEL-iY-peq.normalTitle" = "Add";
+
+/* Class = "IBUILabel"; text = "[Player]"; ObjectID = "f8x-xy-jpY"; */
+"f8x-xy-jpY.text" = "Player";
+
+/* Class = "IBUILabel"; text = "[Exercise list]"; ObjectID = "fIV-tR-785"; */
+"fIV-tR-785.text" = "Exercise list";
+
+/* Class = "IBUITextView"; text = "[Note text]"; ObjectID = "fhx-GQ-Myw"; */
+"fhx-GQ-Myw.text" = "Note text";
+
+/* Class = "IBUIButton"; normalTitle = "[Save]"; ObjectID = "fyO-2o-R48"; */
+"fyO-2o-R48.normalTitle" = "Save";
+
+/* Class = "IBUITextField"; text = "[Note name]"; ObjectID = "kqb-TO-VaQ"; */
+"kqb-TO-VaQ.text" = "Note name";
+
+/* Class = "IBUIButton"; normalTitle = "[Back]"; ObjectID = "l61-IA-43t"; */
+"l61-IA-43t.normalTitle" = "Back";
+
+/* Class = "IBUILabel"; text = "[Created:]"; ObjectID = "lTP-ge-Lft"; */
+"lTP-ge-Lft.text" = "Created:";
+
+/* Class = "IBUILabel"; text = "[Section name]"; ObjectID = "lc0-bh-PxL"; */
+"lc0-bh-PxL.text" = "Section name";
+
+/* Class = "IBUILabel"; text = "[Exercise name]"; ObjectID = "mPA-DE-wa6"; */
+"mPA-DE-wa6.text" = "Exercise name";
+
+/* Class = "IBUIBarButtonItem"; title = "[Exercise name]"; ObjectID = "mwj-wY-Ofe"; */
+"mwj-wY-Ofe.title" = "Exercise name";
+
+/* Class = "IBUIBarButtonItem"; title = "[Back]"; ObjectID = "ocU-bF-nQz"; */
+"ocU-bF-nQz.title" = "Back";
+
+/* Class = "IBUILabel"; text = "[New first]"; ObjectID = "q2c-Sw-Lf4"; */
+"q2c-Sw-Lf4.text" = "New first";
+
+/* Class = "IBUILabel"; text = "[23.2.2014]"; ObjectID = "r83-1J-Nys"; */
+"r83-1J-Nys.text" = "[23.2.2014]";
+
+/* Class = "IBUILabel"; text = "[Date:]"; ObjectID = "rnX-RI-MUQ"; */
+"rnX-RI-MUQ.text" = "Date:";
+
+/* Class = "IBUILabel"; text = "[Favorite exercises]"; ObjectID = "s7x-id-qxY"; */
+"s7x-id-qxY.text" = "Favorite exercises";
+
+/* Class = "IBUILabel"; text = "Z -> A"; ObjectID = "scS-HC-yO3"; */
+"scS-HC-yO3.text" = "Z -> A";
+
+/* Class = "IBUILabel"; text = "[Floorball coach]"; ObjectID = "tJu-bA-Iye"; */
+"tJu-bA-Iye.text" = "Floorball coach";
+
+/* Class = "IBUILabel"; text = "[Version:]"; ObjectID = "tgy-bo-T1B"; */
+"tgy-bo-T1B.text" = "Version:";
+
+/* Class = "IBUIBarButtonItem"; title = "[Back]"; ObjectID = "ufF-nP-7SY"; */
+"ufF-nP-7SY.title" = "Back";
+
+/* Class = "IBUILabel"; text = "[About]"; ObjectID = "wCT-98-WBt"; */
+"wCT-98-WBt.text" = "About";
+
+/* Class = "IBUILabel"; text = "[Floorball coach]"; ObjectID = "wy0-mQ-WJz"; */
+"wy0-mQ-WJz.text" = "Floorball coach";
+
+/* Class = "IBUIBarButtonItem"; title = "[Back]"; ObjectID = "yuD-el-1Lu"; */
+"yuD-el-1Lu.title" = "Back";
+
+/* Class = "IBUIButton"; normalTitle = "[Save]"; ObjectID = "z2K-F5-mQf"; */
+"z2K-F5-mQf.normalTitle" = "Save";

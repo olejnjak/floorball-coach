@@ -41,7 +41,6 @@
 {
     [super viewDidLoad];
     
-    [self updateToolbar];
     [self updateUI];
 }
 
@@ -284,6 +283,8 @@
 
 - (void)updateUI
 {
+    [self updateToolbar];
+    
     if (self.type == FBCListViewControllerTypeFavorite)
     {
         NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
@@ -292,6 +293,18 @@
         [toolbarItems removeObject:self.addButton];
         
         [self.toolbar setItems:toolbarItems animated:YES];
+        
+        [self.titleLabel setText:LOC(@"FBCFavoriteExercises")];
+    }
+    else if (self.type == FBCListViewControllerTypeExercise)
+    {
+        [self.typeChangeButton setTitle:LOC(@"FBCTrainings")];
+        [self.titleLabel setText:LOC(@"FBCExerciseList")];
+    }
+    else if (self.type == FBCListViewControllerTypeTraining)
+    {
+        [self.typeChangeButton setTitle:LOC(@"FBCExercises")];
+        [self.titleLabel setText:LOC(@"FBCTrainingList")];
     }
     
     UIColor *clearColor = [UIColor clearColor];

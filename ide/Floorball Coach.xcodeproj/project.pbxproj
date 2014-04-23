@@ -16,7 +16,6 @@
 		6906CFD718DF871200D3006A /* NSMutableArray+RemoveDuplicates.m in Sources */ = {isa = PBXBuildFile; fileRef = 6906CFD618DF871200D3006A /* NSMutableArray+RemoveDuplicates.m */; };
 		690B803E18CE33680042C083 /* FBCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B803918CE33680042C083 /* FBCAppDelegate.m */; };
 		690B804118CE33680042C083 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B803D18CE33680042C083 /* main.m */; };
-		690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690B804318CE33FD0042C083 /* MainStoryboard.storyboard */; };
 		690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804618CE3DC40042C083 /* FBCMainMenuController.m */; };
 		690B804A18CE41670042C083 /* FBCMainMenuCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */; };
 		690CB3D91904863400DC289E /* attacker.png in Resources */ = {isa = PBXBuildFile; fileRef = 690CB3D01904863400DC289E /* attacker.png */; };
@@ -41,6 +40,7 @@
 		696290DB18FC77D50079CAF7 /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */; };
 		696290DD18FC79EF0079CAF7 /* FBCExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */; };
 		6964A67518F8ABD7006B502E /* FBCRubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964A67418F8ABD7006B502E /* FBCRubber.m */; };
+		69685F0B19083EB20055FC2B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69685F0D19083EB20055FC2B /* MainStoryboard.storyboard */; };
 		6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6990D18218D5C371003BC7BC /* FBCSortViewController.m */; };
 		6999802318F87BCD00063C86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		6999802418F87BCD00063C86 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
@@ -140,7 +140,6 @@
 		690B803A18CE33680042C083 /* Floorball Coach-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Floorball Coach-Info.plist"; sourceTree = "<group>"; };
 		690B803B18CE33680042C083 /* Floorball Coach-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Floorball Coach-Prefix.pch"; sourceTree = "<group>"; };
 		690B803D18CE33680042C083 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		690B804318CE33FD0042C083 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		690B804518CE3DC40042C083 /* FBCMainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCMainMenuController.h; sourceTree = "<group>"; };
 		690B804618CE3DC40042C083 /* FBCMainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuController.m; sourceTree = "<group>"; };
 		690B804818CE41670042C083 /* FBCMainMenuCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCMainMenuCellFactory.h; sourceTree = "<group>"; };
@@ -177,6 +176,8 @@
 		6964A67218F8AA7B006B502E /* FBCTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBCTools.h; sourceTree = "<group>"; };
 		6964A67318F8ABD7006B502E /* FBCRubber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCRubber.h; sourceTree = "<group>"; };
 		6964A67418F8ABD7006B502E /* FBCRubber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCRubber.m; sourceTree = "<group>"; };
+		69685F0F19083EBB0055FC2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		69685F1319083EDB0055FC2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainStoryboard.strings; sourceTree = "<group>"; };
 		6990D18118D5C371003BC7BC /* FBCSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortViewController.h; sourceTree = "<group>"; };
 		6990D18218D5C371003BC7BC /* FBCSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCSortViewController.m; sourceTree = "<group>"; };
 		6990D18618D5D1D5003BC7BC /* FBCSortBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCSortBlocks.h; sourceTree = "<group>"; };
@@ -361,7 +362,7 @@
 				690B803A18CE33680042C083 /* Floorball Coach-Info.plist */,
 				690B803B18CE33680042C083 /* Floorball Coach-Prefix.pch */,
 				690B803D18CE33680042C083 /* main.m */,
-				690B804318CE33FD0042C083 /* MainStoryboard.storyboard */,
+				69685F0D19083EB20055FC2B /* MainStoryboard.storyboard */,
 				69C3E4FB18DCDD3900B6B1FB /* localization.strings */,
 			);
 			name = "Supporting files";
@@ -725,6 +726,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 69ECF25A18CE32C800F741AB;
 			productRefGroup = 69ECF26418CE32C900F741AB /* Products */;
@@ -791,7 +793,7 @@
 				690CB3E11904863400DC289E /* shot.png in Resources */,
 				690CB3DB1904863400DC289E /* cone.png in Resources */,
 				690CB3D91904863400DC289E /* attacker.png in Resources */,
-				690B804418CE33FD0042C083 /* MainStoryboard.storyboard in Resources */,
+				69685F0B19083EB20055FC2B /* MainStoryboard.storyboard in Resources */,
 				6903A0A019055DE5004A74DB /* cvut-logo.png in Resources */,
 				690CB3DD1904863400DC289E /* line.png in Resources */,
 				690CB3DA1904863400DC289E /* border.png in Resources */,
@@ -892,6 +894,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		69685F0D19083EB20055FC2B /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69685F0F19083EBB0055FC2B /* Base */,
+				69685F1319083EDB0055FC2B /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		6999804D18F87C3800063C86 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

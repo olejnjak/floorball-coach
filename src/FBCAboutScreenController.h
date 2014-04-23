@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) id<FBCControllerDoneProtocol> delegate;
+@property (weak, nonatomic) IBOutlet UITextView *creditsTextView;
 
 - (IBAction)backButtonTapped:(UIButton *)sender;
 
