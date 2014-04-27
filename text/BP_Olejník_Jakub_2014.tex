@@ -54,7 +54,7 @@
 \end{introduction}
 
 \chapter{Cíl práce}
-	Výsledkem práce by měl být funkční prototyp, kterým bude možné nahradit nyní využívané kreslicí tabule. Využitím tabletu se odstraní nutnost použití jiných kreslicích nástrojů, které nemusí být vždy dostupné, popř. jejich viditelnost na tabuli není dostačující. Dále elektronickou tabuli nelze umazat tak, aby na ní nebylo vysvětlované cvičení vidět, v~případě ušpinění displeje jej lze snadno očistit.
+	Výsledkem práce by měl být funkční prototyp, kterým bude možné nahradit nyní využívané kreslicí tabule. Využitím tabletu se odstraní nutnost použití jiných kreslicích nástrojů, které nemusí být vždy dostupné, popř. jejich viditelnost na tabuli není dostačující. Dále elektronickou tabuli nelze umazat tak, aby na ní nebylo vysvětlované cvičení čitelné, v~případě umazání displeje jej lze snadno očistit.
 
 	Naopak cílem práce není aplikace určená pro libovolné kreslení. Takovou aplikaci by samozřejmě bylo možné využít i pro výše zmíněné účely, nicméně podpora symboliky, které se mezi trenéry a hráči již nyní využívá, tvoří fundamentální základ celé aplikace a~je hlavním znakem, který tuto aplikaci odlišuje od ostatních, které ji mohou svým zaměřením připomínat.
 
@@ -64,19 +64,19 @@
 
 \chapter{Analýza a návrh}
 
-	Na začátkem práce byla provedena analýza problematiky. Byly zohledněny dobré i špatné vlastnosti již existujících aplikací nejen na iOS, ale i na OS Android a desktopových systémech. V~rámci analýzy bylo provedeno dotazníkové šetření na základě, kterého byl upraven seznam funkcí, které jsou, nebo budou implementovány. Na základě této analýzy vznikla specifikace požadavků, která bude v~této kapitole rozebrána.
+	Na začátku práce byla provedena analýza problematiky. Byly zohledněny dobré i špatné vlastnosti již existujících aplikací nejen na iOS, ale i na OS Android a desktopových systémech. V~rámci analýzy bylo provedeno dotazníkové šetření na jehož základě, byl upraven seznam funkcí, které jsou, nebo budou implementovány. Na základě této analýzy vznikla specifikace požadavků, která bude v~této kapitole rozebrána.
 
 \section{Analýza požadavků}
 
 \subsection{Dotazníkové šetření}
 
-	V rámci analytické části práce jsem se rozhodl oslovit vybraný vzorek potenciálních uživatelů aplikace. Primárním cílem tohoto šetření byla především kontrola, zda se mi podařilo zaměřit se na opravdu důležité časti aplikace. Dalším z cílů bylo získání povědomí o podobných aplikacích, které již někdo za podobným účelem použil.
+	V rámci analytické části práce jsem se rozhodl oslovit vybraný vzorek potenciálních uživatelů aplikace. Primárním cílem tohoto šetření byla především kontrola, zda se podařilo zaměřit se na opravdu důležité časti aplikace. Dalším z cílů bylo získání povědomí o podobných aplikacích, které již někdo za podobným účelem použil.
 
 	Jednotlivé body dotazníku budou rozebrány v této kapitole. Pro analýzu zmíněných podobných aplikací je připravena samostatná kapitola (\ref{sec:competition}).
 
-\subsubsection{Cílové věkové kategorie}
+\subsubsection{Cílové věkové kategorie} \label{sec:target_group}
 
-	Jak je patrné z grafu \ref{graph:category}, šetření prokázalo, že cílovou skupinou budou trenéři starších kategorií (starší žáci a výše) \-- u mladších kategorií jsou priority jiné než u těch starších.
+	Jak je patrné z grafu \ref{graph:category}, šetření prokázalo, že cílovou skupinou budou trenéři starších kategorií (starší žáci a výše) \-- u mladších kategorií jsou priority nastaveny jinak, než u těch starších. Mladší (popř. začínající) hráče je třeba naučit florbalové základy \-- postoj, držení hole, střela, přihrávka, což je nutné předvést, nikoli kreslit.
 
 	\begin{figure}
 		\includegraphics{img/graph_category}
@@ -85,7 +85,9 @@
 
 \subsubsection{Četnost užití kreslicí tabule}
 
-	Dalším zjištěním (graf \ref{graph:table_usage}), které mě nepřekvapilo je fakt, že přibližně pouze pětina trenérů kreslicí tabuli nepoužívá vůbec, překvapením pro mě byla druhá část grafu \-- třetina trenérů ji využije více než pětkrát za trénink.
+	Dalším zjištěním (graf \ref{graph:table_usage}), které nebylo překvapením je fakt, že přibližně pouze pětina trenérů kreslicí tabuli nepoužívá vůbec, překvapením byla druhá část grafu \-- třetina trenérů ji využije více než pětkrát za trénink.
+
+	Počet trenérů, kteří tabuli nevyužívají přibližně kopíruje počet trenérů, kteří trénují mladší kategorie, což potvrzuje tvrzení v předchozí kapitole (\ref{sec:target_group}).
 
 	\begin{figure}
 		\includegraphics{img/graph_table_usage}
@@ -94,15 +96,17 @@
 
 \subsubsection{Funkce volné kreslení, seskupování cvičení, perzistence}
 
-	Výsledky potvrdily, že funkce volného kreslení (jako v Malování v MS Windows) je pro uživatele nepostradatelná. Toto od začátku měla být základní funkcionalita aplikace, což bylo výsledky potvrzeno. Stejně zásadními se ukázaly funkce perzistentního uložení cvičení a funkce seskupování cvičení do tréninků. Seskupování cvičení nebylo od začátku považováno za důležitou funkcionalitu, ale podle tohoto výsledku bylo rozhodnuto o jeho zařazení do aplikace.
+	Výsledky potvrdily, že funkce volného kreslení (jako v Malování v MS Windows) je pro uživatele nepostradatelná. Toto od začátku měla být základní funkcionalita aplikace. Stejně zásadními se ukázaly funkce perzistentního uložení a funkce seskupování cvičení do tréninků. Seskupování bylo od začátku považováno za důležitou funkcionalitu, ale podle tohoto výsledku bylo rozhodnuto o jeho zařazení do aplikace.
 
 \subsubsection{Textové poznámky}
 
-	Naopak překvapen jsem byl tím, že textové poznámky nejsou pro trenéry tak důležité, třetina dotázaných by se bez nich obešla. Zde jsem si dovolil upřednostnit svůj hlas a do aplikace toto zařadit, protože si myslím, že poznámkový aparát může trenérovi sloužit jako upomínka, aby nezapomněl, co je důležité hráčům před cvičením zdůraznit, což vede k jejich hráčskému růstu.
+	Naopak překvapením bylo, že textové poznámky nejsou pro trenéry tak důležité, třetina dotázaných by se bez nich obešla. Nicméně tato funkcionalita byla do aplikace zařazena, protože poznámkový aparát může sloužit jako upomínka pro trenéra, aby nezapomněl, co je důležité hráčům před cvičením zdůraznit, což vede k jejich růstu.
+
+	Dalším důležitým faktorem je, že poznámky mohou do jisté míry nahradit funkcionalitu, která vyplynula z dotazníkového šetření jako chtěná (např. docházka), ale prozatím byla odložena. Tímto způsobem je možné ji nahradit bez časového zdržení a  implementačních komplikací.
 
 \subsubsection{Automatické nakreslení cvičení}
 
-	Zajímavou funkcionalitou, kterou bych rád v aplikaci jednou viděl je automatické postupné nakreslení cvičení. Tato funkce snižuje nároky na prezentační schopnosti trenéra tím, že jednoduchým poklepáním je schopen připravené cvičení \uv{nakreslit}. Zároveň jsou sníženy nároky na grafické nároky na trenéra, protože nemusí ve spěchu a v nepohodlné pozici cvičení kreslit. Tato funkce se líbila všem dotázaným a je na seznamu funkcí, které budou do aplikace v nejbližší době doplněny. Takto bylo rozhodnuto z důvodu její pracnosti a omezené časové dotaci na tuto práci.
+	Zajímavou funkcionalitou, kterou by bylo dobré jednou v aplikaci mít, je automatické postupné nakreslení cvičení. Tato funkce snižuje nároky na prezentační schopnosti trenéra tím, že jednoduchým poklepáním je schopen připravené cvičení \uv{nakreslit}. Zároveň jsou sníženy nároky na grafické nároky na trenéra, protože nemusí ve spěchu a v nepohodlné pozici cvičení kreslit. Tato funkce se líbila všem dotázaným a je na seznamu funkcí, které budou do aplikace v nejbližší době doplněny. Takto bylo rozhodnuto z důvodu její pracnosti a omezené časové dotaci na tuto práci.
 
 	Toto byl výčet původně navrhovaných funkcí, které by měly být v aplikaci implementovány, následující funkce jsou tipy, které by dotazovaní trenéři v aplikaci ocenili.
 
@@ -112,7 +116,9 @@
 
 \subsubsection{Docházka}
 
-	Další zmíněnou funkcí byla docházka na trénink. Tato funkce nebude implementována, protože nesouvisí s přípravou tréninku. Tato funkce by mohla být zařazena do kategorie \uv{managementu} tréninku, čímž se navrhovaná aplikace nezabývá.
+	Další zmíněnou funkcí byla docházka na trénink. Tato funkce nebude implementována, protože nesouvisí s přípravou tréninku. Tato funkce by mohla být zařazena do kategorie \uv{managementu} tréninku, což odporuje zamýšlenému určení aplikace.
+
+	Dalším aspektem pro vynechání funkce byl fakt, že trenér má možnost si docházku zapsat. K tomuto účelu může využít textové poznámky, které budou v aplikaci implementovány, a jsou mu tedy dostupné.
 
 \subsubsection{Čas, který cvičení zabralo}
 
@@ -138,7 +144,13 @@
 
 	Operační systém iOS patří mezi velmi dynamicky se rozvíjející platformy, několikrát do roka je vydána nová verze, která obsahuje nové funkce. Toto samozřejmě může přinášet problémy se zpětnou kompatibilitou, nicméně velká většina zařízení vždy přejde na novou verzi systému téměř okamžitě, tudíž roztříštěnost tohoto systému prakticky neexistuje, což samozřejmě přináší vývojářům spoustu výhod.
 
-	Poslední verze (verze 7) přinesla velké množství nemalých změn, především co se uživatelského rozhraní týče, a především proto jsem se rozhodl podporu starších verzí systému z aplikace vynechat.
+	Poslední verze (verze 7) přinesla velké množství nemalých změn, především co se uživatelského rozhraní týče, a především proto jsem se rozhodl podporu starších verzí systému z aplikace vynechat. Důležité přitom je, že poslední verzi systému používají téměř všechna zařízení s iOS \cite{devAppleStats}.
+
+	\begin{figure}
+		\centering
+		\includegraphics{img/ios7stats}
+		\caption{Graf verzí iOS k 27.4.2014}\label{graph:ios7_stats}\cite{devAppleStats}
+	\end{figure}
 
 \section{Podobné aplikace}\label{sec:competition}
 

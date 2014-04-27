@@ -1108,7 +1108,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/../src/Floorball Coach-Info.plist";
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
-				PROVISIONING_PROFILE = "9129B872-7E83-49F2-B600-D3A279FF34F8";
+				PROVISIONING_PROFILE = "F0BA3347-D27F-476B-BB8A-FD2449983023";
 				SYMROOT = ../out;
 				USER_HEADER_SEARCH_PATHS = "../lib/Lumberjack/**";
 				WRAPPER_EXTENSION = app;
@@ -1120,13 +1120,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 24U s.r.o.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/../src/Floorball Coach-Info.plist";
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
 				SYMROOT = ../out;
 				USER_HEADER_SEARCH_PATHS = "../lib/Lumberjack/**";
 				WRAPPER_EXTENSION = app;

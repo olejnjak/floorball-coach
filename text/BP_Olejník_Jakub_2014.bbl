@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+\providecommand{\biburl}[1]{\url{#1}}
+\providecommand{\urlprefix}{Dostupn{\' e} z: }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\eprint}[2][]{\biburl{#2}}
+
+\bibitem{devAppleStats}
+Apple, Inc.: \emph{App Store Distribution - Apple Developer}. [cit.
+  2014-04-27].
+\urlprefix\biburl{https://developer.apple.com/support/appstore/}
+
+\end{thebibliography}
