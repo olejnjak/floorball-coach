@@ -16,6 +16,8 @@
 
 \usepackage{dirtree} %directory tree visualisation
 
+\usepackage{subfig}
+
 % % list of acronyms
 % \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
 % \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
@@ -68,7 +70,7 @@
 
 \section{Analýza požadavků}
 
-\subsection{Dotazníkové šetření}
+\subsection{Dotazníkové šetření}\label{sec:survey}
 
 	V rámci analytické části práce jsem se rozhodl oslovit vybraný vzorek potenciálních uživatelů aplikace. Primárním cílem tohoto šetření byla především kontrola, zda se podařilo zaměřit se na opravdu důležité časti aplikace. Dalším z cílů bylo získání povědomí o podobných aplikacích, které již někdo za podobným účelem použil.
 
@@ -79,6 +81,7 @@
 	Jak je patrné z grafu \ref{graph:category}, šetření prokázalo, že cílovou skupinou budou trenéři starších kategorií (starší žáci a výše) \-- u mladších kategorií jsou priority nastaveny jinak, než u těch starších. Mladší (popř. začínající) hráče je třeba naučit florbalové základy \-- postoj, držení hole, střela, přihrávka, což je nutné předvést, nikoli kreslit.
 
 	\begin{figure}
+		\centering
 		\includegraphics{img/graph_category}
 		\caption{Graf trénovaných kategorií}\label{graph:category}
 	\end{figure}
@@ -90,8 +93,9 @@
 	Počet trenérů, kteří tabuli nevyužívají přibližně kopíruje počet trenérů, kteří trénují mladší kategorie, což potvrzuje tvrzení v předchozí kapitole (\ref{sec:target_group}).
 
 	\begin{figure}
+		\centering
 		\includegraphics{img/graph_table_usage}
-		\caption{Graf využívání kreslicí tabule}\label{graph:table_usage}
+		\caption{Graf využítí kreslicí tabule}\label{graph:table_usage}
 	\end{figure}
 
 \subsubsection{Funkce volné kreslení, seskupování cvičení, perzistence}
@@ -144,15 +148,119 @@
 
 	Operační systém iOS patří mezi velmi dynamicky se rozvíjející platformy, několikrát do roka je vydána nová verze, která obsahuje nové funkce. Toto samozřejmě může přinášet problémy se zpětnou kompatibilitou, nicméně velká většina zařízení vždy přejde na novou verzi systému téměř okamžitě, tudíž roztříštěnost tohoto systému prakticky neexistuje, což samozřejmě přináší vývojářům spoustu výhod.
 
-	Poslední verze (verze 7) přinesla velké množství nemalých změn, především co se uživatelského rozhraní týče, a především proto jsem se rozhodl podporu starších verzí systému z aplikace vynechat. Důležité přitom je, že poslední verzi systému používají téměř všechna zařízení s iOS \cite{devAppleStats}.
+	Poslední verze (verze 7) přinesla velké množství změn, především v uživatelském rozhraní, proto bylo rozhodnuto podporu starších verzí systému z aplikace vynechat. Důležité přitom je, že poslední verzi systému používá vetšina uživatelů, což znázorňuje graf \ref{graph:ios7_stats} \cite{devAppleStats}.
+
+	{\LARGE TODO dopsat zařízení na nichž oficiálně běží iOS 7}
 
 	\begin{figure}
 		\centering
 		\includegraphics{img/ios7stats}
-		\caption{Graf verzí iOS k 27.4.2014}\label{graph:ios7_stats}\cite{devAppleStats}
+		\caption{Graf verzí iOS k 27.4.2014}\label{graph:ios7_stats}
 	\end{figure}
 
 \section{Podobné aplikace}\label{sec:competition}
+
+	V rámci analýzy požadavků bylo nutné prozkoumat, zda existují podobné aplikace. Následně v nalezených aplikacích bylo potřeba identifikovat jejich kladné, ale i záporné vlastnosti. Takto získané informace byly následně využity pro zlepšení navrhnované aplikace.
+
+	Analýza podobných aplikací byla zaměřena především na uživatelské rozhraní nalezených aplikací a funkce, které aplikace nabízí. U funkcí bylo důležitým kritériem, zda jsou užitečné pro florbalové trenéry.
+
+	\subsection{CoachNote Hockey And Ringette}
+
+	Tato aplikace\footnote{v době analýzy byla dostupná verze 1.6.6} se od začátku analýzy jevila jako nejkvalitnější ze všech nalezených. Zároveň se svým zaměřením i nabízenou funkcionalitou zaměřovala na podobnou cílovou skupinu uživatelů jako aplikace navrhovaná v této práci.
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{img/competition/coachnote/IMG_0015}
+		\caption{Hlavní menu aplikace CoachNote Hockey And Ringette}
+		\label{pic:coachnote_menu}
+	\end{figure}
+
+	Uživatelské rozhraní (obr. \ref{pic:coachnote_menu} a \ref{pic:coachnote_exercises}) vypadá podle mého názoru líbivě, nicméně toto je vykoupeno jeho nižší intuitivitou. Aplikace nabízí velké množství funkcí, které je občas složité dohledat. Zároveň ikony, které byly zvoleny pro nástroje mohou uživatele zmást (např. ikona pro skrytí panelu nahrávaní zvuku).
+
+	Rozšířené možnosti jednotlivých nástrojů jsou dostupné po druhém tapnutí na zvolený nástroj. Toto řešení považuji za nešťastné, jelikož jiné kreslicí nástroje, nejen na platformě iOS, řeší tyto věci jiným způsobem, např. změnou položek ve speciálním panelu, který je pro rozšířená nastavení zvoleného nástroje určen. Z tohoto důvodu si myslím, že uživatel často rozšířené možnosti nástroje nenajde.
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{img/competition/coachnote/IMG_0011}
+		\caption{Zobrazení cvičení v aplikaci CoachNote Hockey And Ringette}
+		\label{pic:coachnote_exercises}
+	\end{figure}
+
+	Po stránce dostupných funkcí by aplikace florbalovému trenérovi mohla vyhovovat. Nicméně pro zobrazení hráčů využívá jinou notaci \-- odlišuje je pouze pomocí barev, což je mezi florbalovými trenéry podle mého názoru nedostačující, protože trenéři i hráči jsou zvyklí rozlišení pomocí různých symbolů.
+
+	U aplikace je šikovné, že hráči jsou speciální objekty, které je možné přesouvat a aplikace zobrazuje jejich trajektorii. Bohužel tato funkce není dotažená do konce a hráče lze přesunout pouze z bodu A do bodu B, pokud je potřeba jej přesunout do dalšího bodu, pak jeho předchozí trajektorie zmizí.
+
+	Aplikace obsahuje velké množství funkcí, některé jsou podle mého názoru zbytečné (např. nahrávání zvuku) a jiné důležité chybí. Jednou z takových funkcí, kterou se mi nepodařilo dohledat je mazání jednotlivých hráčů. Aplikace nabízí pouze možnost smazat všechny hráče, kteří jsou na hřišti zakresleni, což považuji za velký nedostatek, obzvlášť pokud uvažujeme, jak je aplikace komplexní.
+
+	Analýza této aplikace byla zaměřena především na verzi, která je dostupná zdarma na \href{https://itunes.apple.com/us/app/coachnote-hockey-ringette/id562205341?mt=8}{App store}. Placená verze aplikace je osvobozena od reklamy a obsahuje rozšířenou funkcionalitu (např. možnost psát text přímo do cvičení).
+
+	Aplikace podporuje i zařízení iPhone, nicméně na tomto zařízení aplikace zkoušena nebyla, poněvadž navrhovaná aplikace se zaměřuje pouze na iPad.
+
+	Existují různé varianty aplikace, které jsou zaměřené na jiné sporty. Ostatní varianty nebyly testovány, protože sporty, na které byly zaměřeny se od florbalu významně liší.
+
+	Aplikace celkově není špatné, při doplnění florbalové notace a po úpravě uživatelského rozhraní by mohla být dobře použitelná. Co by mohlo být pro uživatele nepříjemné, je až příliš dlouhé čekání při otevření prázdného cvičení\footnote{vyzkoušeno na iPadu 4 a na iPadu Air}.
+
+	\subsection{IceHockey Board Free}
+
+	Aplikace \footnote{v době analýzy byla dostupná verze 8.4} je zdarma dostupná na \href{https://itunes.apple.com/ca/app/icehockey-board-free/id366079177?mt=8}{App store}. Aplikace je zaměřena na lední hokej, existují varianty pro jiné sporty, např. pozemní hokej, ale varianta pro florbal chybí.
+
+	Aplikace je velmi jednoduchá, obsahuje pevný počet hráčů (6 pro každý z týmů). Aplikace si umí ukládat pozice hráčů a poté mezi těmito uloženými stavy lze tapnutím přecházet. Toto platí pouze pro pozice hráčů, nakreslené čáry jsou zobrazeny vždy, bez ohledu na uložený stav.
+
+	Uživatelské rozhraní (obr. \ref{pic:icehockey_board_free}) v aplikaci je minimalistické, po spuštění se zobrazí hřiště a lze s ním ihned manipulovat. Jednotlivé nástroje jsou dostupné po rozvinutí pomocného panelu, který je naznačen vhodnou ikonou.
+
+	\begin{figure}[p]
+		\centering
+		\includegraphics[width=\textwidth]{img/competition/icehockey_board_free/IMG_0018}
+		\caption{Uživatelské rozhraní aplikace IceHockey Board Free}
+		\label{pic:icehockey_board_free}
+	\end{figure}
+
+	Po funkční stránce je aplikace příliš jednoduchá, neumožňuje mazání jednotlivých čar, mazat lze pouze všechny čáry hromadně. Na aplikaci je hezké, že umožňuje automatické nakreslení cvičení, avšak tato funkcionalita není dotažena a týká se pouze pozic jednotlivých hráčů. Tato aplikace posloužila pouze jako příklad, jak by navrhovaná aplikace neměla vypadat, rozhraní není pro uživatele přívětivé a funkce jsou omezené a nedotažené. Dále aplikace obsahuje pro uživatele velmi nepříjemnou reklamu, která jej zdržuje od užívání při spuštění a při každé maximalizaci aplikace.
+
+	\newpage
+
+	\subsection{My Field Hockey Coach Free}
+
+	Verze aplikace\footnote{v době analýzy byla dostupná verze 3.1}, která je dostupná zdarma na \href{https://itunes.apple.com/us/app/my-field-hockey-coach-free/id457826679?mt=8}{App store} je velice omezená, je zaměřená na pozemní hokej. Umožňuje pouze správu jednotlivých hráčů v týmu a jejich rozmístění do formace. Další funkce této aplikace neodpovídají zaměření navrhované aplikace \-- jedná se o možnost zobrazení ukazatele aktuálního skóre utkání a tabule složící k signalizaci střídání. Aplikace neumožňuje žádnou formu kreslení. Toto by mohlo být obsahem placené verze.
+
+	\begin{figure}[h!]
+		\centering
+		\subfloat[Hlavní nabídka]{\includegraphics[width=0.4\textwidth]{img/competition/my_field_hockey_coach_free/IMG_0019}}
+ 		\hfil
+ 		\subfloat[Správa hráčů]{\includegraphics[width=0.4\textwidth]{img/competition/my_field_hockey_coach_free/IMG_0021}}
+
+ 		\caption{Uživatelské rozhraní aplikace My Field Hockey Coach Free}
+ 		\label{pic:my_field_hockey_coach_free}
+	\end{figure}
+
+	Aplikace má povedené uživatelské rozhraní (obr. \ref{pic:my_field_hockey_coach_free}. Často jsou pro tlačítka použity textové popisky, čímž je možné se vyvarovat použití matoucí ikony.
+
+	Bylo by dobré se inspirovat návrhem jednotlivých nabídek v menu, které jsou navrženy přehledně a intuitivně. Naopak rozhraní pro kreslicí ploch v aplikaci chybí, tudíž jej nelze jakkoliv analyzovat.
+
+	\subsection{Exercise drawer}
+
+	Aplikace psaná v Javě, tudíž běžící na desktopových platformách, volně dostupná na \href{http://floorballcoach.org/exercisedrawer/}{internetu}. Jedná se o aplikaci, která byla zmíněna v dotazníkovém šetření (kapitola \ref{sec:survey}). Aplikaci považuji vhodnou na přípravu materiálů, pokud autor chce např. publikovat knížku o trénování.
+
+	Funkcemi se aplikace velmi podobá aplikaci navrhované v této práci. Jako jediná je zaměřena na florbal. Nicméně některé funkce jsou omezené, např. je možné kreslit pouze úsečky \-- funkce volného kreslení chybí. Aplikace neumožňuje přípravu celých tréninků, je možné ukládat cvičení pouze jednotlivě. Je možné ke cvičení vkládat poznámky a to dvojím způsobem. Prvním je možnost vkládat poznámky přímo na plochu cvičení, druhá je možnost připsat právě jednu poznámku a uložit ji jako přílohu ke cvičení.
+
+	Aplikace dále umí zobrazit mnoho typů hřiště, nicméně všechny typy jsou pouze mírně obměněné varianty nákresu celého hřiště a poloviny hřiště.
+
+	Po funkční stránce mě zklamalo, že v aplikaci nelze, popř. není snadné, smazat nakreslenou přihrávku, střelu ani pohyb hráče. Bylo možné smazat pouze hráče či kužel.
+
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{img/competition/exercise_drawer}
+		\caption{Uživatelské rozhraní aplikace Exercise Drawer}
+		\label{pic:exercise_drawer}
+	\end{figure}
+
+	Uživatelské rozhraní aplikace (obr. \ref{pic:exercise_drawer}) je jednoduché a přehledné, což připisuji především zvolené platformě a velikosti monitoru, na kterém byla aplikace zkoušena.
+
+	Tato aplikace je co se týče funkční stránky pravděpodobně nejlepší a bylo by dobré, aby navrhovaná aplikace byla jejím ekvivalentem na platformě iOS.
+
+	\subsection{Aplikace zmíněné v dotaznících}
+
+	V provedeném dotazníkovém šetření \ref{sec:survey} byly zmíněny ještě další aplikace \-- Florbalový trenér a CoachAp (obě pro OS Android), nicméně ani jednu nebylo možné na Google Play Store nalézt, tudíž nebyly analyzovány.
 
 \section{Návrh uživatelského rozhraní}
 
