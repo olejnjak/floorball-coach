@@ -34,7 +34,6 @@
 		69391D0618DD99E70009E3AB /* FBCFavoritesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0518DD99E70009E3AB /* FBCFavoritesModel.m */; };
 		69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */; };
 		6943971418F0BEE10044DEAC /* FBCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943971318F0BEE10044DEAC /* FBCLine.m */; };
-		6951182918FB54EE000E778F /* libLumberjack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6951182418FB535E000E778F /* libLumberjack.a */; };
 		696290CF18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 696290CE18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m */; };
 		696290DA18FC77D50079CAF7 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */; };
 		696290DB18FC77D50079CAF7 /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */; };
@@ -80,6 +79,18 @@
 		69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26818CE32C900F741AB /* CoreGraphics.framework */; };
 		69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
 		69EFCA5D18F8AF79001BEB8D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69EFCA5C18F8AF79001BEB8D /* Images.xcassets */; };
+		69F473A819152FFE0008BD43 /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739119152FFE0008BD43 /* CLIColor.m */; };
+		69F473A919152FFE0008BD43 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739319152FFE0008BD43 /* DDAbstractDatabaseLogger.m */; };
+		69F473AA19152FFE0008BD43 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739519152FFE0008BD43 /* DDASLLogCapture.m */; };
+		69F473AB19152FFE0008BD43 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739719152FFE0008BD43 /* DDASLLogger.m */; };
+		69F473AC19152FFE0008BD43 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739919152FFE0008BD43 /* DDFileLogger.m */; };
+		69F473AD19152FFE0008BD43 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739C19152FFE0008BD43 /* DDLog.m */; };
+		69F473AE19152FFE0008BD43 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739E19152FFE0008BD43 /* DDTTYLogger.m */; };
+		69F473AF19152FFE0008BD43 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F473A119152FFE0008BD43 /* DDContextFilterLogFormatter.m */; };
+		69F473B019152FFE0008BD43 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F473A319152FFE0008BD43 /* DDDispatchQueueLogFormatter.m */; };
+		69F473B119152FFE0008BD43 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F473A519152FFE0008BD43 /* DDMultiFormatter.m */; };
+		69F473B219152FFE0008BD43 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F473A619152FFE0008BD43 /* README.txt */; };
+		69F473B319152FFE0008BD43 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F473A719152FFE0008BD43 /* LICENSE.txt */; };
 		69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F5882918CF78C9002A18F4 /* FBCListViewController.m */; };
 		69FBC18318DCE7890070E258 /* FBCNewNoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FBC18218DCE7890070E258 /* FBCNewNoteController.m */; };
 		69FBC18618DCF96A0070E258 /* FBCNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FBC18518DCF96A0070E258 /* FBCNoteCell.m */; };
@@ -91,27 +102,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6951182318FB535E000E778F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6951181E18FB535E000E778F /* Lumberjack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC58E48814DC70CF006B16E2;
-			remoteInfo = Lumberjack;
-		};
-		6951182518FB535E000E778F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6951181E18FB535E000E778F /* Lumberjack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DC58E4C114DC8BE2006B16E2;
-			remoteInfo = LibTest;
-		};
-		6951182718FB5377000E778F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6951181E18FB535E000E778F /* Lumberjack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = DC58E48714DC70CF006B16E2;
-			remoteInfo = Lumberjack;
-		};
 		69ADBD4218F0C9DE00DF7B18 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69ECF25B18CE32C800F741AB /* Project object */;
@@ -168,7 +158,6 @@
 		69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCEditUnitNameController.m; sourceTree = "<group>"; };
 		6943971218F0BEE10044DEAC /* FBCLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCLine.h; sourceTree = "<group>"; };
 		6943971318F0BEE10044DEAC /* FBCLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCLine.m; sourceTree = "<group>"; };
-		6951181E18FB535E000E778F /* Lumberjack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Lumberjack.xcodeproj; path = ../lib/Lumberjack/Xcode/LumberjackFramework/Mobile/Lumberjack.xcodeproj; sourceTree = "<group>"; };
 		696290CE18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingUnitLibraryTests.m; sourceTree = "<group>"; };
 		696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = ../lib/MockitoIOS/OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMockitoIOS.framework; path = ../lib/MockitoIOS/OCMockitoIOS.framework; sourceTree = "<group>"; };
@@ -249,6 +238,29 @@
 		69ECF26A18CE32C900F741AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		69ECF27F18CE32C900F741AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		69EFCA5C18F8AF79001BEB8D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		69F4739019152FFE0008BD43 /* CLIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLIColor.h; sourceTree = "<group>"; };
+		69F4739119152FFE0008BD43 /* CLIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLIColor.m; sourceTree = "<group>"; };
+		69F4739219152FFE0008BD43 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		69F4739319152FFE0008BD43 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		69F4739419152FFE0008BD43 /* DDASLLogCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogCapture.h; sourceTree = "<group>"; };
+		69F4739519152FFE0008BD43 /* DDASLLogCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogCapture.m; sourceTree = "<group>"; };
+		69F4739619152FFE0008BD43 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		69F4739719152FFE0008BD43 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		69F4739819152FFE0008BD43 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		69F4739919152FFE0008BD43 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		69F4739A19152FFE0008BD43 /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
+		69F4739B19152FFE0008BD43 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		69F4739C19152FFE0008BD43 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		69F4739D19152FFE0008BD43 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		69F4739E19152FFE0008BD43 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		69F473A019152FFE0008BD43 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		69F473A119152FFE0008BD43 /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		69F473A219152FFE0008BD43 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		69F473A319152FFE0008BD43 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		69F473A419152FFE0008BD43 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
+		69F473A519152FFE0008BD43 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		69F473A619152FFE0008BD43 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		69F473A719152FFE0008BD43 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		69F5882818CF78C9002A18F4 /* FBCListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCListViewController.h; sourceTree = "<group>"; };
 		69F5882918CF78C9002A18F4 /* FBCListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCListViewController.m; sourceTree = "<group>"; };
 		69FBC18118DCE7890070E258 /* FBCNewNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNewNoteController.h; sourceTree = "<group>"; };
@@ -297,7 +309,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6951182918FB54EE000E778F /* libLumberjack.a in Frameworks */,
 				69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */,
 				69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */,
 				69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */,
@@ -381,15 +392,6 @@
 			name = Exercise;
 			sourceTree = "<group>";
 		};
-		6951181F18FB535E000E778F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6951182418FB535E000E778F /* libLumberjack.a */,
-				6951182618FB535E000E778F /* LibTest.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		696290CC18FC760B0079CAF7 /* Doublers */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,9 +434,11 @@
 		69BC278918E087C600C0B055 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				69F4738E19152FFE0008BD43 /* Lumberjack */,
 				69FE9FF418E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout */,
 			);
 			name = lib;
+			path = ../lib;
 			sourceTree = "<group>";
 		};
 		69DE1C6D18CE8929006A869C /* tst */ = {
@@ -505,7 +509,6 @@
 		69ECF25A18CE32C800F741AB = {
 			isa = PBXGroup;
 			children = (
-				6951181E18FB535E000E778F /* Lumberjack.xcodeproj */,
 				6999804C18F87C3800063C86 /* RubberTool prototype */,
 				69ECF26518CE32C900F741AB /* Frameworks */,
 				69BC278918E087C600C0B055 /* lib */,
@@ -538,6 +541,52 @@
 				69ECF27F18CE32C900F741AB /* XCTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69F4738E19152FFE0008BD43 /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				69F4738F19152FFE0008BD43 /* CLI */,
+				69F4739219152FFE0008BD43 /* DDAbstractDatabaseLogger.h */,
+				69F4739319152FFE0008BD43 /* DDAbstractDatabaseLogger.m */,
+				69F4739419152FFE0008BD43 /* DDASLLogCapture.h */,
+				69F4739519152FFE0008BD43 /* DDASLLogCapture.m */,
+				69F4739619152FFE0008BD43 /* DDASLLogger.h */,
+				69F4739719152FFE0008BD43 /* DDASLLogger.m */,
+				69F4739819152FFE0008BD43 /* DDFileLogger.h */,
+				69F4739919152FFE0008BD43 /* DDFileLogger.m */,
+				69F4739A19152FFE0008BD43 /* DDLog+LOGV.h */,
+				69F4739B19152FFE0008BD43 /* DDLog.h */,
+				69F4739C19152FFE0008BD43 /* DDLog.m */,
+				69F4739D19152FFE0008BD43 /* DDTTYLogger.h */,
+				69F4739E19152FFE0008BD43 /* DDTTYLogger.m */,
+				69F4739F19152FFE0008BD43 /* Extensions */,
+				69F473A719152FFE0008BD43 /* LICENSE.txt */,
+			);
+			path = Lumberjack;
+			sourceTree = "<group>";
+		};
+		69F4738F19152FFE0008BD43 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				69F4739019152FFE0008BD43 /* CLIColor.h */,
+				69F4739119152FFE0008BD43 /* CLIColor.m */,
+			);
+			path = CLI;
+			sourceTree = "<group>";
+		};
+		69F4739F19152FFE0008BD43 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69F473A019152FFE0008BD43 /* DDContextFilterLogFormatter.h */,
+				69F473A119152FFE0008BD43 /* DDContextFilterLogFormatter.m */,
+				69F473A219152FFE0008BD43 /* DDDispatchQueueLogFormatter.h */,
+				69F473A319152FFE0008BD43 /* DDDispatchQueueLogFormatter.m */,
+				69F473A419152FFE0008BD43 /* DDMultiFormatter.h */,
+				69F473A519152FFE0008BD43 /* DDMultiFormatter.m */,
+				69F473A619152FFE0008BD43 /* README.txt */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		69FD432A18CFABB800A95B61 /* Main menu */ = {
@@ -615,8 +664,7 @@
 				69FE9FF518E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.h */,
 				69FE9FF618E7632A00EEA177 /* LXReorderableCollectionViewFlowLayout.m */,
 			);
-			name = LXReorderableCollectionViewFlowLayout;
-			path = ../lib/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout;
+			path = LXReorderableCollectionViewFlowLayout;
 			sourceTree = "<group>";
 		};
 		69FEA00A18E763E600EEA177 /* Field */ = {
@@ -698,7 +746,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6951182818FB5377000E778F /* PBXTargetDependency */,
 			);
 			name = "Floorball Coach";
 			productName = "Floorbal Coach";
@@ -731,12 +778,6 @@
 			mainGroup = 69ECF25A18CE32C800F741AB;
 			productRefGroup = 69ECF26418CE32C900F741AB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6951181F18FB535E000E778F /* Products */;
-					ProjectRef = 6951181E18FB535E000E778F /* Lumberjack.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				69ECF26218CE32C800F741AB /* Floorball Coach */,
@@ -745,23 +786,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6951182418FB535E000E778F /* libLumberjack.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLumberjack.a;
-			remoteRef = 6951182318FB535E000E778F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6951182618FB535E000E778F /* LibTest.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = LibTest.app;
-			remoteRef = 6951182518FB535E000E778F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6999802018F87BCD00063C86 /* Resources */ = {
@@ -788,6 +812,7 @@
 				69EFCA5D18F8AF79001BEB8D /* Images.xcassets in Resources */,
 				69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */,
 				690CB3E01904863400DC289E /* run.png in Resources */,
+				69F473B319152FFE0008BD43 /* LICENSE.txt in Resources */,
 				690CB3DE1904863400DC289E /* pass.png in Resources */,
 				690CB3DF1904863400DC289E /* rubber.png in Resources */,
 				690CB3E11904863400DC289E /* shot.png in Resources */,
@@ -797,6 +822,7 @@
 				6903A0A019055DE5004A74DB /* cvut-logo.png in Resources */,
 				690CB3DD1904863400DC289E /* line.png in Resources */,
 				690CB3DA1904863400DC289E /* border.png in Resources */,
+				69F473B219152FFE0008BD43 /* README.txt in Resources */,
 				690CB3DC1904863400DC289E /* defender.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -829,16 +855,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */,
+				69F473AC19152FFE0008BD43 /* DDFileLogger.m in Sources */,
 				69E8D5F418F0A75B0031C171 /* FBCCone.m in Sources */,
 				69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */,
 				69EB652518D503EE00F72E33 /* FBCComplexExerciseCell.m in Sources */,
+				69F473AA19152FFE0008BD43 /* DDASLLogCapture.m in Sources */,
 				69F5882A18CF78C9002A18F4 /* FBCListViewController.m in Sources */,
 				6943971418F0BEE10044DEAC /* FBCLine.m in Sources */,
 				6906CFC818DF418C00D3006A /* FBCTrainingDetailController.m in Sources */,
 				69A2013F18D5274F005C4E7B /* FBCTrainingCell.m in Sources */,
 				69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */,
 				69391D0618DD99E70009E3AB /* FBCFavoritesModel.m in Sources */,
+				69F473AB19152FFE0008BD43 /* DDASLLogger.m in Sources */,
 				6990D18318D5C371003BC7BC /* FBCSortViewController.m in Sources */,
+				69F473A919152FFE0008BD43 /* DDAbstractDatabaseLogger.m in Sources */,
 				69FD433B18CFB7B000A95B61 /* FBCFadeSegue.m in Sources */,
 				6906CFD118DF7C0C00D3006A /* FBCTrainingDetailSectionHeaderView.m in Sources */,
 				69FBC18318DCE7890070E258 /* FBCNewNoteController.m in Sources */,
@@ -849,6 +879,7 @@
 				6964A67518F8ABD7006B502E /* FBCRubber.m in Sources */,
 				69C9524E18E773800058C958 /* FBCDrawingView.m in Sources */,
 				69A2013C18D51C67005C4E7B /* FBCSimpleExerciseCell.m in Sources */,
+				69F473AF19152FFE0008BD43 /* DDContextFilterLogFormatter.m in Sources */,
 				69FD433E18CFB95500A95B61 /* FBCFlipHorizontalSegue.m in Sources */,
 				6906CFD718DF871200D3006A /* NSMutableArray+RemoveDuplicates.m in Sources */,
 				6906CFD418DF801800D3006A /* UICollectionView+ReloadAnimated.m in Sources */,
@@ -858,11 +889,14 @@
 				690B804718CE3DC40042C083 /* FBCMainMenuController.m in Sources */,
 				691E7B0718CFE34E0030B929 /* FBCNotesPanelController.m in Sources */,
 				69B7079918F0B43B0060FEB7 /* FBCDefender.m in Sources */,
+				69F473AD19152FFE0008BD43 /* DDLog.m in Sources */,
 				69C530D118F0C65200111364 /* TestFBCTrainingUnitLibrary.m in Sources */,
 				69E8D5F718F0AFF40031C171 /* FBCPlayer.m in Sources */,
 				690B804118CE33680042C083 /* main.m in Sources */,
 				69EB652818D5057700F72E33 /* NSDate+FBCDateToString.m in Sources */,
+				69F473AE19152FFE0008BD43 /* DDTTYLogger.m in Sources */,
 				69EB651C18D4EC6A00F72E33 /* FBCTrainingUnitLibrary.m in Sources */,
+				69F473B119152FFE0008BD43 /* DDMultiFormatter.m in Sources */,
 				69FD433218CFAC1C00A95B61 /* FBCTrainingListModel.m in Sources */,
 				69E32BFA18E88C8800303ED4 /* FBCRun.m in Sources */,
 				69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */,
@@ -872,6 +906,8 @@
 				69FD432F18CFABF300A95B61 /* FBCExerciseListModel.m in Sources */,
 				691E7B0118CFDC1F0030B929 /* FBCToolboxController.m in Sources */,
 				69FBC18618DCF96A0070E258 /* FBCNoteCell.m in Sources */,
+				69F473B019152FFE0008BD43 /* DDDispatchQueueLogFormatter.m in Sources */,
+				69F473A819152FFE0008BD43 /* CLIColor.m in Sources */,
 				69EB651818D4E6F500F72E33 /* FBCTraining.m in Sources */,
 				6906CFCE18DF70E300D3006A /* FBCTrainingDetailModel.m in Sources */,
 				6906CFCB18DF6F3B00D3006A /* FBCTrainingDetailCell.m in Sources */,
@@ -881,11 +917,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6951182818FB5377000E778F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Lumberjack;
-			targetProxy = 6951182718FB5377000E778F /* PBXContainerItemProxy */;
-		};
 		69ADBD4318F0C9DE00DF7B18 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 69ECF26218CE32C800F741AB /* Floorball Coach */;
@@ -1106,11 +1137,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/../src/Floorball Coach-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
 				PROVISIONING_PROFILE = "F0BA3347-D27F-476B-BB8A-FD2449983023";
 				SYMROOT = ../out;
-				USER_HEADER_SEARCH_PATHS = "../lib/Lumberjack/**";
+				USER_HEADER_SEARCH_PATHS = "../lib/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1124,11 +1156,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/../src/Floorball Coach-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
 				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
 				SYMROOT = ../out;
-				USER_HEADER_SEARCH_PATHS = "../lib/Lumberjack/**";
+				USER_HEADER_SEARCH_PATHS = "../lib/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

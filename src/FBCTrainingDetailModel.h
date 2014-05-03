@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../lib/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.h"
+#import "LXReorderableCollectionViewFlowLayout/LXReorderableCollectionViewFlowLayout.h"
 
 static const NSInteger kFBCTrainingExercisesSection = 0;
 static const NSInteger kFBCFavoriteExercisesSection = 1;
