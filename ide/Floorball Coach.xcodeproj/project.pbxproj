@@ -1136,7 +1136,7 @@
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/../src/Floorball Coach-Info.plist";
+				INFOPLIST_FILE = "../src/Floorball Coach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
@@ -1155,7 +1155,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 24U s.r.o.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/../src/Floorball Coach-Info.plist";
+				INFOPLIST_FILE = "../src/Floorball Coach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
