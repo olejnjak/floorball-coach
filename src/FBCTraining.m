@@ -137,6 +137,11 @@ static NSString *kFBCExerciseKey = @"exercises";
 
 - (void)addExercise:(FBCExercise *)exercise
 {
+    if (nil == exercise)
+    {
+        return;
+    }
+    
     FBCExercise *exerciseCopy = [exercise copy];
     FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
     
@@ -147,6 +152,11 @@ static NSString *kFBCExerciseKey = @"exercises";
 
 - (void)addExercise:(FBCExercise *)exercise toIndex:(NSInteger)index
 {
+    if (nil == exercise)
+    {
+        return;
+    }
+
     FBCExercise *exerciseCopy = [exercise copy];
     FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
     
