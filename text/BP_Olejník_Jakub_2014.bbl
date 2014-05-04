@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\biburl}[1]{\url{#1}}
 \providecommand{\urlprefix}{Dostupn{\' e} z: }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,5 +12,46 @@
 Apple, Inc.: \emph{App Store Distribution - Apple Developer}. [cit.
   2014-04-27].
 \urlprefix\biburl{https://developer.apple.com/support/appstore/}
+
+\bibitem{appleMVCOnline}
+Apple, Inc.: \emph{Model-View-Controller}. [cit. 2014-05-03].
+\urlprefix\biburl{https://developer.apple.com/library/ios/documentation/general/conceptual/devpedia-cocoacore/MVC.html}
+
+\bibitem{ios7compat}
+Apple, Inc.: \emph{Apple Unveils iOS 7}. [cit. 2014-04-27].
+\urlprefix\biburl{http://www.apple.com/pr/library/2013/06/10Apple-Unveils-iOS-7.html}
+
+\bibitem{coachnoteAppstore}
+Apple, Inc.: \emph{CoachNote Hockey And Ringette na App store}. [cit.
+  2014-01-02].
+\urlprefix\biburl{https://itunes.apple.com/us/app/coachnote-hockey-ringette/id562205341?mt=8}
+
+\bibitem{iceHockeyBoardAppstore}
+Apple, Inc.: \emph{IceHockey Board Free na App store}. [cit. 2014-01-02].
+\urlprefix\biburl{https://itunes.apple.com/ca/app/icehockey-board-free/id366079177?mt=8}
+
+\bibitem{myFieldHockeyAppstore}
+Apple, Inc.: \emph{My Field Hockey Coach Free na App store}. [cit. 2014-01-02].
+\urlprefix\biburl{https://itunes.apple.com/us/app/my-field-hockey-coach-free/id457826679?mt=8}
+
+\bibitem{exerciseDrawerOnline}
+Janák, J.: \emph{Exercise Drawer}. [cit. 2014-01-13].
+\urlprefix\biburl{http://floorballcoach.org/exercisedrawer/}
+
+\bibitem{aboutObjCOnline}
+Apple, Inc.: \emph{About Objective-C}. [cit. 2014-05-03].
+\urlprefix\biburl{https://developer.apple.com/library/mac/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html}
+
+\bibitem{plistKeysOnline}
+Apple, Inc.: \emph{Property list iOS Keys Reference}. [cit. 2014-05-03].
+\urlprefix\biburl{https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html}
+
+\bibitem{moqupsOnline}
+S.C. EverCoder Software SRL: \emph{Moqups}. [cit. 2014-01-27].
+\urlprefix\biburl{https://moqups.com/}
+
+\bibitem{nsCodingOnline}
+Apple, Inc.: \emph{NSCoding reference}. [cit. 2014-05-03].
+\urlprefix\biburl{https://developer.apple.com/library/ios/documentation/general/conceptual/devpedia-cocoacore/MVC.html}
 
 \end{thebibliography}

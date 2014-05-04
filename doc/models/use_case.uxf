@@ -71,7 +71,7 @@
     <type>com.umlet.element.UseCase</type>
     <coordinates>
       <x>290</x>
-      <y>700</y>
+      <y>710</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -83,7 +83,7 @@
     <type>com.umlet.element.UseCase</type>
     <coordinates>
       <x>290</x>
-      <y>750</y>
+      <y>760</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -96,12 +96,12 @@ do tréninku
     <type>com.umlet.element.UseCase</type>
     <coordinates>
       <x>290</x>
-      <y>800</y>
+      <y>810</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Přidání cvičení
-do tréninku
+    <panel_attributes>Odstranění cvičení
+z tréninku
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -120,7 +120,7 @@ do tréninku
     <type>com.umlet.element.UseCase</type>
     <coordinates>
       <x>290</x>
-      <y>850</y>
+      <y>860</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -191,7 +191,7 @@ ze hřiště</panel_attributes>
     <type>com.umlet.element.UseCase</type>
     <coordinates>
       <x>300</x>
-      <y>620</y>
+      <y>650</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -315,10 +315,10 @@ ze hřiště</panel_attributes>
       <x>130</x>
       <y>490</y>
       <w>190</w>
-      <h>170</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>170;150;30;30</additional_attributes>
+    <additional_attributes>170;180;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -326,10 +326,10 @@ ze hřiště</panel_attributes>
       <x>130</x>
       <y>490</y>
       <w>180</w>
-      <h>250</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>160;230;30;30</additional_attributes>
+    <additional_attributes>160;240;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -337,10 +337,10 @@ ze hřiště</panel_attributes>
       <x>130</x>
       <y>490</y>
       <w>180</w>
-      <h>300</h>
+      <h>310</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>160;280;30;30</additional_attributes>
+    <additional_attributes>160;290;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -348,10 +348,10 @@ ze hřiště</panel_attributes>
       <x>130</x>
       <y>490</y>
       <w>180</w>
-      <h>350</h>
+      <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>160;330;30;30</additional_attributes>
+    <additional_attributes>160;340;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -359,9 +359,21 @@ ze hřiště</panel_attributes>
       <x>130</x>
       <y>490</y>
       <w>180</w>
-      <h>400</h>
+      <h>410</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>160;380;30;30</additional_attributes>
+    <additional_attributes>160;390;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.UseCase</type>
+    <coordinates>
+      <x>300</x>
+      <y>610</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Úprava poznámky
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
