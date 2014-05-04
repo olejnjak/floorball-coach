@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6903A0A019055DE5004A74DB /* cvut-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6903A09F19055DE5004A74DB /* cvut-logo.png */; };
+		69047C701916452F0026A69A /* FBCNoteDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69047C6F1916452F0026A69A /* FBCNoteDummy.m */; };
+		69047C731916493B0026A69A /* FBCExerciseDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69047C721916493B0026A69A /* FBCExerciseDummy.m */; };
+		69047C75191649990026A69A /* FBCTrainingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69047C74191649990026A69A /* FBCTrainingTests.m */; };
 		6906CFC818DF418C00D3006A /* FBCTrainingDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6906CFC718DF418C00D3006A /* FBCTrainingDetailController.m */; };
 		6906CFCB18DF6F3B00D3006A /* FBCTrainingDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6906CFCA18DF6F3B00D3006A /* FBCTrainingDetailCell.m */; };
 		6906CFCE18DF70E300D3006A /* FBCTrainingDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6906CFCD18DF70E300D3006A /* FBCTrainingDetailModel.m */; };
@@ -34,7 +37,6 @@
 		69391D0618DD99E70009E3AB /* FBCFavoritesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0518DD99E70009E3AB /* FBCFavoritesModel.m */; };
 		69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */; };
 		6943971418F0BEE10044DEAC /* FBCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943971318F0BEE10044DEAC /* FBCLine.m */; };
-		696290CF18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 696290CE18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m */; };
 		696290DA18FC77D50079CAF7 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */; };
 		696290DB18FC77D50079CAF7 /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */; };
 		696290DD18FC79EF0079CAF7 /* FBCExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */; };
@@ -113,6 +115,11 @@
 
 /* Begin PBXFileReference section */
 		6903A09F19055DE5004A74DB /* cvut-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cvut-logo.png"; sourceTree = "<group>"; };
+		69047C6E1916452F0026A69A /* FBCNoteDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNoteDummy.h; sourceTree = "<group>"; };
+		69047C6F1916452F0026A69A /* FBCNoteDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNoteDummy.m; sourceTree = "<group>"; };
+		69047C711916493B0026A69A /* FBCExerciseDummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCExerciseDummy.h; sourceTree = "<group>"; };
+		69047C721916493B0026A69A /* FBCExerciseDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCExerciseDummy.m; sourceTree = "<group>"; };
+		69047C74191649990026A69A /* FBCTrainingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingTests.m; sourceTree = "<group>"; };
 		6906CFC618DF418C00D3006A /* FBCTrainingDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingDetailController.h; sourceTree = "<group>"; };
 		6906CFC718DF418C00D3006A /* FBCTrainingDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingDetailController.m; sourceTree = "<group>"; };
 		6906CFC918DF6F3B00D3006A /* FBCTrainingDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCTrainingDetailCell.h; sourceTree = "<group>"; };
@@ -158,7 +165,6 @@
 		69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCEditUnitNameController.m; sourceTree = "<group>"; };
 		6943971218F0BEE10044DEAC /* FBCLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCLine.h; sourceTree = "<group>"; };
 		6943971318F0BEE10044DEAC /* FBCLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCLine.m; sourceTree = "<group>"; };
-		696290CE18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCTrainingUnitLibraryTests.m; sourceTree = "<group>"; };
 		696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrestIOS.framework; path = ../lib/MockitoIOS/OCHamcrestIOS.framework; sourceTree = "<group>"; };
 		696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMockitoIOS.framework; path = ../lib/MockitoIOS/OCMockitoIOS.framework; sourceTree = "<group>"; };
 		696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCExerciseTests.m; sourceTree = "<group>"; };
@@ -397,6 +403,10 @@
 			children = (
 				69EB651D18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.h */,
 				69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */,
+				69047C6E1916452F0026A69A /* FBCNoteDummy.h */,
+				69047C6F1916452F0026A69A /* FBCNoteDummy.m */,
+				69047C711916493B0026A69A /* FBCExerciseDummy.h */,
+				69047C721916493B0026A69A /* FBCExerciseDummy.m */,
 			);
 			name = Doublers;
 			sourceTree = "<group>";
@@ -446,8 +456,8 @@
 			children = (
 				69ADBD2318F0C71C00DF7B18 /* Supporting files */,
 				696290CC18FC760B0079CAF7 /* Doublers */,
-				696290CE18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m */,
 				696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */,
+				69047C74191649990026A69A /* FBCTrainingTests.m */,
 			);
 			name = tst;
 			path = ../tst;
@@ -845,8 +855,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				696290CF18FC76320079CAF7 /* FBCTrainingUnitLibraryTests.m in Sources */,
+				69047C701916452F0026A69A /* FBCNoteDummy.m in Sources */,
 				696290DD18FC79EF0079CAF7 /* FBCExerciseTests.m in Sources */,
+				69047C731916493B0026A69A /* FBCExerciseDummy.m in Sources */,
+				69047C75191649990026A69A /* FBCTrainingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
