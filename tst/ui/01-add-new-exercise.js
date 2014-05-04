@@ -2,7 +2,7 @@
 var target = UIATarget.localTarget();
 var testName = "Add new exercise";
 
-target.frontMostApp().mainWindow().collectionViews()[0].cells()[2].buttons()["border"].tap();
+target.frontMostApp().mainWindow().collectionViews()[0].cells()[2].buttons()[0].tap();
 
 var count = target.frontMostApp().mainWindow().tableViews()[0].cells().length;
 target.frontMostApp().toolbar().buttons()["Add"].tap();
