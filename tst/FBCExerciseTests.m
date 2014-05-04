@@ -165,4 +165,64 @@ static u_int32_t kMaxRandomNumber = 100;
     XCTAssertEqualObjects(notes, [self.exercise notes], @"Removing note which wasn't contained changed notes array.");
 }
 
+- (void)testLastDateChangeWithCorrectDrawable
+{
+    NSDate *lastChange = [self.exercise lastChange];
+    id<FBCDrawable> drawable = mockProtocol(@protocol(FBCDrawable));
+    
+    sleep(1); // wait for time change
+    
+    [self.exercise addDrawable:drawable];
+    
+    XCTAssertNotEqualObjects(lastChange, [self.exercise lastChange]);
+}
+
+- (void)testLastDateChangeWithNilDrawable
+{
+    NSDate *lastChange = [self.exercise lastChange];
+    
+    sleep(1); // wait for time change
+    
+    [self.exercise addDrawable:nil];
+    
+    XCTAssertEqualObjects(lastChange, [self.exercise lastChange]);
+}
+
+- (void)testLastDateChangeWithNewCorrectNote
+{
+    NSDate *lastChange = [self.exercise lastChange];
+    FBCNote *noteDummy = [[FBCNoteDummy alloc] init];
+    
+    sleep(1); // wait for time change
+    
+    [self.exercise addNote:noteDummy];
+    
+    XCTAssertNotEqualObjects(lastChange, [self.exercise lastChange]);
+}
+
+- (void)testLastDateChangeWithNewNilNote
+{
+    NSDate *lastChange = [self.exercise lastChange];
+    
+    sleep(1); // wait for time change
+    
+    [self.exercise addNote:nil];
+    
+    XCTAssertEqualObjects(lastChange, [self.exercise lastChange]);
+}
+
+- (void)testLastDateChangeWithNoteRemove
+{
+    NSDate *lastChange = [self.exercise lastChange];
+    FBCNote *noteDummy = [[FBCNoteDummy alloc] init];
+    
+    [self.exercise addNote:noteDummy];
+    
+    sleep(1); // wait for time change
+    
+    [self.exercise removeNote:noteDummy];
+    
+    XCTAssertNotEqualObjects(lastChange, [self.exercise lastChange]);
+}
+
 @end
