@@ -17,6 +17,7 @@
 \usepackage{dirtree} %directory tree visualisation
 
 \usepackage{subfig}
+\usepackage{listings}
 
 %\hypersetup{unicode}
 
@@ -399,16 +400,93 @@
 
 \chapter{Testování}
 
+	Testování je velmi nutnou fází vývoje každého software, proto ani u navržené aplikace nebylo opomenuto. V této kapitole budou probrány všechny druhy testování, které byly při vývoji použity.
+
+	Vzhledem k faktu, že navržená aplikace obsahuje pouze jednu komponentu, byly navrženy pouze unit testy, testy uživatelského rozhraní a akceptační test.
+
 \section{Unit testy}
+
+	Po dokončení většiny modelových tříd byla otestována jejich funkčnost. Bylo ověřováno zda správně reaguje na uživatelské vstupy, a zda správně reaguje na nestandardní a neočekávané vstupy (např. zda nezpůsobí pád aplikace).
+
+	Pro testování jsem využil testovací framework XCTest \cite{xctestOnline}, který je prosazován společností Apple jako hlavní framework pro testování, což dokládá jeho velmi dobrá podpora ve vývojovém prostředí Xcode. Takovým způsobem jsem testoval především třídy, které pracují s daty jednotlivých cvičení a tréninků.
+
+	Při testování jsem využil logovací framework Lumberjack \cite{lumberjackOnline}, který je oproti prostředkům, které nabízí Objective-C, lépe konfigurovatelný a umožňuje rozlišení závažnosti jednotlivých logovaných zpráv. Za velice šikovné považuji, že je možné rozlišit úroveň logů, které budou vypisovány na úrovni jednotlivých souborů (v souboru A budou vypisovány pouze závažné chyby, v souboru B bude vypisováno vše, v souboru C nebude vypisováno nic), což logování velmi zpřehledňuje.
+
+	Aby testy byly korektní bylo nutné zajistit správnou izolaci testované třídy. Za tímto účelem byly využity zástupné třídy, popř. objekty, které byly použity místo reálných tříd, které jsou využity v aplikaci samotné.
+
+	Pro splnění rozhraní, např. u konstruktorů, které v argumentu musí obdržet argument, který není \verb|nil|, bylo použito zástupné třídy typu \texttt{Dummy}. \texttt{Dummy} je typ objektu, který splňuje předepsané veřejné rozhraní, ale implementace tohoto rozhraní zůstává prázdná.
+
+	Příklad rozhraní, které by mohla splňovat třída, která je autem a \texttt{Dummy}, která jej implementuje.
+	\begin{lstlisting}
+interface ICar
+{
+	start();
+	stop();
+	isStarted();
+	speedUp(acceleration);
+	slowDown(deccelaration);
+}
+
+class CarDummy
+{
+	start()
+	{
+
+	}
+
+	stop()
+	{
+
+	}
+
+	isStarted()
+	{
+
+	}
+
+	speedUp(acceleration)
+	{
+
+	}
+
+	slowDown(deccelaration)
+	{
+
+	}
+}
+	\end{lstlisting}
+
+	Další z použitých izolačních technik je \texttt{mockování}. \texttt{Mockování} je technika, která umožňuje vytvoření objektu, který splňuje dané rozhraní a zároveň umožňuje takovému objektu přidat předdefinované chování. Pro výše zmiňované rozhraní by mockovaný objekt vypadal asi takto:
+	\begin{lstlisting}
+ICar carMock = mock(ICar);
+carMock.when(isStarted).thenReturn(true);
+	\end{lstlisting}
+	Takovýto objekt zajistí, že pokud testovaná třída vyžaduje, aby auto bylo nastartované, tak \texttt{mockovaný} objekt na volání metody \verb|isStarted| vrátí vždy \verb|true|, což testovanou třídu zbavuje závislosti na konkrétní implementaci auta.
+
+	Pro \texttt{mockování} byl využit framework OCMockito \cite{mockitoOnline}.
 
 \section{Testy uživatelského rozhraní}
 
-\section{Akceptační testy}
+	Uživatelské rozhraní je pro uživatele jednou z nejdůležitějších částí aplikace. Kvalita rozhraní rozhoduje, zda uživatel bude s aplikací spokojen. Z tohoto důvodu byly navrženy testy uživatelského rozhraní.
+
+	Pro implementaci testů uživatelského rozhraní bylo na výběr ze dvou dostupných frameworků. Prvním byl framework Appium \cite{appiumOnline}, který je využíván pro testování aplikací pro OS Android i iOS. Druhou variantou bylo řešení od společnosti Apple, které je nazýváno Instruments Automation \cite{automationOnline}.
+
+	Zvolena byla varianta od společnosti Apple. Důvodem byl zájem zjistit, zda i Automation je kvalitním nástrojem se spoustou chytrých řešení.
+
+	Zpětně toto rozhodnutí hodnotím jako chybu, řešení působí jako by bylo nedokončené, nepodporuje některé standardně využívané komponenty, což psaní testů výrazně ztěžuje. Vyhledávání elementů není přiliš intuitivní, což zabraňuje snadnému psaní robustních testů, které nejsou závislé na aktuálních datech aplikace.
+
+	Z tohoto důvodu jsou testy napsány pouze na základní akce uživatelského rozhraní, které zahrnují vytvoření nového cvičení, vytvoření nového tréninku a zařazení cvičení do tréninku.
+
+	Testy uživatelského rozhraní považuji za slabinu aplikace a v budoucnu budou přepsány do robustnější podoby.
+
+\section{Akceptační test}
 
 \begin{conclusion}
 	Cílem této práce bylo vytvoření prototypu aplikace \uv{Florbalový trenér}, který poskytne základ pro aplikaci, která by florbalovým trenérům usnadnila přípravu tréninků a pomohla jim i v~jejich následné prezentaci. Toto navržená aplikace splňuje.
 
-	Před spuštěním dalšího vývoje by však bylo dobré odstranit nedostatky, které jsou známé. Jedná se především o~rozdělení práce mezi více vláken, aby aplikace při delším načítání dat z~disku nezamrzala.
+	Před spuštěním dalšího vývoje by však bylo dobré odstranit nedostatky, které jsou známé. Především se jedná o doplnění unit testů pro třídy, které momentálně testovány nejsou. Dalším vylepšením testů lze nalézt v testech uživatelského rozhraní, které by měly být přepsány do robustnější formy, aby jejich závislost na aktuálním stavu aplikace byla, co možná nejnižší.
+
+	Dále se jedná o~rozdělení práce mezi více vláken, aby aplikace při delším načítání dat z~disku nezamrzala.
 
 	Dalším možným vylepšením je výměna úložiště, serializované soubory by bylo vhodné nahradit jednoduchou databazí tak, aby i práce s~větším množstvím dat byla svižná a nevyžadovala velké množství operační paměti.
 
