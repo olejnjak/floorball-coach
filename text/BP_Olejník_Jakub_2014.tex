@@ -53,13 +53,13 @@
 % \newacronym{FIT}{FIT}{Fakulta informa{\v c}n{\' i}ch technologi{\' i}}
 
 \begin{introduction}
-	V~dnešním světě jsou informační technologie využívány téměř ve všech oblastech lidské činnosti, přesto se dají najít činnosti jimi nedotčené. Za takovou oblast se dají považovat mladé a~zatím neolympijské sporty, které často doplácí na podmínky amatérského prostředí. Velmi často ani špičkové oddíly nejsou schopny nabídnout svým hráčům dostatečně kvalitní zázemí. Aplikace vyvíjená v~rámci této práce by mohla tento nedostatek alespoň zmírnit.
+	Informační technologie jsou dnes využívány téměř ve všech oblastech lidské činnosti, přesto se dají najít činnosti jimi nedotčené. Takovou oblastí jsou mladé a~zatím neolympijské sporty, které často doplácí na podmínky amatérského prostředí. Velmi často ani špičkové oddíly nejsou schopny nabídnout svým hráčům dostatečně kvalitní zázemí. Aplikace vyvíjená v~rámci této práce si klade za cíl tento nedostatek alespoň zmírnit.
 
-	Toto téma jsem si zvolil na základě osobní zkušenosti a vědomí, že taková mobilní aplikace zatím neexistuje, a desktopové varianty za moc nestojí. Podobné názory jsem zaznamenal vždy, když jsem na toto téma diskutoval s~jinými florbalovými trenéry. Jejich reakce na vznik takové aplikace byly vždy kladné, a proto si myslím, že navržená aplikace bude využívána a mohla by pomoci zvednout kvalitu florbalových tréninků.
+	Toto téma jsem si zvolil na základě osobní zkušenosti a vědomí, že taková mobilní aplikace zatím neexistuje. Podobné názory jsem zaznamenal vždy, když jsem na toto téma diskutoval s~jinými florbalovými trenéry. Jejich reakce na vznik takové aplikace byly vždy kladné, a proto si myslím, že navržená aplikace bude využívána a mohla by pomoci zvednout kvalitu florbalových tréninků.
 \end{introduction}
 
 \chapter{Cíl práce}
-	Výsledkem práce by měl být funkční prototyp, kterým bude možné nahradit nyní využívané kreslicí tabule. Využitím tabletu se odstraní nutnost použití jiných kreslicích nástrojů, které nemusí být vždy dostupné, popř. jejich viditelnost na tabuli není dostačující. Dále elektronickou tabuli nelze umazat tak, aby na ní nebylo vysvětlované cvičení čitelné, v~případě umazání displeje jej lze snadno očistit.
+	Výsledkem práce je funkční prototyp, kterým bude možné nahradit nyní využívané kreslicí tabule. Využitím tabletu se odstraní nutnost použití jiných kreslicích nástrojů, které nemusí být vždy dostupné, popř. jejich viditelnost na tabuli není dostačující. Dále elektronickou tabuli nelze umazat tak, aby na ní nebylo vysvětlované cvičení čitelné, v~případě umazání displeje jej lze snadno očistit.
 
 	Naopak cílem práce není aplikace určená pro libovolné kreslení. Takovou aplikaci by samozřejmě bylo možné využít i pro výše zmíněné účely, nicméně podpora symboliky, která se mezi trenéry a hráči již nyní využívá, tvoří fundamentální základ celé aplikace a~je hlavním znakem, který tuto aplikaci odlišuje od ostatních, které ji mohou svým zaměřením připomínat.
 
@@ -484,18 +484,22 @@ carMock.when(isStarted).thenReturn(true);
 \begin{conclusion}
 	Cílem této práce bylo vytvoření prototypu aplikace \uv{Florbalový trenér}, který poskytne základ pro aplikaci, která by florbalovým trenérům usnadnila přípravu tréninků a pomohla jim i v~jejich následné prezentaci. Toto navržená aplikace splňuje.
 
-	Před spuštěním dalšího vývoje by však bylo dobré odstranit nedostatky, které jsou známé. Především se jedná o doplnění unit testů pro třídy, které momentálně testovány nejsou. Dalším vylepšením testů lze nalézt v testech uživatelského rozhraní, které by měly být přepsány do robustnější formy, aby jejich závislost na aktuálním stavu aplikace byla, co možná nejnižší.
+	Během návrhu aplikace byla provedena analýza podobných aplikací pro iOS, Android a MS Windows. Bylo provedeno dotazníkové šetření pro zpřesnění požadavků na aplikaci potenciálními uživateli. Na základě analýzy byla navržena architektura, nad kterou byla poté aplikace postavena. Nejdůležitější třídy aplikace byly otestovány za pomocí unit testů, část akceptačního testu byla automatizována.
 
-	Dále se jedná o~rozdělení práce mezi více vláken, aby aplikace při delším načítání dat z~disku nezamrzala.
+	Vývoj a především analýza této aplikace byl pro mě zkušeností, kterou určitě využiji v~budoucím kariérním životě. Zároveň vím, že kvalitní aplikace tohoto typu by se mohla ve florbalové komunitě těšit velké oblibě, což znamená velkou motivaci pro budoucí vývoj.
+\end{conclusion}
+
+\chapter{Budoucí práce}
+
+	Před spuštěním dalšího vývoje by však bylo dobré odstranit nedostatky, které jsou známé. Především se jedná o doplnění unit testů pro třídy, které momentálně testovány nejsou. Dalším vylepšení testů lze nalézt v testech uživatelského rozhraní, které by měly být přepsány do robustnější formy, aby jejich závislost na aktuálním stavu aplikace byla, co nejnižší.
+
+	Dále by bylo vhodné optimalizovat využití vláken, aby aplikace byla svižnější.
 
 	Dalším možným vylepšením je výměna úložiště, serializované soubory by bylo vhodné nahradit jednoduchou databazí tak, aby i práce s~větším množstvím dat byla svižná a nevyžadovala velké množství operační paměti.
 
 	Uživatelské rozhraní by také mělo doznat menších změn. Aplikace se od většiny jiných liší v~odstínu použitých barev. Většina aplikací na iOS (především od verze 7) je laděna do světlých odstínů a tohoto standardu by bylo dobré se držet.
 
-	Velkým prostorem pro zlepšení je především umožnění uživateli sdílet cvičení a tréninky s~ostatními, což by aplikaci posunulo opět o~úroveń výše.
-
-	Vývoj a především analýza této aplikace byl pro mě zkušeností, kterou určitě využiji v~budoucím kariérním životě. Zároveň vím, že kvalitní aplikace tohoto typu by se mohla ve florbalové komunitě těšit velké oblibě, což znamená velkou motivaci pro budoucí vývoj.
-\end{conclusion}
+	Velkým prostorem pro zlepšení je především umožnění uživateli sdílet cvičení a tréninky s~ostatními, což by aplikaci posunulo opět o~úroveň výše.
 
 \bibliographystyle{csn690}
 \bibliography{mybibliographyfile}
