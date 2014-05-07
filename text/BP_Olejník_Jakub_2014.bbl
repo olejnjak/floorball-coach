@@ -54,13 +54,18 @@ S.C. EverCoder Software SRL: \emph{Moqups}. [cit. 2014-01-27].
 Apple, Inc.: \emph{NSCoding reference}. [cit. 2014-05-03].
 \urlprefix\biburl{https://developer.apple.com/library/ios/documentation/general/conceptual/devpedia-cocoacore/MVC.html}
 
-\bibitem{xctestOnline}
-Apple, Inc.: \emph{Unit Test Your App}. [cit. 2014-05-05].
-\urlprefix\biburl{https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/Xcode_Overview/UnitTestYourApp/UnitTestYourApp.html}
-
 \bibitem{lumberjackOnline}
 Hanson, R.: \emph{CocoaLumberjack}. [cit. 2014-05-05].
 \urlprefix\biburl{https://github.com/CocoaLumberjack/CocoaLumberjack}
+
+\bibitem{reorderableCollectionViewOnline}
+Boon, S. C.~K.: \emph{LXReorderableCollectionViewFlowLayout}. [cit.
+  2014-05-07].
+\urlprefix\biburl{https://github.com/lxcid/LXReorderableCollectionViewFlowLayout}
+
+\bibitem{xctestOnline}
+Apple, Inc.: \emph{Unit Test Your App}. [cit. 2014-05-05].
+\urlprefix\biburl{https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/Xcode_Overview/UnitTestYourApp/UnitTestYourApp.html}
 
 \bibitem{mockitoOnline}
 Reid, J.: \emph{OCMockito}. [cit. 2014-05-05].

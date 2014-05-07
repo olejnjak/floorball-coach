@@ -393,10 +393,41 @@
 
 \chapter{Realizace}
 
+	V této kapitole bude rozebrána implementace aplikace. Při implementaci byly zohledněny poznatky z analytické a nvrhové části této práce. Věnovat se implementaci každé třídy aplikace by bylo zbytečné, proto se tato kapitola bude zaměřovat na důležité části implementace.
+
 	\section{Kreslení}
-	\section{Seskupování do tréninků}
+
+	Kreslení je hlavní funkcionalitou aplikace, tudíž na něj byl kladen největší důraz. Kreslení je implementováno vektorově, bylo využito podpory bezierovy křivky, kterou poskytuje operační systém.
+
+	Aplikace obsahuje podporu pro různé nástroje, čímž pomáhá trenérovi v lepší přípravě cvičení. Nástroje se dají rozdělit do dvou skupin. První skupinou jsou nástroje, které rozšiřují nástroj křivky a druhou skupinou jsou nástroje reprezentující bod (např. kužel).
+
+	Nástroje, které rozšiřují nástroj křivky jsou zakončeny šipkou, která je vytvořena pomocí směrového vektoru nakreslené křivky. Následně jsou vytvořeny dvě kopie tohoto vektoru, na které je aplikována rotace, aby vektory vytvořily šipku. Oba vektory jsou v dalším kroku zvětšeny na předem definovanou délku.
+
+	Zvláštní pozornost si zasloužil nástroj znázorňující střelu. Jedná se o dvojitou křivku zakončenou šipkou. Na křivku, kterou uživatel dotykem kreslí, jsou okamžitě aplikovány dvě translace, čímž je efekt dvojité křivky vytvořen.
+
+	Nástroje, které reprezentují bod na hřišti (kužel, útočník, obránce) jsou implementačně značně jednodušší. Jejich grafická reprezentace je definovaná předem a uživatel ovlivňuje pouze souřadnice, kde bude element vykreslen, tudíž není potřeba využívat žádné transformace.
+
+	\section{Seskupování cvičení do tréninků}
+
+	Uživatel má možnost seskupovat cvičení do tréninků, což mu umožňuje definovat mezi nimi vztahy a pořadí. Tuto možnost trenér ocení především pokud by cvičení prezentoval svým svěřencům přímo na hrací ploše při tréninku.
+
+	Implementačně je tohoto docíleno pomocí zavedení třídy pro trénink, která má na starosti pořadí jednotlivých cvičení, které jsou v něm zařazeny. Pro veškerou manipulaci s tréninkem je v aplikaci navržena samostatná obrazovka, na které může uživatel zařadit cvičení do tréninku, nebo jej naopak z tréninku vyřadit, také zde je možnost změnit pořadí jednotlivých cvičení.
+
+	Pro zpříjemnění výběru cvičení do tréninku byly implementovány dvě funkce. První z nich je zobrazení náhledu cvičení. Náhled cvičení umožňuje uživateli identifikovat cvičení nejen podle jeho názvu, ale také podle jeho obsahu, což urychluje a zjednodušuje orientaci na obrazovce. Druhou z funkcí je možnost označit cvičení jako oblíbené. V každém tréninku jsou cvičení, která se časem opakují (např. cvičení sloužíci k rozběhání, nebo cvičení sloužící k rozchytání brankářů). Tato cvičení by mělo být snadné vyhledat. Jako důsledek má uživatel k oblíbeným cvičením okamžitý přístup, protože oblíbená cvičení lze samostatně odfiltrovat.
+
 	\section{Perzistence dat}
-	\section{Využíté knihovny}
+
+	Perzistence uložených cvičení tvoří další důležitou součást aplikace. Aplikace ukládá na disk seznam uložených cvičení a tréninků. Ke každému cvičení musí také ukládat seznam nakreslených objektů a také poznámky.
+
+	Pro uložení perzistentních dat byla zvolena serializace objektů do binárních souborů. Toto řešení je implementačně nenáročně a hodí se pro malé aplikace. Mezi nevýhody tohoto řešení patří fakt, že možnost náhodného přístupu k datům je omezena. Z tohoto důvodu si aplikace při startu data z disku připraví do paměti a pracuje s nimi tam, při minimalizaci aplikace jsou data opět uložena zpátky na disk. Pro zmírnění této nevýhody byl navržen mechanismus, který umožňuje izolovat data jednotlivých tréninků. Každé cvičení má v aplikaci vlastní adresář, což umožňuje, aby data cvičení byla do paměti načtena až když jsou skutečně potřeba. Načítání těchto dat (nakreslené objekty, poznámky) probíhá při otevření konkrétního cvičení, při jeho zavření jsou uložena zpět na disk a data jsou z paměti uvolněna.
+
+	\section{Využité knihovny}
+
+	Podle mého názoru není dobré přepisovat komponenty, které jsou již jednou napsány, a které fungují správně, použil jsem v implementaci některé knihovny třetích stran.
+
+	Při vývoji byl využit logovací framework Lumberjack \cite{lumberjackOnline}, který je oproti prostředkům, které nabízí Objective-C, lépe konfigurovatelný a umožňuje rozlišení závažnosti jednotlivých logovaných zpráv. Za velice šikovné považuji, že je možné rozlišit úroveň logů, které budou vypisovány na úrovni jednotlivých souborů (v souboru A budou vypisovány pouze závažné chyby, v souboru B bude vypisováno vše, v souboru C nebude vypisováno nic), což logování velmi zpřehledňuje.
+
+	Další využitou knihovnou byla knihovna LXReorderableCollectionViewFlowLayout \cite{reorderableCollectionViewOnline}, která rozšiřuje možnosti standardní třídy \verb|UICollectionView|. Třída \verb|UICollectionView| slouží pro zobrazení seřazené kolekce prvků. Při využití zmíněné knihovny lze měnit pořadí zobrazených prvků jejich přemístěním na požadované místo. Této funkcionality je využíváno na obrazovce určené pro správu tréninku, uživatel takto může měnit pořadí jednotlivých cvičení, zároveň takto lze cvičení do tréninku zařadit, nebo jej z něj odstranit.
 
 \chapter{Testování}
 
@@ -409,8 +440,6 @@
 	Po dokončení většiny modelových tříd byla otestována jejich funkčnost. Bylo ověřováno zda správně reaguje na uživatelské vstupy, a zda správně reaguje na nestandardní a neočekávané vstupy (např. zda nezpůsobí pád aplikace).
 
 	Pro testování jsem využil testovací framework XCTest \cite{xctestOnline}, který je prosazován společností Apple jako hlavní framework pro testování, což dokládá jeho velmi dobrá podpora ve vývojovém prostředí Xcode. Takovým způsobem jsem testoval především třídy, které pracují s daty jednotlivých cvičení a tréninků.
-
-	Při testování jsem využil logovací framework Lumberjack \cite{lumberjackOnline}, který je oproti prostředkům, které nabízí Objective-C, lépe konfigurovatelný a umožňuje rozlišení závažnosti jednotlivých logovaných zpráv. Za velice šikovné považuji, že je možné rozlišit úroveň logů, které budou vypisovány na úrovni jednotlivých souborů (v souboru A budou vypisovány pouze závažné chyby, v souboru B bude vypisováno vše, v souboru C nebude vypisováno nic), což logování velmi zpřehledňuje.
 
 	Aby testy byly korektní bylo nutné zajistit správnou izolaci testované třídy. Za tímto účelem byly využity zástupné třídy, popř. objekty, které byly použity místo reálných tříd, které jsou využity v aplikaci samotné.
 
@@ -479,21 +508,24 @@ carMock.when(isStarted).thenReturn(true);
 
 	Testy uživatelského rozhraní považuji za slabinu aplikace a v budoucnu budou přepsány do robustnější podoby.
 
-\section{Akceptační test}
+\section{Akceptační testy}
+
+	Akceptační testy jsou typem testů, které provádí zákazník. Protože akceptační testy provádí zákazník je nutné, aby předchozí etapy testů (unit testy, integrační testy, systémové testy) proběhly bez větších nedostatků.
+
+	Navržené akceptační testy, které jsou součástí specifikace požadavků, proběhly úspěšně.
 
 \begin{conclusion}
-	Cílem této práce bylo vytvoření prototypu aplikace \uv{Florbalový trenér}, který poskytne základ pro aplikaci, která by florbalovým trenérům usnadnila přípravu tréninků a pomohla jim i v~jejich následné prezentaci. Toto navržená aplikace splňuje.
+	Cílem této práce bylo vytvoření prototypu aplikace \uv{Florbalový trenér}, který poskytne základ pro aplikaci, která by florbalovým trenérům usnadnila přípravu tréninků a pomohla jim i v~jejich následné prezentaci.
 
 	Během návrhu aplikace byla provedena analýza podobných aplikací pro iOS, Android a MS Windows. Bylo provedeno dotazníkové šetření pro zpřesnění požadavků na aplikaci potenciálními uživateli. Na základě analýzy byla navržena architektura, nad kterou byla poté aplikace postavena. Nejdůležitější třídy aplikace byly otestovány za pomocí unit testů, část akceptačního testu byla automatizována.
 
-	Vývoj a především analýza této aplikace byl pro mě zkušeností, kterou určitě využiji v~budoucím kariérním životě. Zároveň vím, že kvalitní aplikace tohoto typu by se mohla ve florbalové komunitě těšit velké oblibě, což znamená velkou motivaci pro budoucí vývoj.
 \end{conclusion}
 
 \chapter{Budoucí práce}
 
-	Před spuštěním dalšího vývoje by však bylo dobré odstranit nedostatky, které jsou známé. Především se jedná o doplnění unit testů pro třídy, které momentálně testovány nejsou. Dalším vylepšení testů lze nalézt v testech uživatelského rozhraní, které by měly být přepsány do robustnější formy, aby jejich závislost na aktuálním stavu aplikace byla, co nejnižší.
+	Především se jedná o doplnění unit testů pro třídy, které momentálně testovány nejsou. Dalším vylepšení testů lze nalézt v testech uživatelského rozhraní, které by měly být přepsány do robustnější formy, aby jejich závislost na aktuálním stavu aplikace byla, co nejnižší.
 
-	Dále by bylo vhodné optimalizovat využití vláken, aby aplikace byla svižnější.
+	Dále by bylo vhodné optimalizovat využití vláken, aby aplikace byla uživatelsky přívětivější.
 
 	Dalším možným vylepšením je výměna úložiště, serializované soubory by bylo vhodné nahradit jednoduchou databazí tak, aby i práce s~větším množstvím dat byla svižná a nevyžadovala velké množství operační paměti.
 
