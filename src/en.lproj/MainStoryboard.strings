@@ -99,7 +99,7 @@
 "l61-IA-43t.normalTitle" = "Back";
 
 /* Class = "IBUILabel"; text = "[Created:]"; ObjectID = "lTP-ge-Lft"; */
-"lTP-ge-Lft.text" = "Created:";
+"lTP-ge-Lft.text" = "Last update:";
 
 /* Class = "IBUILabel"; text = "[Section name]"; ObjectID = "lc0-bh-PxL"; */
 "lc0-bh-PxL.text" = "Section name";
