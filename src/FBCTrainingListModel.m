@@ -72,7 +72,7 @@
     
     if ([objectToRemove isKindOfClass:[FBCTraining class]])
     {
-        FBCTraining *training = objectToRemove;
+        FBCTraining *training = (FBCTraining*)objectToRemove;
         FBCTrainingUnitLibrary *library = [FBCTrainingUnitLibrary library];
         
         [library removeTraining:training];
@@ -185,6 +185,7 @@
     [cell.nameLabel setText:training.name];
     [cell.dateLabel setText:date];
     [cell.exerciseNumberLabel setText:exerciseCountString];
+    [cell setTraining:training];
 }
 
 @end

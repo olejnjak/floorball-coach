@@ -126,6 +126,23 @@ static NSString *kFBCExerciseKey = @"exercises";
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - NSCopying methods
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    FBCTraining *copy = [[FBCTraining allocWithZone:zone] initWithName:self.name];
+    
+    [self.mutableExercises enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        FBCExercise *exercise = obj;
+        FBCExercise *exCopy = [exercise copy];
+        
+        [copy.mutableExercises addObject:exCopy];
+    }];
+    
+    return copy;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public interface
 
 - (NSArray*)exercises

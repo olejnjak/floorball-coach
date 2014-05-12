@@ -65,6 +65,8 @@
 		69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */; };
 		69C530D118F0C65200111364 /* TestFBCTrainingUnitLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */; };
 		69C9524E18E773800058C958 /* FBCDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C9524D18E773800058C958 /* FBCDrawingView.m */; };
+		69CA3D2E192105C6002A41F1 /* copy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 69CA3D2D192105C6002A41F1 /* copy-icon.png */; };
+		69CA3D32192109BA002A41F1 /* FBCListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CA3D31192109BA002A41F1 /* FBCListTableCell.m */; };
 		69DE1C7618CE9289006A869C /* FBCAboutScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */; };
 		69E32BFA18E88C8800303ED4 /* FBCRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32BF918E88C8800303ED4 /* FBCRun.m */; };
 		69E32BFD18E890C300303ED4 /* FBCPass.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E32BFC18E890C300303ED4 /* FBCPass.m */; };
@@ -208,6 +210,9 @@
 		69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNote.m; sourceTree = "<group>"; };
 		69C9524C18E773800058C958 /* FBCDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCDrawingView.h; sourceTree = "<group>"; };
 		69C9524D18E773800058C958 /* FBCDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCDrawingView.m; sourceTree = "<group>"; };
+		69CA3D2D192105C6002A41F1 /* copy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copy-icon.png"; sourceTree = "<group>"; };
+		69CA3D30192109BA002A41F1 /* FBCListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCListTableCell.h; sourceTree = "<group>"; };
+		69CA3D31192109BA002A41F1 /* FBCListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCListTableCell.m; sourceTree = "<group>"; };
 		69DE1C7018CE8E3F006A869C /* FBCAboutScreenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCAboutScreenController.h; sourceTree = "<group>"; };
 		69DE1C7118CE8E3F006A869C /* FBCAboutScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCAboutScreenController.m; sourceTree = "<group>"; };
 		69DE1C7318CE8ECD006A869C /* FBCControllerDoneProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCControllerDoneProtocol.h; sourceTree = "<group>"; };
@@ -640,6 +645,8 @@
 				6990D18618D5D1D5003BC7BC /* FBCSortBlocks.h */,
 				69391D0418DD99E70009E3AB /* FBCFavoritesModel.h */,
 				69391D0518DD99E70009E3AB /* FBCFavoritesModel.m */,
+				69CA3D30192109BA002A41F1 /* FBCListTableCell.h */,
+				69CA3D31192109BA002A41F1 /* FBCListTableCell.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -691,6 +698,7 @@
 		69FEA00B18E7641600EEA177 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				69CA3D2D192105C6002A41F1 /* copy-icon.png */,
 				6903A09F19055DE5004A74DB /* cvut-logo.png */,
 				690CB3D01904863400DC289E /* attacker.png */,
 				690CB3D11904863400DC289E /* border.png */,
@@ -820,6 +828,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69EFCA5D18F8AF79001BEB8D /* Images.xcassets in Resources */,
+				69CA3D2E192105C6002A41F1 /* copy-icon.png in Resources */,
 				69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */,
 				690CB3E01904863400DC289E /* run.png in Resources */,
 				69F473B319152FFE0008BD43 /* LICENSE.txt in Resources */,
@@ -868,6 +877,7 @@
 			files = (
 				69EB651518D4E6DB00F72E33 /* FBCExercise.m in Sources */,
 				69F473AC19152FFE0008BD43 /* DDFileLogger.m in Sources */,
+				69CA3D32192109BA002A41F1 /* FBCListTableCell.m in Sources */,
 				69E8D5F418F0A75B0031C171 /* FBCCone.m in Sources */,
 				69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */,
 				69EB652518D503EE00F72E33 /* FBCComplexExerciseCell.m in Sources */,

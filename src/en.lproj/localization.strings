@@ -6,6 +6,7 @@
   Copyright (c) 2014 Jakub Olejník. All rights reserved.
 */
 
+"FBCCopy" = " - copy";
 "FBCFavorite" = "Favorite";
 "FBCFavorited" = "Favorited";
 "FBCNewExercise" = "New exercise";

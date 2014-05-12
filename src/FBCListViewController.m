@@ -16,6 +16,7 @@
 #import "FBCSortViewController.h"
 #import "FBCTrainingDetailController.h"
 #import "FBCTrainingUnitLibrary.h"
+#import "FBCListTableCell.h"
 
 @implementation FBCListViewController
 {
@@ -48,8 +49,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self __setInitState];
-    [self.tableView reloadData];
+    [self refresh];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,11 +65,12 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *reusableIdentifier = [self.model reusableCellIdentifierForIndexPath:indexPath];
-    UITableViewCell *result = [tableView dequeueReusableCellWithIdentifier:reusableIdentifier forIndexPath:indexPath];
+    FBCListTableCell *result = [tableView dequeueReusableCellWithIdentifier:reusableIdentifier forIndexPath:indexPath];
     UIColor *clearColor = [UIColor clearColor];
     
     [self.model prepareTableViewCell:result forIndexPath:indexPath];
     
+    [result setParent:self];
     [result setBackgroundColor:clearColor];
     
     return result;
@@ -125,6 +126,15 @@
 - (void)controllerIsDone:(UIViewController *)controller
 {
     [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Public interface
+
+- (void)refresh
+{
+    [self __setInitState];
+    [self.tableView reloadData];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

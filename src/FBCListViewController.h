@@ -34,4 +34,6 @@ typedef enum
 - (IBAction)doneButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)addButtonPressed:(UIBarButtonItem *)sender;
 
+- (void)refresh;
+
 @end

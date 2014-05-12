@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FBCListTableCell.h"
+
 @class FBCExercise;
 
-@interface FBCComplexExerciseCell : UITableViewCell
+@interface FBCComplexExerciseCell : FBCListTableCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -20,5 +22,6 @@
 @property (weak, nonatomic) FBCExercise *exercise;
 
 - (IBAction)favoriteButtonTapped:(UIButton *)sender;
+- (IBAction)duplicateButtonTapped:(UIButton *)sender;
 
 @end

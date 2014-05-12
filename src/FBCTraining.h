@@ -12,7 +12,7 @@
 
 @class FBCExercise;
 
-@interface FBCTraining : NSObject<FBCTrainingUnitProtocol>
+@interface FBCTraining : NSObject<FBCTrainingUnitProtocol, NSCopying>
 
 @property (nonatomic,strong,readonly) NSDate *date;
 

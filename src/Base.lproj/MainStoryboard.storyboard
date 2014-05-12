@@ -244,6 +244,16 @@
                                                         <constraint firstAttribute="width" constant="32" id="oUf-nx-zdn"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYR-dO-TfV">
+                                                    <rect key="frame" x="643" y="14" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" backgroundImage="copy-icon.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="duplicateButtonTapped:" destination="xVb-wb-l7q" eventType="touchUpInside" id="UcZ-B2-DjK"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Yi3-0M-cwt" firstAttribute="height" secondItem="PBu-m2-NUw" secondAttribute="height" id="1kn-eM-sgj"/>
@@ -252,7 +262,10 @@
                                                 <constraint firstItem="lTP-ge-Lft" firstAttribute="top" secondItem="4Jy-1N-T8e" secondAttribute="bottom" constant="3" id="C2q-3R-kZJ"/>
                                                 <constraint firstItem="lTP-ge-Lft" firstAttribute="centerY" secondItem="Gzh-Zi-IVi" secondAttribute="centerY" id="CKi-aO-PxH"/>
                                                 <constraint firstAttribute="trailing" secondItem="4Jy-1N-T8e" secondAttribute="trailing" constant="252" id="F58-tT-Lgl"/>
+                                                <constraint firstItem="lYR-dO-TfV" firstAttribute="width" secondItem="PBu-m2-NUw" secondAttribute="width" id="H1y-cc-97r"/>
+                                                <constraint firstItem="lYR-dO-TfV" firstAttribute="height" secondItem="PBu-m2-NUw" secondAttribute="height" id="Jmd-Xe-oxW"/>
                                                 <constraint firstItem="Yi3-0M-cwt" firstAttribute="width" secondItem="PBu-m2-NUw" secondAttribute="width" id="WZF-gl-nm3"/>
+                                                <constraint firstItem="lYR-dO-TfV" firstAttribute="centerY" secondItem="PBu-m2-NUw" secondAttribute="centerY" constant="1" id="asd-EH-oNn"/>
                                                 <constraint firstItem="lTP-ge-Lft" firstAttribute="height" secondItem="Gzh-Zi-IVi" secondAttribute="height" id="eGS-NY-9NY"/>
                                                 <constraint firstItem="Yi3-0M-cwt" firstAttribute="top" secondItem="8pI-Rq-gaD" secondAttribute="top" constant="14" id="nsO-lV-kOv"/>
                                                 <constraint firstItem="Yi3-0M-cwt" firstAttribute="centerX" secondItem="PBu-m2-NUw" secondAttribute="centerX" id="pyh-gr-6F5"/>
@@ -260,6 +273,7 @@
                                                 <constraint firstItem="Yi3-0M-cwt" firstAttribute="centerY" secondItem="PBu-m2-NUw" secondAttribute="centerY" constant="1" id="qvY-Gh-I6U"/>
                                                 <constraint firstItem="Gzh-Zi-IVi" firstAttribute="leading" secondItem="lTP-ge-Lft" secondAttribute="trailing" constant="24" id="vWP-jv-4zv"/>
                                                 <constraint firstItem="lTP-ge-Lft" firstAttribute="leading" secondItem="4Jy-1N-T8e" secondAttribute="leading" id="wZg-PQ-Of3"/>
+                                                <constraint firstItem="PBu-m2-NUw" firstAttribute="leading" secondItem="lYR-dO-TfV" secondAttribute="trailing" constant="8" id="zJP-On-DFb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -322,10 +336,25 @@
                                                     <color key="textColor" red="0.0" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOO-84-Szu">
+                                                    <rect key="frame" x="683" y="20" width="32" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="HBk-lk-ud3"/>
+                                                        <constraint firstAttribute="height" constant="32" id="HDc-Th-3TZ"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="copy-icon.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="duplicateButtonTapped:" destination="B7V-f1-1WB" eventType="touchUpInside" id="Kz6-Pz-clo"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="r83-1J-Nys" firstAttribute="height" secondItem="rnX-RI-MUQ" secondAttribute="height" id="4ml-pl-lFU"/>
                                                 <constraint firstItem="rnX-RI-MUQ" firstAttribute="leading" secondItem="VU3-tV-4Ig" secondAttribute="trailing" constant="8" id="9P6-eL-A7T"/>
+                                                <constraint firstAttribute="centerY" secondItem="JOO-84-Szu" secondAttribute="centerY" constant="-0.5" id="Dne-OG-DYO"/>
                                                 <constraint firstAttribute="trailing" secondItem="KkV-tc-ORB" secondAttribute="trailing" constant="20" id="GgC-cL-ikp"/>
                                                 <constraint firstItem="XzC-b7-Y5C" firstAttribute="centerX" secondItem="VU3-tV-4Ig" secondAttribute="centerX" id="Kut-13-SAI"/>
                                                 <constraint firstItem="r83-1J-Nys" firstAttribute="leading" secondItem="rnX-RI-MUQ" secondAttribute="trailing" constant="-4" id="Skd-c8-k94"/>
@@ -337,6 +366,7 @@
                                                 <constraint firstItem="KkV-tc-ORB" firstAttribute="leading" secondItem="VU3-tV-4Ig" secondAttribute="trailing" constant="8" id="dh3-qt-xNH"/>
                                                 <constraint firstItem="XzC-b7-Y5C" firstAttribute="centerY" secondItem="VU3-tV-4Ig" secondAttribute="centerY" constant="-0.5" id="g0i-hF-4lc"/>
                                                 <constraint firstItem="rnX-RI-MUQ" firstAttribute="bottom" secondItem="VU3-tV-4Ig" secondAttribute="bottom" id="jz4-Es-vBS"/>
+                                                <constraint firstAttribute="trailing" secondItem="JOO-84-Szu" secondAttribute="trailing" constant="20" id="vvc-EE-eol"/>
                                                 <constraint firstItem="VU3-tV-4Ig" firstAttribute="leading" secondItem="Ox3-Jw-bM1" secondAttribute="leading" constant="20" id="zez-Jd-Cop"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1722,6 +1752,7 @@
         <image name="attacker.png" width="128" height="128"/>
         <image name="border.png" width="512" height="512"/>
         <image name="cone.png" width="128" height="128"/>
+        <image name="copy-icon.png" width="512" height="512"/>
         <image name="cvut-logo.png" width="323" height="245"/>
         <image name="defender.png" width="128" height="128"/>
         <image name="line.png" width="128" height="128"/>
@@ -1736,9 +1767,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="sH3-k9-12t"/>
         <segue reference="HV0-Pc-L6i"/>
-        <segue reference="qP1-Ol-nSg"/>
-        <segue reference="gOi-T2-F6s"/>
+        <segue reference="7nV-PG-H8S"/>
         <segue reference="bBM-iD-fl0"/>
     </inferredMetricsTieBreakers>
 </document>

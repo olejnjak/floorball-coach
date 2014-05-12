@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBCSimpleExerciseCell : UITableViewCell
+#import "FBCListTableCell.h"
+
+@interface FBCSimpleExerciseCell : FBCListTableCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 

@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBCTrainingCell : UITableViewCell
+#import "FBCListTableCell.h"
+
+@class FBCTraining;
+
+@interface FBCTrainingCell : FBCListTableCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *exerciseNumberLabel;
+
+@property (strong, nonatomic) FBCTraining *training;
+
+- (IBAction)duplicateButtonTapped:(UIButton *)sender;
 
 @end
