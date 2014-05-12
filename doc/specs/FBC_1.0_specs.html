@@ -1,0 +1,482 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Specifikace aplikace Florbalový trenér 1.0</title>
+
+<script>
+
+function changeColor() {
+  var tags = document.getElementsByTagName('*');
+  var tcl = " news_highlight ";
+  for (i = 0, j = 0; i < tags.length; i++) {
+    var test = " " + tags[i].className + " ";
+    if (test.indexOf(tcl) != -1) {
+      if (tags[i].style.backgroundColor == "") {
+        tags[i].style.backgroundColor = "yellow";
+        tags[i].style.color = "red";
+      }
+      else {
+        tags[i].style.backgroundColor = "";
+        tags[i].style.color = "";
+      }
+    }
+  }
+}
+
+</script>
+
+<style type="text/css" media="screen">
+
+h1 { font-size: 20px; font-family: "Lucida Grande", Arial, sans-serif; font-weight: bold; line-height: 32px; }
+h2 { font-size: 16px; font-family: "Lucida Grande", Arial, sans-serif; font-weight: bold; text-decoration: underline; margin-top: 24px; margin-bottom: 0px; }
+h3 { font-size: 14px; font-family: "Lucida Grande", Arial, sans-serif; font-weight: bold; margin-top: 24px; margin-bottom: 0px; }
+h4 { font-size: 12px; font-family: "Lucida Grande", Arial, sans-serif; font-weight: 500; margin-top: 8px; margin-bottom: 0px; color: purple; }
+
+.intro          { font-size: 14px; margin-left: 0px; }
+.f_intro        { font-size: 12px; margin-left: 0px; }
+.p_hl           { color: maroon; }
+.syntax         { font-family: monospace; font-size: 12px; color: #003200; }
+.syntax_hl      { font-family: monospace; font-size: 12px; color: navy; }
+.t_param        { font-family: monospace; font-size: 12px; padding-right: 12px; color: maroon; }
+.t2_param       { font-family: monospace; font-size: 12px; padding-right: 12px; color: #5D2E0D; }
+.t2_param_width { font-family: monospace; width: 210px; font-size: 12px; padding-right: 12px; color: #5D2E0D; }
+.t2_param2      { font-family: "Lucida Grande", Arial, sans-serif; font-size: 12px; padding-right: 12px; }
+.b_technical    { font-family: monospace; font-size: 12px; padding-right: 12px; font-weight: bold; }
+.note           { font-family: "Lucida Grande", Arial, sans-serif; font-size: 13px; padding-right: 12px; font-weight: bold; }
+.t_path         { font-family: monospace; font-size: 12px; color: #1F1F1F; }
+table           { margin-left: 20px; margin-right: 20px; }
+TR              { vertical-align: top; }
+TH              { font-family: monospace; font-size: 13px; font-weight: normal; text-decoration: underline; text-align: left; padding-right: 6px; }
+TD              { font-family: Helvetica, Arial; font-size: 12px; padding-right: 6px; }
+p               { font-family: Helvetica, Arial; font-size: 12px; margin-left: 20px; margin-top: 6px; }
+img             { margin-left: 60px; margin-top: 6px; }
+DL, OL, UL      { font-family: Helvetica, Arial; font-size: 12px; }
+pre             { margin-left: 20px; }
+
+xmp             { font-size: 12px; margin-left: 40px; margin-top: 6px; color: darkblue; }
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Specifikace aplikace Florbalový trenér 1.0</h1>
+
+<form><input type="button" value="Zvýraznit změny v nové verzi" onclick='javascript: changeColor()'></form>
+
+<p class="f_intro">
+
+  revize 1<br /><a href="mailto:olejnjak@fit.cvut.cz">Jakub Olejník</a>
+
+</p>
+
+<h2>1. Hlavní cíle vývoje</h2>
+<ul>
+  <li>Vytvoření základu aplikace pro přípravu florbalových tréninků</li>
+  <li>Implementace uživatelského rozhraní, které splňuje zvyklosti platformy iOS</li>
+  <li>Podpora florbalové notace</li>
+  <li>Podpora textových poznámek u jednotlivých tréninků</li>
+  <li>Možnost seskupování cvičení do tréninků</li>
+</ul>
+
+<h2>2. Základní parametery</h2>
+
+<h3>2.1 Technické parametery</h3>
+
+<table border="0" cellspacing="4" cellpadding="0">
+  <tr>
+    <td class="t2_param_width">Název aplikace:</td>
+    <td class="b_technical">Floorball Coach</td>
+  </tr>
+	<tr>
+	  <td class="t2_param_width">Procesorová architektura:</td>
+		<td class="b_technical">armv7, armv7s, arm64, i386 (pouze testovací)</td>
+	</tr>
+	<tr>
+	  <td class="t2_param_width">Podopora iOS:</td>
+		<td class="b_technical">Aplikace podporuje iOS 7.0 a vyšší.</td>
+	</tr>
+	<tr>
+	  <td class="t2_param_width">SDK:</td>
+		<td class="b_technical">iOS 7.x</td>
+	</tr>
+	<tr>
+	  <td class="t2_param_width">Podpora zařízení:</td>
+		<td class="b_technical">iPad 2 a novější</td>
+	</tr>
+	<tr>
+	  <td class="t2_param_width">Podpora orientací zařízení:</td>
+		<td class="b_technical">Všechny orientace na výšku a na šířku, obrazovka s nakresleným cvičením - všechny orientaci na výšku</td>
+	</tr>
+</table>
+
+
+<h2>3. Uživatelské rozhraní</h2>
+
+<p>Rozhraní aplikace se bude skládat z několika obrazovek, mezi kterými bude aplikace přecházet pomocí vhodné animace (konkrétní animace bude zmíněna u každé obrazovky zvlášť).</p>
+
+<ul>
+  <li><a href="#hlavni_nabidka">Hlavní nabídka</a></li>
+  <li><a href="#seznam_cviceni">Seznam cvičení</a></li>
+  <li><a href="#seznam_oblibenych_cviceni">Seznam oblíbených cvičení</a></li>
+  <li><a href="#seznam_treninku">Seznam tréninků</a></li>
+  <li><a href="#detail_cviceni">Detail cvičení</a></li>
+  <li><a href="#detail_treninku">Detail tréninku</a></li>
+  <li><a href="#o_aplikaci">O aplikaci</a></li>
+</ul>
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+<h3 id="hlavni_nabidka">3.1 Hlavní nabídka</h3>
+
+<p>Hlavní nabídka slouží jako rozcestník aplikace. Obsahuje tlačítka, která umožňují přechod na jednotlivé další obrazovky.</p>
+
+<h4>3.1.1 Možnosti hlavní nabídky</h4>
+
+<ul>
+  <li>Vytvoření nového cvičení</li>
+  <li>Vytvoření nového tréninku</li>
+  <li>Přechod na seznam cvičení</li>
+  <li>Přechod na seznam tréninků</li>
+  <li>Přechod na seznam oblíbených cvičení</li>
+  <li>Přechod na stránku <i>O aplikaci</i></li>
+</ul>
+
+<h4>3.1.2 Animace pro přechod mezi obrazovkami</h4>
+
+<p>Všechny přechody, které lze provést v hlavní nabídce budou využivat animaci <span class="p_hl">fade in</span>. Pouze při přechodu na obrazovku <i>O aplikaci</i> bude využita animace <span class="p_hl">cover vertical</span></p>
+
+<h4>3.1.3 Návrh hlavní nabídky</h4>
+
+<p>Rozložení prvků v hlavní nabídce bude vypadat následovně:</p>
+
+<img src="img/menu.png" alt="Návrh hlavní nabídky" title="Návrh hlavní nabídky" height="512">
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+
+<h3 id="seznam_cviceni">3.2 Seznam cvičení</h3>
+
+<p>Tato obrazovka slouží k prohlížení a možnému otevření detailu vybraného cvičení.</p>
+
+<h4>3.2.1 Zobrazené informace o cvičení</h4>
+
+<p>Na této obrazovce budou o cvičení zobrazeny následující informace:</p>
+
+<ul>
+  <li>Název cvičení</li>
+  <li>Datum poslední úpravy cvičení</li>
+  <li>Informace, zda je cvičení v seznamu oblíbených</li>
+</ul>
+
+<h4>3.2.2 Manipulace se cvičeními</h4>
+
+<p>Na obrazovce bude možné se cvičeními manipulovat. Každé jednotlivé cvičení bude možné zařadit mezi oblíbené, popř. jej z oblíbených vyjmout. Dále bude možné cvičení zduplikovat.</p>
+
+<p>Uživateli bude umožňěno zde cvičení mazat a to dvěmi způsoby. První způsob je mazání jednotlivě, pomocí gesta swipe (jako při škrtnutí textu propiskou) zprava doleva a následním tapnutím na tlačitko <span class="p_hl">smazat</span>, které se objeví v pravé části řádku. Druhou možností je výběr režimu úprav pomocí tlačítka <span class="p_hl">upravit</span> v horní liště. Následné pomocí tlačítka v levé části každého řádku lze zobrazit tlačítko <span class="p_hl">smazat</span> a cvičení odstranit.</p>
+
+<p>V této verzi nebude umožněna hromadná manipulace.</p>
+
+<h4>3.2.3 Využité animace</h4>
+
+<p>Pro přechod na všechny obrazovky bude využita animace <span class="p_hl">fade in</span>. Pro přechod na obrazovku <i>Seznam tréninků</i> bude využita animace <span class="p_hl">flip</span>.</p>
+
+<h4>3.2.4 Návrh seznamu cvičení</h4>
+
+<p>Rozložení prvků v seznamu cvičení bude vypadat následovně:</p>
+
+<img src="img/seznam_cviceni.png" alt="Návrh seznamu cvičení" height="512">
+
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+
+<h3 id="seznam_oblibenych_cviceni">3.3 Seznam oblíbených cvičení</h3>
+
+<p>Tato obrazovka slouží k prohlížení a možnému otevření detailu vybraného cvičení.</p>
+
+<p>Obrazovka vypadá stejně jako obrazovka <a href="#seznam_cviceni">Seznam cvičení</a> s následujícími výjimkami:</p>
+
+<ul>
+  <li>Chybí tlačítko pro přechod na seznam tréninků</li>
+  <li>Chybí tlačítko pro vytvoření nového cvičení</li>
+</ul>
+
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+
+<h3 id="seznam_treninku">3.4 Seznam tréninků</h3>
+
+<p>Tato obrazovka slouží k prohlížení a možnému otevření detailu vybraného tréninku nebo cvičení.</p>
+
+<h4>3.4.1 Zobrazené informace o tréninku</h4>
+
+<p>Na této obrazovce budou o tréninku zobrazeny následující informace:</p>
+
+<ul>
+  <li>Název tréninku</li>
+  <li>Datum vytvoření cvičení</li>
+  <li>Počet cvičení zařazených v tréninku</li>
+  <li>Seznam zařazených cvičení</li>
+</ul>
+
+<p>O cvičení zařazeném v tréninku bude k dispozici pouze informace o jeho názvu.</p>
+
+<h4>3.4.2 Manipulace s tréninky</h4>
+
+<p>Na obrazovce bude možné s tréninky manipulovat. Uživateli bude umožňěno zde tréninky mazat a to dvěmi způsoby. První způsob je mazání jednotlivě, pomocí gesta swipe (jako při škrtnutí textu propiskou) zprava doleva a následním tapnutím na tlačitko <span class="p_hl">smazat</span>, které se objeví v pravé části řádku. Druhou možností je výběr režimu úprav pomocí tlačítka <span class="p_hl">upravit</span> v horní liště. Následné pomocí tlačítka v levé části každého řádku lze zobrazit tlačítko <span class="p_hl">smazat</span> a trénink odstranit. Stejným způsobem bude možné z tréninku cvičení vyřadit.</p>
+
+<p>V této verzi nebude umožněna hromadná manipulace.</p>
+
+<h4>3.4.3 Využité animace</h4>
+
+<p>Pro přechod na všechny obrazovky bude využita animace <span class="p_hl">fade in</span>. Pro přechod na obrazovku <i>Seznam cvičení</i> bude využita animace <span class="p_hl">flip</span>.</p>
+
+<h4>3.4.4 Návrh seznamu tréninků</h4>
+
+<p>Rozložení prvků v seznamu tréninků bude vypadat následovně:</p>
+
+<img src="img/seznam_treninku.png" alt="Návrh seznamu tréninků" height="512">
+
+
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+<h3 id="detail_cviceni">3.5 Detail cvičení</h3>
+
+<p>Tato obrazovka slouží k prohlížení, kreslení a psaní poznámek ke cvičení. Na obrazovce také lze cvičení přejmenovat, toto je možné po tapnutí na název cvičení.</p>
+
+<h4>3.5.1 Kreslení</h4>
+
+<p>Na této obrazovce se nachází schéma hřiště, do kterého je možné kreslit. Mimo schéma hřiště kreslení není možné. Kreslení je možné pomocí předpřipravených <a href="#podporovane_nastroje">nástrojů</a>.</p>
+
+<h4>3.5.2 Přidávání poznámek</h4>
+
+<p>Ke každému cvičení je možné přidávat textové poznámky. Poznámka obsahuje <span class="p_hl">název</span> a <span class="p_hl">text</span>.</p>
+
+<p>Po tapnutí na tlačítko <span class="p_hl">Poznámky</span> v horní liště se zobrazí panel s poznámkami. Opětovným tapnutím je panel skryt. Poznámky lze přidávat po klepnutí na tlačítko <span class="p_hl">Přidat</span>, které se v panelu nachází. Po tapnutí na tlačítko <span class="p_hl">Upravit</a> lze poznámky hromadně upravovat a mazat</p>
+
+<h4>3.5.3 Návrh obrazovky</h4>
+
+<p>Náhled cvičení:</p>
+
+<img src="img/nahled_cviceni.png" alt="Náhled cvičení" height="512">
+
+<p>Náhled cvičení s poznámkami:</p>
+
+<img src="img/nahled_cviceni_poznamky.png" alt="Náhled cvičení s poznámkami" height="512">
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+<h3 id="detail_treninku">3.6 Detail tréninku</h3>
+
+<p>Tato obrazovka slouží ke spravování konkrétního tréninku. Na obrazovce jsou zobrazena cvičení, která jsou v tréninku zařazena a cvičení, která je možné do tréninku zařadit, tato cvičení jsou navíc rozdělena do dvou částí (oblíbená a ostatní). Pro lepší orientaci jsou zobrazeny náhledy cvičení.</p>
+
+<h4>3.6.1 Manipulace s tréninkem</h4>
+
+<p>Na obrazovce je možné trénink přejmenovat tapnutím na jeho název. Cvičení jsou do tréninku zařazena tapnutím na cvičení, které chce uživatel zařadit. Další možností je přetažení na požadované místo v tréninku. Lze měnit pořadí jednotlivých cvičení jejich přetažením. Přetažením je zároveň možné cvičení z tréninku vyřadit.</p>
+
+<h4>3.6.2 Návrh obrazovky</h4>
+
+<p>Návrh rozmístění prvků na obrazovce:</p>
+
+<img src="img/pripravit_novy_trenink.png" alt="Detail tréninku" height="512">
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+<h3 id="o_aplikaci">3.7 O aplikaci</h3>
+
+<p>Obrazovka slouží pro zobrazení informací o autorovi aplikace.</p>
+
+<h4>3.7.1 Návrh obrazovky</h4>
+
+<p>Návrh rozmístění prvků na obrazovce:</p>
+
+<img src="img/o_aplikaci.png" alt="O aplikaci" height="512">
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+<h2>4. Podpora florbalové notace</h2>
+
+<p>Pro usnadnění práce florbalového trenéra bude aplikace podporovat specifickou florbalovou symboliku.</p>
+
+<h3>4.1 Běh</h3>
+
+<p>Tento nástroj znázorňuje hráčův běh. Jedná se o plnou čáru, která je zakončena šipkou, která značí směr běhu.</p>
+
+<h3>4.2 Střela</h3>
+
+<p>Tento nástroj znázorňuje střeulu. Jedná se o dvojitou plnou čáru, která je zakončena šipkou, která značí směr střely.</p>
+
+<h3>4.3 Přihrávka</h3>
+
+<p>Tento nástroj znázorňuje přihrávku. Jedná se o přerušovanou čáru, která je zakončena šipkou, která značí její směr.</p>
+
+<h3>4.4 Útočník</h3>
+
+<p>Tento nástroj znázorňuje pozici hráče. Jedná se o kružnici, se kterou po umístění není možné hýbat.</p>
+
+<h3>4.5 Obránce</h3>
+
+<p>Tento nástroj znázorňuje pozici hráče. Jedná se o trojúhelník, se kterým po umístění není možné hýbat.</p>
+
+<h3>4.6 Kužel</h3>
+
+<p>Tento nástroj znázorňuje pozici kužele. Jedná se o kříž, se kterým po umístění není možné hýbat.</p>
+
+<h3>4.7 Čára</h3>
+
+<p>Tento nástroj umožňuje v aplikaci nakreslit jakýkoliv prvek, není zakončen šipkou.</p>
+
+<h3>4.8 Guma</h3>
+
+<p>Tento nástroj umožňuje smazání jakéhokoliv z předcházejích nástrojů.</p>
+
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+<!-- ################################################################################ -->
+
+
+<h2>5. Akceptační test</h2>
+
+<p>Pro úspěšné dokončení aplikace, musí být úspěšně provedeny následující testovací scénáře. Scénáře pokrývají pouze nejdůležitější funkce aplikace.</p>
+
+<h3>5.1 Vytvoření nového cvičení</h3>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">nové cvičení</span></li>
+  <li>na obrazovce detailu cvičení vybrat tlačítko <span class="p_hl">zpět</span></li>
+  <li>v hlavním nabídce vybrat položku <span class="p_hl">seznam cvičení</span></li>
+  <li>pokud obrazovka obsahuje nové cvičení, test prochází</li>
+</ol>
+
+<h3>5.2 Vytvoření nového tréninku</h3>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">nový trénink</span></li>
+  <li>na obrazovce detailu tréninku vybrat tlačítko <span class="p_hl">zpět</span></li>
+  <li>v hlavním nabídce vybrat položku <span class="p_hl">seznam tréninků</span></li>
+  <li>pokud obrazovka obsahuje nový trénink, test prochází</li>
+</ol>
+
+<h3>5.3 Zařazení cvičení do tréninku</h3>
+
+<p>Předpoklady: test vyžaduje existenci alespoň jednoho cvičení a alespoň jednoho tréninku.</p>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">seznam tréninků</span></li>
+  <li>na obrazovce seznam tréninků vybrat trénink</li>
+  <li>na obrazovce detail tréninku zařadit cvičení</li>
+  <li>tapnout na tlačítko zpět</li>
+  <li>pokud trénink na obrazovce seznamu tréninků obsahuje cvičení, test prochází</li>
+</ol>
+
+<h3>5.4 Vyřazení cvičení z tréninku</h3>
+
+<p>Předpoklady: test vyžaduje existenci alespoň jednoho tréninku, který obsahuje nějaké cvičení.</p>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">seznam tréninků</span></li>
+  <li>na obrazovce seznam tréninků přejet po cvičení, které má být smazáno, zprava doleva</li>
+  <li>tapnout na tlačítko <span class="p_hl">smazat</span>, které se objevilo</li>
+  <li>pokud cvičení zmizelo, test prochází</li>
+</ol>
+
+<h3>5.5 Vymazání tréninku</h3>
+
+<p>Předpoklady: test vyžaduje existenci alespoň jednoho tréninku.</p>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">seznam tréninků</span></li>
+  <li>na obrazovce seznam tréninků přejet po tréninku, ktery má být smazán, zprava doleva</li>
+  <li>tapnout na tlačítko <span class="p_hl">smazat</span>, které se objevilo</li>
+  <li>pokud trénink zmizel, test prochází</li>
+</ol>
+
+<h3>5.6 Vymazání cvičení</h3>
+
+<p>Předpoklady: test vyžaduje existenci alespoň jednoho cvičení.</p>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">seznam cvičení</span></li>
+  <li>na obrazovce seznamu cvičení přejet po cvičení, které má být smazáno, zprava doleva</li>
+  <li>tapnout na tlačítko <span class="p_hl">smazat</span>, které se objevilo</li>
+  <li>pokud cvičení zmizelo, test prochází</li>
+</ol>
+
+<h3>5.7 Nakreslení cvičení</h3>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">nové cvičení</span></li>
+  <li>na obrazovce cvičení použít všechny dostupné nástroje</li>
+  <li>pokud bylo možné použít nástroje <span class="p_hl">běh, střela, přihrávka, obránce, útočník, kužel, čára a guma</span>, test prochází</li>
+</ol>
+
+<h3>5.8 Přidání poznámky</h3>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">nové cvičení</span></li>
+  <li>na obrazovce cvičení tapnout na tlačítko <span class="p_hl">poznámky</span></li>
+  <li>v panelu, který se objevil tapnout na tlačítko <span class="p_hl">přidat</span></li>
+  <li>v zobrazeném formuláři vyplnit název a text poznámky a tapnout na tlačítko <span class="p_hl">uložit</span></li>
+</ol>
+
+<h3>5.9 Odstranění poznámky</h3>
+
+<p>Předpoklady: test vyžaduje existenci alespoň jednoho cvičení s alespoň jednou poznámkou.</p>
+
+<ol>
+  <li>v hlavní nabídce vybrat položku <span class="p_hl">seznam cvičení</span></li>
+  <li>na obrazovce seznamu cvičení vybrat cvičení s poznámkou</li>
+  <li>na obrazovce cvičení tapnout na tlačítko <span class="p_hl">poznámky</span></li>
+  <li>v panelu, který se objevil tapnout na tlačítko <span class="p_hl">upravit</span></li>
+  <li>vybrat poznámku a tapnout na tlačítko smazat</li>
+  <li>pokud poznámka zmizela, test prochází</li>
+</ol>
+
+<script type='text/javascript'>
+
+var imgs = document.getElementsByTagName("img");
+
+for (var i = 0; i < imgs.length; i++)
+{
+  var img = imgs.item(i);
+
+  img.addEventListener("click", function () {
+    var src = this.getAttribute("src");
+
+    if (src == null || src == undefined)
+    {
+      return true;
+    }
+
+    window.location = src;
+  }, false);
+
+  img.style.cursor = "pointer";
+  img.title = img.alt;
+}
+
+</script>
+
+</body>
+</html>
