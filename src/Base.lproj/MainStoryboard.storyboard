@@ -1534,7 +1534,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="539" height="830"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Field" translatesAutoresizingMaskIntoConstraints="NO" id="oGL-vn-S3G">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Field" translatesAutoresizingMaskIntoConstraints="NO" id="oGL-vn-S3G">
                                 <rect key="frame" x="0.0" y="0.0" width="539" height="830"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
