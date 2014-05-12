@@ -37,8 +37,6 @@
 		69391D0618DD99E70009E3AB /* FBCFavoritesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0518DD99E70009E3AB /* FBCFavoritesModel.m */; };
 		69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69391D0818DDB0BF0009E3AB /* FBCEditUnitNameController.m */; };
 		6943971418F0BEE10044DEAC /* FBCLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6943971318F0BEE10044DEAC /* FBCLine.m */; };
-		696290DA18FC77D50079CAF7 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */; };
-		696290DB18FC77D50079CAF7 /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */; };
 		696290DD18FC79EF0079CAF7 /* FBCExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 696290DC18FC79EF0079CAF7 /* FBCExerciseTests.m */; };
 		6964A67518F8ABD7006B502E /* FBCRubber.m in Sources */ = {isa = PBXBuildFile; fileRef = 6964A67418F8ABD7006B502E /* FBCRubber.m */; };
 		69685F0B19083EB20055FC2B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69685F0D19083EB20055FC2B /* MainStoryboard.storyboard */; };
@@ -58,6 +56,8 @@
 		69ADBD3618F0C9DE00DF7B18 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF27F18CE32C900F741AB /* XCTest.framework */; };
 		69ADBD3718F0C9DE00DF7B18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26618CE32C900F741AB /* Foundation.framework */; };
 		69ADBD3818F0C9DE00DF7B18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69ECF26A18CE32C900F741AB /* UIKit.framework */; };
+		69B331C019211076006B5FF3 /* OCHamcrestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */; };
+		69B331C119211076006B5FF3 /* OCMockitoIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */; };
 		69B7079618F0B2230060FEB7 /* FBCAttacker.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7079518F0B2230060FEB7 /* FBCAttacker.m */; };
 		69B7079918F0B43B0060FEB7 /* FBCDefender.m in Sources */ = {isa = PBXBuildFile; fileRef = 69B7079818F0B43B0060FEB7 /* FBCDefender.m */; };
 		69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */; };
@@ -308,8 +308,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				696290DA18FC77D50079CAF7 /* OCHamcrestIOS.framework in Frameworks */,
-				696290DB18FC77D50079CAF7 /* OCMockitoIOS.framework in Frameworks */,
+				69B331C019211076006B5FF3 /* OCHamcrestIOS.framework in Frameworks */,
+				69B331C119211076006B5FF3 /* OCMockitoIOS.framework in Frameworks */,
 				69ADBD3618F0C9DE00DF7B18 /* XCTest.framework in Frameworks */,
 				69ADBD3818F0C9DE00DF7B18 /* UIKit.framework in Frameworks */,
 				69ADBD3718F0C9DE00DF7B18 /* Foundation.framework in Frameworks */,
@@ -1028,9 +1028,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"/Users/olejnjak/Downloads/OCMockito-1.2.0",
-					"/Users/olejnjak/Downloads/OCHamcrest-3.0.1",
-					"/Users/olejnjak/School/BI-BAP/lib/MockitoIOS",
+					../lib/MockitoIOS,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../tst/Floorball Coach Tests-Prefix.pch";
@@ -1056,9 +1054,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"/Users/olejnjak/Downloads/OCMockito-1.2.0",
-					"/Users/olejnjak/Downloads/OCHamcrest-3.0.1",
-					"/Users/olejnjak/School/BI-BAP/lib/MockitoIOS",
+					../lib/MockitoIOS,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../tst/Floorball Coach Tests-Prefix.pch";

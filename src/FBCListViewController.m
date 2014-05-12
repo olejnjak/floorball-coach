@@ -189,7 +189,7 @@
         FBCTrainingDetailController *dst = [segue destinationViewController];
         
         [dst setDelegate:self];
-        [dst setTraining:_selectedUnit];
+        [dst setTraining:(FBCTraining*)_selectedUnit];
         
         _selectedUnit = nil;
         
