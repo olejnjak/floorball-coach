@@ -31,35 +31,35 @@ Fakulta informačních technologií\\
   \tableofcontents[currentsection]
 \end{frame}
 
-\subsection{Motivace}
-\begin{frame}
-\frametitle{Motivace}
-
-\begin{itemize}
-  \item aplikace zaměřená na florbal neexistuje
-  \item aplikace pro jiné sporty nepodporují florbalovou notaci
-  \item odpadají nevýhody využití klasické kreslicí tabule
-\end{itemize}
-
-\end{frame}
-
 \subsection{Zadání}
 \begin{frame}
 \frametitle{Zadání}
 
 \begin{itemize}
-  \item analýza podobných aplikací
-  \item analýza požadavků vybraných trenérů
-  \item UML modely
-  \item wireframy
-  \item specifikace
-  \item prototyp aplikace
-  \item akceptační test
+  \item Analyzujte aplikace zabývající se přípravou florbalových tréninků.
+  \item Analyzujte požadavky vybraných trenérů na takovou aplikaci.
+  \item Na základě analýzy připravte UML modely.
+  \item Vytvořte wireframy uživatelského rozhraní.
+  \item Připravte specifikaci, podle které navrhněte prototyp mobilní aplikace.
+  \item Funkční prototyp otestujte pomocí akceptačních testů.
 \end{itemize}
 
 \end{frame}
 
-\section{Podobné aplikace}
+
+\subsection{Motivace}
+\begin{frame}
+\frametitle{Motivace}
+
+\begin{itemize}
+  \item Aplikace zaměřená na florbal neexistuje.
+  \item Aplikace pro jiné sporty nepodporují florbalovou notaci.
+  \item Odpadají nevýhody využití klasické kreslicí tabule.
+\end{itemize}
+
+\end{frame}
+
+\section{Analýza existujících řešení}
 
 \begin{frame}
   \frametitle{Obsah}
@@ -73,7 +73,6 @@ Fakulta informačních technologií\\
 
   \begin{figure}[H]
     \includegraphics[width=.8\textwidth]{img/IMG_0011}
-    \caption{Uživatelské rozhraní aplikace CoachNote}
     \label{pic:coachnote}
   \end{figure}
 
@@ -84,8 +83,7 @@ Fakulta informačních technologií\\
 \frametitle{IceHockey Board}
 
   \begin{figure}[H]
-    \includegraphics[height=.6\textheight]{img/IMG_0018}
-    \caption{Uživatelské rozhraní aplikace IceHockey Board Free}
+    \includegraphics[height=.8\textheight]{img/IMG_0018}
     \label{pic:icehockeyboardfree}
   \end{figure}
 
@@ -95,8 +93,7 @@ Fakulta informačních technologií\\
 \begin{frame}
 \frametitle{My Field Hockey Coach}
   \begin{figure}[H]
-    \includegraphics[height=.6\textheight]{img/IMG_0019}
-    \caption{Uživatelské rozhraní aplikace My Field Hockey Coach Free}
+    \includegraphics[height=.8\textheight]{img/IMG_0019}
     \label{pic:myfieldhockeycoachfree}
   \end{figure}
 \end{frame}
@@ -105,35 +102,32 @@ Fakulta informačních technologií\\
 \begin{frame}
 \frametitle{Exercise drawer}
   \begin{figure}[H]
-    \includegraphics[height=.6\textheight]{img/exercise_drawer}
-    \caption{Uživatelské rozhraní aplikace Exercise drawer}
+    \includegraphics[height=.8\textheight]{img/exercise_drawer}
     \label{pic:exercisedrawer}
   \end{figure}
 \end{frame}
 
-\section{Prototyp}
-
-\subsection{Uživatelské rozhraní}
+\section{Analýza požadavků}
 
 \begin{frame}
-  \frametitle{Uživatelské rozhraní}
+  \frametitle{Analýza požadavků}
 
-  \begin{figure}[H]
+  Co bylo úkolem analýzy požadavků?
 
-    \centering
-    \subfloat[Hlavní nabídka]{\includegraphics[width=0.4\textwidth]{img/IMG_0277}}
-    \hfil
-    \subfloat[Obrazovka kreslení]{\includegraphics[width=0.4\textwidth]{img/IMG_0276}}
-
-    \caption{Uživatelské rozhraní navržené aplikace}
-    \label{pic:prototype_ui}
-  \end{figure}
+  \begin{itemize}
+      \item Zjistit, jaké věkové kategorie budoucí trenéři trénují.
+      \item Zjistit, jak často trenéři svěřencům cvičení kreslí.
+      \item Zjistit, zda již některý z trenérů využil podobnou aplikaci.
+      \item Zjistit, co trenéři od takové aplikace očekávají.
+  \end{itemize}
 \end{frame}
 
-\subsection{Funkcionalita}
+\section{Návrh aplikace}
+
+\subsection{Navržená funkcionalita}
 
 \begin{frame}
-  \frametitle{Funkcionalita}
+  \frametitle{Navržená funkcionalita}
 
   \begin{itemize}
     \item volné kreslení na hřiště
@@ -142,6 +136,23 @@ Fakulta informačních technologií\\
     \item perzistentní ukládání cvičení
     \item seskupování cvičení do tréninků
   \end{itemize}
+\end{frame}
+
+
+\subsection{Návrh uživatelského rozhraní}
+
+\begin{frame}
+  \frametitle{Návrh uživatelského rozhraní}
+
+  \begin{figure}[H]
+
+    \centering
+    \subfloat{\includegraphics[width=0.4\textwidth]{img/IMG_0277}}
+    \hfil
+    \subfloat{\includegraphics[width=0.4\textwidth]{img/IMG_0276}}
+
+    \label{pic:prototype_ui}
+  \end{figure}
 \end{frame}
 
 \section{Testování}
@@ -162,31 +173,18 @@ Fakulta informačních technologií\\
   \tableofcontents[currentsection]
 \end{frame}
 
-\subsection{Shrnutí}
-
 \begin{frame}
-  \frametitle{Shrnutí}
+  \frametitle{Závěr}
 
-  \begin{block}{Úkol}
-    \begin{itemize}
-      \item návrh aplikace pro zlepšení vedení florbalových tréninků
-      \item analýza existujících řešení
-      \item analýza požadavků budoucích uživatelů
-      \item akceptační test
-    \end{itemize}
-
-  \end{block}
-
-  \begin{block}{Zhodnocení}
-    \begin{itemize}
-      \item aplikace dokončena a připravena pro submit na App Store
-      \item analýza soustředěna především na podobné aplikace a požadavky budoucích uživatelů
-      \item akceptační test doplněn také o testy uživatelského rozhraní a unit testy
-    \end{itemize}
-  \end{block}
+  \begin{itemize}
+    \item Implementována aplikace pro zlepšení vedení florbalových tréninků (ve fázi funkčního prototypu).
+    \item Aplikace respektuje požadavky dotázaných florbalových trenérů.
+    \item Analýza byla soustředěna především na podobné aplikace a požadavky budoucích uživatelů.
+    \item Akceptační testy byly doplněny také o testy uživatelského rozhraní a unit testy.
+  \end{itemize}
 \end{frame}
 
-\subsection{Obhajoba}
+\section{Otázky oponenta}
 
 \begin{frame}
   \frametitle{Jakým způsobem a s jakými konkrétními výsledky byly provedeny akceptační testy?}
@@ -194,16 +192,16 @@ Fakulta informačních technologií\\
   Způsoby:
 
   \begin{enumerate}
-    \item vývojář podle připraveného scénáře
-    \item automatizace podle připraveného scénáře
-    \item budoucí uživatel bez připraveného scénáře
+    \item Vývojář podle připraveného scénáře
+    \item Automatizace podle připraveného scénáře
+    \item Budoucí uživatel bez připraveného scénáře
   \end{enumerate}
 
   Výsledky:
 
   \begin{itemize}
-    \item u prvních dvou způsobů bylo výstupem zda test dosáhl očekávaného výsledku
-    \item třetí způsob byl kombinací akceptačního testu s testem uživatelského rozhraní a výstupem byl i komentář uživatele jak obtížné bylo se k očekávanému cíli dostat
+    \item U prvních dvou způsobů bylo výstupem, zda test dosáhl očekávaného výsledku.
+    \item Třetí způsob byl kombinací akceptačního testu s testem uživatelského rozhraní a výstupem byl i komentář uživatele jak obtížné bylo se k očekávanému cíli dostat.
   \end{itemize}
 
 \end{frame}
@@ -211,9 +209,9 @@ Fakulta informačních technologií\\
   \frametitle{Bylo řešení konzultováno s budoucími uživateli i v průběhu analýzy, návrhu a/nebo implementace?}
 
   \begin{itemize}
-    \item doplnění funkcí, popř. tipů na fuknce do aplikace během analýzy
-    \item úpravy wireframů během návrhu
-    \item zpětná vazba vybraných trenérů během implementace
+    \item Doplnění funkcí, popř. tipů na fuknce do aplikace během analýzy.
+    \item Wireframy byly během návrhu upraveny podle připomínek uživatelů.
+    \item Byla poskytnuta zpětná vazba vybraných trenérů během implementace.
   \end{itemize}
 \end{frame}
 
