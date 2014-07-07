@@ -28,3 +28,4 @@ This app is published under [GNU GPL v3](http://www.gnu.org/licenses/gpl.txt) li
 ### Author ###
 
 * Jakub Olejník
+* App was developed as bachelor thesis at [Faculty of Information Technology](http://fit.cvut.cz) at [Czech Technical University in Prague](http://cvut.cz)
