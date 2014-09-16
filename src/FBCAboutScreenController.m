@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
     
-    NSString * appVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    NSString * appVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 
     [self.versionLabel setText:appVersionString];
     [self.creditsTextView setText:LOC(@"FBCFITCredits")];
