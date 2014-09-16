@@ -784,7 +784,7 @@
 						TestTargetID = 69ECF26218CE32C800F741AB;
 					};
 					69ECF26218CE32C800F741AB = {
-						DevelopmentTeam = F7SM98QCWV;
+						DevelopmentTeam = MS5H3BD7U5;
 					};
 				};
 			};
@@ -1161,7 +1161,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
-				PROVISIONING_PROFILE = "63a12d2a-a4dc-4e25-b550-2223da8781f4";
+				PROVISIONING_PROFILE = "a2aa9928-3b1e-46dd-b1e3-90b97b5e174a";
 				SYMROOT = ../out;
 				USER_HEADER_SEARCH_PATHS = "../lib/**";
 				WRAPPER_EXTENSION = app;
@@ -1180,7 +1180,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
-				PROVISIONING_PROFILE = "3899FD4E-DD17-4FD4-9B06-EC352D827C95";
+				PROVISIONING_PROFILE = "246894b7-4587-4c78-a5e5-fb28930d6db6";
 				SYMROOT = ../out;
 				USER_HEADER_SEARCH_PATHS = "../lib/**";
 				WRAPPER_EXTENSION = app;
