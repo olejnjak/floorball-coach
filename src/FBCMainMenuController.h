@@ -14,4 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mainMenu;
 
+- (IBAction)removeAdsTapped:(UIButton *)sender;
+- (IBAction)restoreTapped:(UIButton *)sender;
+
 @end

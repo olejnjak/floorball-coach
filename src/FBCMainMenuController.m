@@ -136,4 +136,9 @@
     }
 }
 
+- (IBAction)removeAdsTapped:(UIButton *)sender {
+}
+
+- (IBAction)restoreTapped:(UIButton *)sender {
+}
 @end
