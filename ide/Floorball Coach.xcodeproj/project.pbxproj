@@ -85,7 +85,7 @@
 		69EFCA5D18F8AF79001BEB8D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69EFCA5C18F8AF79001BEB8D /* Images.xcassets */; };
 		69F473A819152FFE0008BD43 /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739119152FFE0008BD43 /* CLIColor.m */; };
 		69F473A919152FFE0008BD43 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739319152FFE0008BD43 /* DDAbstractDatabaseLogger.m */; };
-		69F473AA19152FFE0008BD43 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739519152FFE0008BD43 /* DDASLLogCapture.m */; };
+		69F473AA19152FFE0008BD43 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739519152FFE0008BD43 /* DDASLLogCapture.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		69F473AB19152FFE0008BD43 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739719152FFE0008BD43 /* DDASLLogger.m */; };
 		69F473AC19152FFE0008BD43 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739919152FFE0008BD43 /* DDFileLogger.m */; };
 		69F473AD19152FFE0008BD43 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F4739C19152FFE0008BD43 /* DDLog.m */; };
