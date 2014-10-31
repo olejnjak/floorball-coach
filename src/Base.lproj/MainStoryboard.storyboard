@@ -182,6 +182,12 @@
                                 <color key="tintColor" red="0.023529411764705882" green="0.074509803921568626" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.0" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="5mP-0o-kRa">
+                                <rect key="frame" x="224" y="1024" width="320" height="66"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9SZ-sS-LaG" id="suV-Jy-WgO"/>
+                                </connections>
+                            </adBannerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="siG-Qe-0Td">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,7 +296,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzC-b7-Y5C">
-                                                    <rect key="frame" x="20" y="5.5" width="60" height="60"/>
+                                                    <rect key="frame" x="20" y="5" width="60" height="60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" red="0.0" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -398,6 +404,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NGp-y2-59O" firstAttribute="top" secondItem="5mP-0o-kRa" secondAttribute="top" id="4Ka-Eq-YsZ"/>
                             <constraint firstAttribute="trailing" secondItem="ZDK-9g-EON" secondAttribute="trailing" id="BMI-dW-dBp"/>
                             <constraint firstItem="siG-Qe-0Td" firstAttribute="top" secondItem="ZDK-9g-EON" secondAttribute="bottom" id="Dma-yz-q2U"/>
                             <constraint firstAttribute="centerX" secondItem="9E1-Xm-ul5" secondAttribute="centerX" id="IIz-BS-baT"/>
@@ -407,6 +414,7 @@
                             <constraint firstItem="siG-Qe-0Td" firstAttribute="leading" secondItem="JlM-51-kvk" secondAttribute="leading" id="bCq-KI-CFK"/>
                             <constraint firstItem="9E1-Xm-ul5" firstAttribute="width" secondItem="JlM-51-kvk" secondAttribute="width" id="eQ9-Z3-0Si"/>
                             <constraint firstItem="NGp-y2-59O" firstAttribute="top" secondItem="siG-Qe-0Td" secondAttribute="bottom" id="fV4-vy-vSB"/>
+                            <constraint firstAttribute="centerX" secondItem="5mP-0o-kRa" secondAttribute="centerX" id="pDl-Cf-HA3"/>
                             <constraint firstItem="9E1-Xm-ul5" firstAttribute="height" secondItem="JlM-51-kvk" secondAttribute="height" id="vbA-4P-SDV"/>
                             <constraint firstAttribute="trailing" secondItem="siG-Qe-0Td" secondAttribute="trailing" id="xL9-57-rkU"/>
                         </constraints>
@@ -414,6 +422,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="addButton" destination="MnX-h3-PxE" id="LnF-9V-khB"/>
+                        <outlet property="bannerTopConstraint" destination="4Ka-Eq-YsZ" id="6na-BG-Rxj"/>
+                        <outlet property="bannerView" destination="5mP-0o-kRa" id="SpO-km-phL"/>
                         <outlet property="doneButton" destination="9bB-Gj-GiB" id="IeD-rZ-1jK"/>
                         <outlet property="editButton" destination="u5A-i0-d8G" id="g3F-4U-mB0"/>
                         <outlet property="tableView" destination="siG-Qe-0Td" id="ud9-c8-g8B"/>
@@ -1367,7 +1377,6 @@
                                                     <rect key="frame" x="0.0" y="2" width="198" height="198"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5K-Mc-4cI">
-                                                    <rect key="frame" x="5" y="8" width="184" height="154"/>
                                                     <color key="backgroundColor" red="1" green="0.1678057117" blue="0.28120118989999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Exercise name]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-DE-wa6">
@@ -1433,6 +1442,12 @@
                                 <color key="tintColor" red="0.023529411760000001" green="0.074509803920000006" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.0" green="0.77647058820000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="O3Z-2T-SDv">
+                                <rect key="frame" x="224" y="1024" width="320" height="66"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ONY-qI-YdE" id="HrF-OP-8Zk"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -1440,7 +1455,9 @@
                             <constraint firstAttribute="centerX" secondItem="Mpo-BV-O2g" secondAttribute="centerX" id="69Z-YQ-Hyg"/>
                             <constraint firstAttribute="centerY" secondItem="Mpo-BV-O2g" secondAttribute="centerY" id="6fP-MT-L6B"/>
                             <constraint firstItem="uCC-mG-qhg" firstAttribute="top" secondItem="EgE-AQ-aj8" secondAttribute="bottom" constant="-13" id="9qK-UZ-STf"/>
+                            <constraint firstItem="uCC-mG-qhg" firstAttribute="top" secondItem="O3Z-2T-SDv" secondAttribute="top" id="Bqd-1H-HY6"/>
                             <constraint firstAttribute="height" secondItem="Mpo-BV-O2g" secondAttribute="height" id="FUB-sD-GfK"/>
+                            <constraint firstAttribute="centerX" secondItem="O3Z-2T-SDv" secondAttribute="centerX" id="OqE-ec-60W"/>
                             <constraint firstItem="aM2-ik-9Fs" firstAttribute="leading" secondItem="7np-ao-PGP" secondAttribute="leading" id="jps-8R-URo"/>
                             <constraint firstAttribute="width" secondItem="Mpo-BV-O2g" secondAttribute="width" id="mhz-zB-9GC"/>
                             <constraint firstItem="EgE-AQ-aj8" firstAttribute="leading" secondItem="7np-ao-PGP" secondAttribute="leading" constant="44" id="oLa-Yc-3eo"/>
@@ -1450,6 +1467,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerTopConstraint" destination="Bqd-1H-HY6" id="QAi-Hv-byP"/>
+                        <outlet property="bannerView" destination="O3Z-2T-SDv" id="FXj-gN-HKt"/>
                         <outlet property="collectionView" destination="EgE-AQ-aj8" id="kjU-OZ-uZ5"/>
                         <outlet property="flowLayout" destination="1c2-RR-Ogr" id="3gm-BX-dhk"/>
                         <outlet property="trainingName" destination="RHe-5u-Avc" id="bjd-Zb-xjM"/>
@@ -1741,9 +1760,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gOi-T2-F6s"/>
         <segue reference="HV0-Pc-L6i"/>
-        <segue reference="qP1-Ol-nSg"/>
-        <segue reference="bBM-iD-fl0"/>
+        <segue reference="7nV-PG-H8S"/>
+        <segue reference="sH3-k9-12t"/>
+        <segue reference="fWF-YC-6Jc"/>
     </inferredMetricsTieBreakers>
 </document>

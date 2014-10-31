@@ -17,6 +17,7 @@
 #import "FBCTrainingDetailController.h"
 #import "FBCTrainingUnitLibrary.h"
 #import "FBCListTableCell.h"
+#import "FBCIAPModel.h"
 
 @implementation FBCListViewController
 {
@@ -118,6 +119,14 @@
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     return [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - ADBannerViewDelegate methods
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [self showAds];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -361,6 +370,22 @@
     }
     
     [toolbar setItems:toolbarItems animated:YES];
+}
+
+- (void)showAds
+{
+    if ([[FBCIAPModel model] shouldDisplayAds] == NO)
+    {
+        return;
+    }
+    
+    CGFloat bannerHeight = [self.bannerView frame].size.height;
+    
+    [self.bannerTopConstraint setConstant:bannerHeight];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 @end

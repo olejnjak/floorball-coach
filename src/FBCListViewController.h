@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
 #import "FBCControllerDoneProtocol.h"
 
@@ -18,7 +19,8 @@ typedef enum
     FBCListViewControllerTypeFavorite
 } FBCListViewControllerType;
 
-@interface FBCListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,FBCControllerDoneProtocol>
+@interface FBCListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,FBCControllerDoneProtocol,
+                                                        ADBannerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
@@ -27,6 +29,9 @@ typedef enum
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *typeChangeButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet ADBannerView *bannerView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bannerTopConstraint;
 
 @property (assign, nonatomic) FBCListViewControllerType type;
 

@@ -11,6 +11,7 @@
 #import "FBCEditUnitNameController.h"
 #import "FBCTraining.h"
 #import "LXReorderableCollectionViewFlowLayout.h"
+#import "FBCIAPModel.h"
 
 @implementation FBCTrainingDetailController
 {
@@ -101,6 +102,14 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - ADBannerViewDelegate methods
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [self showAds];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Custom properties
 
 - (FBCTrainingDetailModel*)model
@@ -122,6 +131,25 @@
     {
         [self.delegate controllerIsDone:self];
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Helpers
+
+- (void)showAds
+{
+    if ([[FBCIAPModel model] shouldDisplayAds] == NO)
+    {
+        return;
+    }
+    
+    CGFloat bannerHeight = [self.bannerView frame].size.height;
+    
+    [self.bannerTopConstraint setConstant:bannerHeight];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 @end
