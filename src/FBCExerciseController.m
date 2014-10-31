@@ -14,6 +14,8 @@
 #define kFBCNotesShownConstant 0
 #define kFBCNotesHiddenConstant -320
 
+#define kAdHidePeriod 5
+
 @implementation FBCExerciseController
 {
     UIPopoverController *_popoverController;
@@ -95,6 +97,11 @@
     {
         [self hideNotesPanel];
     }
+}
+
+- (IBAction)closeAdTapped:(UIButton *)sender
+{
+    [self hideAdBanner];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -188,6 +195,14 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - ADBannerView delegate
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [self showAdBanner];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Notes panel handling
 
 - (void)toggleNotesPanel
@@ -236,6 +251,29 @@
     FBCExercise *exercise = [self exercise];
     
     [self.nameItem setTitle:exercise.name];
+}
+
+- (void)hideAdBanner
+{
+    CGFloat bannerViewHeight = [self.bannerView frame].size.height;
+    [self.bannerTopConstraint setConstant:-bannerViewHeight-20];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
+    __weak FBCExerciseController *weakSelf = self;
+    
+    [weakSelf performSelector:@selector(showAdBanner) withObject:nil afterDelay:kAdHidePeriod];
+}
+
+- (void)showAdBanner
+{
+    [self.bannerTopConstraint setConstant:0];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
 }
 
 @end

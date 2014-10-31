@@ -63,6 +63,7 @@
 		69C3E4F818DCDC7500B6B1FB /* FBCUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4F718DCDC7500B6B1FB /* FBCUtilities.m */; };
 		69C3E4F918DCDD3900B6B1FB /* localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69C3E4FB18DCDD3900B6B1FB /* localization.strings */; };
 		69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */; };
+		69C49FF21A03CA9B001D6658 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C49FF11A03CA9B001D6658 /* iAd.framework */; };
 		69C530D118F0C65200111364 /* TestFBCTrainingUnitLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */; };
 		69C9524E18E773800058C958 /* FBCDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C9524D18E773800058C958 /* FBCDrawingView.m */; };
 		69CA3D2E192105C6002A41F1 /* copy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 69CA3D2D192105C6002A41F1 /* copy-icon.png */; };
@@ -208,6 +209,7 @@
 		69C3E4FA18DCDD3900B6B1FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localization.strings; sourceTree = "<group>"; };
 		69C3E4FC18DCDF6C00B6B1FB /* FBCNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCNote.h; sourceTree = "<group>"; };
 		69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNote.m; sourceTree = "<group>"; };
+		69C49FF11A03CA9B001D6658 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		69C9524C18E773800058C958 /* FBCDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCDrawingView.h; sourceTree = "<group>"; };
 		69C9524D18E773800058C958 /* FBCDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCDrawingView.m; sourceTree = "<group>"; };
 		69CA3D2D192105C6002A41F1 /* copy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copy-icon.png"; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69C49FF21A03CA9B001D6658 /* iAd.framework in Frameworks */,
 				69ECF26918CE32C900F741AB /* CoreGraphics.framework in Frameworks */,
 				69ECF26B18CE32C900F741AB /* UIKit.framework in Frameworks */,
 				69ECF26718CE32C900F741AB /* Foundation.framework in Frameworks */,
@@ -548,6 +551,7 @@
 		69ECF26518CE32C900F741AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69C49FF11A03CA9B001D6658 /* iAd.framework */,
 				696290D818FC77D50079CAF7 /* OCHamcrestIOS.framework */,
 				696290D918FC77D50079CAF7 /* OCMockitoIOS.framework */,
 				69ECF26618CE32C900F741AB /* Foundation.framework */,
@@ -1154,14 +1158,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
 				INFOPLIST_FILE = "../src/Floorball Coach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
-				PROVISIONING_PROFILE = "a2aa9928-3b1e-46dd-b1e3-90b97b5e174a";
+				PROVISIONING_PROFILE = "370de35f-4f8a-4895-93f0-0d3633ac8b5e";
 				SYMROOT = ../out;
 				USER_HEADER_SEARCH_PATHS = "../lib/**";
 				WRAPPER_EXTENSION = app;
@@ -1173,14 +1178,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "../src/Floorball Coach-Prefix.pch";
 				INFOPLIST_FILE = "../src/Floorball Coach-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OBJROOT = ../tmp;
 				PRODUCT_NAME = "Floorball Coach";
-				PROVISIONING_PROFILE = "246894b7-4587-4c78-a5e5-fb28930d6db6";
+				PROVISIONING_PROFILE = "fba4cb84-ee54-455c-8569-575c14d9f31a";
 				SYMROOT = ../out;
 				USER_HEADER_SEARCH_PATHS = "../lib/**";
 				WRAPPER_EXTENSION = app;
