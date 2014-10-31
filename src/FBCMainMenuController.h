@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 #import "FBCControllerDoneProtocol.h"
+#import "FBCIAPModel.h"
 
-@interface FBCMainMenuController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate,FBCControllerDoneProtocol>
+@interface FBCMainMenuController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate,
+                                                    FBCControllerDoneProtocol, FBCIAPModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mainMenu;
 

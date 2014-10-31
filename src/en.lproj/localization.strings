@@ -9,6 +9,8 @@
 "FBCCopy" = " - copy";
 "FBCFavorite" = "Favorite";
 "FBCFavorited" = "Favorited";
+"FBCIAPFailed" = "Unable to purchase item.";
+"FBCIAPFailedTitle" = "Purchase failed";
 "FBCNewExercise" = "New exercise";
 "FBCNewTraining" = "New training";
 "FBCTrainingExercises" = "Exercises in training";

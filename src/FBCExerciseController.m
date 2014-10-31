@@ -10,6 +10,7 @@
 #import "FBCNotesPanelController.h"
 #import "FBCEditUnitNameController.h"
 #import "FBCFieldController.h"
+#import "FBCIAPModel.h"
 
 #define kFBCNotesShownConstant 0
 #define kFBCNotesHiddenConstant -320
@@ -269,6 +270,11 @@
 
 - (void)showAdBanner
 {
+    if ([[FBCIAPModel model] shouldDisplayAds] == NO)
+    {
+        return;
+    }
+    
     [self.bannerTopConstraint setConstant:0];
     
     [UIView animateWithDuration:0.3 animations:^{

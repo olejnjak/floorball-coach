@@ -14,11 +14,28 @@
 #import "FBCTrainingUnitLibrary.h"
 #import "FBCTrainingDetailController.h"
 #import "FBCTraining.h"
+#import "FBCIAPModel.h"
+#import "FBCMainMenuAboutCell.h"
 
 @implementation FBCMainMenuController
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIViewController methods -
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[FBCIAPModel model] setDelegate:self];
+    [[FBCIAPModel model] requestProductsFromApple];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [[FBCIAPModel model] setDelegate:nil];
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -45,6 +62,19 @@
     UICollectionViewCell *cell =
         [collectionView dequeueReusableCellWithReuseIdentifier:reusableId forIndexPath:indexPath];
     
+    NSString *aboutId = [NSString stringWithFormat:kFBCMainMenuCellFormat, (long)5];
+    
+    if ([reusableId isEqualToString:aboutId])
+    {
+        FBCMainMenuAboutCell *aboutCell = (FBCMainMenuAboutCell*)cell;
+        BOOL iapAvailable = [[FBCIAPModel model] iapAvailable];
+        BOOL bought = [[FBCIAPModel model] shouldDisplayAds] == NO;
+        BOOL allowButtons = iapAvailable && !bought;
+        
+        [aboutCell.removeAdsButton setEnabled:allowButtons];
+        [aboutCell.restoreButton setEnabled:allowButtons];
+    }
+    
     return cell;
 }
 
@@ -54,6 +84,19 @@
 - (void)controllerIsDone:(UIViewController *)controller
 {
     [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - FBCIAPModelDelegate methods - 
+
+- (void)iapAvailableChanged:(BOOL)available
+{
+    [self.mainMenu reloadData];
+}
+
+- (void)adStateChanged:(BOOL)bought
+{
+    [self.mainMenu reloadData];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -136,7 +179,12 @@
     }
 }
 
-- (IBAction)removeAdsTapped:(UIButton *)sender {
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UI actions -
+
+- (IBAction)removeAdsTapped:(UIButton *)sender
+{
+    [[FBCIAPModel model] buyRemoveAds];
 }
 
 - (IBAction)restoreTapped:(UIButton *)sender {

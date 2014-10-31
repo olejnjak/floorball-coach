@@ -8,6 +8,7 @@
 
 #import "FBCAppDelegate.h"
 #import "FBCTrainingUnitLibrary.h"
+#import "FBCIAPModel.h"
 
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
@@ -20,6 +21,8 @@
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
 #endif
+    
+    [FBCIAPModel model];
 
     return YES;
 }

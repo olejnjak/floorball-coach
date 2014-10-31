@@ -65,6 +65,8 @@
 		69C3E4FE18DCDF6C00B6B1FB /* FBCNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */; };
 		69C49FF21A03CA9B001D6658 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C49FF11A03CA9B001D6658 /* iAd.framework */; };
 		69C49FF41A03CDF6001D6658 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C49FF31A03CDF6001D6658 /* StoreKit.framework */; };
+		69C49FF81A03D2CA001D6658 /* FBCIAPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C49FF71A03D2CA001D6658 /* FBCIAPModel.m */; };
+		69C49FFC1A03DF8D001D6658 /* FBCMainMenuAboutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C49FFB1A03DF8D001D6658 /* FBCMainMenuAboutCell.m */; };
 		69C530D118F0C65200111364 /* TestFBCTrainingUnitLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EB651E18D4F10E00F72E33 /* TestFBCTrainingUnitLibrary.m */; };
 		69C9524E18E773800058C958 /* FBCDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69C9524D18E773800058C958 /* FBCDrawingView.m */; };
 		69CA3D2E192105C6002A41F1 /* copy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 69CA3D2D192105C6002A41F1 /* copy-icon.png */; };
@@ -212,6 +214,10 @@
 		69C3E4FD18DCDF6C00B6B1FB /* FBCNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCNote.m; sourceTree = "<group>"; };
 		69C49FF11A03CA9B001D6658 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		69C49FF31A03CDF6001D6658 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		69C49FF61A03D2CA001D6658 /* FBCIAPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCIAPModel.h; sourceTree = "<group>"; };
+		69C49FF71A03D2CA001D6658 /* FBCIAPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCIAPModel.m; sourceTree = "<group>"; };
+		69C49FFA1A03DF8D001D6658 /* FBCMainMenuAboutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCMainMenuAboutCell.h; sourceTree = "<group>"; };
+		69C49FFB1A03DF8D001D6658 /* FBCMainMenuAboutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCMainMenuAboutCell.m; sourceTree = "<group>"; };
 		69C9524C18E773800058C958 /* FBCDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCDrawingView.h; sourceTree = "<group>"; };
 		69C9524D18E773800058C958 /* FBCDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCDrawingView.m; sourceTree = "<group>"; };
 		69CA3D2D192105C6002A41F1 /* copy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copy-icon.png"; sourceTree = "<group>"; };
@@ -353,6 +359,7 @@
 		690B803718CE33680042C083 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				69C49FF51A03D2B3001D6658 /* IAP */,
 				69E32BF718E88C7100303ED4 /* Tools */,
 				6906CFC518DF417600D3006A /* Training detail */,
 				69FD432B18CFABC700A95B61 /* About screen */,
@@ -460,6 +467,15 @@
 			);
 			name = lib;
 			path = ../lib;
+			sourceTree = "<group>";
+		};
+		69C49FF51A03D2B3001D6658 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				69C49FF61A03D2CA001D6658 /* FBCIAPModel.h */,
+				69C49FF71A03D2CA001D6658 /* FBCIAPModel.m */,
+			);
+			name = IAP;
 			sourceTree = "<group>";
 		};
 		69DE1C6D18CE8929006A869C /* tst */ = {
@@ -619,6 +635,8 @@
 				690B804618CE3DC40042C083 /* FBCMainMenuController.m */,
 				690B804818CE41670042C083 /* FBCMainMenuCellFactory.h */,
 				690B804918CE41670042C083 /* FBCMainMenuCellFactory.m */,
+				69C49FFA1A03DF8D001D6658 /* FBCMainMenuAboutCell.h */,
+				69C49FFB1A03DF8D001D6658 /* FBCMainMenuAboutCell.m */,
 			);
 			name = "Main menu";
 			sourceTree = "<group>";
@@ -895,6 +913,8 @@
 				69F473AC19152FFE0008BD43 /* DDFileLogger.m in Sources */,
 				69CA3D32192109BA002A41F1 /* FBCListTableCell.m in Sources */,
 				69E8D5F418F0A75B0031C171 /* FBCCone.m in Sources */,
+				69C49FF81A03D2CA001D6658 /* FBCIAPModel.m in Sources */,
+				69C49FFC1A03DF8D001D6658 /* FBCMainMenuAboutCell.m in Sources */,
 				69391D0918DDB0BF0009E3AB /* FBCEditUnitNameController.m in Sources */,
 				69EB652518D503EE00F72E33 /* FBCComplexExerciseCell.m in Sources */,
 				69F473AA19152FFE0008BD43 /* DDASLLogCapture.m in Sources */,
