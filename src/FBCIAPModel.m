@@ -8,7 +8,7 @@
 
 #import "FBCIAPModel.h"
 
-#define kRemoveAdsId @"cz.olejnjak.cz.floorballcoach.removeads"
+#define kRemoveAdsId @"cz.olejnjak.floorballcoach.removeads"
 
 static FBCIAPModel *fbcIapModel = nil;
 
@@ -40,8 +40,6 @@ static FBCIAPModel *fbcIapModel = nil;
     if (self != nil)
     {
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-        
-        [self requestProductsFromApple];
     }
     
     return self;
@@ -80,6 +78,8 @@ static FBCIAPModel *fbcIapModel = nil;
             default:
                 break;
         }
+     
+        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
     }
 }
 
@@ -100,6 +100,8 @@ static FBCIAPModel *fbcIapModel = nil;
     if ([product.productIdentifier isEqualToString:kRemoveAdsId])
     {
         _removeAdsProduct = product;
+        
+        [self.delegate iapAvailableChanged:self.iapAvailable];
     }
 }
 
@@ -117,7 +119,7 @@ static FBCIAPModel *fbcIapModel = nil;
 {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     
-    return [ud boolForKey:kRemoveAdsId];
+    return NO == [ud boolForKey:kRemoveAdsId];
 }
 
 - (BOOL)iapAvailable
@@ -127,11 +129,16 @@ static FBCIAPModel *fbcIapModel = nil;
 
 - (void)requestProductsFromApple
 {
-    SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:
-                                  [NSSet setWithObject:kRemoveAdsId]];
+    NSSet *identifiers = [NSSet setWithObject:kRemoveAdsId];
+    SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:identifiers];
     
     [request setDelegate:self];
     [request start];
+}
+
+- (void)restorePurchases
+{
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -139,9 +146,13 @@ static FBCIAPModel *fbcIapModel = nil;
 
 - (void)boughtProductWithIdentifier:(NSString*)identifier
 {
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    
-    [ud setBool:YES forKey:kRemoveAdsId];
+    if ([identifier isEqualToString:kRemoveAdsId])
+    {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        
+        [ud setBool:YES forKey:kRemoveAdsId];
+        [self.delegate adStateChanged:YES];
+    }
 }
 
 @end

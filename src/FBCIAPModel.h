@@ -26,6 +26,7 @@
 - (BOOL)shouldDisplayAds;
 - (BOOL)iapAvailable;
 
+- (void)restorePurchases;
 - (void)requestProductsFromApple;
 
 @end

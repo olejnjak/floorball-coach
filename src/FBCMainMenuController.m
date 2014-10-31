@@ -187,6 +187,8 @@
     [[FBCIAPModel model] buyRemoveAds];
 }
 
-- (IBAction)restoreTapped:(UIButton *)sender {
+- (IBAction)restoreTapped:(UIButton *)sender
+{
+    [[FBCIAPModel model] restorePurchases];
 }
 @end
