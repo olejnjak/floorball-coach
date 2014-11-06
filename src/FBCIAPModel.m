@@ -75,6 +75,8 @@ static FBCIAPModel *fbcIapModel = nil;
                 [alert show];
             }
                 break;
+            case SKPaymentTransactionStatePurchasing:
+                return;
             default:
                 break;
         }
